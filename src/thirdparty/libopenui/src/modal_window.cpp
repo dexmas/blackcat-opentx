@@ -1,0 +1,42 @@
+/*
+ * Copyright (C) OpenTX
+ *
+ * Source:
+ *  https://github.com/opentx/libopenui
+ *
+ * This file is a part of libopenui library.
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 3 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ */
+
+
+#include "modal_window.h"
+#include "font.h"
+
+ModalWindow::ModalWindow(Window * parent):
+  Window(parent->getFullScreenWindow(), {0, 0, LCD_W, LCD_H})
+#if !defined(HARDWARE_TOUCH)
+  , previousFocus(focusWindow)
+#endif
+{
+}
+
+void ModalWindow::paint(BitmapBuffer * dc)
+{
+  dc->drawFilledRect(0, 0, width(), height(), SOLID, OVERLAY_COLOR | OPACITY(5));
+}
+
+void ModalWindowContent::paint(BitmapBuffer * dc)
+{
+  dc->drawSolidFilledRect(0, 0, width(), POPUP_HEADER_HEIGHT, FOCUS_BGCOLOR);
+  dc->drawText(FIELD_PADDING_LEFT, (POPUP_HEADER_HEIGHT - getFontHeight(FONT(STD))) / 2, title.c_str(), FOCUS_COLOR);
+  dc->drawSolidFilledRect(0, POPUP_HEADER_HEIGHT, width(), height() - POPUP_HEADER_HEIGHT, DEFAULT_BGCOLOR);
+}

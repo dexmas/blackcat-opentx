@@ -1,0 +1,1692 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source files">
+      <UniqueIdentifier>{91310c68-e573-4544-99cb-3d1637f2197d}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header files">
+      <UniqueIdentifier>{1a7e9bfd-5c5d-45c0-ba16-e9db1ba2bcf7}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource files">
+      <UniqueIdentifier>{f70d1efc-92c4-421d-a6a7-663cd0580f8d}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="Source files\src">
+      <UniqueIdentifier>{3c268fc7-fba2-4432-aac1-588187f1cf5c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\src\gui">
+      <UniqueIdentifier>{28adc073-5060-4aec-9c6b-de4e1d818ca6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\src\gui\128x64">
+      <UniqueIdentifier>{44342c20-0e24-4a15-bad3-d200228d6474}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\src\gui\common">
+      <UniqueIdentifier>{cd4c2af4-cedb-4f6a-b780-c1d173d3dcef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\src\gui\common\stdlcd">
+      <UniqueIdentifier>{031dad9f-6ea8-41d2-aabc-e51b6166a27e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\src\io">
+      <UniqueIdentifier>{fbffa869-baaf-4018-8db6-bd10280d9ed4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\src\pulses">
+      <UniqueIdentifier>{7dbeb23c-3774-439f-bda5-25618c5d5a90}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\src\storage">
+      <UniqueIdentifier>{5c5197cf-97cd-4cef-9ab9-c45378f9524e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\src\targets">
+      <UniqueIdentifier>{e7d05815-adb0-4b25-afba-64b680f4a953}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\src\targets\common">
+      <UniqueIdentifier>{4eaaa8ef-4187-4f3d-9318-81dbfa3c4493}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\src\targets\common\arm">
+      <UniqueIdentifier>{c6bf7e29-af98-4c25-84e3-1596faabdd2f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\src\targets\sky9x">
+      <UniqueIdentifier>{82b0e6b8-ebe6-4f48-aa42-ddf42deca6c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\src\targets\sky9x\usb">
+      <UniqueIdentifier>{64aa6b90-0918-4040-80f4-9438cc9affa1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\src\targets\sky9x\usb\common">
+      <UniqueIdentifier>{731bb3a6-7586-41e9-8a0f-beada356b792}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\src\targets\sky9x\usb\common\core">
+      <UniqueIdentifier>{19a0a8f2-2d6c-4f64-a27a-3e942a65fe73}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\src\targets\sky9x\usb\common\hid">
+      <UniqueIdentifier>{56040546-ae1c-4d8b-a3a4-0fb82e028f2c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\src\targets\sky9x\usb\device">
+      <UniqueIdentifier>{69817ab6-4415-4fd1-a60d-d0edd0c6cb24}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\src\targets\sky9x\usb\device\core">
+      <UniqueIdentifier>{5ccb943c-deb7-40a7-80b4-e9dbdd94da07}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\src\targets\sky9x\usb\device\hid-joystick">
+      <UniqueIdentifier>{5b435a09-2ee3-4c40-baec-f69c638dda26}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\src\telemetry">
+      <UniqueIdentifier>{1f52320a-e0dd-44db-bdb4-f34813432ffd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\src\thirdparty">
+      <UniqueIdentifier>{ec80b132-b88d-4234-906b-dcb800ac471d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\src\thirdparty\CoOS">
+      <UniqueIdentifier>{49ec0042-6c6c-4985-b86f-97b2b915add6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\src\thirdparty\CoOS\kernel">
+      <UniqueIdentifier>{6321c3e3-e100-465d-8e26-c85f95b0beb0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\src\thirdparty\CoOS\portable">
+      <UniqueIdentifier>{83b33a96-1b56-4ebc-8e6d-9470a4ad0b30}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\src\thirdparty\CoOS\portable\GCC">
+      <UniqueIdentifier>{a40050c0-75c5-4901-9888-bbb5b3be6c93}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\src\thirdparty\FatFs">
+      <UniqueIdentifier>{a992eebe-69b8-4bc9-a193-949372f64499}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\src\thirdparty\FatFs\option">
+      <UniqueIdentifier>{6ae66507-b98c-4920-8b50-e41c0d3c8ab7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\Device-specific files">
+      <UniqueIdentifier>{b9d58803-b652-4e4d-b2a5-ad36d6131fbd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header files\src">
+      <UniqueIdentifier>{930c2352-3979-4dbe-8dcd-ab3f72ba50fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header files\src\gui">
+      <UniqueIdentifier>{6b4daaff-7f9b-48c1-b1d4-bea6280a56ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header files\src\gui\128x64">
+      <UniqueIdentifier>{f265a876-c17f-41a6-9967-4cd5b8790359}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header files\src\io">
+      <UniqueIdentifier>{2229ef5d-f3ba-477e-a75b-28edddff28ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header files\src\pulses">
+      <UniqueIdentifier>{e697bd59-7124-4d86-9727-1e603b6df719}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header files\src\storage">
+      <UniqueIdentifier>{bc02515b-9474-403f-b819-988fd32626df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header files\src\targets">
+      <UniqueIdentifier>{9b0391bb-702c-42ac-98c7-f95361122f6f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header files\src\targets\sky9x">
+      <UniqueIdentifier>{7049a2a8-c103-4a20-9750-93b7ea5cbcda}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header files\src\targets\sky9x\usb">
+      <UniqueIdentifier>{a41d6f53-4486-4d6a-ac17-f6ebc0df7989}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header files\src\targets\sky9x\usb\common">
+      <UniqueIdentifier>{b9cb6e16-4b61-4879-98b9-7137af591c7e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header files\src\targets\sky9x\usb\common\core">
+      <UniqueIdentifier>{ff5a1782-8190-4c81-8077-ac1283037b57}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header files\src\targets\sky9x\usb\common\hid">
+      <UniqueIdentifier>{646fbca0-a64d-463a-9f27-1cf761c56653}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header files\src\targets\sky9x\usb\device">
+      <UniqueIdentifier>{93d744d5-8438-4d9a-a168-005342f3e967}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header files\src\targets\sky9x\usb\device\core">
+      <UniqueIdentifier>{ebb0b16b-1bbc-45bd-bc36-6b4516ef9eb5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header files\src\targets\sky9x\usb\device\hid-joystick">
+      <UniqueIdentifier>{06c865be-8f4d-4129-84c7-f817ed45d10a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header files\src\telemetry">
+      <UniqueIdentifier>{46548fbc-1568-4b53-bf04-f1e568df3cb7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header files\src\thirdparty">
+      <UniqueIdentifier>{9fb1c26f-43ce-4958-aa15-acc1816eeaa2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header files\src\thirdparty\CoOS">
+      <UniqueIdentifier>{18a339c0-c0a0-4f94-99c3-223f31497803}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header files\src\thirdparty\CoOS\kernel">
+      <UniqueIdentifier>{cdeb8484-a0de-42bf-9aaf-2f11bb9c4add}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header files\src\thirdparty\CoOS\portable">
+      <UniqueIdentifier>{3fb64581-56e9-4272-aa3b-4a4a6082d46c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header files\src\thirdparty\FatFs">
+      <UniqueIdentifier>{82802cca-ea4b-49d1-9a83-0fed3399c229}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header files\Device-specific files">
+      <UniqueIdentifier>{204c2b5a-8b01-4c12-8821-8d7fe5f4cb6b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="VisualGDB settings">
+      <UniqueIdentifier>{09d95a0f-a762-48ab-85a5-3b271c6ae80f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource files\fonts">
+      <UniqueIdentifier>{bac11e08-2c82-43a5-ae34-a7228efdcdfd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource files\bitmaps">
+      <UniqueIdentifier>{dfc49cae-0971-4435-adc4-9ed5598f5cb7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource files\translations">
+      <UniqueIdentifier>{c35246b1-af4b-4462-beb4-1fe4a58aa98d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header files\src\lua">
+      <UniqueIdentifier>{52bef09a-5e01-46d1-836d-84c78859f91b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\src\lua">
+      <UniqueIdentifier>{4cb0b5a6-01fe-4c3c-a0cb-e4bfe0622bf1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header files\src\thirdparty\lua">
+      <UniqueIdentifier>{fb430413-d313-432b-888b-ef3c1a4b8adf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\src\thirdparty\lua">
+      <UniqueIdentifier>{879e23ea-896e-4736-96ae-4715e40f293b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header files\src\gui\common">
+      <UniqueIdentifier>{62e93dc6-1592-423d-894d-397988e5b60a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header files\src\gui\common\stdlcd">
+      <UniqueIdentifier>{a2c9cb71-1181-4f31-8860-fb6c67614b12}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\src\gui\navigation">
+      <UniqueIdentifier>{240b1898-fb2f-400b-a7f7-d79fa17ac9f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header files\src\storage\conversion">
+      <UniqueIdentifier>{1aa877d2-8db1-4633-b026-34a6fe2ca39d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\src\storage\conversion">
+      <UniqueIdentifier>{7919d4c0-e124-4057-a2d7-78d8ef83dd31}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header files\src\targets\sky9x\usb\common\masstorage">
+      <UniqueIdentifier>{2ff5448d-71bc-4374-a8c5-131d57c7ab01}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header files\src\targets\sky9x\usb\device\masstorage">
+      <UniqueIdentifier>{77fd6d05-ed38-4c68-b9a2-08dd02015ae0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\src\targets\sky9x\usb\device\masstorage">
+      <UniqueIdentifier>{881a650c-535a-42ae-b517-d61c782d4d45}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header files\src\thirdparty\libopenui">
+      <UniqueIdentifier>{2f6ebd9c-55ae-4d85-8650-f915f8770b14}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\src\thirdparty\libopenui">
+      <UniqueIdentifier>{42d7acb2-2bfe-4183-90af-e64791c757e4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\targets\common\arm\loadboot.cpp">
+      <Filter>Source files\src\targets\common\arm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\targets\sky9x\usb\device\hid-joystick\HIDDJoystickDriver.c">
+      <Filter>Source files\src\targets\sky9x\usb\device\hid-joystick</Filter>
+    </ClCompile>
+    <ClCompile Include="src\targets\sky9x\usb\device\hid-joystick\HIDDJoystickDriverDescriptors.c">
+      <Filter>Source files\src\targets\sky9x\usb\device\hid-joystick</Filter>
+    </ClCompile>
+    <ClCompile Include="src\targets\sky9x\usb\device\hid-joystick\HIDDJoystickInputReport.c">
+      <Filter>Source files\src\targets\sky9x\usb\device\hid-joystick</Filter>
+    </ClCompile>
+    <ClCompile Include="src\thirdparty\CoOS\kernel\core.c">
+      <Filter>Source files\src\thirdparty\CoOS\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="src\thirdparty\CoOS\kernel\event.c">
+      <Filter>Source files\src\thirdparty\CoOS\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="src\thirdparty\CoOS\kernel\flag.c">
+      <Filter>Source files\src\thirdparty\CoOS\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="src\thirdparty\CoOS\kernel\hook.c">
+      <Filter>Source files\src\thirdparty\CoOS\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="src\thirdparty\CoOS\kernel\mutex.c">
+      <Filter>Source files\src\thirdparty\CoOS\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="src\thirdparty\CoOS\kernel\serviceReq.c">
+      <Filter>Source files\src\thirdparty\CoOS\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="src\thirdparty\CoOS\kernel\task.c">
+      <Filter>Source files\src\thirdparty\CoOS\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="src\thirdparty\CoOS\kernel\time.c">
+      <Filter>Source files\src\thirdparty\CoOS\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="src\thirdparty\CoOS\kernel\timer.c">
+      <Filter>Source files\src\thirdparty\CoOS\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="src\thirdparty\CoOS\portable\arch.c">
+      <Filter>Source files\src\thirdparty\CoOS\portable</Filter>
+    </ClCompile>
+    <ClCompile Include="src\thirdparty\CoOS\portable\GCC\port.c">
+      <Filter>Source files\src\thirdparty\CoOS\portable\GCC</Filter>
+    </ClCompile>
+    <ClCompile Include="src\thirdparty\FatFs\fattime.c">
+      <Filter>Source files\src\thirdparty\FatFs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\thirdparty\FatFs\ff.c">
+      <Filter>Source files\src\thirdparty\FatFs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\thirdparty\FatFs\option\ccsbcs.c">
+      <Filter>Source files\src\thirdparty\FatFs\option</Filter>
+    </ClCompile>
+    <ClInclude Include="src\gui\gui_common.h">
+      <Filter>Header files\src\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\targets\sky9x\usb\device\hid-joystick\HIDDJoystickDriver.h">
+      <Filter>Header files\src\targets\sky9x\usb\device\hid-joystick</Filter>
+    </ClInclude>
+    <ClInclude Include="src\targets\sky9x\usb\device\hid-joystick\HIDDJoystickDriverDescriptors.h">
+      <Filter>Header files\src\targets\sky9x\usb\device\hid-joystick</Filter>
+    </ClInclude>
+    <ClInclude Include="src\targets\sky9x\usb\device\hid-joystick\HIDDJoystickInputReport.h">
+      <Filter>Header files\src\targets\sky9x\usb\device\hid-joystick</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thirdparty\CoOS\OsConfig.h">
+      <Filter>Header files\src\thirdparty\CoOS</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thirdparty\CoOS\kernel\coocox.h">
+      <Filter>Header files\src\thirdparty\CoOS\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thirdparty\CoOS\kernel\CoOS.h">
+      <Filter>Header files\src\thirdparty\CoOS\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thirdparty\CoOS\kernel\OsCore.h">
+      <Filter>Header files\src\thirdparty\CoOS\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thirdparty\CoOS\kernel\OsError.h">
+      <Filter>Header files\src\thirdparty\CoOS\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thirdparty\CoOS\kernel\OsEvent.h">
+      <Filter>Header files\src\thirdparty\CoOS\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thirdparty\CoOS\kernel\OsFlag.h">
+      <Filter>Header files\src\thirdparty\CoOS\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thirdparty\CoOS\kernel\OsMM.h">
+      <Filter>Header files\src\thirdparty\CoOS\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thirdparty\CoOS\kernel\OsMutex.h">
+      <Filter>Header files\src\thirdparty\CoOS\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thirdparty\CoOS\kernel\OsQueue.h">
+      <Filter>Header files\src\thirdparty\CoOS\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thirdparty\CoOS\kernel\OsServiceReq.h">
+      <Filter>Header files\src\thirdparty\CoOS\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thirdparty\CoOS\kernel\OsTask.h">
+      <Filter>Header files\src\thirdparty\CoOS\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thirdparty\CoOS\kernel\OsTime.h">
+      <Filter>Header files\src\thirdparty\CoOS\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thirdparty\CoOS\kernel\OsTimer.h">
+      <Filter>Header files\src\thirdparty\CoOS\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thirdparty\CoOS\kernel\utility.h">
+      <Filter>Header files\src\thirdparty\CoOS\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thirdparty\CoOS\portable\OsArch.h">
+      <Filter>Header files\src\thirdparty\CoOS\portable</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thirdparty\FatFs\diskio.h">
+      <Filter>Header files\src\thirdparty\FatFs</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thirdparty\FatFs\ff.h">
+      <Filter>Header files\src\thirdparty\FatFs</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thirdparty\FatFs\ffconf.h">
+      <Filter>Header files\src\thirdparty\FatFs</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thirdparty\FatFs\integer.h">
+      <Filter>Header files\src\thirdparty\FatFs</Filter>
+    </ClInclude>
+    <None Include="ATSAM3S.xml">
+      <Filter>VisualGDB settings</Filter>
+    </None>
+    <ClCompile Include="src\thirdparty\Lua\src\lapi.c">
+      <Filter>Source files\src\thirdparty\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\thirdparty\Lua\src\lbaselib.c">
+      <Filter>Source files\src\thirdparty\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\thirdparty\Lua\src\lbitlib.c">
+      <Filter>Source files\src\thirdparty\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\thirdparty\Lua\src\lcode.c">
+      <Filter>Source files\src\thirdparty\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\thirdparty\Lua\src\lcorolib.c">
+      <Filter>Source files\src\thirdparty\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\thirdparty\Lua\src\lctype.c">
+      <Filter>Source files\src\thirdparty\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\thirdparty\Lua\src\ldo.c">
+      <Filter>Source files\src\thirdparty\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\thirdparty\Lua\src\lfunc.c">
+      <Filter>Source files\src\thirdparty\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\thirdparty\Lua\src\lgc.c">
+      <Filter>Source files\src\thirdparty\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\thirdparty\Lua\src\linit.c">
+      <Filter>Source files\src\thirdparty\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\thirdparty\Lua\src\liolib.c">
+      <Filter>Source files\src\thirdparty\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\thirdparty\Lua\src\llex.c">
+      <Filter>Source files\src\thirdparty\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\thirdparty\Lua\src\lmathlib.c">
+      <Filter>Source files\src\thirdparty\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\thirdparty\Lua\src\lmem.c">
+      <Filter>Source files\src\thirdparty\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\thirdparty\Lua\src\loadlib.c">
+      <Filter>Source files\src\thirdparty\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\thirdparty\Lua\src\lobject.c">
+      <Filter>Source files\src\thirdparty\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\thirdparty\Lua\src\lopcodes.c">
+      <Filter>Source files\src\thirdparty\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\thirdparty\Lua\src\lparser.c">
+      <Filter>Source files\src\thirdparty\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\thirdparty\Lua\src\lrotable.c">
+      <Filter>Source files\src\thirdparty\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\thirdparty\Lua\src\lstate.c">
+      <Filter>Source files\src\thirdparty\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\thirdparty\Lua\src\lstring.c">
+      <Filter>Source files\src\thirdparty\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\thirdparty\Lua\src\lstrlib.c">
+      <Filter>Source files\src\thirdparty\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\thirdparty\Lua\src\ltable.c">
+      <Filter>Source files\src\thirdparty\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\thirdparty\Lua\src\ltm.c">
+      <Filter>Source files\src\thirdparty\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\thirdparty\Lua\src\lvm.c">
+      <Filter>Source files\src\thirdparty\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\thirdparty\Lua\src\lzio.c">
+      <Filter>Source files\src\thirdparty\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\thirdparty\Lua\src\lauxlib.c">
+      <Filter>Source files\src\thirdparty\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\thirdparty\Lua\src\ldebug.c">
+      <Filter>Source files\src\thirdparty\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\thirdparty\Lua\src\lundump.c">
+      <Filter>Source files\src\thirdparty\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\thirdparty\Lua\src\ldump.c">
+      <Filter>Source files\src\thirdparty\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\audio.cpp">
+      <Filter>Source files\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\bin_allocator.cpp">
+      <Filter>Source files\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\bluetooth.cpp">
+      <Filter>Source files\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\buzzer.cpp">
+      <Filter>Source files\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cli.cpp">
+      <Filter>Source files\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\crc.cpp">
+      <Filter>Source files\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\curves.cpp">
+      <Filter>Source files\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\debug.cpp">
+      <Filter>Source files\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\disk_cache.cpp">
+      <Filter>Source files\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dump.cpp">
+      <Filter>Source files\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\functions.cpp">
+      <Filter>Source files\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gps.cpp">
+      <Filter>Source files\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gvars.cpp">
+      <Filter>Source files\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gyro.cpp">
+      <Filter>Source files\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\haptic.cpp">
+      <Filter>Source files\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\keys.cpp">
+      <Filter>Source files\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\logs.cpp">
+      <Filter>Source files\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main.cpp">
+      <Filter>Source files\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\maths.cpp">
+      <Filter>Source files\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\mixer.cpp">
+      <Filter>Source files\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\opentx.cpp">
+      <Filter>Source files\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\rtc.cpp">
+      <Filter>Source files\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sbus.cpp">
+      <Filter>Source files\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sdcard.cpp">
+      <Filter>Source files\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\serial.cpp">
+      <Filter>Source files\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\simu.cpp">
+      <Filter>Source files\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\stamp.cpp">
+      <Filter>Source files\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\strhelpers.cpp">
+      <Filter>Source files\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\switches.cpp">
+      <Filter>Source files\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\tasks.cpp">
+      <Filter>Source files\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\timers.cpp">
+      <Filter>Source files\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\trainer.cpp">
+      <Filter>Source files\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\translations.cpp">
+      <Filter>Source files\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\vario.cpp">
+      <Filter>Source files\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\gui_common.cpp">
+      <Filter>Source files\src\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\screenshot.cpp">
+      <Filter>Source files\src\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\128x64\bmp.cpp">
+      <Filter>Source files\src\gui\128x64</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\128x64\fonts.cpp">
+      <Filter>Source files\src\gui\128x64</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\128x64\lcd.cpp">
+      <Filter>Source files\src\gui\128x64</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\128x64\menu_model.cpp">
+      <Filter>Source files\src\gui\128x64</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\128x64\menu_radio.cpp">
+      <Filter>Source files\src\gui\128x64</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\128x64\model_curve_edit.cpp">
+      <Filter>Source files\src\gui\128x64</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\128x64\model_custom_scripts.cpp">
+      <Filter>Source files\src\gui\128x64</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\128x64\model_display.cpp">
+      <Filter>Source files\src\gui\128x64</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\128x64\model_failsafe.cpp">
+      <Filter>Source files\src\gui\128x64</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\128x64\model_flightmodes.cpp">
+      <Filter>Source files\src\gui\128x64</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\128x64\model_gvars.cpp">
+      <Filter>Source files\src\gui\128x64</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\128x64\model_input_edit.cpp">
+      <Filter>Source files\src\gui\128x64</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\128x64\model_inputs_mixes.cpp">
+      <Filter>Source files\src\gui\128x64</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\128x64\model_logical_switches.cpp">
+      <Filter>Source files\src\gui\128x64</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\128x64\model_mix_edit.cpp">
+      <Filter>Source files\src\gui\128x64</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\128x64\model_outputs.cpp">
+      <Filter>Source files\src\gui\128x64</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\128x64\model_select.cpp">
+      <Filter>Source files\src\gui\128x64</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\128x64\model_setup.cpp">
+      <Filter>Source files\src\gui\128x64</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\128x64\model_special_functions.cpp">
+      <Filter>Source files\src\gui\128x64</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\128x64\model_telemetry.cpp">
+      <Filter>Source files\src\gui\128x64</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\128x64\model_telemetry_sensor.cpp">
+      <Filter>Source files\src\gui\128x64</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\128x64\model_templates.cpp">
+      <Filter>Source files\src\gui\128x64</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\128x64\popups.cpp">
+      <Filter>Source files\src\gui\128x64</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\128x64\radio_calibration.cpp">
+      <Filter>Source files\src\gui\128x64</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\128x64\radio_diaganas.cpp">
+      <Filter>Source files\src\gui\128x64</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\128x64\radio_diagkeys.cpp">
+      <Filter>Source files\src\gui\128x64</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\128x64\radio_setup.cpp">
+      <Filter>Source files\src\gui\128x64</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\128x64\splash.cpp">
+      <Filter>Source files\src\gui\128x64</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\128x64\startup_shutdown.cpp">
+      <Filter>Source files\src\gui\128x64</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\128x64\view_about.cpp">
+      <Filter>Source files\src\gui\128x64</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\128x64\view_channels.cpp">
+      <Filter>Source files\src\gui\128x64</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\128x64\view_main.cpp">
+      <Filter>Source files\src\gui\128x64</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\128x64\view_statistics.cpp">
+      <Filter>Source files\src\gui\128x64</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\128x64\view_telemetry.cpp">
+      <Filter>Source files\src\gui\128x64</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\128x64\widgets.cpp">
+      <Filter>Source files\src\gui\128x64</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\common\stdlcd\draw_functions.cpp">
+      <Filter>Source files\src\gui\common\stdlcd</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\common\stdlcd\menus.cpp">
+      <Filter>Source files\src\gui\common\stdlcd</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\common\stdlcd\model_curves.cpp">
+      <Filter>Source files\src\gui\common\stdlcd</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\common\stdlcd\model_heli.cpp">
+      <Filter>Source files\src\gui\common\stdlcd</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\common\stdlcd\model_inputs.cpp">
+      <Filter>Source files\src\gui\common\stdlcd</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\common\stdlcd\model_mixes.cpp">
+      <Filter>Source files\src\gui\common\stdlcd</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\common\stdlcd\model_module_options.cpp">
+      <Filter>Source files\src\gui\common\stdlcd</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\common\stdlcd\model_notes.cpp">
+      <Filter>Source files\src\gui\common\stdlcd</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\common\stdlcd\model_receiver_options.cpp">
+      <Filter>Source files\src\gui\common\stdlcd</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\common\stdlcd\model_setup_pxx1.cpp">
+      <Filter>Source files\src\gui\common\stdlcd</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\common\stdlcd\model_setup_pxx2.cpp">
+      <Filter>Source files\src\gui\common\stdlcd</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\common\stdlcd\popups.cpp">
+      <Filter>Source files\src\gui\common\stdlcd</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\common\stdlcd\radio_hardware.cpp">
+      <Filter>Source files\src\gui\common\stdlcd</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\common\stdlcd\radio_power_meter.cpp">
+      <Filter>Source files\src\gui\common\stdlcd</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\common\stdlcd\radio_sdmanager.cpp">
+      <Filter>Source files\src\gui\common\stdlcd</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\common\stdlcd\radio_spectrum_analyser.cpp">
+      <Filter>Source files\src\gui\common\stdlcd</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\common\stdlcd\radio_tools.cpp">
+      <Filter>Source files\src\gui\common\stdlcd</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\common\stdlcd\radio_trainer.cpp">
+      <Filter>Source files\src\gui\common\stdlcd</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\common\stdlcd\radio_version.cpp">
+      <Filter>Source files\src\gui\common\stdlcd</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\common\stdlcd\view_text.cpp">
+      <Filter>Source files\src\gui\common\stdlcd</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\navigation\common.cpp">
+      <Filter>Source files\src\gui\navigation</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\navigation\navigation_9x.cpp">
+      <Filter>Source files\src\gui\navigation</Filter>
+    </ClCompile>
+    <ClCompile Include="src\io\bootloader_flash.cpp">
+      <Filter>Source files\src\io</Filter>
+    </ClCompile>
+    <ClCompile Include="src\io\frsky_firmware_update.cpp">
+      <Filter>Source files\src\io</Filter>
+    </ClCompile>
+    <ClCompile Include="src\io\multi_firmware_update.cpp">
+      <Filter>Source files\src\io</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua\api_general.cpp">
+      <Filter>Source files\src\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua\api_lcd.cpp">
+      <Filter>Source files\src\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua\api_model.cpp">
+      <Filter>Source files\src\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua\interface.cpp">
+      <Filter>Source files\src\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua\widgets.cpp">
+      <Filter>Source files\src\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pulses\crossfire.cpp">
+      <Filter>Source files\src\pulses</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pulses\dsm2.cpp">
+      <Filter>Source files\src\pulses</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pulses\modules_helpers.cpp">
+      <Filter>Source files\src\pulses</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pulses\multi.cpp">
+      <Filter>Source files\src\pulses</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pulses\ppm.cpp">
+      <Filter>Source files\src\pulses</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pulses\pulses.cpp">
+      <Filter>Source files\src\pulses</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pulses\pxx1.cpp">
+      <Filter>Source files\src\pulses</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pulses\pxx2.cpp">
+      <Filter>Source files\src\pulses</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pulses\sbus.cpp">
+      <Filter>Source files\src\pulses</Filter>
+    </ClCompile>
+    <ClCompile Include="src\storage\eeprom_common.cpp">
+      <Filter>Source files\src\storage</Filter>
+    </ClCompile>
+    <ClCompile Include="src\storage\eeprom_raw.cpp">
+      <Filter>Source files\src\storage</Filter>
+    </ClCompile>
+    <ClCompile Include="src\storage\eeprom_rlc.cpp">
+      <Filter>Source files\src\storage</Filter>
+    </ClCompile>
+    <ClCompile Include="src\storage\modelslist.cpp">
+      <Filter>Source files\src\storage</Filter>
+    </ClCompile>
+    <ClCompile Include="src\storage\rlc.cpp">
+      <Filter>Source files\src\storage</Filter>
+    </ClCompile>
+    <ClCompile Include="src\storage\rtc_backup.cpp">
+      <Filter>Source files\src\storage</Filter>
+    </ClCompile>
+    <ClCompile Include="src\storage\sdcard_raw.cpp">
+      <Filter>Source files\src\storage</Filter>
+    </ClCompile>
+    <ClCompile Include="src\storage\storage_common.cpp">
+      <Filter>Source files\src\storage</Filter>
+    </ClCompile>
+    <ClCompile Include="src\storage\conversions\conversions.cpp">
+      <Filter>Source files\src\storage\conversion</Filter>
+    </ClCompile>
+    <ClCompile Include="src\storage\conversions\conversions_216_218.cpp">
+      <Filter>Source files\src\storage\conversion</Filter>
+    </ClCompile>
+    <ClCompile Include="src\storage\conversions\conversions_218_219.cpp">
+      <Filter>Source files\src\storage\conversion</Filter>
+    </ClCompile>
+    <ClCompile Include="src\targets\sky9x\adc_driver.cpp">
+      <Filter>Source files\src\targets\sky9x</Filter>
+    </ClCompile>
+    <ClCompile Include="src\targets\sky9x\audio_driver.cpp">
+      <Filter>Source files\src\targets\sky9x</Filter>
+    </ClCompile>
+    <ClCompile Include="src\targets\sky9x\aux_serial_driver.cpp">
+      <Filter>Source files\src\targets\sky9x</Filter>
+    </ClCompile>
+    <ClCompile Include="src\targets\sky9x\bluetooth.cpp">
+      <Filter>Source files\src\targets\sky9x</Filter>
+    </ClCompile>
+    <ClCompile Include="src\targets\sky9x\board.cpp">
+      <Filter>Source files\src\targets\sky9x</Filter>
+    </ClCompile>
+    <ClCompile Include="src\targets\sky9x\board_lowlevel.c">
+      <Filter>Source files\src\targets\sky9x</Filter>
+    </ClCompile>
+    <ClCompile Include="src\targets\sky9x\buzzer_driver.cpp">
+      <Filter>Source files\src\targets\sky9x</Filter>
+    </ClCompile>
+    <ClCompile Include="src\targets\sky9x\coproc_driver.cpp">
+      <Filter>Source files\src\targets\sky9x</Filter>
+    </ClCompile>
+    <ClCompile Include="src\targets\sky9x\core_cm3.c">
+      <Filter>Source files\src\targets\sky9x</Filter>
+    </ClCompile>
+    <ClCompile Include="src\targets\sky9x\crt.c">
+      <Filter>Source files\src\targets\sky9x</Filter>
+    </ClCompile>
+    <ClCompile Include="src\targets\sky9x\diskio.cpp">
+      <Filter>Source files\src\targets\sky9x</Filter>
+    </ClCompile>
+    <ClCompile Include="src\targets\sky9x\eeprom_driver.cpp">
+      <Filter>Source files\src\targets\sky9x</Filter>
+    </ClCompile>
+    <ClCompile Include="src\targets\sky9x\flash_driver.cpp">
+      <Filter>Source files\src\targets\sky9x</Filter>
+    </ClCompile>
+    <ClCompile Include="src\targets\sky9x\haptic_driver.cpp">
+      <Filter>Source files\src\targets\sky9x</Filter>
+    </ClCompile>
+    <ClCompile Include="src\targets\sky9x\i2c_driver.cpp">
+      <Filter>Source files\src\targets\sky9x</Filter>
+    </ClCompile>
+    <ClCompile Include="src\targets\sky9x\joystick.cpp">
+      <Filter>Source files\src\targets\sky9x</Filter>
+    </ClCompile>
+    <ClCompile Include="src\targets\sky9x\keys_driver.cpp">
+      <Filter>Source files\src\targets\sky9x</Filter>
+    </ClCompile>
+    <ClCompile Include="src\targets\sky9x\lcd_driver.cpp">
+      <Filter>Source files\src\targets\sky9x</Filter>
+    </ClCompile>
+    <ClCompile Include="src\targets\sky9x\massstorage.cpp">
+      <Filter>Source files\src\targets\sky9x</Filter>
+    </ClCompile>
+    <ClCompile Include="src\targets\sky9x\MEDSdcard.c">
+      <Filter>Source files\src\targets\sky9x</Filter>
+    </ClCompile>
+    <ClCompile Include="src\targets\sky9x\pulses_driver.cpp">
+      <Filter>Source files\src\targets\sky9x</Filter>
+    </ClCompile>
+    <ClCompile Include="src\targets\sky9x\pwr_driver.cpp">
+      <Filter>Source files\src\targets\sky9x</Filter>
+    </ClCompile>
+    <ClCompile Include="src\targets\sky9x\rotary_encoder_driver.cpp">
+      <Filter>Source files\src\targets\sky9x</Filter>
+    </ClCompile>
+    <ClCompile Include="src\targets\sky9x\rtc_driver.cpp">
+      <Filter>Source files\src\targets\sky9x</Filter>
+    </ClCompile>
+    <ClCompile Include="src\targets\sky9x\rtc_ds3231_driver.cpp">
+      <Filter>Source files\src\targets\sky9x</Filter>
+    </ClCompile>
+    <ClCompile Include="src\targets\sky9x\sdcard_driver.cpp">
+      <Filter>Source files\src\targets\sky9x</Filter>
+    </ClCompile>
+    <ClCompile Include="src\targets\sky9x\telemetry_driver.cpp">
+      <Filter>Source files\src\targets\sky9x</Filter>
+    </ClCompile>
+    <ClCompile Include="src\targets\sky9x\trainer_driver.cpp">
+      <Filter>Source files\src\targets\sky9x</Filter>
+    </ClCompile>
+    <ClCompile Include="src\targets\sky9x\usb_driver.cpp">
+      <Filter>Source files\src\targets\sky9x</Filter>
+    </ClCompile>
+    <ClCompile Include="src\targets\sky9x\vectors_sam3s.c">
+      <Filter>Source files\src\targets\sky9x</Filter>
+    </ClCompile>
+    <ClCompile Include="src\targets\sky9x\usb\common\core\USBConfigurationDescriptor.c">
+      <Filter>Source files\src\targets\sky9x\usb\common\core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\targets\sky9x\usb\common\core\USBEndpointDescriptor.c">
+      <Filter>Source files\src\targets\sky9x\usb\common\core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\targets\sky9x\usb\common\core\USBFeatureRequest.c">
+      <Filter>Source files\src\targets\sky9x\usb\common\core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\targets\sky9x\usb\common\core\USBGenericDescriptor.c">
+      <Filter>Source files\src\targets\sky9x\usb\common\core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\targets\sky9x\usb\common\core\USBGenericRequest.c">
+      <Filter>Source files\src\targets\sky9x\usb\common\core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\targets\sky9x\usb\common\core\USBGetDescriptorRequest.c">
+      <Filter>Source files\src\targets\sky9x\usb\common\core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\targets\sky9x\usb\common\core\USBInterfaceRequest.c">
+      <Filter>Source files\src\targets\sky9x\usb\common\core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\targets\sky9x\usb\common\core\USBIrqHandler.c">
+      <Filter>Source files\src\targets\sky9x\usb\common\core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\targets\sky9x\usb\common\core\USBSetAddressRequest.c">
+      <Filter>Source files\src\targets\sky9x\usb\common\core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\targets\sky9x\usb\common\core\USBSetConfigurationRequest.c">
+      <Filter>Source files\src\targets\sky9x\usb\common\core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\targets\sky9x\usb\common\hid\HIDIdleRequest.c">
+      <Filter>Source files\src\targets\sky9x\usb\common\hid</Filter>
+    </ClCompile>
+    <ClCompile Include="src\targets\sky9x\usb\common\hid\HIDReportRequest.c">
+      <Filter>Source files\src\targets\sky9x\usb\common\hid</Filter>
+    </ClCompile>
+    <ClCompile Include="src\targets\sky9x\usb\device\core\USBD_UDP.c">
+      <Filter>Source files\src\targets\sky9x\usb\device\core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\targets\sky9x\usb\device\core\USBDDriver.c">
+      <Filter>Source files\src\targets\sky9x\usb\device\core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\targets\sky9x\usb\device\massstorage\MSDDriver.c">
+      <Filter>Source files\src\targets\sky9x\usb\device\masstorage</Filter>
+    </ClCompile>
+    <ClCompile Include="src\targets\sky9x\usb\device\massstorage\MSDDriverDescriptors.c">
+      <Filter>Source files\src\targets\sky9x\usb\device\masstorage</Filter>
+    </ClCompile>
+    <ClCompile Include="src\targets\sky9x\usb\device\massstorage\MSDDStateMachine.c">
+      <Filter>Source files\src\targets\sky9x\usb\device\masstorage</Filter>
+    </ClCompile>
+    <ClCompile Include="src\targets\sky9x\usb\device\massstorage\MSDLun.c">
+      <Filter>Source files\src\targets\sky9x\usb\device\masstorage</Filter>
+    </ClCompile>
+    <ClCompile Include="src\targets\sky9x\usb\device\massstorage\SBCMethods.c">
+      <Filter>Source files\src\targets\sky9x\usb\device\masstorage</Filter>
+    </ClCompile>
+    <ClCompile Include="src\telemetry\crossfire.cpp">
+      <Filter>Source files\src\telemetry</Filter>
+    </ClCompile>
+    <ClCompile Include="src\telemetry\flysky_ibus.cpp">
+      <Filter>Source files\src\telemetry</Filter>
+    </ClCompile>
+    <ClCompile Include="src\telemetry\frsky.cpp">
+      <Filter>Source files\src\telemetry</Filter>
+    </ClCompile>
+    <ClCompile Include="src\telemetry\frsky_d.cpp">
+      <Filter>Source files\src\telemetry</Filter>
+    </ClCompile>
+    <ClCompile Include="src\telemetry\frsky_pxx2.cpp">
+      <Filter>Source files\src\telemetry</Filter>
+    </ClCompile>
+    <ClCompile Include="src\telemetry\frsky_sport.cpp">
+      <Filter>Source files\src\telemetry</Filter>
+    </ClCompile>
+    <ClCompile Include="src\telemetry\hitec.cpp">
+      <Filter>Source files\src\telemetry</Filter>
+    </ClCompile>
+    <ClCompile Include="src\telemetry\hott.cpp">
+      <Filter>Source files\src\telemetry</Filter>
+    </ClCompile>
+    <ClCompile Include="src\telemetry\multi.cpp">
+      <Filter>Source files\src\telemetry</Filter>
+    </ClCompile>
+    <ClCompile Include="src\telemetry\spektrum.cpp">
+      <Filter>Source files\src\telemetry</Filter>
+    </ClCompile>
+    <ClCompile Include="src\telemetry\telemetry.cpp">
+      <Filter>Source files\src\telemetry</Filter>
+    </ClCompile>
+    <ClCompile Include="src\telemetry\telemetry_sensors.cpp">
+      <Filter>Source files\src\telemetry</Filter>
+    </ClCompile>
+    <ClCompile Include="data\translations\tts_en.cpp">
+      <Filter>Source files\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Debug.vgdbsettings">
+      <Filter>VisualGDB settings</Filter>
+    </None>
+    <None Include="Release.vgdbsettings">
+      <Filter>VisualGDB settings</Filter>
+    </None>
+    <None Include="data\fonts\sqt5\font_03x05.lbm">
+      <Filter>Resource files\fonts</Filter>
+    </None>
+    <None Include="data\fonts\sqt5\font_04x06.lbm">
+      <Filter>Resource files\fonts</Filter>
+    </None>
+    <None Include="data\fonts\sqt5\font_04x06_extra.lbm">
+      <Filter>Resource files\fonts</Filter>
+    </None>
+    <None Include="data\fonts\sqt5\font_05x07.lbm">
+      <Filter>Resource files\fonts</Filter>
+    </None>
+    <None Include="data\fonts\sqt5\font_05x07_B_compressed.lbm">
+      <Filter>Resource files\fonts</Filter>
+    </None>
+    <None Include="data\fonts\sqt5\font_05x07_extra.lbm">
+      <Filter>Resource files\fonts</Filter>
+    </None>
+    <None Include="data\fonts\sqt5\font_08x10.lbm">
+      <Filter>Resource files\fonts</Filter>
+    </None>
+    <None Include="data\fonts\sqt5\font_10x14_compressed.lbm">
+      <Filter>Resource files\fonts</Filter>
+    </None>
+    <None Include="data\fonts\sqt5\font_10x14_extra.lbm">
+      <Filter>Resource files\fonts</Filter>
+    </None>
+    <None Include="data\fonts\sqt5\font_22x38_num.lbm">
+      <Filter>Resource files\fonts</Filter>
+    </None>
+    <None Include="data\bitmaps\128x64\about.lbm">
+      <Filter>Resource files\bitmaps</Filter>
+    </None>
+    <None Include="data\bitmaps\128x64\asterisk.lbm">
+      <Filter>Resource files\bitmaps</Filter>
+    </None>
+    <None Include="data\bitmaps\128x64\sleep.lbm">
+      <Filter>Resource files\bitmaps</Filter>
+    </None>
+    <None Include="data\bitmaps\128x64\splash.lbm">
+      <Filter>Resource files\bitmaps</Filter>
+    </None>
+    <None Include="data\bitmaps\sticks.lbm">
+      <Filter>Resource files\bitmaps</Filter>
+    </None>
+    <None Include="ATSAM3S.props">
+      <Filter>VisualGDB settings</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\thirdparty\Lua\src\lua.hpp">
+      <Filter>Header files\src\thirdparty\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thirdparty\Lua\src\lapi.h">
+      <Filter>Header files\src\thirdparty\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thirdparty\Lua\src\lauxlib.h">
+      <Filter>Header files\src\thirdparty\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thirdparty\Lua\src\lcode.h">
+      <Filter>Header files\src\thirdparty\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thirdparty\Lua\src\lctype.h">
+      <Filter>Header files\src\thirdparty\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thirdparty\Lua\src\ldebug.h">
+      <Filter>Header files\src\thirdparty\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thirdparty\Lua\src\ldo.h">
+      <Filter>Header files\src\thirdparty\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thirdparty\Lua\src\lfunc.h">
+      <Filter>Header files\src\thirdparty\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thirdparty\Lua\src\lgc.h">
+      <Filter>Header files\src\thirdparty\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thirdparty\Lua\src\llex.h">
+      <Filter>Header files\src\thirdparty\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thirdparty\Lua\src\llimits.h">
+      <Filter>Header files\src\thirdparty\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thirdparty\Lua\src\lmem.h">
+      <Filter>Header files\src\thirdparty\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thirdparty\Lua\src\lobject.h">
+      <Filter>Header files\src\thirdparty\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thirdparty\Lua\src\lopcodes.h">
+      <Filter>Header files\src\thirdparty\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thirdparty\Lua\src\lparser.h">
+      <Filter>Header files\src\thirdparty\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thirdparty\Lua\src\lrotable.h">
+      <Filter>Header files\src\thirdparty\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thirdparty\Lua\src\lstate.h">
+      <Filter>Header files\src\thirdparty\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thirdparty\Lua\src\lstring.h">
+      <Filter>Header files\src\thirdparty\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thirdparty\Lua\src\ltable.h">
+      <Filter>Header files\src\thirdparty\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thirdparty\Lua\src\ltm.h">
+      <Filter>Header files\src\thirdparty\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thirdparty\Lua\src\lua.h">
+      <Filter>Header files\src\thirdparty\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thirdparty\Lua\src\luaconf.h">
+      <Filter>Header files\src\thirdparty\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thirdparty\Lua\src\lualib.h">
+      <Filter>Header files\src\thirdparty\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thirdparty\Lua\src\lundump.h">
+      <Filter>Header files\src\thirdparty\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thirdparty\Lua\src\lvm.h">
+      <Filter>Header files\src\thirdparty\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thirdparty\Lua\src\lzio.h">
+      <Filter>Header files\src\thirdparty\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\audio.h">
+      <Filter>Header files\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bin_allocator.h">
+      <Filter>Header files\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bitfield.h">
+      <Filter>Header files\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bluetooth.h">
+      <Filter>Header files\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\buzzer.h">
+      <Filter>Header files\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\chksize.h">
+      <Filter>Header files\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\cli.h">
+      <Filter>Header files\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\crc.h">
+      <Filter>Header files\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dataconstants.h">
+      <Filter>Header files\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\datastructs.h">
+      <Filter>Header files\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\debounce.h">
+      <Filter>Header files\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\debug.h">
+      <Filter>Header files\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\definitions.h">
+      <Filter>Header files\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\disk_cache.h">
+      <Filter>Header files\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dmafifo.h">
+      <Filter>Header files\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dump.h">
+      <Filter>Header files\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\fifo.h">
+      <Filter>Header files\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\fonts.h">
+      <Filter>Header files\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\gps.h">
+      <Filter>Header files\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\gvars.h">
+      <Filter>Header files\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\gyro.h">
+      <Filter>Header files\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\haptic.h">
+      <Filter>Header files\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\keys.h">
+      <Filter>Header files\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\myeeprom.h">
+      <Filter>Header files\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\opentx.h">
+      <Filter>Header files\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\opentx_constants.h">
+      <Filter>Header files\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\opentx_helpers.h">
+      <Filter>Header files\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\opentx_types.h">
+      <Filter>Header files\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\options.h">
+      <Filter>Header files\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\pwr.h">
+      <Filter>Header files\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\rtc.h">
+      <Filter>Header files\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\rtos.h">
+      <Filter>Header files\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sbus.h">
+      <Filter>Header files\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sdcard.h">
+      <Filter>Header files\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\serial.h">
+      <Filter>Header files\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\stamp.h">
+      <Filter>Header files\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\strhelpers.h">
+      <Filter>Header files\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\tasks.h">
+      <Filter>Header files\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\timers.h">
+      <Filter>Header files\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\trainer.h">
+      <Filter>Header files\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\translations.h">
+      <Filter>Header files\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\gui\128x64\gui.h">
+      <Filter>Header files\src\gui\128x64</Filter>
+    </ClInclude>
+    <ClInclude Include="src\gui\128x64\lcd.h">
+      <Filter>Header files\src\gui\128x64</Filter>
+    </ClInclude>
+    <ClInclude Include="src\gui\128x64\menus.h">
+      <Filter>Header files\src\gui\128x64</Filter>
+    </ClInclude>
+    <ClInclude Include="src\gui\128x64\popups.h">
+      <Filter>Header files\src\gui\128x64</Filter>
+    </ClInclude>
+    <ClInclude Include="src\gui\common\stdlcd\draw_functions.h">
+      <Filter>Header files\src\gui\common\stdlcd</Filter>
+    </ClInclude>
+    <ClInclude Include="src\gui\common\stdlcd\menus.h">
+      <Filter>Header files\src\gui\common\stdlcd</Filter>
+    </ClInclude>
+    <ClInclude Include="src\gui\common\stdlcd\popups.h">
+      <Filter>Header files\src\gui\common\stdlcd</Filter>
+    </ClInclude>
+    <ClInclude Include="src\io\frsky_firmware_update.h">
+      <Filter>Header files\src\io</Filter>
+    </ClInclude>
+    <ClInclude Include="src\io\frsky_pxx2.h">
+      <Filter>Header files\src\io</Filter>
+    </ClInclude>
+    <ClInclude Include="src\io\frsky_sport.h">
+      <Filter>Header files\src\io</Filter>
+    </ClInclude>
+    <ClInclude Include="src\io\multi_firmware_update.h">
+      <Filter>Header files\src\io</Filter>
+    </ClInclude>
+    <ClInclude Include="src\io\stk500.h">
+      <Filter>Header files\src\io</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lua\lua_api.h">
+      <Filter>Header files\src\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\pulses\modules_constants.h">
+      <Filter>Header files\src\pulses</Filter>
+    </ClInclude>
+    <ClInclude Include="src\pulses\modules_helpers.h">
+      <Filter>Header files\src\pulses</Filter>
+    </ClInclude>
+    <ClInclude Include="src\pulses\multi.h">
+      <Filter>Header files\src\pulses</Filter>
+    </ClInclude>
+    <ClInclude Include="src\pulses\pulses.h">
+      <Filter>Header files\src\pulses</Filter>
+    </ClInclude>
+    <ClInclude Include="src\pulses\pulses_common.h">
+      <Filter>Header files\src\pulses</Filter>
+    </ClInclude>
+    <ClInclude Include="src\pulses\pxx.h">
+      <Filter>Header files\src\pulses</Filter>
+    </ClInclude>
+    <ClInclude Include="src\pulses\pxx1.h">
+      <Filter>Header files\src\pulses</Filter>
+    </ClInclude>
+    <ClInclude Include="src\pulses\pxx2.h">
+      <Filter>Header files\src\pulses</Filter>
+    </ClInclude>
+    <ClInclude Include="src\storage\eeprom_common.h">
+      <Filter>Header files\src\storage</Filter>
+    </ClInclude>
+    <ClInclude Include="src\storage\eeprom_raw.h">
+      <Filter>Header files\src\storage</Filter>
+    </ClInclude>
+    <ClInclude Include="src\storage\eeprom_rlc.h">
+      <Filter>Header files\src\storage</Filter>
+    </ClInclude>
+    <ClInclude Include="src\storage\modelslist.h">
+      <Filter>Header files\src\storage</Filter>
+    </ClInclude>
+    <ClInclude Include="src\storage\rtc_backup.h">
+      <Filter>Header files\src\storage</Filter>
+    </ClInclude>
+    <ClInclude Include="src\storage\sdcard_raw.h">
+      <Filter>Header files\src\storage</Filter>
+    </ClInclude>
+    <ClInclude Include="src\storage\storage.h">
+      <Filter>Header files\src\storage</Filter>
+    </ClInclude>
+    <ClInclude Include="src\storage\conversions\conversions.h">
+      <Filter>Header files\src\storage\conversion</Filter>
+    </ClInclude>
+    <ClInclude Include="src\storage\conversions\datastructs_218.h">
+      <Filter>Header files\src\storage\conversion</Filter>
+    </ClInclude>
+    <ClInclude Include="src\targets\sky9x\AT91SAM3S4.h">
+      <Filter>Header files\src\targets\sky9x</Filter>
+    </ClInclude>
+    <ClInclude Include="src\targets\sky9x\audio_driver.h">
+      <Filter>Header files\src\targets\sky9x</Filter>
+    </ClInclude>
+    <ClInclude Include="src\targets\sky9x\board.h">
+      <Filter>Header files\src\targets\sky9x</Filter>
+    </ClInclude>
+    <ClInclude Include="src\targets\sky9x\board_lowlevel.h">
+      <Filter>Header files\src\targets\sky9x</Filter>
+    </ClInclude>
+    <ClInclude Include="src\targets\sky9x\chip.h">
+      <Filter>Header files\src\targets\sky9x</Filter>
+    </ClInclude>
+    <ClInclude Include="src\targets\sky9x\core_cm3.h">
+      <Filter>Header files\src\targets\sky9x</Filter>
+    </ClInclude>
+    <ClInclude Include="src\targets\sky9x\i2c_driver.h">
+      <Filter>Header files\src\targets\sky9x</Filter>
+    </ClInclude>
+    <ClInclude Include="src\targets\sky9x\Media.h">
+      <Filter>Header files\src\targets\sky9x</Filter>
+    </ClInclude>
+    <ClInclude Include="src\targets\sky9x\usb\common\core\USBConfigurationDescriptor.h">
+      <Filter>Header files\src\targets\sky9x\usb\common\core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\targets\sky9x\usb\common\core\USBDeviceDescriptor.h">
+      <Filter>Header files\src\targets\sky9x\usb\common\core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\targets\sky9x\usb\common\core\USBDeviceQualifierDescriptor.h">
+      <Filter>Header files\src\targets\sky9x\usb\common\core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\targets\sky9x\usb\common\core\USBEndpointDescriptor.h">
+      <Filter>Header files\src\targets\sky9x\usb\common\core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\targets\sky9x\usb\common\core\USBFeatureRequest.h">
+      <Filter>Header files\src\targets\sky9x\usb\common\core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\targets\sky9x\usb\common\core\USBGenericDescriptor.h">
+      <Filter>Header files\src\targets\sky9x\usb\common\core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\targets\sky9x\usb\common\core\USBGenericRequest.h">
+      <Filter>Header files\src\targets\sky9x\usb\common\core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\targets\sky9x\usb\common\core\USBGetDescriptorRequest.h">
+      <Filter>Header files\src\targets\sky9x\usb\common\core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\targets\sky9x\usb\common\core\USBInterfaceAssociationDescriptor.h">
+      <Filter>Header files\src\targets\sky9x\usb\common\core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\targets\sky9x\usb\common\core\USBInterfaceDescriptor.h">
+      <Filter>Header files\src\targets\sky9x\usb\common\core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\targets\sky9x\usb\common\core\USBInterfaceRequest.h">
+      <Filter>Header files\src\targets\sky9x\usb\common\core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\targets\sky9x\usb\common\core\USBIrqHandler.h">
+      <Filter>Header files\src\targets\sky9x\usb\common\core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\targets\sky9x\usb\common\core\USBSetAddressRequest.h">
+      <Filter>Header files\src\targets\sky9x\usb\common\core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\targets\sky9x\usb\common\core\USBSetConfigurationRequest.h">
+      <Filter>Header files\src\targets\sky9x\usb\common\core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\targets\sky9x\usb\common\core\USBStringDescriptor.h">
+      <Filter>Header files\src\targets\sky9x\usb\common\core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\targets\sky9x\usb\common\hid\HIDButton.h">
+      <Filter>Header files\src\targets\sky9x\usb\common\hid</Filter>
+    </ClInclude>
+    <ClInclude Include="src\targets\sky9x\usb\common\hid\HIDDescriptor.h">
+      <Filter>Header files\src\targets\sky9x\usb\common\hid</Filter>
+    </ClInclude>
+    <ClInclude Include="src\targets\sky9x\usb\common\hid\HIDDeviceDescriptor.h">
+      <Filter>Header files\src\targets\sky9x\usb\common\hid</Filter>
+    </ClInclude>
+    <ClInclude Include="src\targets\sky9x\usb\common\hid\HIDGenericDescriptor.h">
+      <Filter>Header files\src\targets\sky9x\usb\common\hid</Filter>
+    </ClInclude>
+    <ClInclude Include="src\targets\sky9x\usb\common\hid\HIDGenericDesktop.h">
+      <Filter>Header files\src\targets\sky9x\usb\common\hid</Filter>
+    </ClInclude>
+    <ClInclude Include="src\targets\sky9x\usb\common\hid\HIDGenericRequest.h">
+      <Filter>Header files\src\targets\sky9x\usb\common\hid</Filter>
+    </ClInclude>
+    <ClInclude Include="src\targets\sky9x\usb\common\hid\HIDIdleRequest.h">
+      <Filter>Header files\src\targets\sky9x\usb\common\hid</Filter>
+    </ClInclude>
+    <ClInclude Include="src\targets\sky9x\usb\common\hid\HIDInterfaceDescriptor.h">
+      <Filter>Header files\src\targets\sky9x\usb\common\hid</Filter>
+    </ClInclude>
+    <ClInclude Include="src\targets\sky9x\usb\common\hid\HIDReport.h">
+      <Filter>Header files\src\targets\sky9x\usb\common\hid</Filter>
+    </ClInclude>
+    <ClInclude Include="src\targets\sky9x\usb\common\hid\HIDReportRequest.h">
+      <Filter>Header files\src\targets\sky9x\usb\common\hid</Filter>
+    </ClInclude>
+    <ClInclude Include="src\targets\sky9x\usb\common\massstorage\MSDeviceDescriptor.h">
+      <Filter>Header files\src\targets\sky9x\usb\common\masstorage</Filter>
+    </ClInclude>
+    <ClInclude Include="src\targets\sky9x\usb\common\massstorage\MSInterfaceDescriptor.h">
+      <Filter>Header files\src\targets\sky9x\usb\common\masstorage</Filter>
+    </ClInclude>
+    <ClInclude Include="src\targets\sky9x\usb\device\core\USBD.h">
+      <Filter>Header files\src\targets\sky9x\usb\device\core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\targets\sky9x\usb\device\core\USBDDriver.h">
+      <Filter>Header files\src\targets\sky9x\usb\device\core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\targets\sky9x\usb\device\core\USBDDriverDescriptors.h">
+      <Filter>Header files\src\targets\sky9x\usb\device\core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\targets\sky9x\usb\device\massstorage\MSD.h">
+      <Filter>Header files\src\targets\sky9x\usb\device\masstorage</Filter>
+    </ClInclude>
+    <ClInclude Include="src\targets\sky9x\usb\device\massstorage\MSDDriver.h">
+      <Filter>Header files\src\targets\sky9x\usb\device\masstorage</Filter>
+    </ClInclude>
+    <ClInclude Include="src\targets\sky9x\usb\device\massstorage\MSDDriverDescriptors.h">
+      <Filter>Header files\src\targets\sky9x\usb\device\masstorage</Filter>
+    </ClInclude>
+    <ClInclude Include="src\targets\sky9x\usb\device\massstorage\MSDDStateMachine.h">
+      <Filter>Header files\src\targets\sky9x\usb\device\masstorage</Filter>
+    </ClInclude>
+    <ClInclude Include="src\targets\sky9x\usb\device\massstorage\MSDIOFifo.h">
+      <Filter>Header files\src\targets\sky9x\usb\device\masstorage</Filter>
+    </ClInclude>
+    <ClInclude Include="src\targets\sky9x\usb\device\massstorage\MSDLun.h">
+      <Filter>Header files\src\targets\sky9x\usb\device\masstorage</Filter>
+    </ClInclude>
+    <ClInclude Include="src\targets\sky9x\usb\device\massstorage\SBC.h">
+      <Filter>Header files\src\targets\sky9x\usb\device\masstorage</Filter>
+    </ClInclude>
+    <ClInclude Include="src\targets\sky9x\usb\device\massstorage\SBCMethods.h">
+      <Filter>Header files\src\targets\sky9x\usb\device\masstorage</Filter>
+    </ClInclude>
+    <ClInclude Include="src\telemetry\crossfire.h">
+      <Filter>Header files\src\telemetry</Filter>
+    </ClInclude>
+    <ClInclude Include="src\telemetry\flysky_ibus.h">
+      <Filter>Header files\src\telemetry</Filter>
+    </ClInclude>
+    <ClInclude Include="src\telemetry\frsky.h">
+      <Filter>Header files\src\telemetry</Filter>
+    </ClInclude>
+    <ClInclude Include="src\telemetry\hitec.h">
+      <Filter>Header files\src\telemetry</Filter>
+    </ClInclude>
+    <ClInclude Include="src\telemetry\hott.h">
+      <Filter>Header files\src\telemetry</Filter>
+    </ClInclude>
+    <ClInclude Include="src\telemetry\multi.h">
+      <Filter>Header files\src\telemetry</Filter>
+    </ClInclude>
+    <ClInclude Include="src\telemetry\spektrum.h">
+      <Filter>Header files\src\telemetry</Filter>
+    </ClInclude>
+    <ClInclude Include="src\telemetry\telemetry.h">
+      <Filter>Header files\src\telemetry</Filter>
+    </ClInclude>
+    <ClInclude Include="src\telemetry\telemetry_holders.h">
+      <Filter>Header files\src\telemetry</Filter>
+    </ClInclude>
+    <ClInclude Include="src\telemetry\telemetry_sensors.h">
+      <Filter>Header files\src\telemetry</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thirdparty\libopenui\src\basenumberedit.h">
+      <Filter>Header files\src\thirdparty\libopenui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thirdparty\libopenui\src\bitfield.h">
+      <Filter>Header files\src\thirdparty\libopenui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thirdparty\libopenui\src\bitmapbuffer.h">
+      <Filter>Header files\src\thirdparty\libopenui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thirdparty\libopenui\src\button.h">
+      <Filter>Header files\src\thirdparty\libopenui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thirdparty\libopenui\src\checkbox.h">
+      <Filter>Header files\src\thirdparty\libopenui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thirdparty\libopenui\src\choice.h">
+      <Filter>Header files\src\thirdparty\libopenui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thirdparty\libopenui\src\coloredit.h">
+      <Filter>Header files\src\thirdparty\libopenui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thirdparty\libopenui\src\dialog.h">
+      <Filter>Header files\src\thirdparty\libopenui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thirdparty\libopenui\src\filechoice.h">
+      <Filter>Header files\src\thirdparty\libopenui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thirdparty\libopenui\src\font.h">
+      <Filter>Header files\src\thirdparty\libopenui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thirdparty\libopenui\src\form.h">
+      <Filter>Header files\src\thirdparty\libopenui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thirdparty\libopenui\src\gridlayout.h">
+      <Filter>Header files\src\thirdparty\libopenui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thirdparty\libopenui\src\keyboard_base.h">
+      <Filter>Header files\src\thirdparty\libopenui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thirdparty\libopenui\src\keyboard_number.h">
+      <Filter>Header files\src\thirdparty\libopenui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thirdparty\libopenui\src\keyboard_text.h">
+      <Filter>Header files\src\thirdparty\libopenui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thirdparty\libopenui\src\libopenui_defines.h">
+      <Filter>Header files\src\thirdparty\libopenui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thirdparty\libopenui\src\libopenui_depends.h">
+      <Filter>Header files\src\thirdparty\libopenui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thirdparty\libopenui\src\libopenui_file.h">
+      <Filter>Header files\src\thirdparty\libopenui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thirdparty\libopenui\src\libopenui_globals.h">
+      <Filter>Header files\src\thirdparty\libopenui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thirdparty\libopenui\src\libopenui_helpers.h">
+      <Filter>Header files\src\thirdparty\libopenui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thirdparty\libopenui\src\libopenui_types.h">
+      <Filter>Header files\src\thirdparty\libopenui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thirdparty\libopenui\src\mainwindow.h">
+      <Filter>Header files\src\thirdparty\libopenui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thirdparty\libopenui\src\menu.h">
+      <Filter>Header files\src\thirdparty\libopenui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thirdparty\libopenui\src\menutoolbar.h">
+      <Filter>Header files\src\thirdparty\libopenui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thirdparty\libopenui\src\modal_window.h">
+      <Filter>Header files\src\thirdparty\libopenui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thirdparty\libopenui\src\numberedit.h">
+      <Filter>Header files\src\thirdparty\libopenui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thirdparty\libopenui\src\progress.h">
+      <Filter>Header files\src\thirdparty\libopenui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thirdparty\libopenui\src\slider.h">
+      <Filter>Header files\src\thirdparty\libopenui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thirdparty\libopenui\src\static.h">
+      <Filter>Header files\src\thirdparty\libopenui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thirdparty\libopenui\src\table.h">
+      <Filter>Header files\src\thirdparty\libopenui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thirdparty\libopenui\src\textedit.h">
+      <Filter>Header files\src\thirdparty\libopenui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thirdparty\libopenui\src\theme.h">
+      <Filter>Header files\src\thirdparty\libopenui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thirdparty\libopenui\src\window.h">
+      <Filter>Header files\src\thirdparty\libopenui</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <LinkerScript Include="src\targets\sky9x\sam3s8c_flash.ld" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="data\fonts\sqt5\font_03x05.png">
+      <Filter>Resource files\fonts</Filter>
+    </Image>
+    <Image Include="data\fonts\sqt5\font_04x06.png">
+      <Filter>Resource files\fonts</Filter>
+    </Image>
+    <Image Include="data\fonts\sqt5\font_04x06_extra.png">
+      <Filter>Resource files\fonts</Filter>
+    </Image>
+    <Image Include="data\fonts\sqt5\font_05x07.png">
+      <Filter>Resource files\fonts</Filter>
+    </Image>
+    <Image Include="data\fonts\sqt5\font_05x07_B_compressed.png">
+      <Filter>Resource files\fonts</Filter>
+    </Image>
+    <Image Include="data\fonts\sqt5\font_05x07_extra.png">
+      <Filter>Resource files\fonts</Filter>
+    </Image>
+    <Image Include="data\fonts\sqt5\font_08x10.png">
+      <Filter>Resource files\fonts</Filter>
+    </Image>
+    <Image Include="data\fonts\sqt5\font_10x14_compressed.png">
+      <Filter>Resource files\fonts</Filter>
+    </Image>
+    <Image Include="data\fonts\sqt5\font_10x14_extra.png">
+      <Filter>Resource files\fonts</Filter>
+    </Image>
+    <Image Include="data\fonts\sqt5\font_22x38_num.png">
+      <Filter>Resource files\fonts</Filter>
+    </Image>
+    <Image Include="data\bitmaps\128x64\about.png">
+      <Filter>Resource files\bitmaps</Filter>
+    </Image>
+    <Image Include="data\bitmaps\128x64\asterisk.png">
+      <Filter>Resource files\bitmaps</Filter>
+    </Image>
+    <Image Include="data\bitmaps\128x64\sleep.png">
+      <Filter>Resource files\bitmaps</Filter>
+    </Image>
+    <Image Include="data\bitmaps\128x64\splash.png">
+      <Filter>Resource files\bitmaps</Filter>
+    </Image>
+    <Image Include="data\bitmaps\sticks.png">
+      <Filter>Resource files\bitmaps</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="data\translations\cz.h.txt">
+      <Filter>Resource files\translations</Filter>
+    </Text>
+    <Text Include="data\translations\de.h.txt">
+      <Filter>Resource files\translations</Filter>
+    </Text>
+    <Text Include="data\translations\en.h.txt">
+      <Filter>Resource files\translations</Filter>
+    </Text>
+    <Text Include="data\translations\es.h.txt">
+      <Filter>Resource files\translations</Filter>
+    </Text>
+    <Text Include="data\translations\fi.h.txt">
+      <Filter>Resource files\translations</Filter>
+    </Text>
+    <Text Include="data\translations\fr.h.txt">
+      <Filter>Resource files\translations</Filter>
+    </Text>
+    <Text Include="data\translations\it.h.txt">
+      <Filter>Resource files\translations</Filter>
+    </Text>
+    <Text Include="data\translations\nl.h.txt">
+      <Filter>Resource files\translations</Filter>
+    </Text>
+    <Text Include="data\translations\pl.h.txt">
+      <Filter>Resource files\translations</Filter>
+    </Text>
+    <Text Include="data\translations\pt.h.txt">
+      <Filter>Resource files\translations</Filter>
+    </Text>
+    <Text Include="data\translations\se.h.txt">
+      <Filter>Resource files\translations</Filter>
+    </Text>
+  </ItemGroup>
+</Project>
