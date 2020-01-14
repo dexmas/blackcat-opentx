@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2000
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "blackcat-opentx", "blackcat-opentx.vcxproj", "{838CF6E3-0038-4491-B9F6-1474F84F159E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|VisualGDB = Debug|VisualGDB
+		Release|VisualGDB = Release|VisualGDB
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{838CF6E3-0038-4491-B9F6-1474F84F159E}.Debug|VisualGDB.ActiveCfg = Debug|VisualGDB
+		{838CF6E3-0038-4491-B9F6-1474F84F159E}.Debug|VisualGDB.Build.0 = Debug|VisualGDB
+		{838CF6E3-0038-4491-B9F6-1474F84F159E}.Release|VisualGDB.ActiveCfg = Release|VisualGDB
+		{838CF6E3-0038-4491-B9F6-1474F84F159E}.Release|VisualGDB.Build.0 = Release|VisualGDB
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A0974BD2-3D90-4CD7-A128-C7D1BF9809E4}
+	EndGlobalSection
+EndGlobal

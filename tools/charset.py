@@ -7,45 +7,11 @@ import os
 
 standard_chars = """ !"#$%&'()*+,-./0123456789:;<=>?°ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz~|≥"""
 
-extra_chars = "".join([chr(0x10000+i) for i in range(21)])
-
-
-def chinese_chars():
-    charset = set()
-    tools_path = os.path.dirname(os.path.realpath(__file__))
-    with open(os.path.join(tools_path, "../radio/src/translations/cn.h.txt")) as f:
-        data = f.read()
-        for c in data:
-            if 0x4E00 <= ord(c) <= 0x9FFF:
-                charset.add(c)
-                # print(ord(c))
-    result = list(charset)
-    result.sort()
-    return result
+extra_chars = ""
 
 
 special_chars = {
-    "en": "",
-    "fr": "éèàîç",
-    "de": "ÄäÖöÜüß",
-    "cz": "ěščřžýáíéňóůúďťĚŠČŘŽÝÁÍÉŇÓÚŮĎŤ",
-    "nl": "",
-    "es": "Ññ",
-    "fi": "åäöÅÄÖ",
-    "it": "àù",
-    "pl": "ąćęłńóśżźĄĆĘŁŃÓŚŻŹ",
-    "pt": "ÁáÂâÃãÀàÇçÉéÊêÍíÓóÔôÕõÚú",
-    "se": "åäöÅÄÖ",
-    "cn": "".join(chinese_chars())
-}
-
-subset_lowercase = {
-    "Č": "č",
-    "Ě": "ě",
-    "Š": "š",
-    "Ú": "ú",
-    "Ů": "ů",
-    "Ž": "ž"
+    "en": ""
 }
 
 # print("CN charset: %d symbols" % len(special_chars["cn"]))
@@ -80,7 +46,4 @@ def get_chars_encoding(subset):
         for char in chars:
             if char not in standard_chars:
                 result[char] = "\\%03o" % (offset + chars.index(char))
-        for upper, lower in subset_lowercase.items():
-            if lower in result:
-                result[upper] = result[lower]
     return result
