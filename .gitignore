@@ -5,3 +5,5 @@
 /build/*.rsp
 /*.user
 /.vs
+*.elf
+*.hex
