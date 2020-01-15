@@ -31,17 +31,11 @@
 //         Headers
 //------------------------------------------------------------------------------
 
-#include "../../../usb/device/massstorage/MSDDriverDescriptors.h"
+#include "usb/device/massstorage/MSDDriverDescriptors.h"
+#include "usb/common/massstorage/MSDeviceDescriptor.h"
+#include "usb/common/massstorage/MSInterfaceDescriptor.h"
 
-#include "../../../usb/common/core/USBStringDescriptor.h"
-#include "../../../usb/common/massstorage/MSDeviceDescriptor.h"
-#include "../../../usb/common/massstorage/MSInterfaceDescriptor.h"
 #include "board_lowlevel.h"
-#include "../../../usb/common/core/USBConfigurationDescriptor.h"
-#include "../../../usb/common/core/USBDeviceDescriptor.h"
-#include "../../../usb/common/core/USBEndpointDescriptor.h"
-#include "../../../usb/common/core/USBGenericDescriptor.h"
-#include "../../../usb/common/core/USBInterfaceDescriptor.h"
 
 //------------------------------------------------------------------------------
 //         Internal definitions

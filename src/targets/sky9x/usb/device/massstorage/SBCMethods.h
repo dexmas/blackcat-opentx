@@ -51,8 +51,8 @@
 //         Headers
 //------------------------------------------------------------------------------
 
-#include "../../../usb/device/massstorage/MSDDStateMachine.h"
-#include "../../../usb/device/massstorage/SBC.h"
+#include "usb/device/massstorage/MSDDStateMachine.h"
+#include "usb/device/massstorage/SBC.h"
 
 //------------------------------------------------------------------------------
 //      Definitions

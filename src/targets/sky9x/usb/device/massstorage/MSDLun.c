@@ -31,10 +31,10 @@
 //         Headers
 //------------------------------------------------------------------------------
 
+#include "usb/device/core/USBD.h"
+#include "usb/device/massstorage/MSDLun.h"
 
-#include "../../../usb/device/massstorage/MSDLun.h"
 #include "board_lowlevel.h"
-#include "../../../usb/device/core/USBD.h"
 #include "debug.h"
 
 //------------------------------------------------------------------------------

@@ -31,11 +31,11 @@
 //      Headers
 //------------------------------------------------------------------------------
 
-#include "../../../usb/device/massstorage/SBCMethods.h"
+#include "usb/device/core/USBD.h"
 
-#include "../../../usb/device/core/USBD.h"
-#include "../../../usb/device/massstorage/MSDDStateMachine.h"
-#include "../../../usb/device/massstorage/MSDIOFifo.h"
+#include "usb/device/massstorage/SBCMethods.h"
+#include "usb/device/massstorage/MSDDStateMachine.h"
+#include "usb/device/massstorage/MSDIOFifo.h"
 
 //------------------------------------------------------------------------------
 //      Global variables

@@ -51,8 +51,9 @@
 //         Headers
 //-----------------------------------------------------------------------------
 
-#include "../../../usb/device/massstorage/MSD.h"
-#include "../../../usb/device/massstorage/MSDLun.h"
+#include "usb/device/massstorage/MSD.h"
+#include "usb/device/massstorage/MSDLun.h"
+
 #include "debug.h"
 
 //-----------------------------------------------------------------------------

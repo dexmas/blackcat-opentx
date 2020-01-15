@@ -69,7 +69,7 @@
 //------------------------------------------------------------------------------
 
 /// FIFO buffer for READ/WRITE (disk) operation of a mass storage device
-typedef struct _MSDIOFifo {
+typedef struct {
 
     /// Pointer to the ring buffer allocated for read/write
     unsigned char * pBuffer;

@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -27,14 +27,13 @@
  * ----------------------------------------------------------------------------
  */
 
-/**\file
-    Title: HIDReportRequest implementation
-
-    About: Purpose
-        Implementation of the HIDReportRequest methods.
-*/
-
-/**\addtogroup usb_hid
+/** \file
+ *    Definitions of callbacks used by the USBD API to notify the user
+ *    application of incoming events. These functions are declared as 'weak',
+ *    so they can be re-implemented elsewhere in the application in a
+ *    transparent way.
+ *
+ * \addtogroup usbd_interface
  *@{
  */
 
@@ -42,32 +41,49 @@
  *         Headers
  *------------------------------------------------------------------------------*/
 
-#include "HIDRequests.h"
+#include "USBD.h"
+#include "USBDDriver.h"
 
 /*------------------------------------------------------------------------------
- *         Exported functions
+ *         Exported function
  *------------------------------------------------------------------------------*/
 
 /**
- * Indicates the type of report targetted by a SET_REPORT or GET_REPORT
- * request.
- * \param request Pointer to a USBGenericRequest instance.
- * \return Requested report type (see "HID Report Types").
+ * Invoked after the USB driver has been initialized. By default, do nothing.
  */
-uint8_t HIDReportRequest_GetReportType(const USBGenericRequest *request)
+WEAK void USBDCallbacks_Initialized(void)
 {
-    return ((USBGenericRequest_GetValue(request) >> 8) & 0xFF);
+    /* Does nothing */
 }
 
 /**
- * Indicates the ID of the report targetted by a SET_REPORT or GET_REPORT
- * request. This value should be 0 if report IDs are not used.
- * \param request Pointer to a USBGenericRequest instance.
- * \return Requested report ID.
+ * Invoked when the USB driver is reset. Does nothing by default.
  */
-uint8_t HIDReportRequest_GetReportId(const USBGenericRequest *request)
+WEAK void USBDCallbacks_Reset(void)
 {
-    return (USBGenericRequest_GetValue(request) & 0xFF);
+    /* Does nothing*/
+}
+
+/**
+ * Invoked when the USB device gets suspended. By default, do nothing.
+ */
+WEAK void USBDCallbacks_Suspended(void) {}
+
+/**
+ * Invoked when the USB device leaves the Suspended state. By default,
+ * Do nothing.
+ */
+WEAK void USBDCallbacks_Resumed(void) {}
+
+/**
+ * USBDCallbacks_RequestReceived - Invoked when a new SETUP request is
+ * received. Does nothing by default.
+ * \param request Pointer to the request to handle.
+ */
+WEAK void USBDCallbacks_RequestReceived(const USBGenericRequest *request)
+{
+    /* Does basic enumeration */
+    USBDDriver_RequestHandler(USBD_GetDriver(), request);
 }
 
 /**@}*/

@@ -27,30 +27,47 @@
  * ----------------------------------------------------------------------------
  */
 
-/*
+/**\file
     Title: HIDIdleRequest implementation
 
     About: Purpose
         Implementation of the HIDIdleRequest methods.
 */
 
-//------------------------------------------------------------------------------
-//         Headers
-//------------------------------------------------------------------------------
+/**\addtogroup usb_hid
+ *@{
+ */
 
-#include "HIDIdleRequest.h"
+/*------------------------------------------------------------------------------
+ *         Headers
+ *------------------------------------------------------------------------------*/
 
-//------------------------------------------------------------------------------
-//         Exported functions
-//------------------------------------------------------------------------------
+#include "HIDRequests.h"
 
-//------------------------------------------------------------------------------
-/// Retrieves the Idle rate (in milliseconds) indicated by a SET_IDLE
-/// request.
-/// \param request Pointer to a USBGenericRequest instance.
-/// \return New idle rate for the report.
-//------------------------------------------------------------------------------
-unsigned char HIDIdleRequest_GetIdleRate(const USBGenericRequest *request)
+/*------------------------------------------------------------------------------
+ *         Exported functions
+ *------------------------------------------------------------------------------*/
+
+/**
+ * Indicates the ID of the report targetted by a SET_IDLE or GET_IDLE
+ * request. This value should be 0 if report IDs are not used.
+ * \param request Pointer to a USBGenericRequest instance.
+ * \return Requested report ID.
+ */
+uint8_t HIDIdleRequest_GetReportId(const USBGenericRequest *request)
+{
+    return (USBGenericRequest_GetValue(request) & 0xFF);
+}
+
+/**
+ * Retrieves the Idle rate (in milliseconds) indicated by a SET_IDLE
+ * request.
+ * \param request Pointer to a USBGenericRequest instance.
+ * \return New idle rate for the report.
+ */
+uint8_t HIDIdleRequest_GetIdleRate(const USBGenericRequest *request)
 {
     return ((USBGenericRequest_GetValue(request) >> 8) & 0xFF);
 }
+
+/**@}*/

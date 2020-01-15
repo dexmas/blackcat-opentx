@@ -31,9 +31,8 @@
 //      Includes
 //-----------------------------------------------------------------------------
 
-#include "../../../usb/device/massstorage/MSDDStateMachine.h"
-
-#include "../../../usb/device/massstorage/SBCMethods.h"
+#include "usb/device/massstorage/MSDDStateMachine.h"
+#include "usb/device/massstorage/SBCMethods.h"
 
 //-----------------------------------------------------------------------------
 //      Internal functions

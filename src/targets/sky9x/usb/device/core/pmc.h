@@ -1,7 +1,7 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
- * Copyright (c) 2008, Atmel Corporation
+ * Copyright (c) 2009, Atmel Corporation
  *
  * All rights reserved.
  *
@@ -27,47 +27,33 @@
  * ----------------------------------------------------------------------------
  */
 
-/**\file
-    Title: HIDReportRequest implementation
+#ifndef _PMC_
+#define _PMC_
 
-    About: Purpose
-        Implementation of the HIDReportRequest methods.
-*/
+/*----------------------------------------------------------------------------
+ *        Headers
+ *----------------------------------------------------------------------------*/
+#include <stdint.h>
 
-/**\addtogroup usb_hid
- *@{
- */
+/*----------------------------------------------------------------------------
+ *        Exported functions
+ *----------------------------------------------------------------------------*/
 
-/*------------------------------------------------------------------------------
- *         Headers
- *------------------------------------------------------------------------------*/
+#ifdef __cplusplus
+ extern "C" {
+#endif
 
-#include "HIDRequests.h"
+extern void PMC_EnablePeripheral( uint32_t dwId ) ;
+extern void PMC_DisablePeripheral( uint32_t dwId ) ;
 
-/*------------------------------------------------------------------------------
- *         Exported functions
- *------------------------------------------------------------------------------*/
+extern void PMC_EnableAllPeripherals( void ) ;
+extern void PMC_DisableAllPeripherals( void ) ;
 
-/**
- * Indicates the type of report targetted by a SET_REPORT or GET_REPORT
- * request.
- * \param request Pointer to a USBGenericRequest instance.
- * \return Requested report type (see "HID Report Types").
- */
-uint8_t HIDReportRequest_GetReportType(const USBGenericRequest *request)
-{
-    return ((USBGenericRequest_GetValue(request) >> 8) & 0xFF);
+extern uint32_t PMC_IsPeriphEnabled( uint32_t dwId ) ;
+
+#ifdef __cplusplus
 }
+#endif
 
-/**
- * Indicates the ID of the report targetted by a SET_REPORT or GET_REPORT
- * request. This value should be 0 if report IDs are not used.
- * \param request Pointer to a USBGenericRequest instance.
- * \return Requested report ID.
- */
-uint8_t HIDReportRequest_GetReportId(const USBGenericRequest *request)
-{
-    return (USBGenericRequest_GetValue(request) & 0xFF);
-}
+#endif /* #ifndef _PMC_ */
 
-/**@}*/

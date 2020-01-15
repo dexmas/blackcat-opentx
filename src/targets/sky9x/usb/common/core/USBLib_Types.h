@@ -1,7 +1,7 @@
 /* ----------------------------------------------------------------------------
  *         ATMEL Microcontroller Software Support 
  * ----------------------------------------------------------------------------
- * Copyright (c) 2008, Atmel Corporation
+ * Copyright (c) 2010, Atmel Corporation
  *
  * All rights reserved.
  *
@@ -27,47 +27,39 @@
  * ----------------------------------------------------------------------------
  */
 
-/**\file
-    Title: HIDReportRequest implementation
-
-    About: Purpose
-        Implementation of the HIDReportRequest methods.
-*/
-
-/**\addtogroup usb_hid
- *@{
+/** \file
+ *  Definitions for USB Lib compiling.
  */
 
-/*------------------------------------------------------------------------------
- *         Headers
- *------------------------------------------------------------------------------*/
+#ifndef USBLIB_TYPES_H
+#define USBLIB_TYPES_H
 
-#include "HIDRequests.h"
+/*----------------------------------------------------------------------------
+ *         Defines
+ *----------------------------------------------------------------------------*/
 
-/*------------------------------------------------------------------------------
- *         Exported functions
- *------------------------------------------------------------------------------*/
+/** USB status ReturnCode */
+typedef enum _USBRC {
+    USBRC_OK = 0,      /**< Operation was successful */
+    USBRC_SUCCESS = 0, /**< Operation was successful */
+    /* Bool codes */
+    USBRC_FALSE = 0,   /**< As boolean TRUE */
+    USBRC_TRUE  = 1,   /**< As boolean FALSE */
+    /* Error codes */    
+    USBRC_BUSY,        /**< EP/Device is already busy */
+    USBRC_ABORTED,     /**< Operation aborted due to error or stall */
+    USBRC_CANCELED,    /**< Operation canceled by user */
+    USBRC_RESET,       /**< Operation aborted due to init/reset/un-configure */
+    USBRC_PARTIAL_DONE,/**< Part of operation successfully done */
+    USBRC_FINISHED,    /**< All operation successfully done and terminate */
 
-/**
- * Indicates the type of report targetted by a SET_REPORT or GET_REPORT
- * request.
- * \param request Pointer to a USBGenericRequest instance.
- * \return Requested report type (see "HID Report Types").
- */
-uint8_t HIDReportRequest_GetReportType(const USBGenericRequest *request)
-{
-    return ((USBGenericRequest_GetValue(request) >> 8) & 0xFF);
-}
+    USBRC_PARAM_ERR,   /**< Failed due to parameter error */
+    USBRC_STATE_ERR,   /**< Failed due to state error */
+    USBRC_ERROR,       /**< General error */
 
-/**
- * Indicates the ID of the report targetted by a SET_REPORT or GET_REPORT
- * request. This value should be 0 if report IDs are not used.
- * \param request Pointer to a USBGenericRequest instance.
- * \return Requested report ID.
- */
-uint8_t HIDReportRequest_GetReportId(const USBGenericRequest *request)
-{
-    return (USBGenericRequest_GetValue(request) & 0xFF);
-}
+    USBRC_SW_NOT_SUPPORTED = 0xFD, /**< Failed due to SW not supported */
+    USBRC_HW_NOT_SUPPORTED = 0xFE  /**< Failed due to HW not supported */
+} USBRC;
+ 
+#endif /* #define USBLIB_TYPES_H */
 
-/**@}*/

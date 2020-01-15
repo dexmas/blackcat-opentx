@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -27,47 +27,53 @@
  * ----------------------------------------------------------------------------
  */
 
-/**\file
-    Title: HIDReportRequest implementation
-
-    About: Purpose
-        Implementation of the HIDReportRequest methods.
-*/
-
-/**\addtogroup usb_hid
+/** \file
+ *
+ * \section Purpose
+ *
+ *    Definition of several callbacks which are triggered by the USB software
+ *    driver after receiving specific requests.
+ *
+ * \section Usage
+ *
+ *    -# Re-implement the USBDDriverCallbacks_ConfigurationChanged
+ *        callback to know when the hosts changes the active configuration of
+ *        the device.
+ *    -# Re-implement the USBDDriverCallbacks_InterfaceSettingChanged
+ *        callback to get notified whenever the active setting of an interface
+ *        is changed by the host.
+ *
+ * \addtogroup usbd_interface
  *@{
  */
 
 /*------------------------------------------------------------------------------
  *         Headers
  *------------------------------------------------------------------------------*/
-
-#include "HIDRequests.h"
-
+#include "board.h"
+#include "USBDDriver.h"
 /*------------------------------------------------------------------------------
- *         Exported functions
+ *         Global functions
  *------------------------------------------------------------------------------*/
 
 /**
- * Indicates the type of report targetted by a SET_REPORT or GET_REPORT
- * request.
- * \param request Pointer to a USBGenericRequest instance.
- * \return Requested report type (see "HID Report Types").
+ * Indicates that the current configuration of the device has changed.
+ * \param cfgnum  New device configuration index.
  */
-uint8_t HIDReportRequest_GetReportType(const USBGenericRequest *request)
-{
-    return ((USBGenericRequest_GetValue(request) >> 8) & 0xFF);
-}
+///*WEAK*/ void USBDDriverCallbacks_ConfigurationChanged(uint8_t cfgnum)
+//{
+////    TRACE_INFO_WP("cfgChanged%d ", cfgnum);
+//}
 
 /**
- * Indicates the ID of the report targetted by a SET_REPORT or GET_REPORT
- * request. This value should be 0 if report IDs are not used.
- * \param request Pointer to a USBGenericRequest instance.
- * \return Requested report ID.
+ * Notifies of a change in the currently active setting of an interface.
+ * \param interface  Number of the interface whose setting has changed.
+ * \param setting  New interface setting.
  */
-uint8_t HIDReportRequest_GetReportId(const USBGenericRequest *request)
+/*WEAK*/ void USBDDriverCallbacks_InterfaceSettingChanged(
+    uint8_t interface,
+    uint8_t setting)
 {
-    return (USBGenericRequest_GetValue(request) & 0xFF);
+//    TRACE_INFO_WP("ifSettingChanged%d.%d ", interface, setting);
 }
-
 /**@}*/

@@ -31,15 +31,15 @@
 //      Includes
 //------------------------------------------------------------------------------
 
-#include "../../../usb/device/massstorage/MSDDriver.h"
+#include "usb/device/core/USBDDriver.h"
+#include "usb/common/core/USBRequests.h"
+#include "usb/device/core/USBD.h"
 
-#include "../../../usb/common/core/USBFeatureRequest.h"
-#include "../../../usb/device/core/USBDDriver.h"
-#include "../../../usb/device/massstorage/MSDDriverDescriptors.h"
-#include "../../../usb/device/massstorage/SBCMethods.h"
-#include "../../../Media.h"
-#include "../../../usb/common/core/USBGenericRequest.h"
-#include "../../../usb/device/core/USBD.h"
+#include "usb/device/massstorage/MSDDriver.h"
+#include "usb/device/massstorage/MSDDriverDescriptors.h"
+#include "usb/device/massstorage/SBCMethods.h"
+
+#include "Media.h"
 #include "debug.h"
 
 //-----------------------------------------------------------------------------

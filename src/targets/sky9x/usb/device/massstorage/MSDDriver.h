@@ -50,9 +50,8 @@
 //         Headers
 //------------------------------------------------------------------------------
 
-#include "../../../usb/device/massstorage/MSD.h"
-#include "../../../usb/device/massstorage/MSDLun.h"
-// #include <utility/trace.h>
+#include "usb/device/massstorage/MSD.h"
+#include "usb/device/massstorage/MSDLun.h"
 
 //------------------------------------------------------------------------------
 //      Global functions

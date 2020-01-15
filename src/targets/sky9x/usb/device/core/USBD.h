@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -27,264 +27,249 @@
  * ----------------------------------------------------------------------------
  */
 
-//------------------------------------------------------------------------------
-/// \unit
-///
-/// !!!Purpose
-/// 
-/// Collection of methods for using the USB device controller on AT91
-/// microcontrollers.
-/// 
-/// !!!Usage
-/// 
-/// Please refer to the corresponding application note.
-/// - "AT91 USB device framework"
-/// - "USBD API" . "USBD API Methods"
-//------------------------------------------------------------------------------
+/**
+ * \file
+ *
+ * \section Purpose
+ *
+ * Collection of methods for using the USB device controller on AT91
+ * microcontrollers.
+ *
+ * \section Usage
+ *
+ * Please refer to the corresponding application note.
+ * - \ref usbd_framework AT91 USB device framework
+ * - \ref usbd_api USBD API
+ *
+ */
 
 #ifndef USBD_H
 #define USBD_H
 
-//------------------------------------------------------------------------------
-//         Headers
-//------------------------------------------------------------------------------
+/*----------------------------------------------------------------------------
+ *         Headers
+ *----------------------------------------------------------------------------*/
 
-// #include <board.h>
-#include "../../../usb/common/core/USBEndpointDescriptor.h"
-#include "../../../usb/common/core/USBGenericRequest.h"
 
-//------------------------------------------------------------------------------
-//      Compile Options
-//------------------------------------------------------------------------------
+#include "usb/common/core/USBDescriptors.h"
+#include "usb/common/core/USBRequests.h"
+#include "usb/common/core/USBLib_Types.h"
 
-/// Compile option for HS or OTG, use DMA. Remove this define for not use DMA.
-#if defined(CHIP_USB_OTGHS) || defined(CHIP_USB_UDPHS)
-#define DMA
+#include <stdio.h>
+
+/*------------------------------------------------------------------------------
+ *      Definitions
+ *------------------------------------------------------------------------------*/
+
+/* Define attribute */
+#if defined   ( __CC_ARM   ) /* Keil µVision 4 */
+    #define WEAK __attribute__ ((weak))
+#elif defined ( __ICCARM__ ) /* IAR Ewarm 5.41+ */
+    #define WEAK __weak
+#elif defined (  __GNUC__  ) /* GCC CS3 2009q3-68 */
+    #define WEAK __attribute__ ((weak))
 #endif
 
-//------------------------------------------------------------------------------
-//      Definitions
-//------------------------------------------------------------------------------
+/* Define NO_INIT attribute */
+#if defined   ( __CC_ARM   )
+    #define NO_INIT
+#elif defined ( __ICCARM__ )
+    #define NO_INIT __no_init
+#elif defined (  __GNUC__  )
+    #define NO_INIT
+#endif
 
-//------------------------------------------------------------------------------
-/// \page "USB device API return values"
-///
-/// This page lists the return values of the USB %device driver API
-///
-/// !Return codes
-/// - USBD_STATUS_SUCCESS
-/// - USBD_STATUS_LOCKED
-/// - USBD_STATUS_ABORTED
-/// - USBD_STATUS_RESET
-           
-/// Indicates the operation was successful.
-#define USBD_STATUS_SUCCESS             0
-/// Endpoint/device is already busy.
-#define USBD_STATUS_LOCKED              1
-/// Operation has been aborted.
-#define USBD_STATUS_ABORTED             2
-/// Operation has been aborted because the device has been reset.
-#define USBD_STATUS_RESET               3
-/// Part ot operation successfully done.
-#define USBD_STATUS_PARTIAL_DONE        4
-/// Operation failed because parameter error
-#define USBD_STATUS_INVALID_PARAMETER   5
-/// Operation failed because in unexpected state
-#define USBD_STATUS_WRONG_STATE         6
-/// Operation failed because HW not supported
-#define USBD_STATUS_HW_NOT_SUPPORTED    0xFE
-//------------------------------------------------------------------------------
 
-//------------------------------------------------------------------------------
-/// \page "USB device states"
-///
-/// This page lists the %device states of the USB %device driver.
-///
-/// !States
-/// - USBD_STATE_SUSPENDED
-/// - USBD_STATE_ATTACHED
-/// - USBD_STATE_POWERED
-/// - USBD_STATE_DEFAULT
-/// - USBD_STATE_ADDRESS
-/// - USBD_STATE_CONFIGURED
+/** \addtogroup usbd_interface
+ *@{*/
 
-/// The device is currently suspended.
+/**
+ * \addtogroup usbd_rc USB device API return codes
+ *  @{
+ * This section lists the return codes for the USB device driver API
+ * - \ref USBD_STATUS_SUCCESS
+ * - \ref USBD_STATUS_LOCKED
+ * - \ref USBD_STATUS_ABORTED
+ * - \ref USBD_STATUS_RESET
+ */
+
+/** Indicates the operation was successful. */
+#define USBD_STATUS_SUCCESS             USBRC_SUCCESS
+/** Endpoint/device is already busy. */
+#define USBD_STATUS_LOCKED              USBRC_BUSY
+/** Operation has been aborted (error or stall). */
+#define USBD_STATUS_ABORTED             USBRC_ABORTED
+/** Operation has been canceled (by user). */
+#define USBD_STATUS_CANCELED            USBRC_CANCELED
+/** Operation has been aborted because the device init/reset/un-configure. */
+#define USBD_STATUS_RESET               USBRC_RESET
+/** Part ot operation successfully done. */
+#define USBD_STATUS_PARTIAL_DONE        USBRC_PARTIAL_DONE
+/** Operation failed because parameter error */
+#define USBD_STATUS_INVALID_PARAMETER   USBRC_PARAM_ERR
+/** Operation failed because in unexpected state */
+#define USBD_STATUS_WRONG_STATE         USBRC_STATE_ERR
+/** Operation failed because SW not supported */
+#define USBD_STATUS_SW_NOT_SUPPORTED    USBRC_SW_NOT_SUPPORTED
+/** Operation failed because HW not supported */
+#define USBD_STATUS_HW_NOT_SUPPORTED    USBRC_HW_NOT_SUPPORTED
+/** @}*/
+
+/** \addtogroup usbd_states USB device states
+ *  @{
+ * This section lists the device states of the USB device driver.
+ * - \ref USBD_STATE_SUSPENDED
+ * - \ref USBD_STATE_ATTACHED
+ * - \ref USBD_STATE_POWERED
+ * - \ref USBD_STATE_DEFAULT
+ * - \ref USBD_STATE_ADDRESS
+ * - \ref USBD_STATE_CONFIGURED
+ */
+
+/** The device is currently suspended. */
 #define USBD_STATE_SUSPENDED            0
-/// USB cable is plugged into the device.
+/** USB cable is plugged into the device. */
 #define USBD_STATE_ATTACHED             1
-/// Host is providing +5V through the USB cable.
+/** Host is providing +5V through the USB cable. */
 #define USBD_STATE_POWERED              2
-/// Device has been reset.
+/** Device has been reset. */
 #define USBD_STATE_DEFAULT              3
-/// The device has been given an address on the bus.
+/** The device has been given an address on the bus. */
 #define USBD_STATE_ADDRESS              4
-/// A valid configuration has been selected.
+/** A valid configuration has been selected. */
 #define USBD_STATE_CONFIGURED           5
-//------------------------------------------------------------------------------
+/**  @}*/
 
-//------------------------------------------------------------------------------
-/// \page "USB device LEDs"
-///
-/// This page lists the LEDs used in the USB %device driver.
-///
-/// !LEDs
-/// - USBD_LEDPOWER
-/// - USBD_LEDUSB
-/// - USBD_LEDOTHER
+/*----------------------------------------------------------------------------
+ *         Types
+ *----------------------------------------------------------------------------*/
 
-/// LED for indicating that the device is powered.
-#define USBD_LEDPOWER                   0
-/// LED for indicating USB activity.
-#define USBD_LEDUSB                     1
-/// LED for custom usage.
-#define USBD_LEDOTHER                   2
-//------------------------------------------------------------------------------
-
-//------------------------------------------------------------------------------
-//         Types
-//------------------------------------------------------------------------------
-
-//------------------------------------------------------------------------------
-/// Buffer struct used for multi-buffer-listed transfer.
-/// The driver can process 255 bytes of buffers or buffer list window.
-//------------------------------------------------------------------------------
-typedef struct _USBDTransferBuffer {
-    /// Pointer to frame buffer
-    unsigned char * pBuffer;
-    /// Size of the frame (up to 64K-1)
-    unsigned short size;
-    /// Bytes transferred
-    unsigned short transferred;
-    /// Bytes in FIFO
-    unsigned short buffered;
-    /// Bytes remaining
-    unsigned short remaining;
+/**
+ * \brief Buffer struct used for multi-buffer-listed transfer.
+ *
+ * The driver can process 255 bytes of buffers or buffer list window.
+ */
+typedef struct {
+    /** Pointer to frame buffer */
+    uint8_t * pBuffer;
+    /** Size of the frame (up to 64K-1) */
+    uint16_t size;
+    /** Bytes transferred */
+    uint16_t transferred;
+    /** Bytes in FIFO */
+    uint16_t buffered;
+    /** Bytes remaining */
+    uint16_t remaining;
 } USBDTransferBuffer;
 
-#ifdef __ICCARM__          // IAR
-#define __attribute__(...) // IAR
-#endif                     // IAR
+#ifdef __ICCARM__          /* IAR*/
+#define __attribute__(...) /* IAR*/
+#endif                     /* IAR*/
 
-//------------------------------------------------------------------------------
-/// Struct used for USBD DMA Link List Transfer Descriptor, must be 16-bytes
-/// aligned.
-/// (For USB, DMA transfer is linked to EPs and FIFO address is EP defined)
-//------------------------------------------------------------------------------
-typedef struct _USBDDmaDescriptor {
-    /// Pointer to Next Descriptor
+/**
+ * \brief Struct used for USBD DMA Link List Transfer Descriptor, must be 16-bytes
+ * aligned.
+ *
+ * (For USB, DMA transfer is linked to EPs and FIFO address is EP defined)
+ */
+typedef struct {
+    /** Pointer to Next Descriptor */
     void* pNxtDesc;
-    /// Pointer to data buffer address
+    /** Pointer to data buffer address */
     void* pDataAddr;
-    /// DMA Control setting register value
-    unsigned int   ctrlSettings:8,  /// Control settings
-                   reserved:8,      /// Not used
-                   bufferLength:16; /// Length of buffer
-    /// Loaded to DMA register, OK to modify
-    unsigned int used;
+    /** DMA Control setting register value */
+    uint32_t   ctrlSettings:8,      /** Control settings */
+                   reserved:8,      /** Not used */
+                   bufferLength:16; /** Length of buffer */
+    /** Loaded to DMA register, OK to modify */
+    uint32_t used;
 } __attribute__((aligned(16))) USBDDmaDescriptor;
 
-#ifdef __ICCARM__          // IAR
-#pragma pack()             // IAR
-#endif                     // IAR
+#ifdef __ICCARM__          /* IAR*/
+#pragma pack()             /* IAR*/
+#endif                     /* IAR*/
 
-//------------------------------------------------------------------------------
-/// Callback used by transfer functions (USBD_Read & USBD_Write) to notify
-/// that a transaction is complete.
-//------------------------------------------------------------------------------
+/**
+ * Callback used by transfer functions (USBD_Read & USBD_Write) to notify
+ * that a transaction is complete.
+ */
 typedef void (*TransferCallback)(void *pArg,
-                                 unsigned char status,
-                                 unsigned int transferred,
-                                 unsigned int remaining);
+                                 uint8_t status,
+                                 uint32_t transferred,
+                                 uint32_t remaining);
 
-//------------------------------------------------------------------------------
-/// Callback used by MBL transfer functions (USBD_Read & USBD_Write) to notify
-/// that a transaction is complete.
-/// \param pArg     Pointer to callback arguments.
-/// \param status   USBD status.
-/// \param nbFreed  Number of buffers that is freed since last callback.
-//------------------------------------------------------------------------------
+/**
+ * Callback used by MBL transfer functions (USBD_Read & USBD_Write) to notify
+ * that a transaction is complete.
+ * \param pArg     Pointer to callback arguments.
+ * \param status   USBD status.
+ */
 typedef void (*MblTransferCallback)(void *pArg,
-                                    unsigned char status,
-                                    unsigned int nbFreed);
+                                    uint8_t status);
 
-//------------------------------------------------------------------------------
-//         Exported functions
-//------------------------------------------------------------------------------
+/**@}*/
 
-extern void USBD_IrqHandler(void);
+/*------------------------------------------------------------------------------
+ *         Exported functions
+ *------------------------------------------------------------------------------*/
+
+//extern void USBD_IrqHandler(void);
 
 extern void USBD_Init(void);
 
-extern void USBD_ConfigureSpeed(unsigned char forceFS);
+extern void USBD_ConfigureSpeed(uint8_t forceFS);
 
 extern void USBD_Connect(void);
 
 extern void USBD_Disconnect(void);
 
-extern char USBD_Write(
-    unsigned char bEndpoint,
+extern uint8_t USBD_Write(
+    uint8_t bEndpoint,
     const void *pData,
-    unsigned int size,
+    uint32_t size,
     TransferCallback callback,
     void *pArg);
 
-extern char USBD_MblWrite(
-    unsigned char bEndpoint,
-    void * pMbl,
-    unsigned short wListSize,
-    unsigned char bCircList,
-    unsigned short wStartNdx,
-    MblTransferCallback fCallback,
-    void * pArgument);
-
-extern char USBD_MblReuse(
-    unsigned char bEndpoint,
-    unsigned char * pNewBuffer,
-    unsigned short wNewSize);
-
-extern char USBD_Read(
-    unsigned char bEndpoint,
+extern uint8_t USBD_Read(
+    uint8_t bEndpoint,
     void *pData,
-    unsigned int dLength,
+    uint32_t dLength,
     TransferCallback fCallback,
     void *pArg);
 
-extern unsigned char USBD_Stall(unsigned char bEndpoint);
+extern uint8_t USBD_Stall(uint8_t bEndpoint);
 
-extern void USBD_Halt(unsigned char bEndpoint);
+extern void USBD_Halt(uint8_t bEndpoint);
 
-extern void USBD_Unhalt(unsigned char bEndpoint);
+extern void USBD_Unhalt(uint8_t bEndpoint);
 
 extern void USBD_ConfigureEndpoint(const USBEndpointDescriptor *pDescriptor);
 
-extern unsigned char USBD_IsHalted(unsigned char bEndpoint);
+extern uint8_t USBD_IsHalted(uint8_t bEndpoint);
 
 extern void USBD_RemoteWakeUp(void);
 
-extern void USBD_SetAddress(unsigned char address);
+extern void USBD_SetAddress(uint8_t address);
 
-extern void USBD_SetConfiguration(unsigned char cfgnum);
+extern void USBD_SetConfiguration(uint8_t cfgnum);
 
-extern unsigned char USBD_GetState(void);
+extern uint8_t USBD_GetState(void);
 
-extern unsigned char USBD_IsHighSpeed(void);
+extern uint8_t USBD_IsHighSpeed(void);
 
-extern void USBD_Test(unsigned char bIndex);
+extern void USBD_Test(uint8_t bIndex);
 
-/* USBD Callbacks */
+extern void USBD_SuspendHandler(void);
+extern void USBD_ResumeHandler(void);
+extern void USBD_ResetHandler(void);
+extern void USBD_RequestHandler(uint8_t bEndpoint,
+                                const USBGenericRequest * pRequest);
 
-#define USBDCallbacks_Reset()
-
-#define USBDCallbacks_Suspended()
-
-#define USBDCallbacks_Resumed()
-
+extern void USBDCallbacks_Initialized(void);
+extern void USBDCallbacks_Reset(void);
+extern void USBDCallbacks_Suspended(void);
+extern void USBDCallbacks_Resumed(void);
 extern void USBDCallbacks_RequestReceived(const USBGenericRequest *request);
 
-extern void USBDDriverCallbacks_ConfigurationChanged(unsigned char cfgnum);
-
-extern void USBDDriverCallbacks_InterfaceSettingChanged(unsigned char interface,
-                                                        unsigned char setting);
-
-#endif //#ifndef USBD_H
+#endif /*#ifndef USBD_H*/
 
