@@ -55,7 +55,7 @@
 #include <stdint.h>
 
 #include "usb/common/hid/HIDRequests.h"
-#include "usb/common/hid/HIDDescriptors.h""
+#include "usb/common/hid/HIDDescriptors.h"
 
 #include "usb/device/core/USBD.h"
 #include "usb/device/core/USBDDriver.h"

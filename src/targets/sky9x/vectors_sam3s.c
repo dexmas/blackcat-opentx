@@ -72,7 +72,7 @@ void DAC_IRQHandler (void) __attribute__((weak));
 void PWM_IRQHandler (void) __attribute__((weak));
 void CRCCU_IRQHandler (void) __attribute__((weak));
 void ACC_IRQHandler (void) __attribute__((weak));
-void USBD_IrqHandler (void) __attribute__((weak));
+void USBD_IRQHandler (void) __attribute__((weak));
 
 /*=========================================================================*/
 /*  DEFINE: All code exported                                              */
@@ -131,7 +131,7 @@ void (* const gVectors[])(void) =
    PWM_IRQHandler,      /*  31 PWM */
    CRCCU_IRQHandler,    /*  32 CRC Calculation Unit */
    ACC_IRQHandler,      /*  33 Analog Comparator */
-   USBD_IrqHandler,     /*  34 USB Device Port */
+   USBD_IRQHandler,     /*  34 USB Device Port */
    0                    /*  35 not used */
 }; /* gVectors */
 
@@ -169,5 +169,6 @@ void TC5_IRQHandler (void) { while(1); }
 void ADC_IRQHandler (void) { while(1); }
 void CRCCU_IRQHandler (void) { while(1); }
 void ACC_IRQHandler (void) { while(1); }
+void USBD_IRQHandler (void) { while(1); }
 
 /*** EOF ***/

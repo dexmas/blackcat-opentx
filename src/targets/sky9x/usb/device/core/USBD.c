@@ -133,8 +133,7 @@ void USBD_ResetHandler()
     USBD_HAL_ResetEPs(0xFFFFFFFF, USBD_STATUS_RESET, 0);
     USBD_ConfigureEndpoint(0);
     /* Invoke the Reset callback */
-//    if (USBDCallbacks_Reset)
-        USBDCallbacks_Reset();
+    USBDCallbacks_Reset();
 }
 
 /**
@@ -373,8 +372,7 @@ void USBD_Init(void)
     previousDeviceState = USBD_STATE_POWERED;
 
     /* Upper Layer Initialize */
-//    if (USBDCallbacks_Initialized)
-        USBDCallbacks_Initialized();
+    USBDCallbacks_Initialized();
 }
 
 /**

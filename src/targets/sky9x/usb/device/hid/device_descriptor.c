@@ -178,7 +178,7 @@ static const unsigned char serialNumberDescriptor[] = {
     USBStringDescriptor_UNICODE('0')
 };
 
-static const unsigned char *stringDescriptors[] = {
+static const unsigned char* stringDescriptors[] = {
 
     languageIdDescriptor,
     manufacturerDescriptor,
@@ -194,7 +194,7 @@ static const unsigned char *stringDescriptors[] = {
 USBDDriverDescriptors hiddJoystickDriverDescriptors = {
 
     &deviceDescriptor,
-    (USBConfigurationDescriptor *) &configurationDescriptors,
+    (USBConfigurationDescriptor*)&configurationDescriptors,
     0, /* No full-speed device qualifier descriptor */
     0, /* No full-speed other speed configuration */
     0, /* No high-speed device descriptor */
