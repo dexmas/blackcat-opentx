@@ -35,17 +35,20 @@ void usbJoystickUpdate()
     if (!usbStarted && usbPlugged()) {
         if (!usbInited) {
             TRACE_DEBUG("usbJoystick init\n\r");
+            WATCHDOG_SUSPEND(200);
             startJoystick();
             usbInited = true;
         }
 
         TRACE_DEBUG("usbJoystick start\n\r");
+        WATCHDOG_SUSPEND(200);
         USBD_Connect();
         usbStarted = true;
     }
 
     if (usbStarted && !usbPlugged()) {
         TRACE_DEBUG("usbJoystick stop\n\r");
+        WATCHDOG_SUSPEND(200);
         USBD_Disconnect();
         usbStarted = false;
     }
