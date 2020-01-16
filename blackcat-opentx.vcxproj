@@ -346,7 +346,6 @@
     <ClCompile Include="src\targets\sky9x\joystick.cpp" />
     <ClCompile Include="src\targets\sky9x\keys_driver.cpp" />
     <ClCompile Include="src\targets\sky9x\lcd_driver.cpp" />
-    <ClCompile Include="src\targets\sky9x\massstorage.cpp" />
     <ClCompile Include="src\targets\sky9x\MEDSdcard.c" />
     <ClCompile Include="src\targets\sky9x\pulses_driver.cpp" />
     <ClCompile Include="src\targets\sky9x\pwr_driver.cpp" />
@@ -375,11 +374,6 @@
     <ClCompile Include="src\targets\sky9x\usb\device\core\USBD_HAL.c" />
     <ClCompile Include="src\targets\sky9x\usb\device\hid\device_descriptor.c" />
     <ClCompile Include="src\targets\sky9x\usb\device\hid\HIDDJoystickDriver.c" />
-    <ClCompile Include="src\targets\sky9x\usb\device\massstorage\MSDDriver.c" />
-    <ClCompile Include="src\targets\sky9x\usb\device\massstorage\MSDDriverDescriptors.c" />
-    <ClCompile Include="src\targets\sky9x\usb\device\massstorage\MSDDStateMachine.c" />
-    <ClCompile Include="src\targets\sky9x\usb\device\massstorage\MSDLun.c" />
-    <ClCompile Include="src\targets\sky9x\usb\device\massstorage\SBCMethods.c" />
     <ClCompile Include="src\targets\sky9x\vectors_sam3s.c" />
     <ClCompile Include="src\tasks.cpp" />
     <ClCompile Include="src\telemetry\crossfire.cpp" />

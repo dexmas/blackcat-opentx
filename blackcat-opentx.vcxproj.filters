@@ -67,9 +67,6 @@
     <Filter Include="Source files\src\targets\sky9x\usb\device\core">
       <UniqueIdentifier>{5ccb943c-deb7-40a7-80b4-e9dbdd94da07}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source files\src\targets\sky9x\usb\device\hid-joystick">
-      <UniqueIdentifier>{5b435a09-2ee3-4c40-baec-f69c638dda26}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source files\src\telemetry">
       <UniqueIdentifier>{1f52320a-e0dd-44db-bdb4-f34813432ffd}</UniqueIdentifier>
     </Filter>
@@ -205,9 +202,6 @@
     <Filter Include="Header files\src\targets\sky9x\usb\device\masstorage">
       <UniqueIdentifier>{77fd6d05-ed38-4c68-b9a2-08dd02015ae0}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source files\src\targets\sky9x\usb\device\masstorage">
-      <UniqueIdentifier>{881a650c-535a-42ae-b517-d61c782d4d45}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header files\src\thirdparty\libopenui">
       <UniqueIdentifier>{2f6ebd9c-55ae-4d85-8650-f915f8770b14}</UniqueIdentifier>
     </Filter>
@@ -216,6 +210,9 @@
     </Filter>
     <Filter Include="Header files\src\targets\sky9x\usb\device\hid">
       <UniqueIdentifier>{5957bc24-0eed-4995-8366-c01c26aa32a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\src\targets\sky9x\usb\device\hid">
+      <UniqueIdentifier>{5b435a09-2ee3-4c40-baec-f69c638dda26}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -837,9 +834,6 @@
     <ClCompile Include="src\targets\sky9x\lcd_driver.cpp">
       <Filter>Source files\src\targets\sky9x</Filter>
     </ClCompile>
-    <ClCompile Include="src\targets\sky9x\massstorage.cpp">
-      <Filter>Source files\src\targets\sky9x</Filter>
-    </ClCompile>
     <ClCompile Include="src\targets\sky9x\MEDSdcard.c">
       <Filter>Source files\src\targets\sky9x</Filter>
     </ClCompile>
@@ -869,21 +863,6 @@
     </ClCompile>
     <ClCompile Include="src\targets\sky9x\vectors_sam3s.c">
       <Filter>Source files\src\targets\sky9x</Filter>
-    </ClCompile>
-    <ClCompile Include="src\targets\sky9x\usb\device\massstorage\MSDDriver.c">
-      <Filter>Source files\src\targets\sky9x\usb\device\masstorage</Filter>
-    </ClCompile>
-    <ClCompile Include="src\targets\sky9x\usb\device\massstorage\MSDDriverDescriptors.c">
-      <Filter>Source files\src\targets\sky9x\usb\device\masstorage</Filter>
-    </ClCompile>
-    <ClCompile Include="src\targets\sky9x\usb\device\massstorage\MSDDStateMachine.c">
-      <Filter>Source files\src\targets\sky9x\usb\device\masstorage</Filter>
-    </ClCompile>
-    <ClCompile Include="src\targets\sky9x\usb\device\massstorage\MSDLun.c">
-      <Filter>Source files\src\targets\sky9x\usb\device\masstorage</Filter>
-    </ClCompile>
-    <ClCompile Include="src\targets\sky9x\usb\device\massstorage\SBCMethods.c">
-      <Filter>Source files\src\targets\sky9x\usb\device\masstorage</Filter>
     </ClCompile>
     <ClCompile Include="src\telemetry\crossfire.cpp">
       <Filter>Source files\src\telemetry</Filter>
@@ -958,10 +937,10 @@
       <Filter>Source files\src\targets\sky9x\usb\device\core</Filter>
     </ClCompile>
     <ClCompile Include="src\targets\sky9x\usb\device\hid\device_descriptor.c">
-      <Filter>Source files\src\targets\sky9x\usb\device\hid-joystick</Filter>
+      <Filter>Source files\src\targets\sky9x\usb\device\hid</Filter>
     </ClCompile>
     <ClCompile Include="src\targets\sky9x\usb\device\hid\HIDDJoystickDriver.c">
-      <Filter>Source files\src\targets\sky9x\usb\device\hid-joystick</Filter>
+      <Filter>Source files\src\targets\sky9x\usb\device\hid</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
