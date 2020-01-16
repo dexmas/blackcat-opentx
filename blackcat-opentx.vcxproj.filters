@@ -55,20 +55,11 @@
     <Filter Include="Source files\src\targets\sky9x\usb\common">
       <UniqueIdentifier>{731bb3a6-7586-41e9-8a0f-beada356b792}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source files\src\targets\sky9x\usb\common\core">
-      <UniqueIdentifier>{19a0a8f2-2d6c-4f64-a27a-3e942a65fe73}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source files\src\targets\sky9x\usb\common\hid">
       <UniqueIdentifier>{56040546-ae1c-4d8b-a3a4-0fb82e028f2c}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source files\src\targets\sky9x\usb\device">
       <UniqueIdentifier>{69817ab6-4415-4fd1-a60d-d0edd0c6cb24}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source files\src\targets\sky9x\usb\device\core">
-      <UniqueIdentifier>{5ccb943c-deb7-40a7-80b4-e9dbdd94da07}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source files\src\targets\sky9x\usb\device\hid-joystick">
-      <UniqueIdentifier>{5b435a09-2ee3-4c40-baec-f69c638dda26}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source files\src\telemetry">
       <UniqueIdentifier>{1f52320a-e0dd-44db-bdb4-f34813432ffd}</UniqueIdentifier>
@@ -228,6 +219,15 @@
     </Filter>
     <Filter Include="Source files\src\storage\conversion">
       <UniqueIdentifier>{d0692b20-43a9-4bde-83ff-20fba0f00a19}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\src\targets\sky9x\usb\device\hid">
+      <UniqueIdentifier>{5b435a09-2ee3-4c40-baec-f69c638dda26}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\src\targets\sky9x\usb\device\core">
+      <UniqueIdentifier>{da7a93fe-fb3a-4e6d-aca5-9939cba3979b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\src\targets\sky9x\usb\common\core">
+      <UniqueIdentifier>{a6d4650d-acea-4539-a6f8-469d6bdf209f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -456,50 +456,20 @@
     <ClCompile Include="src\targets\sky9x\vectors_sam3s.c">
       <Filter>Source files\src\targets\sky9x</Filter>
     </ClCompile>
-    <ClCompile Include="src\targets\sky9x\usb\common\core\USBConfigurationDescriptor.c">
-      <Filter>Source files\src\targets\sky9x\usb\common\core</Filter>
-    </ClCompile>
-    <ClCompile Include="src\targets\sky9x\usb\common\core\USBEndpointDescriptor.c">
-      <Filter>Source files\src\targets\sky9x\usb\common\core</Filter>
-    </ClCompile>
-    <ClCompile Include="src\targets\sky9x\usb\common\core\USBFeatureRequest.c">
-      <Filter>Source files\src\targets\sky9x\usb\common\core</Filter>
-    </ClCompile>
-    <ClCompile Include="src\targets\sky9x\usb\common\core\USBGenericDescriptor.c">
-      <Filter>Source files\src\targets\sky9x\usb\common\core</Filter>
-    </ClCompile>
-    <ClCompile Include="src\targets\sky9x\usb\common\core\USBGenericRequest.c">
-      <Filter>Source files\src\targets\sky9x\usb\common\core</Filter>
-    </ClCompile>
-    <ClCompile Include="src\targets\sky9x\usb\common\core\USBGetDescriptorRequest.c">
-      <Filter>Source files\src\targets\sky9x\usb\common\core</Filter>
-    </ClCompile>
-    <ClCompile Include="src\targets\sky9x\usb\common\core\USBInterfaceRequest.c">
-      <Filter>Source files\src\targets\sky9x\usb\common\core</Filter>
-    </ClCompile>
-    <ClCompile Include="src\targets\sky9x\usb\common\core\USBSetConfigurationRequest.c">
-      <Filter>Source files\src\targets\sky9x\usb\common\core</Filter>
-    </ClCompile>
     <ClCompile Include="src\targets\sky9x\usb\common\hid\HIDIdleRequest.c">
       <Filter>Source files\src\targets\sky9x\usb\common\hid</Filter>
     </ClCompile>
     <ClCompile Include="src\targets\sky9x\usb\common\hid\HIDReportRequest.c">
       <Filter>Source files\src\targets\sky9x\usb\common\hid</Filter>
     </ClCompile>
-    <ClCompile Include="src\targets\sky9x\usb\device\core\USBDDriver.c">
-      <Filter>Source files\src\targets\sky9x\usb\device\core</Filter>
-    </ClCompile>
-    <ClCompile Include="src\targets\sky9x\usb\device\core\USBD_UDP.c">
-      <Filter>Source files\src\targets\sky9x\usb\device\core</Filter>
-    </ClCompile>
     <ClCompile Include="src\targets\sky9x\usb\device\hid-joystick\HIDDJoystickDriver.c">
-      <Filter>Source files\src\targets\sky9x\usb\device\hid-joystick</Filter>
+      <Filter>Source files\src\targets\sky9x\usb\device\hid</Filter>
     </ClCompile>
     <ClCompile Include="src\targets\sky9x\usb\device\hid-joystick\HIDDJoystickDriverDescriptors.c">
-      <Filter>Source files\src\targets\sky9x\usb\device\hid-joystick</Filter>
+      <Filter>Source files\src\targets\sky9x\usb\device\hid</Filter>
     </ClCompile>
     <ClCompile Include="src\targets\sky9x\usb\device\hid-joystick\HIDDJoystickInputReport.c">
-      <Filter>Source files\src\targets\sky9x\usb\device\hid-joystick</Filter>
+      <Filter>Source files\src\targets\sky9x\usb\device\hid</Filter>
     </ClCompile>
     <ClCompile Include="src\telemetry\flysky_ibus.cpp">
       <Filter>Source files\src\telemetry</Filter>
@@ -864,9 +834,6 @@
     <ClCompile Include="src\targets\sky9x\audio_driver.cpp">
       <Filter>Source files\src\targets\sky9x</Filter>
     </ClCompile>
-    <ClCompile Include="src\targets\sky9x\usb\common\core\USBSetAddressRequest.c">
-      <Filter>Source files\src\targets\sky9x\usb\common\core</Filter>
-    </ClCompile>
     <ClCompile Include="src\targets\sky9x\buzzer_driver.cpp">
       <Filter>Source files\src\targets\sky9x</Filter>
     </ClCompile>
@@ -1095,9 +1062,6 @@
     <ClCompile Include="src\targets\sky9x\aux_serial_driver.cpp">
       <Filter>Source files\src\targets\sky9x</Filter>
     </ClCompile>
-    <ClCompile Include="src\targets\sky9x\massstorage.cpp">
-      <Filter>Source files\src\targets\sky9x</Filter>
-    </ClCompile>
     <ClCompile Include="src\targets\sky9x\usb_driver.cpp">
       <Filter>Source files\src\targets\sky9x</Filter>
     </ClCompile>
@@ -1301,6 +1265,39 @@
     </ClCompile>
     <ClCompile Include="src\telemetry\hott.cpp">
       <Filter>Source files\src\telemetry</Filter>
+    </ClCompile>
+    <ClCompile Include="src\targets\sky9x\usb\device\core\USBD_UDP.c">
+      <Filter>Source files\src\targets\sky9x\usb\device\core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\targets\sky9x\usb\device\core\USBDDriver.c">
+      <Filter>Source files\src\targets\sky9x\usb\device\core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\targets\sky9x\usb\common\core\USBConfigurationDescriptor.c">
+      <Filter>Source files\src\targets\sky9x\usb\common\core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\targets\sky9x\usb\common\core\USBEndpointDescriptor.c">
+      <Filter>Source files\src\targets\sky9x\usb\common\core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\targets\sky9x\usb\common\core\USBFeatureRequest.c">
+      <Filter>Source files\src\targets\sky9x\usb\common\core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\targets\sky9x\usb\common\core\USBGenericDescriptor.c">
+      <Filter>Source files\src\targets\sky9x\usb\common\core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\targets\sky9x\usb\common\core\USBGenericRequest.c">
+      <Filter>Source files\src\targets\sky9x\usb\common\core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\targets\sky9x\usb\common\core\USBGetDescriptorRequest.c">
+      <Filter>Source files\src\targets\sky9x\usb\common\core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\targets\sky9x\usb\common\core\USBInterfaceRequest.c">
+      <Filter>Source files\src\targets\sky9x\usb\common\core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\targets\sky9x\usb\common\core\USBSetAddressRequest.c">
+      <Filter>Source files\src\targets\sky9x\usb\common\core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\targets\sky9x\usb\common\core\USBSetConfigurationRequest.c">
+      <Filter>Source files\src\targets\sky9x\usb\common\core</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

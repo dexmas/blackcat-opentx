@@ -85,7 +85,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">
     <ClCompile>
-      <PreprocessorDefinitions>CPUARM;at91sam3s8;REVX;PCBSKY9X;NAVIGATION_9X;FLAVOUR="9xrpro";REQUIRED_SDCARD_VERSION="2.40";FONT=SQT5;TRANSLATIONS="EN";TRANSLATIONS_EN;PPM_PIN_SERIAL;AUDIO_DUAL_BUFFER;AUDIO;VOICE;RTCLOCK;VARIO;EEPROM;EEPROM_RAW;SPLASH;TIMERS=2;HAPTIC;MULTIMODULE;GPS;PXX;PXX1;DSM2;BOLD_FONT;BATTGRAPH;THRTRACE;GAUGES;GRAPHICS;FLIGHT_MODES;EEPROM_VARIANT=0;CURVES;GVARS;AUTOSOURCE;AUTOSWITCH;SDCARD;VARIO;PPM_UNIT_PERCENT_PREC0;PPM_CENTER_ADJUSTABLE;PPM_LIMITS_SYMETRICAL;OVERRIDE_CHANNEL_FUNCTION;DANGEROUS_MODULE_FUNCTIONS;GUI;CORRECT_NEGATIVE_SHIFTS;RTOS_COOS;DISABLE_MULTI_UPDATE;PPM;SBUS;HARDWARE_EXTERNAL_MODULE_SIZE_STD;PPM_LIMITS_SYMETRICAL;WATCHDOG;ASTERISK;;%(ClCompile.PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>CPUARM;at91sam3s8;REVX;PCBSKY9X;NAVIGATION_9X;FLAVOUR="9xrpro";REQUIRED_SDCARD_VERSION="2.40";FONT=SQT5;TRANSLATIONS="EN";TRANSLATIONS_EN;PPM_PIN_SERIAL;AUDIO_DUAL_BUFFER;AUDIO;VOICE;RTCLOCK;VARIO;EEPROM;EEPROM_RAW;SPLASH;TIMERS=2;HAPTIC;MULTIMODULE;GPS;PXX;PXX1;DSM2;BOLD_FONT;BATTGRAPH;THRTRACE;GAUGES;GRAPHICS;FLIGHT_MODES;EEPROM_VARIANT=0;CURVES;GVARS;AUTOSOURCE;AUTOSWITCH;SDCARD;VARIO;PPM_UNIT_PERCENT_PREC0;PPM_CENTER_ADJUSTABLE;PPM_LIMITS_SYMETRICAL;OVERRIDE_CHANNEL_FUNCTION;DANGEROUS_MODULE_FUNCTIONS;GUI;CORRECT_NEGATIVE_SHIFTS;RTOS_COOS;DISABLE_MULTI_UPDATE;PPM;SBUS;HARDWARE_EXTERNAL_MODULE_SIZE_STD;PPM_LIMITS_SYMETRICAL;WATCHDOG;ASTERISK;POPUP_LEVEL=2;%(ClCompile.PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>src;src\gui;src\gui\128x64;src\thirdparty;src\thirdparty\CoOS;src\thirdparty\CoOS\kernel;src\thirdparty\CoOS\portable;src\thirdparty\FatFs;src\thirdparty\FatFs\option;src\thirdparty\Lua\src;src\thirdparty\libopenui;src\thirdparty\libACCESS;src\targets\sky9x;data;data\bitmaps;data\bitmaps\128x64;data\fonts\sqt5;%(ClCompile.AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PrecompiledHeaderDirectory />
       <Optimization>Os</Optimization>
@@ -355,8 +355,17 @@
     <ClCompile Include="src\targets\sky9x\aux_serial_driver.cpp" />
     <ClCompile Include="src\targets\sky9x\buzzer_driver.cpp" />
     <ClCompile Include="src\targets\sky9x\flash_driver.cpp" />
-    <ClCompile Include="src\targets\sky9x\massstorage.cpp" />
+    <ClCompile Include="src\targets\sky9x\usb\common\core\USBConfigurationDescriptor.c" />
+    <ClCompile Include="src\targets\sky9x\usb\common\core\USBEndpointDescriptor.c" />
+    <ClCompile Include="src\targets\sky9x\usb\common\core\USBFeatureRequest.c" />
+    <ClCompile Include="src\targets\sky9x\usb\common\core\USBGenericDescriptor.c" />
+    <ClCompile Include="src\targets\sky9x\usb\common\core\USBGenericRequest.c" />
+    <ClCompile Include="src\targets\sky9x\usb\common\core\USBGetDescriptorRequest.c" />
+    <ClCompile Include="src\targets\sky9x\usb\common\core\USBInterfaceRequest.c" />
     <ClCompile Include="src\targets\sky9x\usb\common\core\USBSetAddressRequest.c" />
+    <ClCompile Include="src\targets\sky9x\usb\common\core\USBSetConfigurationRequest.c" />
+    <ClCompile Include="src\targets\sky9x\usb\device\core\USBDDriver.c" />
+    <ClCompile Include="src\targets\sky9x\usb\device\core\USBD_UDP.c" />
     <ClCompile Include="src\targets\sky9x\usb_driver.cpp" />
     <ClCompile Include="src\tasks.cpp" />
     <ClCompile Include="src\telemetry\frsky_d.cpp" />
@@ -643,18 +652,8 @@
     <ClCompile Include="src\targets\sky9x\telemetry_driver.cpp" />
     <ClCompile Include="src\targets\sky9x\trainer_driver.cpp" />
     <ClCompile Include="src\targets\sky9x\vectors_sam3s.c" />
-    <ClCompile Include="src\targets\sky9x\usb\common\core\USBConfigurationDescriptor.c" />
-    <ClCompile Include="src\targets\sky9x\usb\common\core\USBEndpointDescriptor.c" />
-    <ClCompile Include="src\targets\sky9x\usb\common\core\USBFeatureRequest.c" />
-    <ClCompile Include="src\targets\sky9x\usb\common\core\USBGenericDescriptor.c" />
-    <ClCompile Include="src\targets\sky9x\usb\common\core\USBGenericRequest.c" />
-    <ClCompile Include="src\targets\sky9x\usb\common\core\USBGetDescriptorRequest.c" />
-    <ClCompile Include="src\targets\sky9x\usb\common\core\USBInterfaceRequest.c" />
-    <ClCompile Include="src\targets\sky9x\usb\common\core\USBSetConfigurationRequest.c" />
     <ClCompile Include="src\targets\sky9x\usb\common\hid\HIDIdleRequest.c" />
     <ClCompile Include="src\targets\sky9x\usb\common\hid\HIDReportRequest.c" />
-    <ClCompile Include="src\targets\sky9x\usb\device\core\USBDDriver.c" />
-    <ClCompile Include="src\targets\sky9x\usb\device\core\USBD_UDP.c" />
     <ClCompile Include="src\targets\sky9x\usb\device\hid-joystick\HIDDJoystickDriver.c" />
     <ClCompile Include="src\targets\sky9x\usb\device\hid-joystick\HIDDJoystickDriverDescriptors.c" />
     <ClCompile Include="src\targets\sky9x\usb\device\hid-joystick\HIDDJoystickInputReport.c" />
