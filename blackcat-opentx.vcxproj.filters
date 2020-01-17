@@ -154,9 +154,6 @@
     <Filter Include="Header files\src\thirdparty\FatFs">
       <UniqueIdentifier>{82802cca-ea4b-49d1-9a83-0fed3399c229}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header files\Device-specific files">
-      <UniqueIdentifier>{204c2b5a-8b01-4c12-8821-8d7fe5f4cb6b}</UniqueIdentifier>
-    </Filter>
     <Filter Include="VisualGDB settings">
       <UniqueIdentifier>{09d95a0f-a762-48ab-85a5-3b271c6ae80f}</UniqueIdentifier>
     </Filter>
