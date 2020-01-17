@@ -82,7 +82,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">
     <ClCompile>
-      <PreprocessorDefinitions>at91sam3s8;REVX;PCBSKY9X;RTOS_COOS;FLAVOUR="9xrpro";REQUIRED_SDCARD_VERSION="2.3.0";FONT=SQT5;TRANSLATIONS="EN";TRANSLATIONS_EN;PPM_PIN_SERIAL;AUDIO_DUAL_BUFFER;AUDIO;VOICE;RTCLOCK;RUN_FROM_FLASH=1;EEPROM;EEPROM_RAW;EEPROM_CONVERSIONS;SPLASH;TIMERS=2;HAPTIC;MULTIMODULE;VIRTUAL_INPUTS;TELEMETRY_FRSKY;TELEMETRY_FRSKY_SPORT;FRSKY_HUB;GPS;PXX;DSM2;BOLD_FONT;BATTGRAPH;THRTRACE;GAUGES;VARIO;GRAPHICS;FLIGHT_MODES;EEPROM_VARIANT=1;CURVES;GVARS;AUTOSOURCE;AUTOSWITCH;SDCARD;PPM_UNIT_PERCENT_PREC0;PPM_CENTER_ADJUSTABLE;PPM_LIMITS_SYMETRICAL;OVERRIDE_CHANNEL_FUNCTION;DANGEROUS_MODULE_FUNCTIONS;GUI;CPUARM;CORRECT_NEGATIVE_SHIFTS;DISABLE_MULTI_UPDATE;NAVIGATION_9X;BUZZER;PXX1;WATCHDOG;%(ClCompile.PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>at91sam3s8;REVX;PCBSKY9X;RTOS_COOS;FLAVOUR="9xrpro";REQUIRED_SDCARD_VERSION="2.3.0";FONT=SQT5;TRANSLATIONS="EN";TRANSLATIONS_EN;PPM_PIN_SERIAL;AUDIO_DUAL_BUFFER;AUDIO;VOICE;RTCLOCK;RUN_FROM_FLASH=1;EEPROM;EEPROM_RAW;EEPROM_CONVERSIONS;SPLASH;TIMERS=2;HAPTIC;MULTIMODULE;VIRTUAL_INPUTS;TELEMETRY_FRSKY;TELEMETRY_FRSKY_SPORT;FRSKY_HUB;GPS;PXX;DSM2;BOLD_FONT;BATTGRAPH;THRTRACE;GAUGES;VARIO;GRAPHICS;FLIGHT_MODES;EEPROM_VARIANT=1;CURVES;GVARS;AUTOSOURCE;AUTOSWITCH;SDCARD;PPM_UNIT_PERCENT_PREC0;PPM_CENTER_ADJUSTABLE;PPM_LIMITS_SYMETRICAL;OVERRIDE_CHANNEL_FUNCTION;DANGEROUS_MODULE_FUNCTIONS;GUI;CPUARM;CORRECT_NEGATIVE_SHIFTS;DISABLE_MULTI_UPDATE;NAVIGATION_9X;BUZZER;PXX1;WATCHDOG;POPUP_LEVEL=2;%(ClCompile.PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>src;src\gui;src\gui\128x64;src\thirdparty;src\thirdparty\CoOS;src\thirdparty\CoOS\kernel;src\thirdparty\CoOS\portable;src\thirdparty\FatFs;src\thirdparty\FatFs\option;src\thirdparty\Lua\src;src\targets\sky9x;data;data\bitmaps;data\bitmaps\128x64;data\fonts\sqt5;%(ClCompile.AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PrecompiledHeaderDirectory />
       <Optimization>Os</Optimization>
@@ -151,10 +151,6 @@
     <ClCompile Include="src\gui\128x64\model_failsafe.cpp" />
     <ClCompile Include="src\gui\128x64\model_flightmodes.cpp" />
     <ClCompile Include="src\gui\128x64\model_gvars.cpp" />
-    <ClCompile Include="src\gui\128x64\model_inputs_mixes.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">true</ExcludedFromBuild>
-    </ClCompile>
     <ClCompile Include="src\gui\128x64\model_input_edit.cpp" />
     <ClCompile Include="src\gui\128x64\model_logical_switches.cpp" />
     <ClCompile Include="src\gui\128x64\model_mix_edit.cpp" />

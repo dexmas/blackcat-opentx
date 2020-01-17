@@ -23,72 +23,196 @@
 #if defined(PCBSKY9X)
 #define HW_SETTINGS_COLUMN (2+(15*FW))
 enum {
-  ITEM_RADIO_HARDWARE_OPTREX_DISPLAY,
-  ITEM_RADIO_HARDWARE_STICKS_GAINS_LABELS,
-  ITEM_RADIO_HARDWARE_STICK_LV_GAIN,
-  ITEM_RADIO_HARDWARE_STICK_LH_GAIN,
-  ITEM_RADIO_HARDWARE_STICK_RV_GAIN,
-  ITEM_RADIO_HARDWARE_STICK_RH_GAIN,
-  CASE_BLUETOOTH(ITEM_RADIO_HARDWARE_BT_BAUDRATE)
-  ITEM_RADIO_HARDWARE_MAX
+    ITEM_RADIO_HARDWARE_LABEL_STICKS,
+    ITEM_RADIO_HARDWARE_STICK1,
+    ITEM_RADIO_HARDWARE_STICK2,
+    ITEM_RADIO_HARDWARE_STICK3,
+    ITEM_RADIO_HARDWARE_STICK4,
+    ITEM_RADIO_HARDWARE_STICK_LV_GAIN,
+    ITEM_RADIO_HARDWARE_STICK_LH_GAIN,
+    ITEM_RADIO_HARDWARE_STICK_RV_GAIN,
+    ITEM_RADIO_HARDWARE_STICK_RH_GAIN,
+    ITEM_RADIO_HARDWARE_LABEL_POTS,
+    ITEM_RADIO_HARDWARE_POT1,
+    ITEM_RADIO_HARDWARE_POT2,
+    ITEM_RADIO_HARDWARE_POT3,
+    ITEM_RADIO_HARDWARE_LABEL_SWITCHES,
+    ITEM_RADIO_HARDWARE_SA,
+    ITEM_RADIO_HARDWARE_SB,
+    ITEM_RADIO_HARDWARE_SC,
+    ITEM_RADIO_HARDWARE_SD,
+    ITEM_RADIO_HARDWARE_SE,
+    ITEM_RADIO_HARDWARE_SF,
+    ITEM_RADIO_HARDWARE_BATTERY_CALIB,
+    ITEM_RADIO_HARDWARE_JITTER_FILTER,
+    ITEM_RADIO_HARDWARE_RAS,
+    ITEM_RADIO_HARDWARE_DEBUG,
+    CASE_BLUETOOTH(ITEM_RADIO_HARDWARE_BT_BAUDRATE)
+    ITEM_RADIO_HARDWARE_MAX
 };
+
+#define POTS_ROWS NAVIGATION_LINE_BY_LINE|1, NAVIGATION_LINE_BY_LINE|1, NAVIGATION_LINE_BY_LINE|1
+#define SWITCHES_ROWS NAVIGATION_LINE_BY_LINE|1, NAVIGATION_LINE_BY_LINE|1, NAVIGATION_LINE_BY_LINE|1, NAVIGATION_LINE_BY_LINE|1, NAVIGATION_LINE_BY_LINE|1, NAVIGATION_LINE_BY_LINE|1
+#define SWITCH_TYPE_MAX(sw) ((MIXSRC_SF - MIXSRC_FIRST_SWITCH == sw || MIXSRC_SH - MIXSRC_FIRST_SWITCH <= sw) ? SWITCH_2POS : SWITCH_3POS)
+
+#define HW_SETTINGS_COLUMN1 30
+#define HW_SETTINGS_COLUMN2 (HW_SETTINGS_COLUMN1 + 5*FW)
 
 void menuRadioHardware(event_t event)
 {
-  MENU(STR_HARDWARE, menuTabGeneral, MENU_RADIO_HARDWARE, ITEM_RADIO_HARDWARE_MAX+1, {0, 0, 0, 0, 0, 0, CASE_BLUETOOTH(0)});
+    MENU(STR_HARDWARE, menuTabGeneral, MENU_RADIO_HARDWARE, HEADER_LINE + ITEM_RADIO_HARDWARE_MAX, 
+        {
+            HEADER_LINE_COLUMNS
+            0 /* calibration button */,
+            0 /* stick 1 */,
+            0 /* stick 2 */,
+            0 /* stick 3 */,
+            0 /* stick 4 */,
+            LABEL(Pots),
+            POTS_ROWS,
+            LABEL(Switches),
+            SWITCHES_ROWS,
+            0 /* battery calib */,
+            CASE_BLUETOOTH(0)
+            0 /* ADC filter */,
+            READONLY_ROW /* RAS */,
+            1 /* debugs */,
+            0,
+            0
+        });
 
-  uint8_t sub = menuVerticalPosition - 1;
-
-  for (uint8_t i=0; i<LCD_LINES-1; i++) {
-    coord_t y = MENU_HEADER_HEIGHT + 1 + i*FH;
-    uint8_t k = i+menuVerticalOffset;
-    uint8_t blink = ((s_editMode>0) ? BLINK|INVERS : INVERS);
-    uint8_t attr = (sub == k ? blink : 0);
-
-    switch(k) {
-      case ITEM_RADIO_HARDWARE_OPTREX_DISPLAY:
-        g_eeGeneral.optrexDisplay = editChoice(HW_SETTINGS_COLUMN, y, STR_LCD, STR_VLCD, g_eeGeneral.optrexDisplay, 0, 1, attr, event);
-        break;
-
-      case ITEM_RADIO_HARDWARE_STICKS_GAINS_LABELS:
-        lcdDrawTextAlignedLeft(y, "Sticks");
-        lcdDrawText(LCD_W, y, BUTTON(TR_CALIBRATION), attr| RIGHT);
-        if (attr && event == EVT_KEY_FIRST(KEY_ENTER)) {
-          pushMenu(menuRadioCalibration);
-        }
-        break;
-
-      case ITEM_RADIO_HARDWARE_STICK_LV_GAIN:
-      case ITEM_RADIO_HARDWARE_STICK_LH_GAIN:
-      case ITEM_RADIO_HARDWARE_STICK_RV_GAIN:
-      case ITEM_RADIO_HARDWARE_STICK_RH_GAIN:
-      {
-        lcdDrawTextAtIndex(INDENT_WIDTH, y, "\002LVLHRVRH", k-ITEM_RADIO_HARDWARE_STICK_LV_GAIN, 0);
-        lcdDrawText(INDENT_WIDTH+3*FW, y, "Gain");
-        uint8_t mask = (1<<(k-ITEM_RADIO_HARDWARE_STICK_LV_GAIN));
-        uint8_t val = (g_eeGeneral.sticksGain & mask ? 1 : 0);
-        lcdDrawChar(HW_SETTINGS_COLUMN, y, val ? '2' : '1', attr);
-        if (attr) {
-          CHECK_INCDEC_GENVAR(event, val, 0, 1);
-          if (checkIncDec_Ret) {
-            g_eeGeneral.sticksGain ^= mask;
-            setSticksGain(g_eeGeneral.sticksGain);
-          }
-        }
-        break;
-      }
+    uint8_t sub = menuVerticalPosition - HEADER_LINE;
 
 #if defined(BLUETOOTH)
-      case ITEM_RADIO_HARDWARE_BT_BAUDRATE:
-        g_eeGeneral.bluetoothBaudrate = editChoice(HW_SETTINGS_COLUMN, y, STR_BAUDRATE, "\005115k 9600 19200", g_eeGeneral.bluetoothBaudrate, 0, 2, attr, event);
-        if (attr && checkIncDec_Ret) {
-          btInit();
-        }
-        break;
-#endif
+    if (g_eeGeneral.bluetoothMode != BLUETOOTH_OFF && !IS_BLUETOOTH_CHIP_PRESENT()) {
+        g_eeGeneral.bluetoothMode = BLUETOOTH_OFF;
+        storageDirty(EE_GENERAL);
     }
-  }
+#endif
+
+    for (uint8_t i = 0; i < NUM_BODY_LINES; i++) {
+        coord_t y = MENU_HEADER_HEIGHT + 1 + i * FH;
+        uint8_t k = i + menuVerticalOffset;
+        for (int j = 0; j <= k; j++) {
+            if (mstate_tab[j + HEADER_LINE] == HIDDEN_ROW) {
+                k++;
+            }
+        }
+        LcdFlags blink = ((s_editMode > 0) ? BLINK | INVERS : INVERS);
+        LcdFlags attr = (sub == k ? blink : 0);
+
+        switch (k) {
+        case ITEM_RADIO_HARDWARE_LABEL_STICKS:
+            lcdDrawTextAlignedLeft(y, STR_STICKS);
+            lcdDrawText(HW_SETTINGS_COLUMN2, y, BUTTON(TR_CALIBRATION), attr);
+            if (attr && event == EVT_KEY_FIRST(KEY_ENTER)) {
+                pushMenu(menuRadioCalibration);
+            }
+            break;
+
+        case ITEM_RADIO_HARDWARE_STICK1:
+        case ITEM_RADIO_HARDWARE_STICK2:
+        case ITEM_RADIO_HARDWARE_STICK3:
+        case ITEM_RADIO_HARDWARE_STICK4:
+            editStickHardwareSettings(HW_SETTINGS_COLUMN1, y, k - ITEM_RADIO_HARDWARE_STICK1, event, attr);
+            break;
+        case ITEM_RADIO_HARDWARE_STICK_LV_GAIN:
+        case ITEM_RADIO_HARDWARE_STICK_LH_GAIN:
+        case ITEM_RADIO_HARDWARE_STICK_RV_GAIN:
+        case ITEM_RADIO_HARDWARE_STICK_RH_GAIN:
+        {
+            lcdDrawTextAtIndex(INDENT_WIDTH, y, "\002LVLHRVRH", k - ITEM_RADIO_HARDWARE_STICK_LV_GAIN, 0);
+            lcdDrawText(INDENT_WIDTH + 3 * FW, y, "Gain");
+            uint8_t mask = (1 << (k - ITEM_RADIO_HARDWARE_STICK_LV_GAIN));
+            uint8_t val = (g_eeGeneral.sticksGain & mask ? 1 : 0);
+            lcdDrawChar(HW_SETTINGS_COLUMN, y, val ? '2' : '1', attr);
+            if (attr) {
+                CHECK_INCDEC_GENVAR(event, val, 0, 1);
+                if (checkIncDec_Ret) {
+                    g_eeGeneral.sticksGain ^= mask;
+                    setSticksGain(g_eeGeneral.sticksGain);
+                }
+            }
+            break;
+        }
+        case ITEM_RADIO_HARDWARE_LABEL_POTS:
+            lcdDrawTextAlignedLeft(y, STR_POTS);
+            break;
+        case ITEM_RADIO_HARDWARE_POT1:
+        case ITEM_RADIO_HARDWARE_POT2:
+        case ITEM_RADIO_HARDWARE_POT3:
+        {
+            int idx = k - ITEM_RADIO_HARDWARE_POT1;
+            uint8_t shift = (2 * idx);
+            uint8_t mask = (0x03 << shift);
+            lcdDrawTextAtIndex(INDENT_WIDTH, y, STR_VSRCRAW, NUM_STICKS + idx + 1, menuHorizontalPosition < 0 ? attr : 0);
+            if (ZEXIST(g_eeGeneral.anaNames[NUM_STICKS + idx]) || (attr && s_editMode > 0 && menuHorizontalPosition == 0))
+                editName(HW_SETTINGS_COLUMN1, y, g_eeGeneral.anaNames[NUM_STICKS + idx], LEN_ANA_NAME, event, attr && menuHorizontalPosition == 0);
+            else
+                lcdDrawMMM(HW_SETTINGS_COLUMN1, y, menuHorizontalPosition == 0 ? attr : 0);
+            break;
+        }
+        case ITEM_RADIO_HARDWARE_LABEL_SWITCHES:
+            lcdDrawTextAlignedLeft(y, STR_SWITCHES);
+            break;
+
+        case ITEM_RADIO_HARDWARE_SA:
+        case ITEM_RADIO_HARDWARE_SB:
+        case ITEM_RADIO_HARDWARE_SC:
+        case ITEM_RADIO_HARDWARE_SD:
+        case ITEM_RADIO_HARDWARE_SE:
+        case ITEM_RADIO_HARDWARE_SF:
+        {
+            int index = k - ITEM_RADIO_HARDWARE_SA;
+            lcdDrawTextAtIndex(INDENT_WIDTH, y, STR_VSRCRAW, MIXSRC_FIRST_SWITCH - MIXSRC_Rud + index + 1, menuHorizontalPosition < 0 ? attr : 0);
+            if (ZEXIST(g_eeGeneral.switchNames[index]) || (attr && s_editMode > 0 && menuHorizontalPosition == 0))
+                editName(HW_SETTINGS_COLUMN1, y, g_eeGeneral.switchNames[index], LEN_SWITCH_NAME, event, menuHorizontalPosition == 0 ? attr : 0);
+            else
+                lcdDrawMMM(HW_SETTINGS_COLUMN1, y, menuHorizontalPosition == 0 ? attr : 0);
+
+            break;
+        }
+
+        case ITEM_RADIO_HARDWARE_BATTERY_CALIB:
+            lcdDrawTextAlignedLeft(y, STR_BATT_CALIB);
+            putsVolts(HW_SETTINGS_COLUMN2, y, getBatteryVoltage(), attr | PREC2 | LEFT);
+
+            if (attr) {
+                CHECK_INCDEC_GENVAR(event, g_eeGeneral.txVoltageCalibration, -127, 127);
+            }
+            break;
+        case ITEM_RADIO_HARDWARE_JITTER_FILTER:
+            g_eeGeneral.jitterFilter = 1 - editCheckBox(1 - g_eeGeneral.jitterFilter, HW_SETTINGS_COLUMN2, y, STR_JITTER_FILTER, attr, event);
+            break;
+        case ITEM_RADIO_HARDWARE_RAS:
+            lcdDrawTextAlignedLeft(y, "RAS");
+            if (telemetryData.swrInternal.isFresh())
+                lcdDrawNumber(HW_SETTINGS_COLUMN2, y, telemetryData.swrInternal.value());
+            else
+                lcdDrawText(HW_SETTINGS_COLUMN2, y, "---");
+            lcdDrawText(lcdNextPos, y, "/");
+
+            if (telemetryData.swrExternal.isFresh())
+                lcdDrawNumber(lcdNextPos, y, telemetryData.swrExternal.value());
+            else
+                lcdDrawText(lcdNextPos, y, "---");
+            break;
+
+        case ITEM_RADIO_HARDWARE_DEBUG:
+            lcdDrawTextAlignedLeft(y, STR_DEBUG);
+            lcdDrawText(HW_SETTINGS_COLUMN2, y, STR_ANALOGS_BTN, menuHorizontalPosition == 0 ? attr : 0);
+            lcdDrawText(lcdLastRightPos + 2, y, STR_KEYS_BTN, menuHorizontalPosition == 1 ? attr : 0);
+            if (attr && event == EVT_KEY_BREAK(KEY_ENTER)) {
+                if (menuHorizontalPosition == 0)
+                    pushMenu(menuRadioDiagAnalogs);
+                else
+                    pushMenu(menuRadioDiagKeys);
+            }
+            break;
+        }
+    }
 }
+
 #endif // PCBSKY9X
 
 #if defined(PCBTARANIS)

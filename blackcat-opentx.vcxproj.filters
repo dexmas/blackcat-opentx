@@ -561,9 +561,6 @@
     <ClCompile Include="src\gui\128x64\model_input_edit.cpp">
       <Filter>Source files\src\gui\128x64</Filter>
     </ClCompile>
-    <ClCompile Include="src\gui\128x64\model_inputs_mixes.cpp">
-      <Filter>Source files\src\gui\128x64</Filter>
-    </ClCompile>
     <ClCompile Include="src\gui\128x64\model_logical_switches.cpp">
       <Filter>Source files\src\gui\128x64</Filter>
     </ClCompile>

@@ -390,9 +390,7 @@ void boardInit()
 
   init_SDcard();
 
-#if defined(PCBAR9X)
   rtcInit();
-#endif
 }
 
 uint8_t temperature = 0;          // Raw temp reading
