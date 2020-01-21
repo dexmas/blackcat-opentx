@@ -936,6 +936,9 @@
     <ClCompile Include="src\targets\sky9x\usb\device\hid\HIDDJoystickDriver.c">
       <Filter>Source files\src\targets\sky9x\usb\device\hid</Filter>
     </ClCompile>
+    <ClCompile Include="src\syscalls.c">
+      <Filter>Source files\src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Debug.vgdbsettings">

@@ -211,12 +211,10 @@ void menuStatisticsDebug(event_t event)
   y += FH;
 #endif
 
-#if defined(STM32)
   lcdDrawTextAlignedLeft(y, "Free Mem");
   lcdDrawNumber(MENU_DEBUG_COL1_OFS, y, availableMemory(), LEFT);
   lcdDrawText(lcdLastRightPos, y, "b");
   y += FH;
-#endif
 
 #if defined(LUA)
   lcdDrawTextAlignedLeft(y, "Lua scripts");
