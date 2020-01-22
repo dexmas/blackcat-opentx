@@ -83,6 +83,7 @@
   #define MAX_INPUTS                   32
   #define MAX_TRAINER_CHANNELS         16
   #define MAX_TELEMETRY_SENSORS        40
+  #define MAX_SCRIPTS                  2
 #else
   #warning "Unknown board!"
 #endif
@@ -336,7 +337,7 @@ enum TelemetryUnit {
   #define NUM_LINE_ITEMS 2
 #endif
 
-#if defined(PCBTARANIS)
+#if defined(PCBTARANIS) || defined(PCBSKY9X)
   #define MAX_TELEM_SCRIPT_INPUTS  8
 #endif
 

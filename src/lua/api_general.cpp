@@ -50,6 +50,8 @@
   #include "lua/lua_exports_xlite.inc"
 #elif defined(PCBTARANIS)
   #include "lua/lua_exports_x9d.inc"
+#elif defined(PCBSKY9X)
+#include "lua/lua_exports_sky9x.inc"
 #endif
 
 #if defined(SIMU)
@@ -1657,6 +1659,7 @@ const luaR_value_entry opentxConstants[] = {
   { "MIXSRC_Ele", MIXSRC_Ele },
   { "MIXSRC_Thr", MIXSRC_Thr },
   { "MIXSRC_Ail", MIXSRC_Ail },
+#if !defined(PCBSKY9X)
   { "MIXSRC_SA", MIXSRC_SA },
   { "MIXSRC_SB", MIXSRC_SB },
   { "MIXSRC_SC", MIXSRC_SC },
@@ -1668,6 +1671,7 @@ const luaR_value_entry opentxConstants[] = {
 #if !defined(PCBXLITE) && !defined(PCBX9LITE)
   { "MIXSRC_SF", MIXSRC_SF },
   { "MIXSRC_SH", MIXSRC_SH },
+#endif
 #endif
   { "MIXSRC_CH1", MIXSRC_CH1 },
   { "SWSRC_LAST", SWSRC_LAST_LOGICAL_SWITCH },

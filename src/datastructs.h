@@ -290,7 +290,7 @@ PACK(struct FrSkyLineData {
   source_t sources[NUM_LINE_ITEMS];
 });
 
-#if defined(PCBTARANIS)
+#if defined(PCBTARANIS) || (defined(PCBSKY9X) && defined(LUA))
 PACK(struct TelemetryScriptData {
   char    file[LEN_SCRIPT_FILENAME];
   int16_t inputs[MAX_TELEM_SCRIPT_INPUTS];
@@ -300,7 +300,7 @@ PACK(struct TelemetryScriptData {
 union TelemetryScreenData {
   FrSkyBarData  bars[4];
   FrSkyLineData lines[4];
-#if defined(PCBTARANIS)
+#if defined(PCBTARANIS) || (defined(PCBSKY9X) && defined(LUA))
   TelemetryScriptData script;
 #endif
 };
@@ -554,7 +554,7 @@ PACK(struct CustomScreenData {
   #define TOPBAR_DATA
 #endif
 
-#if defined(PCBHORUS) || defined(PCBTARANIS)
+#if defined(PCBHORUS) || defined(PCBTARANIS) || (defined(PCBSKY9X) && defined(LUA))
   #define SCRIPT_DATA \
     NOBACKUP(ScriptData scriptsData[MAX_SCRIPTS]);
 #else
@@ -933,7 +933,7 @@ static inline void check_struct()
   CHKSIZE(ModelData, 6604);
 #elif defined(PCBSKY9X)
   CHKSIZE(RadioData, 735);
-  CHKSIZE(ModelData, 5301);
+  CHKSIZE(ModelData, 5357);
 #elif defined(PCBHORUS)
   CHKSIZE(RadioData, 881);
   CHKSIZE(ModelData, 9736);

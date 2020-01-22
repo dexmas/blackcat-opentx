@@ -1,0 +1,2802 @@
+# 1 "src/dataconstants.h"
+# 1 "<built-in>"
+# 1 "<command-line>"
+# 1 "src/dataconstants.h"
+# 24 "src/dataconstants.h"
+# 1 "src/targets/sky9x/board.h" 1
+# 24 "src/targets/sky9x/board.h"
+# 1 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\inttypes.h" 1 3
+# 16 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\inttypes.h" 3
+# 1 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\newlib.h" 1 3
+# 14 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\newlib.h" 3
+# 1 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\_newlib_version.h" 1 3
+# 15 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\newlib.h" 2 3
+# 17 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\inttypes.h" 2 3
+# 1 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\sys\\config.h" 1 3
+
+
+
+# 1 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\machine\\ieeefp.h" 1 3
+# 5 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\sys\\config.h" 2 3
+# 1 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\sys\\features.h" 1 3
+# 6 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\sys\\config.h" 2 3
+# 18 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\inttypes.h" 2 3
+# 1 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\sys\\_intsup.h" 1 3
+# 35 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\sys\\_intsup.h" 3
+       
+       
+       
+       
+       
+       
+       
+# 187 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\sys\\_intsup.h" 3
+       
+       
+       
+       
+       
+       
+       
+# 19 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\inttypes.h" 2 3
+# 1 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\_ansi.h" 1 3
+# 20 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\inttypes.h" 2 3
+# 1 "d:\\work\\arm-eabi\\lib\\gcc\\arm-none-eabi\\9.2.1\\include\\stdint.h" 1 3 4
+# 9 "d:\\work\\arm-eabi\\lib\\gcc\\arm-none-eabi\\9.2.1\\include\\stdint.h" 3 4
+# 1 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\stdint.h" 1 3 4
+# 12 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\stdint.h" 3 4
+# 1 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\machine\\_default_types.h" 1 3 4
+# 41 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\machine\\_default_types.h" 3 4
+
+# 41 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\machine\\_default_types.h" 3 4
+typedef signed char __int8_t;
+
+typedef unsigned char __uint8_t;
+# 55 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\machine\\_default_types.h" 3 4
+typedef short int __int16_t;
+
+typedef short unsigned int __uint16_t;
+# 77 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\machine\\_default_types.h" 3 4
+typedef long int __int32_t;
+
+typedef long unsigned int __uint32_t;
+# 103 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\machine\\_default_types.h" 3 4
+typedef long long int __int64_t;
+
+typedef long long unsigned int __uint64_t;
+# 134 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\machine\\_default_types.h" 3 4
+typedef signed char __int_least8_t;
+
+typedef unsigned char __uint_least8_t;
+# 160 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\machine\\_default_types.h" 3 4
+typedef short int __int_least16_t;
+
+typedef short unsigned int __uint_least16_t;
+# 182 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\machine\\_default_types.h" 3 4
+typedef long int __int_least32_t;
+
+typedef long unsigned int __uint_least32_t;
+# 200 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\machine\\_default_types.h" 3 4
+typedef long long int __int_least64_t;
+
+typedef long long unsigned int __uint_least64_t;
+# 214 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\machine\\_default_types.h" 3 4
+typedef long long int __intmax_t;
+
+
+
+
+
+
+
+typedef long long unsigned int __uintmax_t;
+
+
+
+
+
+
+
+typedef int __intptr_t;
+
+typedef unsigned int __uintptr_t;
+# 13 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\stdint.h" 2 3 4
+
+# 1 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\sys\\_stdint.h" 1 3 4
+# 20 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\sys\\_stdint.h" 3 4
+typedef __int8_t int8_t ;
+
+
+
+typedef __uint8_t uint8_t ;
+
+
+
+
+
+
+
+typedef __int16_t int16_t ;
+
+
+
+typedef __uint16_t uint16_t ;
+
+
+
+
+
+
+
+typedef __int32_t int32_t ;
+
+
+
+typedef __uint32_t uint32_t ;
+
+
+
+
+
+
+
+typedef __int64_t int64_t ;
+
+
+
+typedef __uint64_t uint64_t ;
+
+
+
+
+
+
+typedef __intmax_t intmax_t;
+
+
+
+
+typedef __uintmax_t uintmax_t;
+
+
+
+
+typedef __intptr_t intptr_t;
+
+
+
+
+typedef __uintptr_t uintptr_t;
+# 15 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\stdint.h" 2 3 4
+
+
+
+
+
+
+typedef __int_least8_t int_least8_t;
+typedef __uint_least8_t uint_least8_t;
+
+
+
+
+typedef __int_least16_t int_least16_t;
+typedef __uint_least16_t uint_least16_t;
+
+
+
+
+typedef __int_least32_t int_least32_t;
+typedef __uint_least32_t uint_least32_t;
+
+
+
+
+typedef __int_least64_t int_least64_t;
+typedef __uint_least64_t uint_least64_t;
+# 51 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\stdint.h" 3 4
+  typedef int int_fast8_t;
+  typedef unsigned int uint_fast8_t;
+# 61 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\stdint.h" 3 4
+  typedef int int_fast16_t;
+  typedef unsigned int uint_fast16_t;
+# 71 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\stdint.h" 3 4
+  typedef int int_fast32_t;
+  typedef unsigned int uint_fast32_t;
+# 81 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\stdint.h" 3 4
+  typedef long long int int_fast64_t;
+  typedef long long unsigned int uint_fast64_t;
+# 10 "d:\\work\\arm-eabi\\lib\\gcc\\arm-none-eabi\\9.2.1\\include\\stdint.h" 2 3 4
+# 21 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\inttypes.h" 2 3
+
+# 1 "d:\\work\\arm-eabi\\lib\\gcc\\arm-none-eabi\\9.2.1\\include\\stddef.h" 1 3 4
+# 321 "d:\\work\\arm-eabi\\lib\\gcc\\arm-none-eabi\\9.2.1\\include\\stddef.h" 3 4
+typedef unsigned int wchar_t;
+# 23 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\inttypes.h" 2 3
+
+
+# 1 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\xlocale.h" 1 3
+# 9 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\xlocale.h" 3
+struct __locale_t;
+typedef struct __locale_t *locale_t;
+# 26 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\inttypes.h" 2 3
+# 312 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\inttypes.h" 3
+typedef struct {
+  intmax_t quot;
+  intmax_t rem;
+} imaxdiv_t;
+
+struct _reent;
+
+
+
+
+
+extern intmax_t imaxabs(intmax_t j);
+extern imaxdiv_t imaxdiv(intmax_t numer, intmax_t denomer);
+extern intmax_t strtoimax(const char *__restrict, char **__restrict, int);
+extern intmax_t _strtoimax_r(struct _reent *, const char *__restrict, char **__restrict, int);
+extern uintmax_t strtoumax(const char *__restrict, char **__restrict, int);
+extern uintmax_t _strtoumax_r(struct _reent *, const char *__restrict, char **__restrict, int);
+extern intmax_t wcstoimax(const wchar_t *__restrict, wchar_t **__restrict, int);
+extern intmax_t _wcstoimax_r(struct _reent *, const wchar_t *__restrict, wchar_t **__restrict, int);
+extern uintmax_t wcstoumax(const wchar_t *__restrict, wchar_t **__restrict, int);
+extern uintmax_t _wcstoumax_r(struct _reent *, const wchar_t *__restrict, wchar_t **__restrict, int);
+
+
+extern intmax_t strtoimax_l(const char *__restrict, char **_restrict, int, locale_t);
+extern uintmax_t strtoumax_l(const char *__restrict, char **_restrict, int, locale_t);
+extern intmax_t wcstoimax_l(const wchar_t *__restrict, wchar_t **_restrict, int, locale_t);
+extern uintmax_t wcstoumax_l(const wchar_t *__restrict, wchar_t **_restrict, int, locale_t);
+# 25 "src/targets/sky9x/board.h" 2
+# 1 "d:\\work\\arm-eabi\\lib\\gcc\\arm-none-eabi\\9.2.1\\include\\stdbool.h" 1 3 4
+# 26 "src/targets/sky9x/board.h" 2
+# 1 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\stdio.h" 1 3
+# 35 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\stdio.h" 3
+# 1 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\sys\\cdefs.h" 1 3
+# 47 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\sys\\cdefs.h" 3
+# 1 "d:\\work\\arm-eabi\\lib\\gcc\\arm-none-eabi\\9.2.1\\include\\stddef.h" 1 3 4
+# 209 "d:\\work\\arm-eabi\\lib\\gcc\\arm-none-eabi\\9.2.1\\include\\stddef.h" 3 4
+typedef unsigned int size_t;
+# 48 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\sys\\cdefs.h" 2 3
+# 36 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\stdio.h" 2 3
+# 1 "d:\\work\\arm-eabi\\lib\\gcc\\arm-none-eabi\\9.2.1\\include\\stddef.h" 1 3 4
+# 143 "d:\\work\\arm-eabi\\lib\\gcc\\arm-none-eabi\\9.2.1\\include\\stddef.h" 3 4
+typedef int ptrdiff_t;
+# 415 "d:\\work\\arm-eabi\\lib\\gcc\\arm-none-eabi\\9.2.1\\include\\stddef.h" 3 4
+typedef struct {
+  long long __max_align_ll __attribute__((__aligned__(__alignof__(long long))));
+  long double __max_align_ld __attribute__((__aligned__(__alignof__(long double))));
+# 426 "d:\\work\\arm-eabi\\lib\\gcc\\arm-none-eabi\\9.2.1\\include\\stddef.h" 3 4
+} max_align_t;
+# 37 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\stdio.h" 2 3
+
+
+
+# 1 "d:\\work\\arm-eabi\\lib\\gcc\\arm-none-eabi\\9.2.1\\include\\stdarg.h" 1 3 4
+# 40 "d:\\work\\arm-eabi\\lib\\gcc\\arm-none-eabi\\9.2.1\\include\\stdarg.h" 3 4
+typedef __builtin_va_list __gnuc_va_list;
+# 41 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\stdio.h" 2 3
+
+
+
+
+
+typedef __gnuc_va_list va_list;
+# 60 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\stdio.h" 3
+# 1 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\sys\\reent.h" 1 3
+# 13 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\sys\\reent.h" 3
+# 1 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\_ansi.h" 1 3
+# 14 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\sys\\reent.h" 2 3
+# 1 "d:\\work\\arm-eabi\\lib\\gcc\\arm-none-eabi\\9.2.1\\include\\stddef.h" 1 3 4
+# 15 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\sys\\reent.h" 2 3
+# 1 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\sys\\_types.h" 1 3
+# 24 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\sys\\_types.h" 3
+# 1 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\machine\\_types.h" 1 3
+# 25 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\sys\\_types.h" 2 3
+# 1 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\sys\\lock.h" 1 3
+# 33 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\sys\\lock.h" 3
+struct __lock;
+typedef struct __lock * _LOCK_T;
+
+
+
+
+
+
+extern void __retarget_lock_init(_LOCK_T *lock);
+
+extern void __retarget_lock_init_recursive(_LOCK_T *lock);
+
+extern void __retarget_lock_close(_LOCK_T lock);
+
+extern void __retarget_lock_close_recursive(_LOCK_T lock);
+
+extern void __retarget_lock_acquire(_LOCK_T lock);
+
+extern void __retarget_lock_acquire_recursive(_LOCK_T lock);
+
+extern int __retarget_lock_try_acquire(_LOCK_T lock);
+
+extern int __retarget_lock_try_acquire_recursive(_LOCK_T lock);
+
+
+extern void __retarget_lock_release(_LOCK_T lock);
+
+extern void __retarget_lock_release_recursive(_LOCK_T lock);
+# 26 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\sys\\_types.h" 2 3
+
+
+typedef long __blkcnt_t;
+
+
+
+typedef long __blksize_t;
+
+
+
+typedef __uint64_t __fsblkcnt_t;
+
+
+
+typedef __uint32_t __fsfilcnt_t;
+
+
+
+typedef long _off_t;
+
+
+
+
+
+typedef int __pid_t;
+
+
+
+typedef short __dev_t;
+
+
+
+typedef unsigned short __uid_t;
+
+
+typedef unsigned short __gid_t;
+
+
+
+typedef __uint32_t __id_t;
+
+
+
+
+
+
+
+typedef unsigned short __ino_t;
+# 88 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\sys\\_types.h" 3
+typedef __uint32_t __mode_t;
+
+
+
+
+
+__extension__ typedef long long _off64_t;
+
+
+
+
+
+typedef _off_t __off_t;
+
+
+typedef _off64_t __loff_t;
+
+
+typedef long __key_t;
+
+
+
+
+
+
+
+typedef long _fpos_t;
+# 129 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\sys\\_types.h" 3
+typedef unsigned int __size_t;
+# 145 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\sys\\_types.h" 3
+typedef signed int _ssize_t;
+# 156 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\sys\\_types.h" 3
+typedef _ssize_t __ssize_t;
+
+
+# 1 "d:\\work\\arm-eabi\\lib\\gcc\\arm-none-eabi\\9.2.1\\include\\stddef.h" 1 3 4
+# 350 "d:\\work\\arm-eabi\\lib\\gcc\\arm-none-eabi\\9.2.1\\include\\stddef.h" 3 4
+typedef unsigned int wint_t;
+# 160 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\sys\\_types.h" 2 3
+
+
+
+typedef struct
+{
+  int __count;
+  union
+  {
+    wint_t __wch;
+    unsigned char __wchb[4];
+  } __value;
+} _mbstate_t;
+
+
+
+typedef _LOCK_T _flock_t;
+
+
+
+
+typedef void *_iconv_t;
+
+
+
+
+
+
+typedef unsigned long __clock_t;
+
+
+
+
+
+
+typedef __int_least64_t __time_t;
+
+
+
+
+
+typedef unsigned long __clockid_t;
+
+
+typedef unsigned long __timer_t;
+
+
+typedef __uint8_t __sa_family_t;
+
+
+
+typedef __uint32_t __socklen_t;
+
+
+typedef int __nl_item;
+typedef unsigned short __nlink_t;
+typedef long __suseconds_t;
+typedef unsigned long __useconds_t;
+
+
+typedef __builtin_va_list __va_list;
+# 16 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\sys\\reent.h" 2 3
+
+
+
+
+
+
+typedef unsigned long __ULong;
+# 38 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\sys\\reent.h" 3
+struct _reent;
+
+struct __locale_t;
+
+
+
+
+
+
+struct _Bigint
+{
+  struct _Bigint *_next;
+  int _k, _maxwds, _sign, _wds;
+  __ULong _x[1];
+};
+
+
+struct __tm
+{
+  int __tm_sec;
+  int __tm_min;
+  int __tm_hour;
+  int __tm_mday;
+  int __tm_mon;
+  int __tm_year;
+  int __tm_wday;
+  int __tm_yday;
+  int __tm_isdst;
+};
+
+
+
+
+
+
+
+struct _on_exit_args {
+ void * _fnargs[32];
+ void * _dso_handle[32];
+
+ __ULong _fntypes;
+
+
+ __ULong _is_cxa;
+};
+# 93 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\sys\\reent.h" 3
+struct _atexit {
+ struct _atexit *_next;
+ int _ind;
+
+ void (*_fns[32])(void);
+        struct _on_exit_args _on_exit_args;
+};
+# 117 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\sys\\reent.h" 3
+struct __sbuf {
+ unsigned char *_base;
+ int _size;
+};
+# 181 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\sys\\reent.h" 3
+struct __sFILE {
+  unsigned char *_p;
+  int _r;
+  int _w;
+  short _flags;
+  short _file;
+  struct __sbuf _bf;
+  int _lbfsize;
+
+
+
+
+
+
+  void * _cookie;
+
+  int (*_read) (struct _reent *, void *,
+        char *, int);
+  int (*_write) (struct _reent *, void *,
+         const char *,
+         int);
+  _fpos_t (*_seek) (struct _reent *, void *, _fpos_t, int);
+  int (*_close) (struct _reent *, void *);
+
+
+  struct __sbuf _ub;
+  unsigned char *_up;
+  int _ur;
+
+
+  unsigned char _ubuf[3];
+  unsigned char _nbuf[1];
+
+
+  struct __sbuf _lb;
+
+
+  int _blksize;
+  _off_t _offset;
+
+
+  struct _reent *_data;
+
+
+
+  _flock_t _lock;
+
+  _mbstate_t _mbstate;
+  int _flags2;
+};
+# 287 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\sys\\reent.h" 3
+typedef struct __sFILE __FILE;
+
+
+
+struct _glue
+{
+  struct _glue *_next;
+  int _niobs;
+  __FILE *_iobs;
+};
+# 319 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\sys\\reent.h" 3
+struct _rand48 {
+  unsigned short _seed[3];
+  unsigned short _mult[3];
+  unsigned short _add;
+
+
+
+
+};
+# 608 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\sys\\reent.h" 3
+struct _reent
+{
+  int _errno;
+
+
+
+
+  __FILE *_stdin, *_stdout, *_stderr;
+
+  int _inc;
+  char _emergency[25];
+
+
+  int _unspecified_locale_info;
+  struct __locale_t *_locale;
+
+  int __sdidinit;
+
+  void (*__cleanup) (struct _reent *);
+
+
+  struct _Bigint *_result;
+  int _result_k;
+  struct _Bigint *_p5s;
+  struct _Bigint **_freelist;
+
+
+  int _cvtlen;
+  char *_cvtbuf;
+
+  union
+    {
+      struct
+        {
+          unsigned int _unused_rand;
+          char * _strtok_last;
+          char _asctime_buf[26];
+          struct __tm _localtime_buf;
+          int _gamma_signgam;
+          __extension__ unsigned long long _rand_next;
+          struct _rand48 _r48;
+          _mbstate_t _mblen_state;
+          _mbstate_t _mbtowc_state;
+          _mbstate_t _wctomb_state;
+          char _l64a_buf[8];
+          char _signal_buf[24];
+          int _getdate_err;
+          _mbstate_t _mbrlen_state;
+          _mbstate_t _mbrtowc_state;
+          _mbstate_t _mbsrtowcs_state;
+          _mbstate_t _wcrtomb_state;
+          _mbstate_t _wcsrtombs_state;
+   int _h_errno;
+        } _reent;
+
+
+
+      struct
+        {
+
+          unsigned char * _nextf[30];
+          unsigned int _nmalloc[30];
+        } _unused;
+    } _new;
+
+
+
+  struct _atexit *_atexit;
+  struct _atexit _atexit0;
+
+
+
+  void (**(_sig_func))(int);
+
+
+
+
+  struct _glue __sglue;
+
+  __FILE __sf[3];
+
+};
+# 814 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\sys\\reent.h" 3
+extern struct _reent *_impure_ptr ;
+extern struct _reent *const _global_impure_ptr ;
+
+void _reclaim_reent (struct _reent *);
+# 61 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\stdio.h" 2 3
+# 1 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\sys\\types.h" 1 3
+# 28 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\sys\\types.h" 3
+typedef __uint8_t u_int8_t;
+
+
+typedef __uint16_t u_int16_t;
+
+
+typedef __uint32_t u_int32_t;
+
+
+typedef __uint64_t u_int64_t;
+
+typedef int register_t;
+# 62 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\sys\\types.h" 3
+# 1 "d:\\work\\arm-eabi\\lib\\gcc\\arm-none-eabi\\9.2.1\\include\\stddef.h" 1 3 4
+# 63 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\sys\\types.h" 2 3
+
+
+
+
+# 1 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\machine\\endian.h" 1 3
+
+
+
+
+
+# 1 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\machine\\_endian.h" 1 3
+# 7 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\machine\\endian.h" 2 3
+# 68 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\sys\\types.h" 2 3
+# 1 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\sys\\select.h" 1 3
+# 14 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\sys\\select.h" 3
+# 1 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\sys\\_sigset.h" 1 3
+# 41 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\sys\\_sigset.h" 3
+typedef unsigned long __sigset_t;
+# 15 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\sys\\select.h" 2 3
+# 1 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\sys\\_timeval.h" 1 3
+# 35 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\sys\\_timeval.h" 3
+typedef __suseconds_t suseconds_t;
+
+
+
+
+typedef __int_least64_t time_t;
+# 52 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\sys\\_timeval.h" 3
+struct timeval {
+ time_t tv_sec;
+ suseconds_t tv_usec;
+};
+# 16 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\sys\\select.h" 2 3
+# 1 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\sys\\timespec.h" 1 3
+# 38 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\sys\\timespec.h" 3
+# 1 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\sys\\_timespec.h" 1 3
+# 45 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\sys\\_timespec.h" 3
+struct timespec {
+ time_t tv_sec;
+ long tv_nsec;
+};
+# 39 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\sys\\timespec.h" 2 3
+# 58 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\sys\\timespec.h" 3
+struct itimerspec {
+ struct timespec it_interval;
+ struct timespec it_value;
+};
+# 17 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\sys\\select.h" 2 3
+
+
+
+typedef __sigset_t sigset_t;
+# 34 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\sys\\select.h" 3
+typedef unsigned long fd_mask;
+
+
+
+
+
+
+
+typedef struct _types_fd_set {
+ fd_mask fds_bits[(((64)+(((sizeof (fd_mask) * 8))-1))/((sizeof (fd_mask) * 8)))];
+} _types_fd_set;
+# 60 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\sys\\select.h" 3
+
+
+int select (int __n, _types_fd_set *__readfds, _types_fd_set *__writefds, _types_fd_set *__exceptfds, struct timeval *__timeout)
+                                                   ;
+
+int pselect (int __n, _types_fd_set *__readfds, _types_fd_set *__writefds, _types_fd_set *__exceptfds, const struct timespec *__timeout, const sigset_t *__set)
+
+                           ;
+
+
+
+# 69 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\sys\\types.h" 2 3
+
+
+
+
+typedef __uint32_t in_addr_t;
+
+
+
+
+typedef __uint16_t in_port_t;
+# 87 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\sys\\types.h" 3
+typedef unsigned char u_char;
+
+
+
+typedef unsigned short u_short;
+
+
+
+typedef unsigned int u_int;
+
+
+
+typedef unsigned long u_long;
+
+
+
+
+
+
+
+typedef unsigned short ushort;
+typedef unsigned int uint;
+typedef unsigned long ulong;
+
+
+
+typedef __blkcnt_t blkcnt_t;
+
+
+
+
+typedef __blksize_t blksize_t;
+
+
+
+
+typedef unsigned long clock_t;
+# 135 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\sys\\types.h" 3
+typedef long daddr_t;
+
+
+
+typedef char * caddr_t;
+
+
+
+
+typedef __fsblkcnt_t fsblkcnt_t;
+typedef __fsfilcnt_t fsfilcnt_t;
+
+
+
+
+typedef __id_t id_t;
+
+
+
+
+typedef __ino_t ino_t;
+# 173 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\sys\\types.h" 3
+typedef __off_t off_t;
+
+
+
+typedef __dev_t dev_t;
+
+
+
+typedef __uid_t uid_t;
+
+
+
+typedef __gid_t gid_t;
+
+
+
+
+typedef __pid_t pid_t;
+
+
+
+
+typedef __key_t key_t;
+
+
+
+
+typedef _ssize_t ssize_t;
+
+
+
+
+typedef __mode_t mode_t;
+
+
+
+
+typedef __nlink_t nlink_t;
+
+
+
+
+typedef __clockid_t clockid_t;
+
+
+
+
+
+typedef __timer_t timer_t;
+
+
+
+
+
+typedef __useconds_t useconds_t;
+# 236 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\sys\\types.h" 3
+typedef __int64_t sbintime_t;
+
+
+# 1 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\sys\\_pthreadtypes.h" 1 3
+# 23 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\sys\\_pthreadtypes.h" 3
+# 1 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\sys\\sched.h" 1 3
+# 48 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\sys\\sched.h" 3
+struct sched_param {
+  int sched_priority;
+# 61 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\sys\\sched.h" 3
+};
+# 24 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\sys\\_pthreadtypes.h" 2 3
+# 32 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\sys\\_pthreadtypes.h" 3
+typedef __uint32_t pthread_t;
+# 61 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\sys\\_pthreadtypes.h" 3
+typedef struct {
+  int is_initialized;
+  void *stackaddr;
+  int stacksize;
+  int contentionscope;
+  int inheritsched;
+  int schedpolicy;
+  struct sched_param schedparam;
+
+
+
+
+
+  int detachstate;
+} pthread_attr_t;
+# 154 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\sys\\_pthreadtypes.h" 3
+typedef __uint32_t pthread_mutex_t;
+
+typedef struct {
+  int is_initialized;
+# 168 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\sys\\_pthreadtypes.h" 3
+  int recursive;
+} pthread_mutexattr_t;
+
+
+
+
+
+
+typedef __uint32_t pthread_cond_t;
+
+
+
+typedef struct {
+  int is_initialized;
+  clock_t clock;
+
+
+
+} pthread_condattr_t;
+
+
+
+typedef __uint32_t pthread_key_t;
+
+typedef struct {
+  int is_initialized;
+  int init_executed;
+} pthread_once_t;
+# 240 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\sys\\types.h" 2 3
+# 1 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\machine\\types.h" 1 3
+# 241 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\sys\\types.h" 2 3
+# 62 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\stdio.h" 2 3
+
+
+
+
+typedef __FILE FILE;
+
+
+
+
+
+
+typedef _fpos_t fpos_t;
+
+
+
+
+
+# 1 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\sys\\stdio.h" 1 3
+# 80 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\stdio.h" 2 3
+# 181 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\stdio.h" 3
+char * ctermid (char *);
+
+
+
+
+FILE * tmpfile (void);
+char * tmpnam (char *);
+
+char * tempnam (const char *, const char *) __attribute__((__malloc__)) __attribute__((__warn_unused_result__));
+
+int fclose (FILE *);
+int fflush (FILE *);
+FILE * freopen (const char *restrict, const char *restrict, FILE *restrict);
+void setbuf (FILE *restrict, char *restrict);
+int setvbuf (FILE *restrict, char *restrict, int, size_t);
+int fprintf (FILE *restrict, const char *restrict, ...)
+               __attribute__ ((__format__ (__printf__, 2, 3)));
+int fscanf (FILE *restrict, const char *restrict, ...)
+               __attribute__ ((__format__ (__scanf__, 2, 3)));
+int printf (const char *restrict, ...)
+               __attribute__ ((__format__ (__printf__, 1, 2)));
+int scanf (const char *restrict, ...)
+               __attribute__ ((__format__ (__scanf__, 1, 2)));
+int sscanf (const char *restrict, const char *restrict, ...)
+               __attribute__ ((__format__ (__scanf__, 2, 3)));
+int vfprintf (FILE *restrict, const char *restrict, __gnuc_va_list)
+               __attribute__ ((__format__ (__printf__, 2, 0)));
+int vprintf (const char *, __gnuc_va_list)
+               __attribute__ ((__format__ (__printf__, 1, 0)));
+int vsprintf (char *restrict, const char *restrict, __gnuc_va_list)
+               __attribute__ ((__format__ (__printf__, 2, 0)));
+int fgetc (FILE *);
+char * fgets (char *restrict, int, FILE *restrict);
+int fputc (int, FILE *);
+int fputs (const char *restrict, FILE *restrict);
+int getc (FILE *);
+int getchar (void);
+char * gets (char *);
+int putc (int, FILE *);
+int putchar (int);
+int puts (const char *);
+int ungetc (int, FILE *);
+size_t fread (void *restrict, size_t _size, size_t _n, FILE *restrict);
+size_t fwrite (const void *restrict , size_t _size, size_t _n, FILE *);
+
+
+
+int fgetpos (FILE *restrict, fpos_t *restrict);
+
+int fseek (FILE *, long, int);
+
+
+
+int fsetpos (FILE *, const fpos_t *);
+
+long ftell ( FILE *);
+void rewind (FILE *);
+void clearerr (FILE *);
+int feof (FILE *);
+int ferror (FILE *);
+void perror (const char *);
+
+FILE * fopen (const char *restrict _name, const char *restrict _type);
+int sprintf (char *restrict, const char *restrict, ...)
+               __attribute__ ((__format__ (__printf__, 2, 3)));
+int remove (const char *);
+int rename (const char *, const char *);
+# 257 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\stdio.h" 3
+int fseeko (FILE *, off_t, int);
+off_t ftello (FILE *);
+
+
+
+
+
+
+
+int snprintf (char *restrict, size_t, const char *restrict, ...)
+               __attribute__ ((__format__ (__printf__, 3, 4)));
+int vsnprintf (char *restrict, size_t, const char *restrict, __gnuc_va_list)
+               __attribute__ ((__format__ (__printf__, 3, 0)));
+int vfscanf (FILE *restrict, const char *restrict, __gnuc_va_list)
+               __attribute__ ((__format__ (__scanf__, 2, 0)));
+int vscanf (const char *, __gnuc_va_list)
+               __attribute__ ((__format__ (__scanf__, 1, 0)));
+int vsscanf (const char *restrict, const char *restrict, __gnuc_va_list)
+               __attribute__ ((__format__ (__scanf__, 2, 0)));
+# 284 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\stdio.h" 3
+int asiprintf (char **, const char *, ...)
+               __attribute__ ((__format__ (__printf__, 2, 3)));
+char * asniprintf (char *, size_t *, const char *, ...)
+               __attribute__ ((__format__ (__printf__, 3, 4)));
+char * asnprintf (char *restrict, size_t *restrict, const char *restrict, ...)
+               __attribute__ ((__format__ (__printf__, 3, 4)));
+
+int diprintf (int, const char *, ...)
+               __attribute__ ((__format__ (__printf__, 2, 3)));
+
+int fiprintf (FILE *, const char *, ...)
+               __attribute__ ((__format__ (__printf__, 2, 3)));
+int fiscanf (FILE *, const char *, ...)
+               __attribute__ ((__format__ (__scanf__, 2, 3)));
+int iprintf (const char *, ...)
+               __attribute__ ((__format__ (__printf__, 1, 2)));
+int iscanf (const char *, ...)
+               __attribute__ ((__format__ (__scanf__, 1, 2)));
+int siprintf (char *, const char *, ...)
+               __attribute__ ((__format__ (__printf__, 2, 3)));
+int siscanf (const char *, const char *, ...)
+               __attribute__ ((__format__ (__scanf__, 2, 3)));
+int sniprintf (char *, size_t, const char *, ...)
+               __attribute__ ((__format__ (__printf__, 3, 4)));
+int vasiprintf (char **, const char *, __gnuc_va_list)
+               __attribute__ ((__format__ (__printf__, 2, 0)));
+char * vasniprintf (char *, size_t *, const char *, __gnuc_va_list)
+               __attribute__ ((__format__ (__printf__, 3, 0)));
+char * vasnprintf (char *, size_t *, const char *, __gnuc_va_list)
+               __attribute__ ((__format__ (__printf__, 3, 0)));
+int vdiprintf (int, const char *, __gnuc_va_list)
+               __attribute__ ((__format__ (__printf__, 2, 0)));
+int vfiprintf (FILE *, const char *, __gnuc_va_list)
+               __attribute__ ((__format__ (__printf__, 2, 0)));
+int vfiscanf (FILE *, const char *, __gnuc_va_list)
+               __attribute__ ((__format__ (__scanf__, 2, 0)));
+int viprintf (const char *, __gnuc_va_list)
+               __attribute__ ((__format__ (__printf__, 1, 0)));
+int viscanf (const char *, __gnuc_va_list)
+               __attribute__ ((__format__ (__scanf__, 1, 0)));
+int vsiprintf (char *, const char *, __gnuc_va_list)
+               __attribute__ ((__format__ (__printf__, 2, 0)));
+int vsiscanf (const char *, const char *, __gnuc_va_list)
+               __attribute__ ((__format__ (__scanf__, 2, 0)));
+int vsniprintf (char *, size_t, const char *, __gnuc_va_list)
+               __attribute__ ((__format__ (__printf__, 3, 0)));
+# 339 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\stdio.h" 3
+FILE * fdopen (int, const char *);
+
+int fileno (FILE *);
+
+
+int pclose (FILE *);
+FILE * popen (const char *, const char *);
+
+
+
+void setbuffer (FILE *, char *, int);
+int setlinebuf (FILE *);
+
+
+
+int getw (FILE *);
+int putw (int, FILE *);
+
+
+int getc_unlocked (FILE *);
+int getchar_unlocked (void);
+void flockfile (FILE *);
+int ftrylockfile (FILE *);
+void funlockfile (FILE *);
+int putc_unlocked (int, FILE *);
+int putchar_unlocked (int);
+# 374 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\stdio.h" 3
+int dprintf (int, const char *restrict, ...)
+               __attribute__ ((__format__ (__printf__, 2, 3)));
+
+FILE * fmemopen (void *restrict, size_t, const char *restrict);
+
+
+FILE * open_memstream (char **, size_t *);
+int vdprintf (int, const char *restrict, __gnuc_va_list)
+               __attribute__ ((__format__ (__printf__, 2, 0)));
+
+
+
+int renameat (int, const char *, int, const char *);
+# 396 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\stdio.h" 3
+int _asiprintf_r (struct _reent *, char **, const char *, ...)
+               __attribute__ ((__format__ (__printf__, 3, 4)));
+char * _asniprintf_r (struct _reent *, char *, size_t *, const char *, ...)
+               __attribute__ ((__format__ (__printf__, 4, 5)));
+char * _asnprintf_r (struct _reent *, char *restrict, size_t *restrict, const char *restrict, ...)
+               __attribute__ ((__format__ (__printf__, 4, 5)));
+int _asprintf_r (struct _reent *, char **restrict, const char *restrict, ...)
+               __attribute__ ((__format__ (__printf__, 3, 4)));
+int _diprintf_r (struct _reent *, int, const char *, ...)
+               __attribute__ ((__format__ (__printf__, 3, 4)));
+int _dprintf_r (struct _reent *, int, const char *restrict, ...)
+               __attribute__ ((__format__ (__printf__, 3, 4)));
+int _fclose_r (struct _reent *, FILE *);
+int _fcloseall_r (struct _reent *);
+FILE * _fdopen_r (struct _reent *, int, const char *);
+int _fflush_r (struct _reent *, FILE *);
+int _fgetc_r (struct _reent *, FILE *);
+int _fgetc_unlocked_r (struct _reent *, FILE *);
+char * _fgets_r (struct _reent *, char *restrict, int, FILE *restrict);
+char * _fgets_unlocked_r (struct _reent *, char *restrict, int, FILE *restrict);
+
+
+
+
+int _fgetpos_r (struct _reent *, FILE *, fpos_t *);
+int _fsetpos_r (struct _reent *, FILE *, const fpos_t *);
+
+int _fiprintf_r (struct _reent *, FILE *, const char *, ...)
+               __attribute__ ((__format__ (__printf__, 3, 4)));
+int _fiscanf_r (struct _reent *, FILE *, const char *, ...)
+               __attribute__ ((__format__ (__scanf__, 3, 4)));
+FILE * _fmemopen_r (struct _reent *, void *restrict, size_t, const char *restrict);
+FILE * _fopen_r (struct _reent *, const char *restrict, const char *restrict);
+FILE * _freopen_r (struct _reent *, const char *restrict, const char *restrict, FILE *restrict);
+int _fprintf_r (struct _reent *, FILE *restrict, const char *restrict, ...)
+               __attribute__ ((__format__ (__printf__, 3, 4)));
+int _fpurge_r (struct _reent *, FILE *);
+int _fputc_r (struct _reent *, int, FILE *);
+int _fputc_unlocked_r (struct _reent *, int, FILE *);
+int _fputs_r (struct _reent *, const char *restrict, FILE *restrict);
+int _fputs_unlocked_r (struct _reent *, const char *restrict, FILE *restrict);
+size_t _fread_r (struct _reent *, void *restrict, size_t _size, size_t _n, FILE *restrict);
+size_t _fread_unlocked_r (struct _reent *, void *restrict, size_t _size, size_t _n, FILE *restrict);
+int _fscanf_r (struct _reent *, FILE *restrict, const char *restrict, ...)
+               __attribute__ ((__format__ (__scanf__, 3, 4)));
+int _fseek_r (struct _reent *, FILE *, long, int);
+int _fseeko_r (struct _reent *, FILE *, _off_t, int);
+long _ftell_r (struct _reent *, FILE *);
+_off_t _ftello_r (struct _reent *, FILE *);
+void _rewind_r (struct _reent *, FILE *);
+size_t _fwrite_r (struct _reent *, const void *restrict, size_t _size, size_t _n, FILE *restrict);
+size_t _fwrite_unlocked_r (struct _reent *, const void *restrict, size_t _size, size_t _n, FILE *restrict);
+int _getc_r (struct _reent *, FILE *);
+int _getc_unlocked_r (struct _reent *, FILE *);
+int _getchar_r (struct _reent *);
+int _getchar_unlocked_r (struct _reent *);
+char * _gets_r (struct _reent *, char *);
+int _iprintf_r (struct _reent *, const char *, ...)
+               __attribute__ ((__format__ (__printf__, 2, 3)));
+int _iscanf_r (struct _reent *, const char *, ...)
+               __attribute__ ((__format__ (__scanf__, 2, 3)));
+FILE * _open_memstream_r (struct _reent *, char **, size_t *);
+void _perror_r (struct _reent *, const char *);
+int _printf_r (struct _reent *, const char *restrict, ...)
+               __attribute__ ((__format__ (__printf__, 2, 3)));
+int _putc_r (struct _reent *, int, FILE *);
+int _putc_unlocked_r (struct _reent *, int, FILE *);
+int _putchar_unlocked_r (struct _reent *, int);
+int _putchar_r (struct _reent *, int);
+int _puts_r (struct _reent *, const char *);
+int _remove_r (struct _reent *, const char *);
+int _rename_r (struct _reent *,
+      const char *_old, const char *_new);
+int _scanf_r (struct _reent *, const char *restrict, ...)
+               __attribute__ ((__format__ (__scanf__, 2, 3)));
+int _siprintf_r (struct _reent *, char *, const char *, ...)
+               __attribute__ ((__format__ (__printf__, 3, 4)));
+int _siscanf_r (struct _reent *, const char *, const char *, ...)
+               __attribute__ ((__format__ (__scanf__, 3, 4)));
+int _sniprintf_r (struct _reent *, char *, size_t, const char *, ...)
+               __attribute__ ((__format__ (__printf__, 4, 5)));
+int _snprintf_r (struct _reent *, char *restrict, size_t, const char *restrict, ...)
+               __attribute__ ((__format__ (__printf__, 4, 5)));
+int _sprintf_r (struct _reent *, char *restrict, const char *restrict, ...)
+               __attribute__ ((__format__ (__printf__, 3, 4)));
+int _sscanf_r (struct _reent *, const char *restrict, const char *restrict, ...)
+               __attribute__ ((__format__ (__scanf__, 3, 4)));
+char * _tempnam_r (struct _reent *, const char *, const char *);
+FILE * _tmpfile_r (struct _reent *);
+char * _tmpnam_r (struct _reent *, char *);
+int _ungetc_r (struct _reent *, int, FILE *);
+int _vasiprintf_r (struct _reent *, char **, const char *, __gnuc_va_list)
+               __attribute__ ((__format__ (__printf__, 3, 0)));
+char * _vasniprintf_r (struct _reent*, char *, size_t *, const char *, __gnuc_va_list)
+               __attribute__ ((__format__ (__printf__, 4, 0)));
+char * _vasnprintf_r (struct _reent*, char *, size_t *, const char *, __gnuc_va_list)
+               __attribute__ ((__format__ (__printf__, 4, 0)));
+int _vasprintf_r (struct _reent *, char **, const char *, __gnuc_va_list)
+               __attribute__ ((__format__ (__printf__, 3, 0)));
+int _vdiprintf_r (struct _reent *, int, const char *, __gnuc_va_list)
+               __attribute__ ((__format__ (__printf__, 3, 0)));
+int _vdprintf_r (struct _reent *, int, const char *restrict, __gnuc_va_list)
+               __attribute__ ((__format__ (__printf__, 3, 0)));
+int _vfiprintf_r (struct _reent *, FILE *, const char *, __gnuc_va_list)
+               __attribute__ ((__format__ (__printf__, 3, 0)));
+int _vfiscanf_r (struct _reent *, FILE *, const char *, __gnuc_va_list)
+               __attribute__ ((__format__ (__scanf__, 3, 0)));
+int _vfprintf_r (struct _reent *, FILE *restrict, const char *restrict, __gnuc_va_list)
+               __attribute__ ((__format__ (__printf__, 3, 0)));
+int _vfscanf_r (struct _reent *, FILE *restrict, const char *restrict, __gnuc_va_list)
+               __attribute__ ((__format__ (__scanf__, 3, 0)));
+int _viprintf_r (struct _reent *, const char *, __gnuc_va_list)
+               __attribute__ ((__format__ (__printf__, 2, 0)));
+int _viscanf_r (struct _reent *, const char *, __gnuc_va_list)
+               __attribute__ ((__format__ (__scanf__, 2, 0)));
+int _vprintf_r (struct _reent *, const char *restrict, __gnuc_va_list)
+               __attribute__ ((__format__ (__printf__, 2, 0)));
+int _vscanf_r (struct _reent *, const char *restrict, __gnuc_va_list)
+               __attribute__ ((__format__ (__scanf__, 2, 0)));
+int _vsiprintf_r (struct _reent *, char *, const char *, __gnuc_va_list)
+               __attribute__ ((__format__ (__printf__, 3, 0)));
+int _vsiscanf_r (struct _reent *, const char *, const char *, __gnuc_va_list)
+               __attribute__ ((__format__ (__scanf__, 3, 0)));
+int _vsniprintf_r (struct _reent *, char *, size_t, const char *, __gnuc_va_list)
+               __attribute__ ((__format__ (__printf__, 4, 0)));
+int _vsnprintf_r (struct _reent *, char *restrict, size_t, const char *restrict, __gnuc_va_list)
+               __attribute__ ((__format__ (__printf__, 4, 0)));
+int _vsprintf_r (struct _reent *, char *restrict, const char *restrict, __gnuc_va_list)
+               __attribute__ ((__format__ (__printf__, 3, 0)));
+int _vsscanf_r (struct _reent *, const char *restrict, const char *restrict, __gnuc_va_list)
+               __attribute__ ((__format__ (__scanf__, 3, 0)));
+
+
+
+int fpurge (FILE *);
+ssize_t __getdelim (char **, size_t *, int, FILE *);
+ssize_t __getline (char **, size_t *, FILE *);
+
+
+void clearerr_unlocked (FILE *);
+int feof_unlocked (FILE *);
+int ferror_unlocked (FILE *);
+int fileno_unlocked (FILE *);
+int fflush_unlocked (FILE *);
+int fgetc_unlocked (FILE *);
+int fputc_unlocked (int, FILE *);
+size_t fread_unlocked (void *restrict, size_t _size, size_t _n, FILE *restrict);
+size_t fwrite_unlocked (const void *restrict , size_t _size, size_t _n, FILE *);
+# 577 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\stdio.h" 3
+int __srget_r (struct _reent *, FILE *);
+int __swbuf_r (struct _reent *, int, FILE *);
+# 601 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\stdio.h" 3
+FILE *funopen (const void *__cookie,
+  int (*__readfn)(void *__cookie, char *__buf,
+    int __n),
+  int (*__writefn)(void *__cookie, const char *__buf,
+     int __n),
+  fpos_t (*__seekfn)(void *__cookie, fpos_t __off, int __whence),
+  int (*__closefn)(void *__cookie));
+FILE *_funopen_r (struct _reent *, const void *__cookie,
+  int (*__readfn)(void *__cookie, char *__buf,
+    int __n),
+  int (*__writefn)(void *__cookie, const char *__buf,
+     int __n),
+  fpos_t (*__seekfn)(void *__cookie, fpos_t __off, int __whence),
+  int (*__closefn)(void *__cookie));
+# 687 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\stdio.h" 3
+static __inline__ int __sputc_r(struct _reent *_ptr, int _c, FILE *_p) {
+
+
+
+
+ if (--_p->_w >= 0 || (_p->_w >= _p->_lbfsize && (char)_c != '\n'))
+  return (*_p->_p++ = _c);
+ else
+  return (__swbuf_r(_ptr, _c, _p));
+}
+# 741 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\stdio.h" 3
+static __inline int
+_getchar_unlocked(void)
+{
+ struct _reent *_ptr;
+
+ _ptr = _impure_ptr;
+ return ((--(((_ptr)->_stdin))->_r < 0 ? __srget_r(_ptr, ((_ptr)->_stdin)) : (int)(*(((_ptr)->_stdin))->_p++)));
+}
+
+static __inline int
+_putchar_unlocked(int _c)
+{
+ struct _reent *_ptr;
+
+ _ptr = _impure_ptr;
+ return (__sputc_r(_ptr, _c, ((_ptr)->_stdout)));
+}
+# 797 "d:\\work\\arm-eabi\\arm-none-eabi\\include\\stdio.h" 3
+
+# 27 "src/targets/sky9x/board.h" 2
+# 1 "src/targets/sky9x/board_lowlevel.h" 1
+# 27 "src/targets/sky9x/board_lowlevel.h"
+# 1 "src/targets/sky9x/chip.h" 1
+# 28 "src/targets/sky9x/board_lowlevel.h" 2
+# 1 "src/targets/sky9x/AT91SAM3S4.h" 1
+# 72 "src/targets/sky9x/AT91SAM3S4.h"
+
+# 72 "src/targets/sky9x/AT91SAM3S4.h"
+typedef volatile const uint32_t RoReg;
+
+
+
+typedef volatile uint32_t WoReg;
+typedef volatile uint32_t RwReg;
+# 100 "src/targets/sky9x/AT91SAM3S4.h"
+typedef enum IRQn
+{
+
+  NonMaskableInt_IRQn = -14,
+  MemoryManagement_IRQn = -12,
+  BusFault_IRQn = -11,
+  UsageFault_IRQn = -10,
+  SVCall_IRQn = -5,
+  DebugMonitor_IRQn = -4,
+  PendSV_IRQn = -2,
+  SysTick_IRQn = -1,
+
+
+  SUPC_IRQn = 0,
+  RSTC_IRQn = 1,
+  RTC_IRQn = 2,
+  RTT_IRQn = 3,
+  WDT_IRQn = 4,
+  PMC_IRQn = 5,
+  EFC_IRQn = 6,
+  UART0_IRQn = 8,
+  UART1_IRQn = 9,
+  SMC_IRQn = 10,
+  PIOA_IRQn = 11,
+  PIOB_IRQn = 12,
+  PIOC_IRQn = 13,
+  USART0_IRQn = 14,
+  USART1_IRQn = 15,
+  HSMCI_IRQn = 18,
+  TWI0_IRQn = 19,
+  TWI1_IRQn = 20,
+  SPI_IRQn = 21,
+  SSC_IRQn = 22,
+  TC0_IRQn = 23,
+  TC1_IRQn = 24,
+  TC2_IRQn = 25,
+  TC3_IRQn = 26,
+  TC4_IRQn = 27,
+  TC5_IRQn = 28,
+  ADC_IRQn = 29,
+  DACC_IRQn = 30,
+  PWM_IRQn = 31,
+  CRCCU_IRQn = 32,
+  ACC_IRQn = 33,
+  UDP_IRQn = 34
+} IRQn_Type;
+# 161 "src/targets/sky9x/AT91SAM3S4.h"
+typedef struct {
+  WoReg ACC_CR;
+  RwReg ACC_MR;
+  RwReg Reserved1[7];
+  WoReg ACC_IER;
+  WoReg ACC_IDR;
+  RoReg ACC_IMR;
+  RoReg ACC_ISR;
+  RwReg Reserved2[24];
+  RwReg ACC_ACR;
+  RwReg Reserved3[19];
+  RwReg ACC_WPMR;
+  RoReg ACC_WPSR;
+} Acc;
+# 226 "src/targets/sky9x/AT91SAM3S4.h"
+typedef struct {
+  WoReg ADC_CR;
+  RwReg ADC_MR;
+  RwReg ADC_SEQR1;
+  RwReg ADC_SEQR2;
+  WoReg ADC_CHER;
+  WoReg ADC_CHDR;
+  RoReg ADC_CHSR;
+  RwReg Reserved1[1];
+  RoReg ADC_LCDR;
+  WoReg ADC_IER;
+  WoReg ADC_IDR;
+  RoReg ADC_IMR;
+  RoReg ADC_ISR;
+  RwReg Reserved2[2];
+  RoReg ADC_OVER;
+  RwReg ADC_EMR;
+  RwReg ADC_CWR;
+  RwReg ADC_CGR;
+  RwReg ADC_COR;
+  RoReg ADC_CDR0;
+  RoReg ADC_CDR1;
+  RoReg ADC_CDR2;
+  RoReg ADC_CDR3;
+  RoReg ADC_CDR4;
+  RoReg ADC_CDR5;
+  RoReg ADC_CDR6;
+  RoReg ADC_CDR7;
+  RoReg ADC_CDR8;
+  RoReg ADC_CDR9;
+  RoReg ADC_CDR10;
+  RoReg ADC_CDR11;
+  RoReg ADC_CDR12;
+  RoReg ADC_CDR13;
+  RoReg ADC_CDR14;
+  RoReg ADC_CDR15;
+  RwReg Reserved3[1];
+  RwReg ADC_ACR;
+  RwReg Reserved4[19];
+  RwReg ADC_WPMR;
+  RoReg ADC_WPSR;
+  RwReg Reserved5[5];
+  RwReg ADC_RPR;
+  RwReg ADC_RCR;
+  RwReg ADC_TPR;
+  RwReg ADC_TCR;
+  RwReg ADC_RNPR;
+  RwReg ADC_RNCR;
+  RwReg ADC_TNPR;
+  RwReg ADC_TNCR;
+  WoReg ADC_PTCR;
+  RoReg ADC_PTSR;
+} Adc;
+# 608 "src/targets/sky9x/AT91SAM3S4.h"
+typedef struct {
+  RoReg CHIPID_CIDR;
+  RoReg CHIPID_EXID;
+} Chipid;
+# 635 "src/targets/sky9x/AT91SAM3S4.h"
+typedef struct {
+  RwReg CRCCU_DSCR;
+  RwReg Reserved1[1];
+  WoReg CRCCU_DMA_EN;
+  WoReg CRCCU_DMA_DIS;
+  RoReg CRCCU_DMA_SR;
+  WoReg CRCCU_DMA_IER;
+  WoReg CRCCU_DMA_IDR;
+  RoReg CRCCU_DMA_IMR;
+  RoReg CRCCU_DMA_ISR;
+  RwReg Reserved2[4];
+  WoReg CRCCU_CR;
+  RwReg CRCCU_MR;
+  RoReg CRCCU_SR;
+  WoReg CRCCU_IER;
+  WoReg CRCCU_IDR;
+  RoReg CRCCU_IMR;
+  RoReg CRCCU_ISR;
+} Crccu;
+# 702 "src/targets/sky9x/AT91SAM3S4.h"
+typedef struct {
+  WoReg DACC_CR;
+  RwReg DACC_MR;
+  RwReg Reserved1[2];
+  WoReg DACC_CHER;
+  WoReg DACC_CHDR;
+  RoReg DACC_CHSR;
+  RwReg Reserved2[1];
+  WoReg DACC_CDR;
+  WoReg DACC_IER;
+  WoReg DACC_IDR;
+  RoReg DACC_IMR;
+  RoReg DACC_ISR;
+  RwReg Reserved3[24];
+  RwReg DACC_ACR;
+  RwReg Reserved4[19];
+  RwReg DACC_WPMR;
+  RoReg DACC_WPSR;
+  RwReg Reserved5[5];
+  RwReg DACC_RPR;
+  RwReg DACC_RCR;
+  RwReg DACC_TPR;
+  RwReg DACC_TCR;
+  RwReg DACC_RNPR;
+  RwReg DACC_RNCR;
+  RwReg DACC_TNPR;
+  RwReg DACC_TNCR;
+  WoReg DACC_PTCR;
+  RoReg DACC_PTSR;
+} Dacc;
+# 840 "src/targets/sky9x/AT91SAM3S4.h"
+typedef struct {
+  RwReg EEFC_FMR;
+  WoReg EEFC_FCR;
+  RoReg EEFC_FSR;
+  RoReg EEFC_FRR;
+} Efc;
+# 872 "src/targets/sky9x/AT91SAM3S4.h"
+typedef struct {
+  RwReg SYS_GPBR0;
+  RwReg SYS_GPBR1;
+  RwReg SYS_GPBR2;
+  RwReg SYS_GPBR3;
+} Gpbr;
+# 898 "src/targets/sky9x/AT91SAM3S4.h"
+typedef struct {
+  WoReg HSMCI_CR;
+  RwReg HSMCI_MR;
+  RwReg HSMCI_DTOR;
+  RwReg HSMCI_SDCR;
+  RwReg HSMCI_ARGR;
+  WoReg HSMCI_CMDR;
+  RwReg HSMCI_BLKR;
+  RwReg HSMCI_CSTOR;
+  RoReg HSMCI_RSPR[4];
+  RoReg HSMCI_RDR;
+  WoReg HSMCI_TDR;
+  RwReg Reserved1[2];
+  RoReg HSMCI_SR;
+  WoReg HSMCI_IER;
+  WoReg HSMCI_IDR;
+  RoReg HSMCI_IMR;
+  RwReg Reserved2[1];
+  RwReg HSMCI_CFG;
+  RwReg Reserved3[35];
+  RwReg HSMCI_WPMR;
+  RoReg HSMCI_WPSR;
+  RwReg Reserved4[5];
+  RwReg HSMCI_RPR;
+  RwReg HSMCI_RCR;
+  RwReg HSMCI_TPR;
+  RwReg HSMCI_TCR;
+  RwReg HSMCI_RNPR;
+  RwReg HSMCI_RNCR;
+  RwReg HSMCI_TNPR;
+  RwReg HSMCI_TNCR;
+  WoReg HSMCI_PTCR;
+  RoReg HSMCI_PTSR;
+} Hsmci;
+# 1219 "src/targets/sky9x/AT91SAM3S4.h"
+typedef struct {
+  RwReg MATRIX_MCFG[4];
+  RwReg Reserved1[12];
+  RwReg MATRIX_SCFG[5];
+  RwReg Reserved2[11];
+  RwReg MATRIX_PRAS0;
+  RwReg Reserved3[1];
+  RwReg MATRIX_PRAS1;
+  RwReg Reserved4[1];
+  RwReg MATRIX_PRAS2;
+  RwReg Reserved5[1];
+  RwReg MATRIX_PRAS3;
+  RwReg Reserved6[1];
+  RwReg MATRIX_PRAS4;
+  RwReg Reserved7[28];
+  RwReg CCFG_SYSIO;
+  RwReg Reserved8[1];
+  RwReg CCFG_SMCNFCS;
+  RwReg Reserved9[49];
+  RwReg MATRIX_WPMR;
+  RoReg MATRIX_WPSR;
+} Matrix;
+# 1309 "src/targets/sky9x/AT91SAM3S4.h"
+typedef struct {
+  RwReg Reserved1[64];
+  RwReg PERIPH_RPR;
+  RwReg PERIPH_RCR;
+  RwReg PERIPH_TPR;
+  RwReg PERIPH_TCR;
+  RwReg PERIPH_RNPR;
+  RwReg PERIPH_RNCR;
+  RwReg PERIPH_TNPR;
+  RwReg PERIPH_TNCR;
+  WoReg PERIPH_PTCR;
+  RoReg PERIPH_PTSR;
+} Pdc;
+# 1358 "src/targets/sky9x/AT91SAM3S4.h"
+typedef struct {
+  WoReg PIO_PER;
+  WoReg PIO_PDR;
+  RoReg PIO_PSR;
+  RwReg Reserved1[1];
+  WoReg PIO_OER;
+  WoReg PIO_ODR;
+  RoReg PIO_OSR;
+  RwReg Reserved2[1];
+  WoReg PIO_IFER;
+  WoReg PIO_IFDR;
+  RoReg PIO_IFSR;
+  RwReg Reserved3[1];
+  WoReg PIO_SODR;
+  WoReg PIO_CODR;
+  RwReg PIO_ODSR;
+  RoReg PIO_PDSR;
+  WoReg PIO_IER;
+  WoReg PIO_IDR;
+  RoReg PIO_IMR;
+  RoReg PIO_ISR;
+  WoReg PIO_MDER;
+  WoReg PIO_MDDR;
+  RoReg PIO_MDSR;
+  RwReg Reserved4[1];
+  WoReg PIO_PUDR;
+  WoReg PIO_PUER;
+  RoReg PIO_PUSR;
+  RwReg Reserved5[1];
+  RwReg PIO_ABCDSR[2];
+  RwReg Reserved6[2];
+  WoReg PIO_SCIFSR;
+  WoReg PIO_DIFSR;
+  RoReg PIO_IFDGSR;
+  RwReg PIO_SCDR;
+  WoReg PIO_PPDDR;
+  WoReg PIO_PPDER;
+  RoReg PIO_PPDSR;
+  RwReg Reserved7[1];
+  WoReg PIO_OWER;
+  WoReg PIO_OWDR;
+  RoReg PIO_OWSR;
+  RwReg Reserved8[1];
+  WoReg PIO_AIMER;
+  WoReg PIO_AIMDR;
+  RoReg PIO_AIMMR;
+  RwReg Reserved9[1];
+  WoReg PIO_ESR;
+  WoReg PIO_LSR;
+  RoReg PIO_ELSR;
+  RwReg Reserved10[1];
+  WoReg PIO_FELLSR;
+  WoReg PIO_REHLSR;
+  RoReg PIO_FRLHSR;
+  RwReg Reserved11[1];
+  RoReg PIO_LOCKSR;
+  RwReg PIO_WPMR;
+  RoReg PIO_WPSR;
+  RwReg Reserved12[5];
+  RwReg PIO_SCHMITT;
+  RwReg Reserved13[19];
+  RwReg PIO_PCMR;
+  WoReg PIO_PCIER;
+  WoReg PIO_PCIDR;
+  RoReg PIO_PCIMR;
+  RoReg PIO_PCISR;
+  RoReg PIO_PCRHR;
+  RwReg Reserved14[38];
+} Pio;
+# 2940 "src/targets/sky9x/AT91SAM3S4.h"
+typedef struct {
+  WoReg PMC_SCER;
+  WoReg PMC_SCDR;
+  RoReg PMC_SCSR;
+  RwReg Reserved1[1];
+  WoReg PMC_PCER0;
+  WoReg PMC_PCDR0;
+  RoReg PMC_PCSR0;
+  RwReg Reserved2[1];
+  RwReg CKGR_MOR;
+  RoReg CKGR_MCFR;
+  RwReg CKGR_PLLAR;
+  RwReg CKGR_PLLBR;
+  RwReg PMC_MCKR;
+  RwReg Reserved3[1];
+  RwReg PMC_USB;
+  RwReg Reserved4[1];
+  RwReg PMC_PCK[3];
+  RwReg Reserved5[5];
+  WoReg PMC_IER;
+  WoReg PMC_IDR;
+  RoReg PMC_SR;
+  RoReg PMC_IMR;
+  RwReg PMC_FSMR;
+  RwReg PMC_FSPR;
+  WoReg PMC_FOCR;
+  RwReg Reserved6[26];
+  RwReg PMC_WPMR;
+  RoReg PMC_WPSR;
+  RwReg Reserved7[5];
+  WoReg PMC_PCER1;
+  WoReg PMC_PCDR1;
+  RoReg PMC_PCSR1;
+  RwReg Reserved8[1];
+  RwReg PMC_OCR;
+} Pmc;
+# 3347 "src/targets/sky9x/AT91SAM3S4.h"
+typedef struct {
+  RwReg PWM_CMR;
+  RwReg PWM_CDTY;
+  RwReg PWM_CDTYUPD;
+  RwReg PWM_CPDR;
+  RwReg PWM_CPDRUPD;
+  RwReg PWM_CCNT;
+  RwReg PWM_DT;
+  RwReg PWM_DTUPD;
+} PwmCh_num;
+
+typedef struct {
+  RwReg PWM_CLK;
+  WoReg PWM_ENA;
+  WoReg PWM_DIS;
+  RoReg PWM_SR;
+  WoReg PWM_IER1;
+  WoReg PWM_IDR1;
+  RoReg PWM_IMR1;
+  RoReg PWM_ISR1;
+  RwReg PWM_SCM;
+  RwReg Reserved1[1];
+  RwReg PWM_SCUC;
+  RwReg PWM_SCUP;
+  WoReg PWM_SCUPUPD;
+  WoReg PWM_IER2;
+  WoReg PWM_IDR2;
+  RoReg PWM_IMR2;
+  RoReg PWM_ISR2;
+  RwReg PWM_OOV;
+  RwReg PWM_OS;
+  WoReg PWM_OSS;
+  WoReg PWM_OSC;
+  WoReg PWM_OSSUPD;
+  WoReg PWM_OSCUPD;
+  RwReg PWM_FMR;
+  RoReg PWM_FSR;
+  WoReg PWM_FCR;
+  RwReg PWM_FPV;
+  RwReg PWM_FPE;
+  RwReg Reserved2[3];
+  RwReg PWM_ELxMR[2];
+  RwReg Reserved3[11];
+  RwReg PWM_SMMR;
+  RwReg Reserved4[12];
+  WoReg PWM_WPCR;
+  RoReg PWM_WPSR;
+  RwReg Reserved5[5];
+  RwReg PWM_RPR;
+  RwReg PWM_RCR;
+  RwReg PWM_TPR;
+  RwReg PWM_TCR;
+  RwReg PWM_RNPR;
+  RwReg PWM_RNCR;
+  RwReg PWM_TNPR;
+  RwReg PWM_TNCR;
+  WoReg PWM_PTCR;
+  RoReg PWM_PTSR;
+  RwReg Reserved6[2];
+  RwReg PWM_CMP0V;
+  WoReg PWM_CMP0VUPD;
+  RwReg PWM_CMP0M;
+  WoReg PWM_CMP0MUPD;
+  RwReg PWM_CMP1V;
+  WoReg PWM_CMP1VUPD;
+  RwReg PWM_CMP1M;
+  WoReg PWM_CMP1MUPD;
+  RwReg PWM_CMP2V;
+  WoReg PWM_CMP2VUPD;
+  RwReg PWM_CMP2M;
+  WoReg PWM_CMP2MUPD;
+  RwReg PWM_CMP3V;
+  WoReg PWM_CMP3VUPD;
+  RwReg PWM_CMP3M;
+  WoReg PWM_CMP3MUPD;
+  RwReg PWM_CMP4V;
+  WoReg PWM_CMP4VUPD;
+  RwReg PWM_CMP4M;
+  WoReg PWM_CMP4MUPD;
+  RwReg PWM_CMP5V;
+  WoReg PWM_CMP5VUPD;
+  RwReg PWM_CMP5M;
+  WoReg PWM_CMP5MUPD;
+  RwReg PWM_CMP6V;
+  WoReg PWM_CMP6VUPD;
+  RwReg PWM_CMP6M;
+  WoReg PWM_CMP6MUPD;
+  RwReg PWM_CMP7V;
+  WoReg PWM_CMP7VUPD;
+  RwReg PWM_CMP7M;
+  WoReg PWM_CMP7MUPD;
+  RwReg Reserved7[20];
+  PwmCh_num PWM_CH_NUM[4];
+} Pwm;
+# 4005 "src/targets/sky9x/AT91SAM3S4.h"
+typedef struct {
+  WoReg RSTC_CR;
+  RoReg RSTC_SR;
+  RwReg RSTC_MR;
+} Rstc;
+# 4037 "src/targets/sky9x/AT91SAM3S4.h"
+typedef struct {
+  RwReg RTC_CR;
+  RwReg RTC_MR;
+  RwReg RTC_TIMR;
+  RwReg RTC_CALR;
+  RwReg RTC_TIMALR;
+  RwReg RTC_CALALR;
+  RoReg RTC_SR;
+  WoReg RTC_SCCR;
+  WoReg RTC_IER;
+  WoReg RTC_IDR;
+  RoReg RTC_IMR;
+  RoReg RTC_VER;
+} Rtc;
+# 4135 "src/targets/sky9x/AT91SAM3S4.h"
+typedef struct {
+  RwReg RTT_MR;
+  RwReg RTT_AR;
+  RoReg RTT_VR;
+  RoReg RTT_SR;
+} Rtt;
+# 4165 "src/targets/sky9x/AT91SAM3S4.h"
+typedef struct {
+  RwReg SMC_SETUP;
+  RwReg SMC_PULSE;
+  RwReg SMC_CYCLE;
+  RwReg SMC_MODE;
+} SmcCs_number;
+
+typedef struct {
+  SmcCs_number SMC_CS_NUMBER[5];
+  RwReg Reserved1[12];
+  RwReg SMC_OCMS;
+  WoReg SMC_KEY1;
+  WoReg SMC_KEY2;
+  RwReg Reserved2[22];
+  RwReg SMC_WPMR;
+  RoReg SMC_WPSR;
+} Smc;
+# 4320 "src/targets/sky9x/AT91SAM3S4.h"
+typedef struct {
+  WoReg SPI_CR;
+  RwReg SPI_MR;
+  RoReg SPI_RDR;
+  WoReg SPI_TDR;
+  RoReg SPI_SR;
+  WoReg SPI_IER;
+  WoReg SPI_IDR;
+  RoReg SPI_IMR;
+  RwReg Reserved1[4];
+  RwReg SPI_CSR[4];
+  RwReg Reserved2[41];
+  RwReg SPI_WPMR;
+  RoReg SPI_WPSR;
+  RwReg Reserved3[5];
+  RwReg SPI_RPR;
+  RwReg SPI_RCR;
+  RwReg SPI_TPR;
+  RwReg SPI_TCR;
+  RwReg SPI_RNPR;
+  RwReg SPI_RNCR;
+  RwReg SPI_TNPR;
+  RwReg SPI_TNCR;
+  WoReg SPI_PTCR;
+  RoReg SPI_PTSR;
+} Spi, AT91S_SPI, *AT91PS_SPI;
+# 4478 "src/targets/sky9x/AT91SAM3S4.h"
+typedef struct {
+  WoReg SSC_CR;
+  RwReg SSC_CMR;
+  RwReg Reserved1[2];
+  RwReg SSC_RCMR;
+  RwReg SSC_RFMR;
+  RwReg SSC_TCMR;
+  RwReg SSC_TFMR;
+  RoReg SSC_RHR;
+  WoReg SSC_THR;
+  RwReg Reserved2[2];
+  RoReg SSC_RSHR;
+  RwReg SSC_TSHR;
+  RwReg SSC_RC0R;
+  RwReg SSC_RC1R;
+  RoReg SSC_SR;
+  WoReg SSC_IER;
+  WoReg SSC_IDR;
+  RoReg SSC_IMR;
+  RwReg Reserved3[37];
+  RwReg SSC_WPMR;
+  RoReg SSC_WPSR;
+  RwReg Reserved4[5];
+  RwReg SSC_RPR;
+  RwReg SSC_RCR;
+  RwReg SSC_TPR;
+  RwReg SSC_TCR;
+  RwReg SSC_RNPR;
+  RwReg SSC_RNCR;
+  RwReg SSC_TNPR;
+  RwReg SSC_TNCR;
+  WoReg SSC_PTCR;
+  RoReg SSC_PTSR;
+} Ssc;
+# 4670 "src/targets/sky9x/AT91SAM3S4.h"
+typedef struct {
+  WoReg SUPC_CR;
+  RwReg SUPC_SMMR;
+  RwReg SUPC_MR;
+  RwReg SUPC_WUMR;
+  RwReg SUPC_WUIR;
+  RoReg SUPC_SR;
+} Supc;
+# 4926 "src/targets/sky9x/AT91SAM3S4.h"
+typedef struct {
+  RwReg TC_CCR;
+  RwReg TC_CMR;
+  RwReg Reserved1[2];
+  RwReg TC_CV;
+  RwReg TC_RA;
+  RwReg TC_RB;
+  RwReg TC_RC;
+  RwReg TC_SR;
+  RwReg TC_IER;
+  RwReg TC_IDR;
+  RwReg TC_IMR;
+  RwReg Reserved2[4];
+} TcChannel;
+
+typedef struct {
+  TcChannel TC_CHANNEL[3];
+  WoReg TC_BCR;
+  RwReg TC_BMR;
+  WoReg TC_QIER;
+  WoReg TC_QIDR;
+  RoReg TC_QIMR;
+  RoReg TC_QISR;
+  RwReg TC_FMR;
+  RwReg Reserved1[2];
+  RwReg TC_WPMR;
+  RwReg Reserved2[5];
+  RoReg TC_VER;
+} Tc;
+# 5287 "src/targets/sky9x/AT91SAM3S4.h"
+typedef struct {
+  WoReg TWI_CR;
+  RwReg TWI_MMR;
+  RwReg TWI_SMR;
+  RwReg TWI_IADR;
+  RwReg TWI_CWGR;
+  RwReg Reserved1[3];
+  RoReg TWI_SR;
+  WoReg TWI_IER;
+  WoReg TWI_IDR;
+  RoReg TWI_IMR;
+  RoReg TWI_RHR;
+  WoReg TWI_THR;
+  RwReg Reserved2[50];
+  RwReg TWI_RPR;
+  RwReg TWI_RCR;
+  RwReg TWI_TPR;
+  RwReg TWI_TCR;
+  RwReg TWI_RNPR;
+  RwReg TWI_RNCR;
+  RwReg TWI_TNPR;
+  RwReg TWI_TNCR;
+  WoReg TWI_PTCR;
+  RoReg TWI_PTSR;
+} Twi;
+# 5452 "src/targets/sky9x/AT91SAM3S4.h"
+typedef struct {
+  WoReg UART_CR;
+  RwReg UART_MR;
+  WoReg UART_IER;
+  WoReg UART_IDR;
+  RoReg UART_IMR;
+  RoReg UART_SR;
+  RoReg UART_RHR;
+  WoReg UART_THR;
+  RwReg UART_BRGR;
+  RwReg Reserved1[55];
+  RwReg UART_RPR;
+  RwReg UART_RCR;
+  RwReg UART_TPR;
+  RwReg UART_TCR;
+  RwReg UART_RNPR;
+  RwReg UART_RNCR;
+  RwReg UART_TNPR;
+  RwReg UART_TNCR;
+  WoReg UART_PTCR;
+  RoReg UART_PTSR;
+} Uart;
+# 5571 "src/targets/sky9x/AT91SAM3S4.h"
+typedef struct {
+  RoReg UDP_FRM_NUM;
+  RwReg UDP_GLB_STAT;
+  RwReg UDP_FADDR;
+  RwReg Reserved1[1];
+  WoReg UDP_IER;
+  WoReg UDP_IDR;
+  RoReg UDP_IMR;
+  RoReg UDP_ISR;
+  WoReg UDP_ICR;
+  RwReg Reserved2[1];
+  RwReg UDP_RST_EP;
+  RwReg Reserved3[1];
+  RwReg UDP_CSR[8];
+  RwReg UDP_FDR[8];
+  RwReg Reserved4[1];
+  RwReg UDP_TXVC;
+} Udp;
+# 5718 "src/targets/sky9x/AT91SAM3S4.h"
+typedef struct {
+  WoReg US_CR;
+  RwReg US_MR;
+  WoReg US_IER;
+  WoReg US_IDR;
+  RoReg US_IMR;
+  RoReg US_CSR;
+  RoReg US_RHR;
+  WoReg US_THR;
+  RwReg US_BRGR;
+  RwReg US_RTOR;
+  RwReg US_TTGR;
+  RwReg Reserved1[5];
+  RwReg US_FIDI;
+  RoReg US_NER;
+  RwReg Reserved2[1];
+  RwReg US_IF;
+  RwReg US_MAN;
+  RwReg Reserved3[36];
+  RwReg US_WPMR;
+  RoReg US_WPSR;
+  RwReg Reserved4[4];
+  RoReg US_VERSION;
+  RwReg US_RPR;
+  RwReg US_RCR;
+  RwReg US_TPR;
+  RwReg US_TCR;
+  RwReg US_RNPR;
+  RwReg US_RNCR;
+  RwReg US_TNPR;
+  RwReg US_TNCR;
+  WoReg US_PTCR;
+  RoReg US_PTSR;
+} Usart;
+# 5978 "src/targets/sky9x/AT91SAM3S4.h"
+typedef struct {
+  WoReg WDT_CR;
+  RwReg WDT_MR;
+  RoReg WDT_SR;
+} Wdt;
+# 29 "src/targets/sky9x/board_lowlevel.h" 2
+# 499 "src/targets/sky9x/board_lowlevel.h"
+extern uint32_t Cmd_A41_resp;
+extern int32_t Card_state;
+extern volatile uint32_t Card_initialized;
+extern uint32_t Card_CSD[4];
+extern uint32_t transSpeed;
+# 624 "src/targets/sky9x/board_lowlevel.h"
+extern uint32_t Master_frequency ;
+
+struct t_serial_tx
+{
+  uint8_t *buffer ;
+  uint16_t size ;
+  volatile uint16_t ready ;
+};
+# 28 "src/targets/sky9x/board.h" 2
+# 1 "src/targets/sky9x/audio_driver.h" 1
+# 24 "src/targets/sky9x/audio_driver.h"
+void audioInit( void ) ;
+void audioEnd( void ) ;
+void audioConsumeCurrentBuffer();
+
+
+
+void setSampleRate( uint32_t frequency ) ;
+
+
+
+
+void setScaledVolume(uint8_t volume);
+# 29 "src/targets/sky9x/board.h" 2
+# 1 "src/thirdparty/../opentx_constants.h" 1
+# 24 "src/thirdparty/../opentx_constants.h"
+enum SwitchConfig {
+  SWITCH_NONE,
+  SWITCH_TOGGLE,
+  SWITCH_2POS,
+  SWITCH_3POS,
+};
+
+enum PotConfig {
+  POT_NONE,
+  POT_WITH_DETENT,
+  POT_MULTIPOS_SWITCH,
+  POT_WITHOUT_DETENT
+};
+
+enum SliderConfig {
+  SLIDER_NONE,
+  SLIDER_WITH_DETENT,
+};
+
+enum CalibrationState {
+  CALIB_START,
+  CALIB_SET_MIDPOINT,
+  CALIB_MOVE_STICKS,
+  CALIB_STORE,
+  CALIB_FINISHED
+};
+# 30 "src/targets/sky9x/board.h" 2
+
+extern uint16_t ResetReason;
+
+
+
+
+
+
+void boardInit();
+void boardOff();
+
+
+void rotaryEncoderInit();
+void rotaryEncoderEnd();
+# 57 "src/targets/sky9x/board.h"
+enum EnumKeys
+{
+  KEY_MENU,
+  KEY_ENTER=KEY_MENU,
+  KEY_EXIT,
+  KEY_DOWN,
+  KEY_MINUS = KEY_DOWN,
+  KEY_UP,
+  KEY_PLUS = KEY_UP,
+  KEY_RIGHT,
+  KEY_LEFT,
+
+  KEY_COUNT,
+  KEY_MAX = KEY_COUNT - 1,
+
+  TRM_BASE,
+  TRM_LH_DWN = TRM_BASE,
+  TRM_LH_UP,
+  TRM_LV_DWN,
+  TRM_LV_UP,
+  TRM_RV_DWN,
+  TRM_RV_UP,
+  TRM_RH_DWN,
+  TRM_RH_UP,
+  TRM_LAST = TRM_RH_UP,
+
+  NUM_KEYS
+};
+
+
+
+
+enum EnumSwitches
+{
+  SW_ID0,
+  SW_ID1,
+  SW_ID2,
+  SW_THR,
+  SW_RUD,
+  SW_ELE,
+  SW_AIL,
+  SW_GEA,
+  SW_TRN,
+};
+# 164 "src/targets/sky9x/board.h"
+void lcdInit();
+void lcdRefresh();
+
+void lcdSetRefVolt(uint8_t val);
+void lcdSetContrast();
+# 200 "src/targets/sky9x/board.h"
+void configure_pins( uint32_t pins, uint16_t config );
+uint16_t getCurrent();
+
+extern uint16_t Current_analogue;
+extern uint16_t Current_max;
+extern uint32_t Current_accumulator;
+extern uint32_t Current_used;
+extern uint16_t sessionTimer;
+void calcConsumption();
+
+
+
+
+void init_trainer_capture();
+void stop_trainer_capture();
+
+
+
+void flashWrite(uint32_t * address, const uint32_t * buffer);
+
+
+uint32_t switchState(uint8_t index);
+uint32_t readKeys();
+uint32_t readTrims();
+
+
+
+
+
+
+void extmoduleSerialStart(uint32_t baudrate, uint32_t period_half_us, 
+# 230 "src/targets/sky9x/board.h" 3 4
+                                                                     _Bool 
+# 230 "src/targets/sky9x/board.h"
+                                                                          inverted);
+void extmoduleSendNextFrame();
+void module_output_active();
+inline void EXTERNAL_MODULE_ON()
+{
+  module_output_active();
+}
+# 283 "src/targets/sky9x/board.h"
+enum Analogs {
+  STICK1,
+  STICK2,
+  STICK3,
+  STICK4,
+  POT_FIRST,
+  POT1 = POT_FIRST,
+  POT2,
+  POT3,
+  POT_LAST = POT3,
+  TX_VOLTAGE,
+  TX_CURRENT,
+  NUM_ANALOGS
+};
+enum CalibratedAnalogs {
+  CALIBRATED_STICK1,
+  CALIBRATED_STICK2,
+  CALIBRATED_STICK3,
+  CALIBRATED_STICK4,
+  CALIBRATED_POT_FIRST,
+  CALIBRATED_POT1 = CALIBRATED_POT_FIRST,
+  CALIBRATED_POT2,
+  CALIBRATED_POT3,
+  CALIBRATED_POT_LAST = CALIBRATED_POT3,
+  NUM_CALIBRATED_ANALOGS
+};
+
+
+
+void adcInit();
+void adcRead();
+uint16_t getAnalogValue(uint8_t index);
+void setSticksGain(uint8_t gains);
+inline void enableVBatBridge()
+{
+}
+inline void disableVBatBridge()
+{
+}
+
+
+uint16_t getBatteryVoltage();
+
+
+
+
+
+void buzzerSound(uint8_t duration);
+void buzzerHeartbeat();
+
+
+
+void i2cCheck();
+
+
+void coprocInit();
+void coprocWriteData(uint8_t *data, uint32_t size);
+
+
+
+extern int8_t volumeRequired;
+# 358 "src/targets/sky9x/board.h"
+void hapticOff();
+void hapticOn(uint32_t pwmPercent);
+# 371 "src/targets/sky9x/board.h"
+void pwrInit();
+void pwrOff();
+void pwrOn();
+uint32_t pwrCheck();
+
+# 375 "src/targets/sky9x/board.h" 3 4
+_Bool 
+# 375 "src/targets/sky9x/board.h"
+    pwrPressed();
+
+
+
+
+
+void eepromInit();
+uint8_t eepromReadStatus();
+uint8_t eepromIsTransferComplete();
+void eepromBlockErase(uint32_t address);
+void eepromStartRead(uint8_t * buffer, size_t address, size_t size);
+void eepromStartWrite(uint8_t * buffer, size_t address, size_t size);
+
+
+void debugPutc(const char c);
+
+
+void telemetryPortInit(uint32_t baudrate, uint8_t mode);
+inline void telemetryPortSetDirectionOutput()
+{
+}
+uint32_t telemetryTransmitPending();
+void telemetryTransmitBuffer(const uint8_t * buffer, uint32_t size);
+void rxPdcUsart( void (*pChProcess)(uint8_t x) );
+void sportSendBuffer(const uint8_t * buffer, uint32_t size);
+
+
+void auxSerialTelemetryInit(unsigned int protocol);
+void auxSerialPutc(const unsigned char c);
+
+
+
+
+extern const uint8_t BootCode[];
+# 25 "src/dataconstants.h" 2
+# 94 "src/dataconstants.h"
+enum CurveType {
+  CURVE_TYPE_STANDARD,
+  CURVE_TYPE_CUSTOM,
+  CURVE_TYPE_LAST = CURVE_TYPE_CUSTOM
+};
+# 167 "src/dataconstants.h"
+enum MainViews {
+  VIEW_OUTPUTS_VALUES,
+  VIEW_OUTPUTS_BARS,
+  VIEW_INPUTS,
+  VIEW_TIMER2,
+  VIEW_COUNT
+};
+
+
+enum BeeperMode {
+  e_mode_quiet = -2,
+  e_mode_alarms,
+  e_mode_nokeys,
+  e_mode_all
+};
+# 202 "src/dataconstants.h"
+  enum ModuleIndex {
+    EXTERNAL_MODULE,
+    EXTRA_MODULE,
+    SPORT_MODULE
+  };
+# 233 "src/dataconstants.h"
+enum UartModes {
+
+
+
+  UART_MODE_NONE,
+
+  UART_MODE_TELEMETRY_MIRROR,
+  UART_MODE_TELEMETRY,
+  UART_MODE_SBUS_TRAINER,
+  UART_MODE_LUA,
+  UART_MODE_COUNT,
+  UART_MODE_MAX = UART_MODE_COUNT-1
+};
+# 258 "src/dataconstants.h"
+enum TelemetryProtocol
+{
+  PROTOCOL_TELEMETRY_FIRST,
+  PROTOCOL_TELEMETRY_FRSKY_SPORT = PROTOCOL_TELEMETRY_FIRST,
+  PROTOCOL_TELEMETRY_FRSKY_D,
+  PROTOCOL_TELEMETRY_FRSKY_D_SECONDARY,
+  PROTOCOL_TELEMETRY_CROSSFIRE,
+  PROTOCOL_TELEMETRY_SPEKTRUM,
+  PROTOCOL_TELEMETRY_FLYSKY_IBUS,
+  PROTOCOL_TELEMETRY_HITEC,
+  PROTOCOL_TELEMETRY_HOTT,
+  PROTOCOL_TELEMETRY_MULTIMODULE,
+  PROTOCOL_TELEMETRY_LAST=PROTOCOL_TELEMETRY_MULTIMODULE,
+  PROTOCOL_TELEMETRY_LUA
+};
+
+
+enum TelemetryUnit {
+  UNIT_RAW,
+  UNIT_VOLTS,
+  UNIT_AMPS,
+  UNIT_MILLIAMPS,
+  UNIT_KTS,
+  UNIT_METERS_PER_SECOND,
+  UNIT_FEET_PER_SECOND,
+  UNIT_KMH,
+  UNIT_SPEED = UNIT_KMH,
+  UNIT_MPH,
+  UNIT_METERS,
+  UNIT_DIST = UNIT_METERS,
+  UNIT_FEET,
+  UNIT_CELSIUS,
+  UNIT_TEMPERATURE = UNIT_CELSIUS,
+  UNIT_FAHRENHEIT,
+  UNIT_PERCENT,
+  UNIT_MAH,
+  UNIT_WATTS,
+  UNIT_MILLIWATTS,
+  UNIT_DB,
+  UNIT_RPMS,
+  UNIT_G,
+  UNIT_DEGREE,
+  UNIT_RADIANS,
+  UNIT_MILLILITERS,
+  UNIT_FLOZ,
+  UNIT_MILLILITERS_PER_MINUTE,
+  UNIT_MAX = UNIT_MILLILITERS_PER_MINUTE,
+  UNIT_SPARE1,
+  UNIT_SPARE2,
+  UNIT_SPARE3,
+  UNIT_SPARE4,
+  UNIT_SPARE5,
+  UNIT_SPARE6,
+  UNIT_SPARE7,
+  UNIT_SPARE8,
+  UNIT_SPARE9,
+  UNIT_SPARE10,
+  UNIT_HOURS,
+  UNIT_MINUTES,
+  UNIT_SECONDS,
+
+  UNIT_FIRST_VIRTUAL,
+  UNIT_CELLS = UNIT_FIRST_VIRTUAL,
+  UNIT_DATETIME,
+  UNIT_GPS,
+  UNIT_BITFIELD,
+  UNIT_TEXT,
+
+  UNIT_GPS_LONGITUDE,
+  UNIT_GPS_LATITUDE,
+  UNIT_DATETIME_YEAR,
+  UNIT_DATETIME_DAY_MONTH,
+  UNIT_DATETIME_HOUR_MIN,
+  UNIT_DATETIME_SEC
+};
+# 344 "src/dataconstants.h"
+enum TelemetryScreenType {
+  TELEMETRY_SCREEN_TYPE_NONE,
+  TELEMETRY_SCREEN_TYPE_VALUES,
+  TELEMETRY_SCREEN_TYPE_BARS,
+  TELEMETRY_SCREEN_TYPE_SCRIPT,
+
+  TELEMETRY_SCREEN_TYPE_MAX = TELEMETRY_SCREEN_TYPE_SCRIPT
+
+
+
+};
+
+
+
+
+constexpr int16_t FAILSAFE_CHANNEL_HOLD = 2000;
+constexpr int16_t FAILSAFE_CHANNEL_NOPULSE = 2001;
+
+
+
+
+
+
+enum PotsWarnMode {
+  POTS_WARN_OFF,
+  POTS_WARN_MANUAL,
+  POTS_WARN_AUTO
+};
+# 382 "src/dataconstants.h"
+enum SwitchSources {
+  SWSRC_NONE = 0,
+
+  SWSRC_FIRST_SWITCH,
+# 496 "src/dataconstants.h"
+  SWSRC_ID0 = SWSRC_FIRST_SWITCH,
+  SWSRC_ID1,
+  SWSRC_ID2,
+  SWSRC_THR,
+  SWSRC_RUD,
+  SWSRC_ELE,
+  SWSRC_AIL,
+  SWSRC_GEA,
+  SWSRC_TRN,
+  SWSRC_TRAINER = SWSRC_TRN,
+  SWSRC_LAST_SWITCH = SWSRC_TRN,
+# 516 "src/dataconstants.h"
+  SWSRC_FIRST_TRIM,
+  SWSRC_TrimRudLeft = SWSRC_FIRST_TRIM,
+  SWSRC_TrimRudRight,
+  SWSRC_TrimEleDown,
+  SWSRC_TrimEleUp,
+
+
+  SWSRC_TrimThrDown,
+  SWSRC_TrimThrUp,
+  SWSRC_TrimAilLeft,
+  SWSRC_TrimAilRight,
+# 537 "src/dataconstants.h"
+  SWSRC_REa,
+
+
+  SWSRC_FIRST_LOGICAL_SWITCH,
+  SWSRC_SW1 = SWSRC_FIRST_LOGICAL_SWITCH,
+  SWSRC_SW2,
+
+  SWSRC_LAST_LOGICAL_SWITCH = SWSRC_FIRST_LOGICAL_SWITCH+64 -1,
+
+  SWSRC_ON,
+  SWSRC_ONE,
+
+  SWSRC_FIRST_FLIGHT_MODE,
+  SWSRC_LAST_FLIGHT_MODE = SWSRC_FIRST_FLIGHT_MODE+9 -1,
+
+  SWSRC_TELEMETRY_STREAMING,
+
+  SWSRC_FIRST_SENSOR,
+  SWSRC_LAST_SENSOR = SWSRC_FIRST_SENSOR+40 -1,
+
+  SWSRC_RADIO_ACTIVITY,
+
+
+
+
+
+  SWSRC_COUNT,
+
+  SWSRC_OFF = -SWSRC_ON,
+
+  SWSRC_LAST = SWSRC_COUNT-1,
+  SWSRC_FIRST = -SWSRC_LAST,
+
+  SWSRC_LAST_IN_LOGICAL_SWITCHES = SWSRC_COUNT-1,
+  SWSRC_LAST_IN_MIXES = SWSRC_COUNT-1,
+
+  SWSRC_FIRST_IN_LOGICAL_SWITCHES = -SWSRC_LAST_IN_LOGICAL_SWITCHES,
+  SWSRC_FIRST_IN_MIXES = -SWSRC_LAST_IN_MIXES,
+
+  SWSRC_INVERT = SWSRC_COUNT+1,
+};
+# 587 "src/dataconstants.h"
+enum MixSources {
+  MIXSRC_NONE,
+
+  MIXSRC_FIRST_INPUT, LEXP_MULTIPLE("input", "Input [I%d]", 32)
+  MIXSRC_LAST_INPUT = MIXSRC_FIRST_INPUT+32 -1,
+
+
+  MIXSRC_FIRST_LUA, LEXP_MULTIPLE("lua", "Lua mix output %d", 2*6)
+  MIXSRC_LAST_LUA = MIXSRC_FIRST_LUA+(2*6)-1,
+
+
+  MIXSRC_FIRST_STICK,
+  MIXSRC_Rud = MIXSRC_FIRST_STICK, LEXP("rud", "Rudder")
+  MIXSRC_Ele, LEXP("ele", "Elevator")
+  MIXSRC_Thr, LEXP("thr", "Throttle")
+  MIXSRC_Ail, LEXP("ail", "Aileron")
+
+  MIXSRC_FIRST_POT,
+# 651 "src/dataconstants.h"
+  MIXSRC_P1 = MIXSRC_FIRST_POT,
+  MIXSRC_P2,
+  MIXSRC_P3,
+  MIXSRC_LAST_POT = MIXSRC_P3,
+# 667 "src/dataconstants.h"
+  MIXSRC_MAX,
+
+  MIXSRC_FIRST_HELI,
+  MIXSRC_CYC1 = MIXSRC_FIRST_HELI, LEXP("cyc1", "Cyclic 1")
+  MIXSRC_CYC2, LEXP("cyc2", "Cyclic 2")
+  MIXSRC_CYC3, LEXP("cyc3", "Cyclic 3")
+
+  MIXSRC_FIRST_TRIM,
+  MIXSRC_TrimRud = MIXSRC_FIRST_TRIM, LEXP("trim-rud", "Rudder trim")
+  MIXSRC_TrimEle, LEXP("trim-ele", "Elevator trim")
+  MIXSRC_TrimThr, LEXP("trim-thr", "Throttle trim")
+  MIXSRC_TrimAil, LEXP("trim-ail", "Aileron trim")
+
+
+
+
+
+  MIXSRC_LAST_TRIM = MIXSRC_TrimAil,
+
+
+  MIXSRC_FIRST_SWITCH,
+# 740 "src/dataconstants.h"
+  MIXSRC_3POS = MIXSRC_FIRST_SWITCH,
+  MIXSRC_THR,
+  MIXSRC_RUD,
+  MIXSRC_ELE,
+  MIXSRC_AIL,
+  MIXSRC_GEA,
+  MIXSRC_TRN,
+
+  MIXSRC_FIRST_LOGICAL_SWITCH,
+  MIXSRC_SW1 = MIXSRC_FIRST_LOGICAL_SWITCH, LEXP_MULTIPLE("ls", "Logical switch L%d", 64)
+  MIXSRC_LAST_LOGICAL_SWITCH = MIXSRC_FIRST_LOGICAL_SWITCH+64 -1,
+
+  MIXSRC_FIRST_TRAINER, LEXP_MULTIPLE("trn", "Trainer input %d", 16)
+  MIXSRC_LAST_TRAINER = MIXSRC_FIRST_TRAINER+16 -1,
+
+  MIXSRC_FIRST_CH,
+  MIXSRC_CH1 = MIXSRC_FIRST_CH, LEXP_MULTIPLE("ch", "Channel CH%d", 32)
+  MIXSRC_CH2,
+  MIXSRC_CH3,
+  MIXSRC_CH4,
+  MIXSRC_CH5,
+  MIXSRC_CH6,
+  MIXSRC_CH7,
+  MIXSRC_CH8,
+  MIXSRC_CH9,
+  MIXSRC_CH10,
+  MIXSRC_CH11,
+  MIXSRC_CH12,
+  MIXSRC_CH13,
+  MIXSRC_CH14,
+  MIXSRC_CH15,
+  MIXSRC_CH16,
+  MIXSRC_LAST_CH = MIXSRC_CH1+32 -1,
+
+  MIXSRC_FIRST_GVAR,
+  MIXSRC_GVAR1 = MIXSRC_FIRST_GVAR, LEXP_MULTIPLE("gvar", "Global variable %d", 9)
+  MIXSRC_LAST_GVAR = MIXSRC_FIRST_GVAR+9 -1,
+
+  MIXSRC_TX_VOLTAGE, LEXP("tx-voltage", "Transmitter battery voltage [volts]")
+  MIXSRC_TX_TIME, LEXP("clock", "RTC clock [minutes from midnight]")
+
+
+
+
+  MIXSRC_FIRST_RESERVE,
+  MIXSRC_RESERVE2,
+
+  MIXSRC_RESERVE3,
+  MIXSRC_RESERVE4,
+  MIXSRC_LAST_RESERVE,
+  MIXSRC_FIRST_TIMER,
+  MIXSRC_TIMER1 = MIXSRC_FIRST_TIMER, LEXP("timer1", "Timer 1 value [seconds]")
+  MIXSRC_TIMER2, LEXP("timer2", "Timer 2 value [seconds]")
+  MIXSRC_TIMER3, LEXP("timer3", "Timer 3 value [seconds]")
+  MIXSRC_LAST_TIMER = MIXSRC_TIMER3,
+
+  MIXSRC_FIRST_TELEM, LEXP_MULTIPLE("telem", "Telemetry sensor %d", 40)
+  MIXSRC_LAST_TELEM = MIXSRC_FIRST_TELEM+3*40 -1
+};
+# 810 "src/dataconstants.h"
+enum BacklightMode {
+  e_backlight_mode_off = 0,
+  e_backlight_mode_keys = 1,
+  e_backlight_mode_sticks = 2,
+  e_backlight_mode_all = e_backlight_mode_keys+e_backlight_mode_sticks,
+  e_backlight_mode_on
+};
+
+enum Functions {
+
+  FUNC_OVERRIDE_CHANNEL,
+  FUNC_TRAINER,
+  FUNC_INSTANT_TRIM,
+  FUNC_RESET,
+  FUNC_SET_TIMER,
+  FUNC_ADJUST_GVAR,
+  FUNC_VOLUME,
+  FUNC_SET_FAILSAFE,
+  FUNC_RANGECHECK,
+  FUNC_BIND,
+
+  FUNC_FIRST_WITHOUT_ENABLE,
+  FUNC_PLAY_SOUND = FUNC_FIRST_WITHOUT_ENABLE,
+  FUNC_PLAY_TRACK,
+  FUNC_PLAY_VALUE,
+  FUNC_RESERVE4,
+  FUNC_PLAY_SCRIPT,
+  FUNC_RESERVE5,
+  FUNC_BACKGND_MUSIC,
+  FUNC_BACKGND_MUSIC_PAUSE,
+  FUNC_VARIO,
+  FUNC_HAPTIC,
+  FUNC_LOGS,
+  FUNC_BACKLIGHT,
+  FUNC_SCREENSHOT,
+
+
+
+  FUNC_MAX
+};
+
+enum TimerModes {
+  TMRMODE_NONE,
+  TMRMODE_ABS,
+  TMRMODE_THR,
+  TMRMODE_THR_REL,
+  TMRMODE_THR_TRG,
+  TMRMODE_COUNT
+};
+
+enum CountDownModes {
+  COUNTDOWN_SILENT,
+  COUNTDOWN_BEEPS,
+  COUNTDOWN_VOICE,
+
+
+
+  COUNTDOWN_COUNT
+};
+
+enum ResetFunctionParam {
+  FUNC_RESET_TIMER1,
+  FUNC_RESET_TIMER2,
+  FUNC_RESET_TIMER3,
+  FUNC_RESET_FLIGHT,
+  FUNC_RESET_TELEMETRY,
+  FUNC_RESET_PARAM_FIRST_TELEM,
+  FUNC_RESET_PARAM_LAST_TELEM = FUNC_RESET_PARAM_FIRST_TELEM + 40,
+  FUNC_RESET_PARAMS_COUNT,
+  FUNC_RESET_PARAM_LAST = FUNC_RESET_PARAMS_COUNT-1,
+};
+
+enum AdjustGvarFunctionParam {
+  FUNC_ADJUST_GVAR_CONSTANT,
+  FUNC_ADJUST_GVAR_SOURCE,
+  FUNC_ADJUST_GVAR_GVAR,
+  FUNC_ADJUST_GVAR_INCDEC,
+};
+
+enum BluetoothModes {
+  BLUETOOTH_OFF,
+  BLUETOOTH_TELEMETRY,
+  BLUETOOTH_TRAINER,
+};

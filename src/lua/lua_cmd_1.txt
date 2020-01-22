@@ -1,0 +1,1 @@
+D:\Work\arm-eabi\bin\arm-none-eabi-gcc.exe -E -DCPUARM -DLUA -DLUA_INPUTS -DLUA_EXPORT_GENERATION -DSIMU -Isrc/targets/sky9x -Isrc/thirdparty -DPCBSKY9X -DREVX -DEXPORT src/dataconstants.h > lua_exports_sky9x.txt
