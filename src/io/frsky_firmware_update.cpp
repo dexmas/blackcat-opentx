@@ -342,12 +342,14 @@ const char * FrskyDeviceFirmwareUpdate::doFlashFirmware(const char * filename)
       break;
   }
 
+#if !defined(PCBSKY9X)
   if (module == INTERNAL_MODULE)
     INTERNAL_MODULE_ON();
   else if (module == EXTERNAL_MODULE)
     EXTERNAL_MODULE_ON();
   else
     SPORT_UPDATE_POWER_ON();
+#endif
 
   result = uploadFileNormal(filename, &file);
   f_close(&file);
@@ -484,10 +486,12 @@ const char * FrskyDeviceFirmwareUpdate::flashFirmware(const char * filename)
   INTERNAL_MODULE_OFF();
 #endif
 
+#if !defined(PCBSKY9X)
   uint8_t extPwr = IS_EXTERNAL_MODULE_ON();
   EXTERNAL_MODULE_OFF();
 
   SPORT_UPDATE_POWER_OFF();
+#endif
 
   drawProgressScreen(getBasename(filename), STR_DEVICE_RESET, 0, 0);
 
@@ -508,11 +512,13 @@ const char * FrskyDeviceFirmwareUpdate::flashFirmware(const char * filename)
     POPUP_INFORMATION(STR_FIRMWARE_UPDATE_SUCCESS);
   }
 
+#if !defined(PCBSKY9X)
 #if defined(HARDWARE_INTERNAL_MODULE)
   INTERNAL_MODULE_OFF();
 #endif
   EXTERNAL_MODULE_OFF();
   SPORT_UPDATE_POWER_OFF();
+#endif
 
   /* wait 2s off */
   watchdogSuspend(500 /*5s*/);
@@ -526,10 +532,12 @@ const char * FrskyDeviceFirmwareUpdate::flashFirmware(const char * filename)
   }
 #endif
 
+#if !defined(PCBSKY9X)
   if (extPwr) {
     EXTERNAL_MODULE_ON();
     setupPulsesExternalModule();
   }
+#endif
 
   state = SPORT_IDLE;
   resumePulses();
@@ -749,10 +757,12 @@ const char * FrskyChipFirmwareUpdate::flashFirmware(const char * filename, bool 
   INTERNAL_MODULE_OFF();
 #endif
 
+#if !defined(PCBSKY9X)
   uint8_t extPwr = IS_EXTERNAL_MODULE_ON();
   EXTERNAL_MODULE_OFF();
 
   SPORT_UPDATE_POWER_OFF();
+#endif
 
   if (wait) {
     /* wait 2s off */
@@ -786,10 +796,12 @@ const char * FrskyChipFirmwareUpdate::flashFirmware(const char * filename, bool 
   }
 #endif
 
+#if !defined(PCBSKY9X)
   if (extPwr) {
     EXTERNAL_MODULE_ON();
     setupPulsesExternalModule();
   }
+#endif
 
   resumePulses();
 

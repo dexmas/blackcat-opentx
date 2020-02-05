@@ -34,7 +34,7 @@ PACK(union SportTelemetryPacket
   uint8_t raw[8];
 });
 
-#if defined(STM32)
+#if defined(STM32) || defined(PCBSKY9X)
 bool isBootloader(const char * filename);
 void bootloaderFlash(const char * filename);
 #endif

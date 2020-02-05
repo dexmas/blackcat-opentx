@@ -489,3 +489,66 @@ void boardOff()
 {
   pwrOff();
 }
+
+uint32_t isBootloaderStart(const uint8_t* buffer)
+{
+    uint32_t i;
+    uint8_t* bytes;
+
+    if ((buffer[0] & 0xFFFE3000) != 0x20000000)
+    {
+        return 0;
+    }
+    if ((buffer[1] & 0xFFF80000) != 0x00400000)
+    {
+        return 0;
+    }
+    if ((buffer[2] & 0xFFF80000) != 0x00400000)
+    {
+        return 0;
+    }
+
+    bytes = (uint8_t*)buffer;
+    for (i = 0; i < 1018; i += 1)
+    {
+        if (bytes[i] == 'B')
+        {
+            if (bytes[i + 1] == 'O')
+            {
+                if (bytes[i + 2] == 'O')
+                {
+                    if (bytes[i + 3] == 'T')
+                    {
+                        return (bytes[i + 4] << 8) + bytes[i + 5];
+                    }
+                }
+            }
+        }
+    }
+    return 0;
+}
+
+void sportSendByte(uint8_t byte) 
+{
+    sportSendBuffer(&byte, 1);
+}
+
+bool telemetryGetByte(uint8_t* byte)
+{
+    return telemetrySecondPortReceive(*byte);
+}
+
+void telemetryClearFifo()
+{
+    void startPdcUsartReceive();
+}
+
+void telemetryPortSetDirectionOutput()
+{
+
+}
+
+void telemetryPortSetDirectionInput()
+{
+    startPdcUsartReceive();
+}

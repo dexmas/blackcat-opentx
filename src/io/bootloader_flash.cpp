@@ -44,11 +44,13 @@ void bootloaderFlash(const char * filename)
 
   f_open(&file, filename, FA_READ);
 
+#if !defined(PCBSKY9X)
   static uint8_t unlocked = 0;
   if (!unlocked) {
     unlocked = 1;
     unlockFlash();
   }
+#endif
 
   for (int i = 0; i < BOOTLOADER_SIZE; i += 1024) {
     watchdogSuspend(1000/*10s*/);
@@ -74,10 +76,12 @@ void bootloaderFlash(const char * filename)
   watchdogSuspend(0);
   WDG_RESET();
 
+#if !defined(PCBSKY9X)
   if (unlocked) {
     lockFlash();
     unlocked = 0;
   }
+#endif
 
   f_close(&file);
 

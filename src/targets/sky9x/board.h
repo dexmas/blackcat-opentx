@@ -389,10 +389,10 @@ void eepromStartWrite(uint8_t * buffer, size_t address, size_t size);
 void debugPutc(const char c);
 
 // Telemetry driver
+void startPdcUsartReceive();
 void telemetryPortInit(uint32_t baudrate, uint8_t mode);
-inline void telemetryPortSetDirectionOutput()
-{
-}
+void telemetryPortSetDirectionOutput();
+void telemetryPortSetDirectionInput();
 uint32_t telemetryTransmitPending();
 void telemetryTransmitBuffer(const uint8_t * buffer, uint32_t size);
 void rxPdcUsart( void (*pChProcess)(uint8_t x) );
@@ -406,5 +406,10 @@ bool telemetrySecondPortReceive(uint8_t & data);
 #endif
 
 extern const uint8_t BootCode[];
+
+uint32_t isBootloaderStart(const uint8_t* buffer);
+void sportSendByte(uint8_t byte);
+bool telemetryGetByte(uint8_t* byte);
+void telemetryClearFifo();
 
 #endif // _BOARD_SKY9X_H_

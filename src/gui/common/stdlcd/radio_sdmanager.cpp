@@ -391,29 +391,35 @@ void menuRadioSdManager(event_t _event)
             }
           }
 #endif
-#if defined(PCBTARANIS)
+#if defined(PCBTARANIS) || defined(PCBSKY9X)
           if (!READ_ONLY() && !strcasecmp(ext, FIRMWARE_EXT)) {
             if (isBootloader(lfn)) {
               POPUP_MENU_ADD_ITEM(STR_FLASH_BOOTLOADER);
             }
           }
           else if (!READ_ONLY() && !strcasecmp(ext, SPORT_FIRMWARE_EXT)) {
+#if defined(PCBTARANIS)
             if (HAS_SPORT_UPDATE_CONNECTOR())
               POPUP_MENU_ADD_ITEM(STR_FLASH_EXTERNAL_DEVICE);
             POPUP_MENU_ADD_ITEM(STR_FLASH_INTERNAL_MODULE);
+#endif
             POPUP_MENU_ADD_ITEM(STR_FLASH_EXTERNAL_MODULE);
           }
           else if (!READ_ONLY() && !strcasecmp(ext, FRSKY_FIRMWARE_EXT)) {
             FrSkyFirmwareInformation information;
             if (readFrSkyFirmwareInformation(line, information) == nullptr) {
+#if defined(PCBTARANIS)
               if (information.productFamily == FIRMWARE_FAMILY_INTERNAL_MODULE)
                 POPUP_MENU_ADD_ITEM(STR_FLASH_INTERNAL_MODULE);
+#endif
               if (information.productFamily == FIRMWARE_FAMILY_EXTERNAL_MODULE)
                 POPUP_MENU_ADD_ITEM(STR_FLASH_EXTERNAL_MODULE);
               if (information.productFamily == FIRMWARE_FAMILY_RECEIVER || information.productFamily == FIRMWARE_FAMILY_SENSOR) {
+#if defined(PCBTARANIS)
                 if (HAS_SPORT_UPDATE_CONNECTOR())
                   POPUP_MENU_ADD_ITEM(STR_FLASH_EXTERNAL_DEVICE);
                 else
+#endif
                   POPUP_MENU_ADD_ITEM(STR_FLASH_EXTERNAL_MODULE);
               }
 #if defined(PXX2)
