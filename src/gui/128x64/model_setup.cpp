@@ -1464,7 +1464,7 @@ void menuModelSetup(event_t event)
           MultiModuleStatus &status = getMultiModuleStatus(moduleIdx);
           const uint8_t multi_proto = g_model.moduleData[moduleIdx].getMultiProtocol();
 
-          if (status.isValid()) {
+          /*if (status.isValid()) {
             MultiModuleStatus &status = getMultiModuleStatus(moduleIdx);
             lcdDrawText(INDENT_WIDTH, y, mm_options_strings::options[status.optionDisp]);
             if (attr && status.optionDisp == 2) {
@@ -1473,7 +1473,7 @@ void menuModelSetup(event_t event)
               lcdDrawText(lcdLastRightPos, y, ")", LEFT);
             }
           }
-          else {
+          else */{
             const mm_protocol_definition * pdef = getMultiProtocolDefinition(multi_proto);
             if (pdef->optionsstr) {
               lcdDrawText(INDENT_WIDTH, y, pdef->optionsstr);
