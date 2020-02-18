@@ -32,18 +32,6 @@ unsigned char msdBuffer[MSD_BUFFER_SIZE];
 
 unsigned int msdReadTotal=0, msdWriteTotal=0;
 
-static void ConfigureUsbClock(void)
-{
-    /* Enable PLLB for USB */
-    PMC->CKGR_PLLBR = CKGR_PLLBR_DIVB(1)
-                    | CKGR_PLLBR_MULB(7)
-                    | CKGR_PLLBR_PLLBCOUNT_Msk;
-    while((PMC->PMC_SR & PMC_SR_LOCKB) == 0); // TODO  && (timeout++ < CLOCK_TIMEOUT));
-    /* USB Clock uses PLLB */
-    PMC->PMC_USB = PMC_USB_USBDIV(1)    /* /2   */
-                 | PMC_USB_USBS;        /* PLLB */
-}
-
 /** Maximum number of LUNs which can be defined. */
 #define MAX_LUNS            1
 
@@ -164,7 +152,7 @@ void usbMassStorage()
 {
   static bool initialized = false;
 
-  if (usbPlugged() && sd_card_ready()) {
+  if (sd_card_ready()) {
     TRACE_DEBUG("usbMassStorage\n\r");
 
     if (sdMounted()) {
@@ -175,9 +163,6 @@ void usbMassStorage()
     }
 
     if (!initialized) {
-
-      ConfigureUsbClock();
-
       /* Initialize LUN */
       MEDSdcard_Initialize(&(medias[DRV_SDMMC]), 0);
 

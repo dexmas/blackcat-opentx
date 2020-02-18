@@ -43,7 +43,7 @@ void flashWrite(uint32_t * address, const uint32_t * buffer)    // size is 256 b
 
   __disable_irq();
   /* Call the IAP function with appropriate command */
-  i = IAP_Function(0, flash_cmd);
+  IAP_Function(0, flash_cmd);
   __enable_irq();
 }
 

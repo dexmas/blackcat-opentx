@@ -1322,7 +1322,7 @@ void varioWakeup();
   extern const unsigned char logo_taranis[];
 #endif
 
-#if defined(STM32)
+#if defined(STM32) || defined(PCBSKY9X)
 void usbPluggedIn();
 #endif
 

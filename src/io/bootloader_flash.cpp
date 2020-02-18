@@ -31,7 +31,7 @@ bool isBootloader(const char * filename)
     return false;
   }
 
-  return isBootloaderStart(buffer);
+  return isBootloaderStart((uint32_t*)buffer);
 }
 
 void bootloaderFlash(const char * filename)
@@ -58,7 +58,7 @@ void bootloaderFlash(const char * filename)
       POPUP_WARNING(STR_SDCARD_ERROR);
       break;
     }
-    if (i == 0 && !isBootloaderStart(buffer)) {
+    if (i == 0 && !isBootloaderStart((uint32_t*)buffer)) {
       POPUP_WARNING(STR_INCOMPATIBLE);
       break;
     }

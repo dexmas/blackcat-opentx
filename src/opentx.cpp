@@ -1624,7 +1624,7 @@ void opentxClose(uint8_t shutdown)
 #endif
 }
 
-#if defined(STM32)
+#if defined(STM32) || defined(PCBSKY9X)
 void opentxResume()
 {
   TRACE("opentxResume");

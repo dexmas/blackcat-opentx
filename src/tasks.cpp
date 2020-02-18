@@ -174,14 +174,10 @@ TASK_FUNCTION(mixerTask)
       RTOS_UNLOCK_MUTEX(mixerMutex);
       DEBUG_TIMER_STOP(debugTimerMixer);
 
-#if defined(STM32) && !defined(SIMU)
+#if (defined(STM32) || defined(PCBSKY9X)) && !defined(SIMU)
       if (getSelectedUsbMode() == USB_JOYSTICK_MODE) {
         usbJoystickUpdate();
       }
-#endif
-
-#if defined(PCBSKY9X) && !defined(SIMU)
-      usbJoystickUpdate();
 #endif
 
       DEBUG_TIMER_START(debugTimerTelemetryWakeup);

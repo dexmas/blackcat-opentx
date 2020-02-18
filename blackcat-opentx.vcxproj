@@ -82,7 +82,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">
     <ClCompile>
-      <PreprocessorDefinitions>at91sam3s8;REVX;PCBSKY9X;RTOS_COOS;FLAVOUR="9xrpro";REQUIRED_SDCARD_VERSION="2.3.0";FONT=SQT5;TRANSLATIONS="EN";TRANSLATIONS_EN;PPM_PIN_SERIAL;AUDIO_DUAL_BUFFER;AUDIO;VOICE;RTCLOCK;RUN_FROM_FLASH=1;EEPROM;EEPROM_RAW;EEPROM_CONVERSIONS;SPLASH;TIMERS=2;HAPTIC;MULTIMODULE;VIRTUAL_INPUTS;TELEMETRY_FRSKY;TELEMETRY_FRSKY_SPORT;FRSKY_HUB;GPS;PXX;DSM2;BOLD_FONT;BATTGRAPH;THRTRACE;GAUGES;VARIO;GRAPHICS;FLIGHT_MODES;EEPROM_VARIANT=1;CURVES;AUTOSOURCE;AUTOSWITCH;SDCARD;PPM_UNIT_US;PPM_CENTER_ADJUSTABLE;PPM_LIMITS_SYMETRICAL;OVERRIDE_CHANNEL_FUNCTION;DANGEROUS_MODULE_FUNCTIONS;GUI;CPUARM;CORRECT_NEGATIVE_SHIFTS;DISABLE_MULTI_UPDATE;NAVIGATION_9X;BUZZER;PXX1;WATCHDOG;POPUP_LEVEL=2;CROSSFIRE;%(ClCompile.PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>at91sam3s8;REVX;PCBSKY9X;RTOS_COOS;FLAVOUR="9xrpro";REQUIRED_SDCARD_VERSION="2.3.0";FONT=SQT5;TRANSLATIONS="EN";TRANSLATIONS_EN;PPM_PIN_SERIAL;AUDIO_DUAL_BUFFER;AUDIO;VOICE;RTCLOCK;RUN_FROM_FLASH=1;EEPROM;EEPROM_RAW;EEPROM_CONVERSIONS;SPLASH;TIMERS=2;HAPTIC;MULTIMODULE;VIRTUAL_INPUTS;TELEMETRY_FRSKY;TELEMETRY_FRSKY_SPORT;FRSKY_HUB;GPS;PXX;DSM2;BOLD_FONT;BATTGRAPH;THRTRACE;GAUGES;VARIO;GRAPHICS;FLIGHT_MODES;EEPROM_VARIANT=1;CURVES;AUTOSOURCE;AUTOSWITCH;SDCARD;PPM_UNIT_US;PPM_CENTER_ADJUSTABLE;PPM_LIMITS_SYMETRICAL;OVERRIDE_CHANNEL_FUNCTION;DANGEROUS_MODULE_FUNCTIONS;GUI;CPUARM;CORRECT_NEGATIVE_SHIFTS;DISABLE_MULTI_UPDATE;NAVIGATION_9X;BUZZER;PXX1;WATCHDOG;POPUP_LEVEL=2;CROSSFIRE;GVARS;LUA;LUA_INPUTS;LUA_MODEL_SCRIPTS;USB_SERIAL;%(ClCompile.PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>src;src\gui;src\gui\128x64;src\thirdparty;src\thirdparty\CoOS;src\thirdparty\CoOS\kernel;src\thirdparty\CoOS\portable;src\thirdparty\FatFs;src\thirdparty\FatFs\option;src\thirdparty\Lua\src;src\targets\sky9x;data;data\bitmaps;data\bitmaps\128x64;data\fonts\sqt5;%(ClCompile.AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PrecompiledHeaderDirectory />
       <Optimization>Os</Optimization>
@@ -143,17 +143,11 @@
     <ClCompile Include="src\gui\128x64\menu_model.cpp" />
     <ClCompile Include="src\gui\128x64\menu_radio.cpp" />
     <ClCompile Include="src\gui\128x64\model_curve_edit.cpp" />
-    <ClCompile Include="src\gui\128x64\model_custom_scripts.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">true</ExcludedFromBuild>
-    </ClCompile>
+    <ClCompile Include="src\gui\128x64\model_custom_scripts.cpp" />
     <ClCompile Include="src\gui\128x64\model_display.cpp" />
     <ClCompile Include="src\gui\128x64\model_failsafe.cpp" />
     <ClCompile Include="src\gui\128x64\model_flightmodes.cpp" />
-    <ClCompile Include="src\gui\128x64\model_gvars.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">true</ExcludedFromBuild>
-    </ClCompile>
+    <ClCompile Include="src\gui\128x64\model_gvars.cpp" />
     <ClCompile Include="src\gui\128x64\model_input_edit.cpp" />
     <ClCompile Include="src\gui\128x64\model_logical_switches.cpp" />
     <ClCompile Include="src\gui\128x64\model_mix_edit.cpp" />
@@ -219,10 +213,7 @@
     <ClCompile Include="src\gui\navigation\common.cpp" />
     <ClCompile Include="src\gui\navigation\navigation_9x.cpp" />
     <ClCompile Include="src\gui\screenshot.cpp" />
-    <ClCompile Include="src\gvars.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">true</ExcludedFromBuild>
-    </ClCompile>
+    <ClCompile Include="src\gvars.cpp" />
     <ClCompile Include="src\gyro.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">true</ExcludedFromBuild>
@@ -236,22 +227,10 @@
     </ClCompile>
     <ClCompile Include="src\keys.cpp" />
     <ClCompile Include="src\logs.cpp" />
-    <ClCompile Include="src\lua\api_general.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="src\lua\api_lcd.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="src\lua\api_model.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="src\lua\interface.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">true</ExcludedFromBuild>
-    </ClCompile>
+    <ClCompile Include="src\lua\api_general.cpp" />
+    <ClCompile Include="src\lua\api_lcd.cpp" />
+    <ClCompile Include="src\lua\api_model.cpp" />
+    <ClCompile Include="src\lua\interface.cpp" />
     <ClCompile Include="src\lua\widgets.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">true</ExcludedFromBuild>
@@ -334,16 +313,23 @@
     <ClCompile Include="src\targets\sky9x\crt.c" />
     <ClCompile Include="src\targets\sky9x\diskio.cpp" />
     <ClCompile Include="src\targets\sky9x\eeprom_driver.cpp" />
-    <ClCompile Include="src\targets\sky9x\flash_driver.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">true</ExcludedFromBuild>
-    </ClCompile>
+    <ClCompile Include="src\targets\sky9x\flash_driver.cpp" />
     <ClCompile Include="src\targets\sky9x\haptic_driver.cpp" />
     <ClCompile Include="src\targets\sky9x\i2c_driver.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="src\targets\sky9x\joystick.cpp" />
+    <ClCompile Include="src\targets\sky9x\usb_massstorage.cpp" />
+    <ClCompile Include="src\targets\sky9x\usb\common\cdc\CDCLineCoding.c" />
+    <ClCompile Include="src\targets\sky9x\usb\common\cdc\CDCSetControlLineStateRequest.c" />
+    <ClCompile Include="src\targets\sky9x\usb\device\cdc-serial\CDCDSerialDriver.c" />
+    <ClCompile Include="src\targets\sky9x\usb\device\cdc-serial\CDCDSerialDriverDescriptors.c" />
+    <ClCompile Include="src\targets\sky9x\usb\device\massstorage\MSDDriver.c" />
+    <ClCompile Include="src\targets\sky9x\usb\device\massstorage\MSDDriverDescriptors.c" />
+    <ClCompile Include="src\targets\sky9x\usb\device\massstorage\MSDDStateMachine.c" />
+    <ClCompile Include="src\targets\sky9x\usb\device\massstorage\MSDLun.c" />
+    <ClCompile Include="src\targets\sky9x\usb\device\massstorage\SBCMethods.c" />
+    <ClCompile Include="src\targets\sky9x\usb_driver.cpp" />
     <ClCompile Include="src\targets\sky9x\keys_driver.cpp" />
     <ClCompile Include="src\targets\sky9x\lcd_driver.cpp" />
     <ClCompile Include="src\targets\sky9x\MEDSdcard.c" />
@@ -374,6 +360,7 @@
     <ClCompile Include="src\targets\sky9x\usb\device\core\USBD_HAL.c" />
     <ClCompile Include="src\targets\sky9x\usb\device\hid\device_descriptor.c" />
     <ClCompile Include="src\targets\sky9x\usb\device\hid\HIDDJoystickDriver.c" />
+    <ClCompile Include="src\targets\sky9x\usb_serial.cpp" />
     <ClCompile Include="src\targets\sky9x\vectors_sam3s.c" />
     <ClCompile Include="src\tasks.cpp" />
     <ClCompile Include="src\telemetry\crossfire.cpp" />
@@ -388,126 +375,36 @@
     <ClCompile Include="src\telemetry\spektrum.cpp" />
     <ClCompile Include="src\telemetry\telemetry.cpp" />
     <ClCompile Include="src\telemetry\telemetry_sensors.cpp" />
-    <ClCompile Include="src\thirdparty\Lua\src\lapi.c">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="src\thirdparty\Lua\src\lauxlib.c">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="src\thirdparty\Lua\src\lbaselib.c">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="src\thirdparty\Lua\src\lbitlib.c">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="src\thirdparty\Lua\src\lcode.c">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="src\thirdparty\Lua\src\lcorolib.c">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="src\thirdparty\Lua\src\lctype.c">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="src\thirdparty\Lua\src\ldebug.c">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="src\thirdparty\Lua\src\ldo.c">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="src\thirdparty\Lua\src\ldump.c">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="src\thirdparty\Lua\src\lfunc.c">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="src\thirdparty\Lua\src\lgc.c">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="src\thirdparty\Lua\src\linit.c">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="src\thirdparty\Lua\src\liolib.c">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="src\thirdparty\Lua\src\llex.c">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="src\thirdparty\Lua\src\lmathlib.c">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="src\thirdparty\Lua\src\lmem.c">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="src\thirdparty\Lua\src\loadlib.c">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="src\thirdparty\Lua\src\lobject.c">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="src\thirdparty\Lua\src\lopcodes.c">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="src\thirdparty\Lua\src\lparser.c">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="src\thirdparty\Lua\src\lrotable.c">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="src\thirdparty\Lua\src\lstate.c">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="src\thirdparty\Lua\src\lstring.c">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="src\thirdparty\Lua\src\lstrlib.c">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="src\thirdparty\Lua\src\ltable.c">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="src\thirdparty\Lua\src\ltm.c">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="src\thirdparty\Lua\src\lundump.c">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="src\thirdparty\Lua\src\lvm.c">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="src\thirdparty\Lua\src\lzio.c">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">true</ExcludedFromBuild>
-    </ClCompile>
+    <ClCompile Include="src\thirdparty\Lua\src\lapi.c" />
+    <ClCompile Include="src\thirdparty\Lua\src\lauxlib.c" />
+    <ClCompile Include="src\thirdparty\Lua\src\lbaselib.c" />
+    <ClCompile Include="src\thirdparty\Lua\src\lbitlib.c" />
+    <ClCompile Include="src\thirdparty\Lua\src\lcode.c" />
+    <ClCompile Include="src\thirdparty\Lua\src\lcorolib.c" />
+    <ClCompile Include="src\thirdparty\Lua\src\lctype.c" />
+    <ClCompile Include="src\thirdparty\Lua\src\ldebug.c" />
+    <ClCompile Include="src\thirdparty\Lua\src\ldo.c" />
+    <ClCompile Include="src\thirdparty\Lua\src\ldump.c" />
+    <ClCompile Include="src\thirdparty\Lua\src\lfunc.c" />
+    <ClCompile Include="src\thirdparty\Lua\src\lgc.c" />
+    <ClCompile Include="src\thirdparty\Lua\src\linit.c" />
+    <ClCompile Include="src\thirdparty\Lua\src\liolib.c" />
+    <ClCompile Include="src\thirdparty\Lua\src\llex.c" />
+    <ClCompile Include="src\thirdparty\Lua\src\lmathlib.c" />
+    <ClCompile Include="src\thirdparty\Lua\src\lmem.c" />
+    <ClCompile Include="src\thirdparty\Lua\src\loadlib.c" />
+    <ClCompile Include="src\thirdparty\Lua\src\lobject.c" />
+    <ClCompile Include="src\thirdparty\Lua\src\lopcodes.c" />
+    <ClCompile Include="src\thirdparty\Lua\src\lparser.c" />
+    <ClCompile Include="src\thirdparty\Lua\src\lrotable.c" />
+    <ClCompile Include="src\thirdparty\Lua\src\lstate.c" />
+    <ClCompile Include="src\thirdparty\Lua\src\lstring.c" />
+    <ClCompile Include="src\thirdparty\Lua\src\lstrlib.c" />
+    <ClCompile Include="src\thirdparty\Lua\src\ltable.c" />
+    <ClCompile Include="src\thirdparty\Lua\src\ltm.c" />
+    <ClCompile Include="src\thirdparty\Lua\src\lundump.c" />
+    <ClCompile Include="src\thirdparty\Lua\src\lvm.c" />
+    <ClCompile Include="src\thirdparty\Lua\src\lzio.c" />
     <ClCompile Include="src\timers.cpp" />
     <ClCompile Include="src\trainer.cpp" />
     <ClCompile Include="src\translations.cpp" />
@@ -602,6 +499,17 @@
     <ClInclude Include="src\targets\sky9x\core_cm3.h" />
     <ClInclude Include="src\targets\sky9x\i2c_driver.h" />
     <ClInclude Include="src\targets\sky9x\Media.h" />
+    <ClInclude Include="src\targets\sky9x\usb\common\cdc\CDCAbstractControlManagementDescriptor.h" />
+    <ClInclude Include="src\targets\sky9x\usb\common\cdc\CDCCallManagementDescriptor.h" />
+    <ClInclude Include="src\targets\sky9x\usb\common\cdc\CDCCommunicationInterfaceDescriptor.h" />
+    <ClInclude Include="src\targets\sky9x\usb\common\cdc\CDCDataInterfaceDescriptor.h" />
+    <ClInclude Include="src\targets\sky9x\usb\common\cdc\CDCDeviceDescriptor.h" />
+    <ClInclude Include="src\targets\sky9x\usb\common\cdc\CDCGenericDescriptor.h" />
+    <ClInclude Include="src\targets\sky9x\usb\common\cdc\CDCGenericRequest.h" />
+    <ClInclude Include="src\targets\sky9x\usb\common\cdc\CDCHeaderDescriptor.h" />
+    <ClInclude Include="src\targets\sky9x\usb\common\cdc\CDCLineCoding.h" />
+    <ClInclude Include="src\targets\sky9x\usb\common\cdc\CDCSetControlLineStateRequest.h" />
+    <ClInclude Include="src\targets\sky9x\usb\common\cdc\CDCUnionDescriptor.h" />
     <ClInclude Include="src\targets\sky9x\usb\common\core\USBDescriptors.h" />
     <ClInclude Include="src\targets\sky9x\usb\common\core\USBLib_Trace.h" />
     <ClInclude Include="src\targets\sky9x\usb\common\core\USBLib_Types.h" />
@@ -613,6 +521,8 @@
     <ClInclude Include="src\targets\sky9x\usb\common\hid\HIDUsages.h" />
     <ClInclude Include="src\targets\sky9x\usb\common\massstorage\MSDeviceDescriptor.h" />
     <ClInclude Include="src\targets\sky9x\usb\common\massstorage\MSInterfaceDescriptor.h" />
+    <ClInclude Include="src\targets\sky9x\usb\device\cdc-serial\CDCDSerialDriver.h" />
+    <ClInclude Include="src\targets\sky9x\usb\device\cdc-serial\CDCDSerialDriverDescriptors.h" />
     <ClInclude Include="src\targets\sky9x\usb\device\core\pmc.h" />
     <ClInclude Include="src\targets\sky9x\usb\device\core\USBD.h" />
     <ClInclude Include="src\targets\sky9x\usb\device\core\USBDDriver.h" />
@@ -627,6 +537,7 @@
     <ClInclude Include="src\targets\sky9x\usb\device\massstorage\MSDLun.h" />
     <ClInclude Include="src\targets\sky9x\usb\device\massstorage\SBC.h" />
     <ClInclude Include="src\targets\sky9x\usb\device\massstorage\SBCMethods.h" />
+    <ClInclude Include="src\targets\sky9x\usb_driver.h" />
     <ClInclude Include="src\tasks.h" />
     <ClInclude Include="src\telemetry\crossfire.h" />
     <ClInclude Include="src\telemetry\flysky_ibus.h" />

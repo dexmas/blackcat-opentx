@@ -293,5 +293,7 @@ void startJoystick(void)
 	/* Enable UPLL for USB */
 	_ConfigureUsbClock();
     HIDDJoystickDriver_Initialize(&hiddJoystickDriverDescriptors);
+
+    USBD_Connect();
 }
 

@@ -386,6 +386,8 @@ void boardInit()
   rotaryEncoderInit();
 #endif
 
+  usbInit();
+
   lcdInit();
 
   init_SDcard();
@@ -490,7 +492,7 @@ void boardOff()
   pwrOff();
 }
 
-uint32_t isBootloaderStart(const uint8_t* buffer)
+uint32_t isBootloaderStart(const uint32_t* buffer)
 {
     uint32_t i;
     uint8_t* bytes;

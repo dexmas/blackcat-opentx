@@ -24,7 +24,7 @@ uint8_t currentSpeakerVolume = 255;
 uint8_t requiredSpeakerVolume = 255;
 uint8_t mainRequestFlags = 0;
 
-#if defined(STM32)
+#if defined(STM32) || defined(PCBSKY9X)
 void onUSBConnectMenu(const char *result)
 {
   if (result == STR_USB_MASS_STORAGE) {
@@ -41,13 +41,13 @@ void onUSBConnectMenu(const char *result)
 
 void handleUsbConnection()
 {
-#if defined(STM32) && !defined(SIMU)
+#if (defined(STM32) || defined(PCBSKY9X)) && !defined(SIMU)
   if (!usbStarted() && usbPlugged()) {
     if (getSelectedUsbMode() == USB_UNSELECTED_MODE) {
       if (g_eeGeneral.USBMode == USB_UNSELECTED_MODE && popupMenuItemsCount == 0) {
         POPUP_MENU_ADD_ITEM(STR_USB_JOYSTICK);
         POPUP_MENU_ADD_ITEM(STR_USB_MASS_STORAGE);
-#if defined(DEBUG)
+#if defined(USB_SERIAL)
         POPUP_MENU_ADD_ITEM(STR_USB_SERIAL);
 #endif
         POPUP_MENU_START(onUSBConnectMenu);
@@ -73,7 +73,7 @@ void handleUsbConnection()
     }
     setSelectedUsbMode(USB_UNSELECTED_MODE);
   }
-#endif // defined(STM32) && !defined(SIMU)
+#endif // (defined(STM32) || defined(PCBSKY9X)) && !defined(SIMU)
 }
 
 #if defined(JACK_DETECT_GPIO) && !defined(SIMU)
@@ -503,7 +503,7 @@ void perMain()
   }
 #endif
 
-#if defined(STM32)
+#if defined(STM32) || defined(PCBSKY9X)
   if (!usbPlugged() && SD_CARD_PRESENT() && !sdMounted()) {
     sdMount();
   }
@@ -517,7 +517,7 @@ void perMain()
   }
 #endif
 
-#if defined(STM32)
+#if defined(STM32) || defined(PCBSKY9X)
   if (usbPlugged() && getSelectedUsbMode() == USB_MASS_STORAGE_MODE) {
     // disable access to menus
     lcdClear();

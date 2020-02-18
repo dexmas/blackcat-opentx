@@ -26,6 +26,7 @@
 #include <stdio.h>
 #include "board_lowlevel.h"
 #include "audio_driver.h"
+#include "usb_driver.h"
 #include "../opentx_constants.h"
 
 extern uint16_t ResetReason;
@@ -167,10 +168,6 @@ void lcdRefresh();
 void lcdSetRefVolt(uint8_t val);
 void lcdSetContrast();
 
-#if !defined(SIMU)
-void usbJoystickUpdate();
-#endif
-
 #define PIN_ENABLE                     0x001
 #define PIN_PERIPHERAL                 0x000
 #define PIN_INPUT                      0x002
@@ -246,6 +243,7 @@ extern "C" {
 #endif
   void init_SDcard();
   void sdInit();
+  void sdMount();
   void sdDone();
   uint32_t sd_card_ready();
   uint32_t sdMounted();
@@ -385,6 +383,10 @@ void eepromBlockErase(uint32_t address);
 void eepromStartRead(uint8_t * buffer, size_t address, size_t size);
 void eepromStartWrite(uint8_t * buffer, size_t address, size_t size);
 
+#if !defined(SIMU)
+void usbJoystickUpdate();
+#endif
+
 // Debug driver
 void debugPutc(const char c);
 
@@ -407,7 +409,7 @@ bool telemetrySecondPortReceive(uint8_t & data);
 
 extern const uint8_t BootCode[];
 
-uint32_t isBootloaderStart(const uint8_t* buffer);
+uint32_t isBootloaderStart(const uint32_t* buffer);
 void sportSendByte(uint8_t byte);
 bool telemetryGetByte(uint8_t* byte);
 void telemetryClearFifo();
