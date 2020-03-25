@@ -2168,6 +2168,7 @@ uint32_t pwrCheck()
       RAISE_ALERT(STR_MODEL, STR_MODEL_STILL_POWERED, STR_PRESS_ENTER_TO_CONFIRM, AU_MODEL_STILL_POWERED);
       while (TELEMETRY_STREAMING()) {
         resetForcePowerOffRequest();
+        watchdogSuspend(20);
         RTOS_WAIT_MS(20);
         if (pwrPressed()) {
           return e_power_on;
