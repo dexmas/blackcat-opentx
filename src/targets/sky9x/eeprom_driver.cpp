@@ -188,7 +188,7 @@ void eepromInit()
   eepromWriteStatusRegister();
 }
 
-extern "C" void SPI_IRQHandler()
+extern "C" void SPI_Handler()
 {
   Spi * spiptr = SPI;
   SPI->SPI_IDR = 0x07FF; // All interrupts off

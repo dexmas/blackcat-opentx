@@ -163,7 +163,7 @@ void readRTC()
 
 // TODO should be inside an i2c_driver.cpp
 #ifndef SIMU
-extern "C" void TWI0_IRQHandler()
+extern "C" void TWI0_Handler()
 {
         uint32_t status ;
         status = TWI0->TWI_SR ;         // Read only once, some bits cleared on read

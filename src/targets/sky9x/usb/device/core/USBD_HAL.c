@@ -45,9 +45,8 @@
  *      Headers
  *---------------------------------------------------------------------------*/
 
-#include "AT91SAM3S4.h"
-#include "core_cm3.h"
-//#include "chip.h"
+#include "sam4s16c.h"
+#include "core_cm4.h"
 #include "USBD_HAL.h"
 #include "pmc.h"
 
@@ -165,7 +164,7 @@
 
 /**  Bitmap for all status bits in CSR. */
 #define REG_NO_EFFECT_1_ALL      UDP_CSR_RX_DATA_BK0 | UDP_CSR_RX_DATA_BK1 \
-                                |UDP_CSR_STALLSENTISOERROR | UDP_CSR_RXSETUP \
+                                |UDP_CSR_ISOERROR | UDP_CSR_RXSETUP \
                                 |UDP_CSR_TXCOMP
 
 /**
@@ -832,9 +831,9 @@ static void UDP_EndpointHandler(uint8_t bEndpoint)
     }
 
     // STALL sent
-    if ((status & UDP_CSR_STALLSENTISOERROR) != 0) {
+    if ((status & UDP_CSR_ISOERROR) != 0) {
 
-        CLEAR_CSR(bEndpoint, UDP_CSR_STALLSENTISOERROR);
+        CLEAR_CSR(bEndpoint, UDP_CSR_ISOERROR);
 
         if (   (status & UDP_CSR_EPTYPE_Msk) == UDP_CSR_EPTYPE_ISO_IN
             || (status & UDP_CSR_EPTYPE_Msk) == UDP_CSR_EPTYPE_ISO_OUT ) {

@@ -138,7 +138,7 @@ inline void start_timer2()
   ptc->TC_CHANNEL[2].TC_CCR = 5 ;               // Enable clock and trigger it (may only need trigger)
 
   NVIC_EnableIRQ(TC2_IRQn) ;
-  TC0->TC_CHANNEL[2].TC_IER = TC_IER0_CPCS ;
+  TC0->TC_CHANNEL[2].TC_IER = TC_IER_CPCS ;
 }
 
 void interrupt5ms()
@@ -154,7 +154,7 @@ void interrupt5ms()
   }
 }
 
-extern "C" void TC2_IRQHandler()
+extern "C" void TC2_Handler()
 {
   uint32_t dummy;
 
@@ -204,16 +204,16 @@ void init_pwm()
 
   // PWM0 for LED backlight
   pwmptr->PWM_CH_NUM[0].PWM_CMR = 0x0000000C ;    // CLKB
-  pwmptr->PWM_CH_NUM[0].PWM_CPDR = 100 ;                  // Period
-  pwmptr->PWM_CH_NUM[0].PWM_CPDRUPD = 100 ;               // Period
+  pwmptr->PWM_CH_NUM[0].PWM_CPRD = 100 ;                  // Period
+  pwmptr->PWM_CH_NUM[0].PWM_CPRDUPD = 100 ;               // Period
   pwmptr->PWM_CH_NUM[0].PWM_CDTY = 40 ;                           // Duty
   pwmptr->PWM_CH_NUM[0].PWM_CDTYUPD = 40 ;                // Duty
   pwmptr->PWM_ENA = PWM_ENA_CHID0 ;                                               // Enable channel 0
 
   // PWM2 for HAPTIC drive 100Hz test
   pwmptr->PWM_CH_NUM[2].PWM_CMR = 0x0000000C ;    // CLKB
-  pwmptr->PWM_CH_NUM[2].PWM_CPDR = 100 ;                  // Period
-  pwmptr->PWM_CH_NUM[2].PWM_CPDRUPD = 100 ;               // Period
+  pwmptr->PWM_CH_NUM[2].PWM_CPRD = 100 ;                  // Period
+  pwmptr->PWM_CH_NUM[2].PWM_CPRDUPD = 100 ;               // Period
   pwmptr->PWM_CH_NUM[2].PWM_CDTY = 40 ;                           // Duty
   pwmptr->PWM_CH_NUM[2].PWM_CDTYUPD = 40 ;                // Duty
   pwmptr->PWM_OOV &= ~0x00040000 ;      // Force low
@@ -334,6 +334,68 @@ void i2cInit()
 
 void boardInit()
 {
+    // DeXmas
+    /* Set flash wait state to max in case the below clock switching. */
+    system_init_flash(CHIP_FREQ_CPU_MAX);
+
+    // PLL
+    PMC->CKGR_MOR = (PMC->CKGR_MOR & ~CKGR_MOR_MOSCXTBY) |
+        CKGR_MOR_KEY_PASSWD | CKGR_MOR_MOSCXTEN |
+        CKGR_MOR_MOSCXTST(((15625 * CHIP_FREQ_SLCK_RC / 8 / 1000000) < 0x100 ? (15625 * CHIP_FREQ_SLCK_RC / 8 / 1000000) : 0xFF));
+    /* Wait the Xtal to stabilize */
+    while (!(PMC->PMC_SR & PMC_SR_MOSCXTS));
+
+    PMC->CKGR_MOR |= CKGR_MOR_KEY_PASSWD | CKGR_MOR_MOSCSEL;
+
+    while (!(PMC->PMC_SR & PMC_SR_MOSCSELS)) {
+        /* Do nothing */
+    }
+
+    /* Calculate internal VCO frequency */
+    uint32_t vco_hz = 12000000U * 20;
+
+    /* PMC hardware will automatically make it mul+1 */
+    uint32_t ctrl = CKGR_PLLAR_MULA(20 - 1) | CKGR_PLLAR_DIVA(1) | CKGR_PLLAR_PLLACOUNT(0x3FU);
+
+
+    PMC->CKGR_PLLAR = CKGR_PLLAR_ONE | CKGR_PLLAR_MULA(0);
+    PMC->CKGR_PLLAR = CKGR_PLLAR_ONE | ctrl;
+
+    while (!(PMC->PMC_SR & PMC_SR_LOCKA)) {
+        /* Do nothing */
+    }
+
+    uint32_t ul_timeout;
+
+    PMC->PMC_MCKR = (PMC->PMC_MCKR & (~PMC_MCKR_PRES_Msk)) | PMC_MCKR_PRES_CLK_2;
+    for (ul_timeout = 2048; !(PMC->PMC_SR & PMC_SR_MCKRDY);
+        --ul_timeout) {
+        if (ul_timeout == 0) {
+            break;
+        }
+    }
+
+    if (ul_timeout)
+    {
+        PMC->PMC_MCKR = (PMC->PMC_MCKR & (~PMC_MCKR_CSS_Msk)) |
+            PMC_MCKR_CSS_PLLA_CLK;
+
+        for (ul_timeout = 2048; !(PMC->PMC_SR & PMC_SR_MCKRDY);
+            --ul_timeout) {
+            if (ul_timeout == 0) {
+                break;
+            }
+        }
+    }
+
+    SystemCoreClockUpdate();
+
+    uint32_t cpu_hz = (12000000U * 20) / (1 << (PMC_MCKR_PRES_CLK_2 >> PMC_MCKR_PRES_Pos));
+    system_init_flash(cpu_hz);
+
+    Master_frequency = cpu_hz;
+    // ^^^
+
   Pio *pioptr ;
 
   ResetReason = RSTC->RSTC_SR;

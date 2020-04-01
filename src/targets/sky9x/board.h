@@ -260,7 +260,7 @@ extern "C" {
 #else
   #define WDG_ENABLE(x)                WDT->WDT_MR = 0x3FFF207F
   #define WDG_RESET()                  WDT->WDT_CR = 0xA5000001
-  #define IS_RESET_REASON_WATCHDOG()   ((ResetReason & RSTC_SR_RSTTYP) == (2 << 8))
+  #define IS_RESET_REASON_WATCHDOG()   ((ResetReason & RSTC_SR_RSTTYP_Msk) == (2 << 8))
 #endif
 
 // Backlight driver
@@ -413,5 +413,16 @@ uint32_t isBootloaderStart(const uint32_t* buffer);
 void sportSendByte(uint8_t byte);
 bool telemetryGetByte(uint8_t* byte);
 void telemetryClearFifo();
+
+/** Endpoints max paxcket size */
+#define CHIP_USB_ENDPOINTS_MAXPACKETSIZE(i) \
+   ((i == 0) ? 64 : \
+   ((i == 1) ? 64 : \
+   ((i == 2) ? 64 : \
+   ((i == 3) ? 64 : \
+   ((i == 4) ? 512 : \
+   ((i == 5) ? 512 : \
+   ((i == 6) ? 64 : \
+   ((i == 7) ? 64 : 0 ))))))))
 
 #endif // _BOARD_SKY9X_H_

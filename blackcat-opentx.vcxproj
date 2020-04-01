@@ -1,12 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
-    <ProjectConfiguration Include="Debug|VisualGDB">
-      <Configuration>Debug</Configuration>
-      <Platform>VisualGDB</Platform>
-    </ProjectConfiguration>
-    <ProjectConfiguration Include="Release|VisualGDB">
-      <Configuration>Release</Configuration>
+    <ProjectConfiguration Include="SAM4S16C|VisualGDB">
+      <Configuration>SAM4S16C</Configuration>
       <Platform>VisualGDB</Platform>
     </ProjectConfiguration>
   </ItemGroup>
@@ -19,12 +15,8 @@
     <ProjectName>blackcat-opentx</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
-  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='SAM4S16C|VisualGDB'" Label="Configuration">
     <MCUPropertyListFile>$(ProjectDir)atmel.props</MCUPropertyListFile>
-    <GenerateHexFile>true</GenerateHexFile>
-  </PropertyGroup>
-  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">
-    <MCUPropertyListFile>$(ProjectDir)ATSAM3S.props</MCUPropertyListFile>
     <GenerateHexFile>true</GenerateHexFile>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
@@ -33,16 +25,7 @@
   <ImportGroup Label="Shared">
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">
-    <GNUConfigurationType>Debug</GNUConfigurationType>
-    <OutDir>$(SolutionDir)build\</OutDir>
-    <IntDir>temp\</IntDir>
-    <VisualGDBSettingsFile>$(Configuration).vgdbsettings</VisualGDBSettingsFile>
-    <TargetExt>.elf</TargetExt>
-    <ToolchainID>com.visualgdb.arm-eabi</ToolchainID>
-    <ToolchainVersion>9.2.1/8.3.0/r1</ToolchainVersion>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='SAM4S16C|VisualGDB'">
     <VisualGDBSettingsFile>$(Configuration).vgdbsettings</VisualGDBSettingsFile>
     <OutDir>$(SolutionDir)build\</OutDir>
     <IntDir>temp\</IntDir>
@@ -50,43 +33,13 @@
     <ToolchainID>com.visualgdb.arm-eabi</ToolchainID>
     <ToolchainVersion>9.2.1/8.3.0/r1</ToolchainVersion>
   </PropertyGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='SAM4S16C|VisualGDB'">
     <ClCompile>
-      <AdditionalIncludeDirectories>src;src\gui;src\gui\128x64;src\thirdparty;src\thirdparty\CoOS;src\thirdparty\CoOS\kernel;src\thirdparty\CoOS\portable;src\thirdparty\FatFs;src\thirdparty\FatFs\option;src\thirdparty\Lua\src;src\targets\sky9x;data\bitmaps;data\bitmaps\128x64;data\fonts\sqt5;%(ClCompile.AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>CPUARM;at91sam3s8;LUA;LUA_INPUTS;LUA_MODEL_SCRIPTS;REVX;PCBSKY9X;FLAVOUR="9xrpro";REQUIRED_SDCARD_VERSION="2.22";FONT=SQT5;TRANSLATIONS="EN";TRANSLATIONS_EN;PPM_PIN_SERIAL;AUDIO_DUAL_BUFFER;AUDIO;VOICE;RTCLOCK;RUN_FROM_FLASH=1;EEPROM;EEPROM_RAW;EEPROM_CONVERSIONS;SPLASH;TIMERS=2;HAPTIC;MULTIMODULE;VIRTUAL_INPUTS;TELEMETRY_FRSKY;TELEMETRY_FRSKY_SPORT;FRSKY_HUB;GPS;PXX;DSM2;BOLD_FONT;BATTGRAPH;THRTRACE;GAUGES;VARIO;GRAPHICS;FLIGHT_MODES;EEPROM_VARIANT=1;CURVES;GVARS;AUTOSOURCE;AUTOSWITCH;SDCARD;PPM_UNIT_PERCENT_PREC0;PPM_CENTER_ADJUSTABLE;PPM_LIMITS_SYMETRICAL;OVERRIDE_CHANNEL_FUNCTION;DANGEROUS_MODULE_FUNCTIONS;GUI;CORRECT_NEGATIVE_SHIFTS;%(ClCompile.PreprocessorDefinitions)</PreprocessorDefinitions>
-      <Optimization>O0</Optimization>
-      <PrecompiledHeaderDirectory />
-      <ObjectFileName>$(IntDir)</ObjectFileName>
-    </ClCompile>
-    <Link>
-      <AdditionalLinkerInputs>;%(Link.AdditionalLinkerInputs)</AdditionalLinkerInputs>
-      <LibrarySearchDirectories>;%(Link.LibrarySearchDirectories)</LibrarySearchDirectories>
-      <AdditionalLibraryNames>;%(Link.AdditionalLibraryNames)</AdditionalLibraryNames>
-      <LinkerScript>src/targets/sky9x/sam3s8c_flash.ld</LinkerScript>
-      <GenerateMapFile>false</GenerateMapFile>
-      <MapFileName>
-      </MapFileName>
-      <IgnoreStandardLibraries>false</IgnoreStandardLibraries>
-      <VerboseMode>false</VerboseMode>
-      <RemoveUnusedSections>true</RemoveUnusedSections>
-      <AdditionalOptions>
-      </AdditionalOptions>
-      <UseLinkerGroups>true</UseLinkerGroups>
-    </Link>
-    <ToolchainSettingsContainer>
-      <InstructionSet>THUMB</InstructionSet>
-    </ToolchainSettingsContainer>
-    <ToolchainSettingsContainer>
-      <ARMCPU>cortex-m3</ARMCPU>
-    </ToolchainSettingsContainer>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">
-    <ClCompile>
-      <PreprocessorDefinitions>at91sam3s8;REVX;PCBSKY9X;RTOS_COOS;FLAVOUR="9xrpro";REQUIRED_SDCARD_VERSION="2.3.0";FONT=SQT5;TRANSLATIONS="EN";TRANSLATIONS_EN;PPM_PIN_SERIAL;AUDIO_DUAL_BUFFER;AUDIO;VOICE;RTCLOCK;RUN_FROM_FLASH=1;EEPROM;EEPROM_RAW;SPLASH;TIMERS=2;HAPTIC;MULTIMODULE;VIRTUAL_INPUTS;TELEMETRY_FRSKY_SPORT;FRSKY_HUB;PXX;DSM2;BOLD_FONT;BATTGRAPH;THRTRACE;GAUGES;VARIO;GRAPHICS;FLIGHT_MODES;EEPROM_VARIANT=1;CURVES;AUTOSOURCE;AUTOSWITCH;SDCARD;PPM_UNIT_US;PPM_CENTER_ADJUSTABLE;PPM_LIMITS_SYMETRICAL;OVERRIDE_CHANNEL_FUNCTION;DANGEROUS_MODULE_FUNCTIONS;GUI;CPUARM;CORRECT_NEGATIVE_SHIFTS;DISABLE_MULTI_UPDATE;NAVIGATION_9X;BUZZER;PXX1;WATCHDOG;POPUP_LEVEL=2;CROSSFIRE;GVARS;%(ClCompile.PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>__SAM4S16C__;REVX;PCBSKY9X;RTOS_COOS;FLAVOUR="9xrpro";REQUIRED_SDCARD_VERSION="2.3.0";FONT=SQT5;TRANSLATIONS="EN";TRANSLATIONS_EN;PPM_PIN_SERIAL;AUDIO_DUAL_BUFFER;AUDIO;VOICE;RTCLOCK;RUN_FROM_FLASH=1;EEPROM;EEPROM_RAW;SPLASH;TIMERS=2;HAPTIC;MULTIMODULE;VIRTUAL_INPUTS;TELEMETRY_FRSKY_SPORT;FRSKY_HUB;PXX;DSM2;BOLD_FONT;BATTGRAPH;THRTRACE;GAUGES;VARIO;GRAPHICS;FLIGHT_MODES;EEPROM_VARIANT=1;CURVES;AUTOSOURCE;AUTOSWITCH;SDCARD;PPM_UNIT_US;PPM_CENTER_ADJUSTABLE;PPM_LIMITS_SYMETRICAL;OVERRIDE_CHANNEL_FUNCTION;DANGEROUS_MODULE_FUNCTIONS;GUI;CPUARM;CORRECT_NEGATIVE_SHIFTS;DISABLE_MULTI_UPDATE;NAVIGATION_9X;BUZZER;PXX1;WATCHDOG;POPUP_LEVEL=2;CROSSFIRE;GVARS;LUA;LUA_COMPILER;LUA_INPUTS;LUA_MODEL_SCRIPTS;USE_BIN_ALLOCATOR;%(ClCompile.PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>src;src\gui;src\gui\128x64;src\thirdparty;src\thirdparty\CoOS;src\thirdparty\CoOS\kernel;src\thirdparty\CoOS\portable;src\thirdparty\FatFs;src\thirdparty\FatFs\option;src\thirdparty\Lua\src;src\targets\sky9x;data;data\bitmaps;data\bitmaps\128x64;data\fonts\sqt5;%(ClCompile.AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PrecompiledHeaderDirectory />
+      <PrecompiledHeaderDirectory>
+      </PrecompiledHeaderDirectory>
       <Optimization>Os</Optimization>
-      <OmitFramePointer>true</OmitFramePointer>
     </ClCompile>
     <ToolchainSettingsContainer>
       <InstructionSet>THUMB</InstructionSet>
@@ -96,8 +49,8 @@
     </ToolchainSettingsContainer>
     <Link />
     <Link>
-      <LinkerScript>src\targets\sky9x\sam3s8c_flash.ld</LinkerScript>
-      <AdditionalLinkerInputs>;%(Link.AdditionalLinkerInputs)</AdditionalLinkerInputs>
+      <LinkerScript>src/targets/sky9x/sam4s16c_flash.ld</LinkerScript>
+      <AdditionalLinkerInputs>--specs=nano.specs;-u _printf_float;-u _scanf_float;%(Link.AdditionalLinkerInputs)</AdditionalLinkerInputs>
       <LibrarySearchDirectories>;%(Link.LibrarySearchDirectories)</LibrarySearchDirectories>
       <AdditionalLibraryNames>;%(Link.AdditionalLibraryNames)</AdditionalLibraryNames>
     </Link>
@@ -110,32 +63,26 @@
     <ClCompile Include="src\audio.cpp" />
     <ClCompile Include="src\bin_allocator.cpp" />
     <ClCompile Include="src\bluetooth.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='SAM4S16C|VisualGDB'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="src\buzzer.cpp" />
     <ClCompile Include="src\cli.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='SAM4S16C|VisualGDB'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="src\crc.cpp" />
     <ClCompile Include="src\curves.cpp" />
     <ClCompile Include="src\debug.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='SAM4S16C|VisualGDB'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="src\disk_cache.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='SAM4S16C|VisualGDB'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="src\dump.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='SAM4S16C|VisualGDB'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="src\functions.cpp" />
     <ClCompile Include="src\gps.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='SAM4S16C|VisualGDB'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="src\gui\128x64\bmp.cpp" />
     <ClCompile Include="src\gui\128x64\fonts.cpp" />
@@ -143,9 +90,7 @@
     <ClCompile Include="src\gui\128x64\menu_model.cpp" />
     <ClCompile Include="src\gui\128x64\menu_radio.cpp" />
     <ClCompile Include="src\gui\128x64\model_curve_edit.cpp" />
-    <ClCompile Include="src\gui\128x64\model_custom_scripts.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">true</ExcludedFromBuild>
-    </ClCompile>
+    <ClCompile Include="src\gui\128x64\model_custom_scripts.cpp" />
     <ClCompile Include="src\gui\128x64\model_display.cpp" />
     <ClCompile Include="src\gui\128x64\model_failsafe.cpp" />
     <ClCompile Include="src\gui\128x64\model_flightmodes.cpp" />
@@ -160,8 +105,7 @@
     <ClCompile Include="src\gui\128x64\model_telemetry.cpp" />
     <ClCompile Include="src\gui\128x64\model_telemetry_sensor.cpp" />
     <ClCompile Include="src\gui\128x64\model_templates.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='SAM4S16C|VisualGDB'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="src\gui\128x64\popups.cpp" />
     <ClCompile Include="src\gui\128x64\radio_calibration.cpp" />
@@ -180,8 +124,7 @@
     <ClCompile Include="src\gui\common\stdlcd\menus.cpp" />
     <ClCompile Include="src\gui\common\stdlcd\model_curves.cpp" />
     <ClCompile Include="src\gui\common\stdlcd\model_heli.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='SAM4S16C|VisualGDB'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="src\gui\common\stdlcd\model_inputs.cpp" />
     <ClCompile Include="src\gui\common\stdlcd\model_mixes.cpp" />
@@ -189,21 +132,17 @@
     <ClCompile Include="src\gui\common\stdlcd\model_notes.cpp" />
     <ClCompile Include="src\gui\common\stdlcd\model_receiver_options.cpp" />
     <ClCompile Include="src\gui\common\stdlcd\model_setup_pxx1.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='SAM4S16C|VisualGDB'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="src\gui\common\stdlcd\model_setup_pxx2.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='SAM4S16C|VisualGDB'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="src\gui\common\stdlcd\popups.cpp">
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">$(IntDir)stdlcd\</ObjectFileName>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">$(IntDir)stdlcd\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='SAM4S16C|VisualGDB'">$(IntDir)stdlcd\</ObjectFileName>
     </ClCompile>
     <ClCompile Include="src\gui\common\stdlcd\radio_hardware.cpp" />
     <ClCompile Include="src\gui\common\stdlcd\radio_power_meter.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='SAM4S16C|VisualGDB'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="src\gui\common\stdlcd\radio_sdmanager.cpp" />
     <ClCompile Include="src\gui\common\stdlcd\radio_spectrum_analyser.cpp" />
@@ -217,66 +156,47 @@
     <ClCompile Include="src\gui\screenshot.cpp" />
     <ClCompile Include="src\gvars.cpp" />
     <ClCompile Include="src\gyro.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='SAM4S16C|VisualGDB'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="src\haptic.cpp" />
     <ClCompile Include="src\io\bootloader_flash.cpp" />
     <ClCompile Include="src\io\frsky_firmware_update.cpp" />
     <ClCompile Include="src\io\multi_firmware_update.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='SAM4S16C|VisualGDB'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="src\keys.cpp" />
     <ClCompile Include="src\logs.cpp" />
-    <ClCompile Include="src\lua\api_general.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="src\lua\api_lcd.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="src\lua\api_model.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="src\lua\interface.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="src\lua\widgets.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">true</ExcludedFromBuild>
-    </ClCompile>
+    <ClCompile Include="src\lua\api_general.cpp" />
+    <ClCompile Include="src\lua\api_lcd.cpp" />
+    <ClCompile Include="src\lua\api_model.cpp" />
+    <ClCompile Include="src\lua\interface.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\maths.cpp" />
     <ClCompile Include="src\mixer.cpp" />
     <ClCompile Include="src\opentx.cpp" />
     <ClCompile Include="src\pulses\crossfire.cpp">
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">$(IntDir)pulses\</ObjectFileName>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">$(IntDir)pulses\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='SAM4S16C|VisualGDB'">$(IntDir)pulses\</ObjectFileName>
     </ClCompile>
     <ClCompile Include="src\pulses\dsm2.cpp" />
     <ClCompile Include="src\pulses\modules_helpers.cpp" />
     <ClCompile Include="src\pulses\multi.cpp">
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">$(IntDir)pulses\</ObjectFileName>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">$(IntDir)pulses\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='SAM4S16C|VisualGDB'">$(IntDir)pulses\</ObjectFileName>
     </ClCompile>
     <ClCompile Include="src\pulses\ppm.cpp" />
     <ClCompile Include="src\pulses\pulses.cpp" />
     <ClCompile Include="src\pulses\pxx1.cpp" />
     <ClCompile Include="src\pulses\pxx2.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='SAM4S16C|VisualGDB'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="src\pulses\sbus.cpp" />
     <ClCompile Include="src\rtc.cpp" />
     <ClCompile Include="src\sbus.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='SAM4S16C|VisualGDB'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="src\sdcard.cpp" />
     <ClCompile Include="src\serial.cpp" />
     <ClCompile Include="src\simu.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='SAM4S16C|VisualGDB'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="src\stamp.cpp" />
     <ClCompile Include="src\storage\conversions\conversions.cpp" />
@@ -285,50 +205,43 @@
     <ClCompile Include="src\storage\eeprom_common.cpp" />
     <ClCompile Include="src\storage\eeprom_raw.cpp" />
     <ClCompile Include="src\storage\eeprom_rlc.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='SAM4S16C|VisualGDB'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="src\storage\modelslist.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='SAM4S16C|VisualGDB'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="src\storage\rlc.cpp" />
     <ClCompile Include="src\storage\rtc_backup.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='SAM4S16C|VisualGDB'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="src\storage\sdcard_raw.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='SAM4S16C|VisualGDB'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="src\storage\storage_common.cpp" />
     <ClCompile Include="src\strhelpers.cpp" />
     <ClCompile Include="src\switches.cpp" />
-    <ClCompile Include="src\syscalls.c" />
     <ClCompile Include="src\targets\sky9x\adc_driver.cpp" />
     <ClCompile Include="src\targets\sky9x\audio_driver.cpp" />
     <ClCompile Include="src\targets\sky9x\aux_serial_driver.cpp" />
     <ClCompile Include="src\targets\sky9x\bluetooth.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='SAM4S16C|VisualGDB'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="src\targets\sky9x\board.cpp" />
     <ClCompile Include="src\targets\sky9x\board_lowlevel.c" />
     <ClCompile Include="src\targets\sky9x\buzzer_driver.cpp" />
     <ClCompile Include="src\targets\sky9x\coproc_driver.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='SAM4S16C|VisualGDB'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="src\targets\sky9x\core_cm3.c" />
-    <ClCompile Include="src\targets\sky9x\crt.c" />
     <ClCompile Include="src\targets\sky9x\diskio.cpp" />
     <ClCompile Include="src\targets\sky9x\eeprom_driver.cpp" />
     <ClCompile Include="src\targets\sky9x\flash_driver.cpp" />
     <ClCompile Include="src\targets\sky9x\haptic_driver.cpp" />
     <ClCompile Include="src\targets\sky9x\i2c_driver.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='SAM4S16C|VisualGDB'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="src\targets\sky9x\startup_sam4s.c" />
+    <ClCompile Include="src\targets\sky9x\syscalls.c" />
+    <ClCompile Include="src\targets\sky9x\system_sam4s.c" />
     <ClCompile Include="src\targets\sky9x\usb_massstorage.cpp" />
     <ClCompile Include="src\targets\sky9x\usb\common\cdc\CDCLineCoding.c" />
     <ClCompile Include="src\targets\sky9x\usb\common\cdc\CDCSetControlLineStateRequest.c" />
@@ -346,13 +259,11 @@
     <ClCompile Include="src\targets\sky9x\pulses_driver.cpp" />
     <ClCompile Include="src\targets\sky9x\pwr_driver.cpp" />
     <ClCompile Include="src\targets\sky9x\rotary_encoder_driver.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='SAM4S16C|VisualGDB'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="src\targets\sky9x\rtc_driver.cpp" />
     <ClCompile Include="src\targets\sky9x\rtc_ds3231_driver.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='SAM4S16C|VisualGDB'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="src\targets\sky9x\sdcard_driver.cpp" />
     <ClCompile Include="src\targets\sky9x\telemetry_driver.cpp" />
@@ -371,7 +282,6 @@
     <ClCompile Include="src\targets\sky9x\usb\device\hid\device_descriptor.c" />
     <ClCompile Include="src\targets\sky9x\usb\device\hid\HIDDJoystickDriver.c" />
     <ClCompile Include="src\targets\sky9x\usb_serial.cpp" />
-    <ClCompile Include="src\targets\sky9x\vectors_sam3s.c" />
     <ClCompile Include="src\tasks.cpp" />
     <ClCompile Include="src\telemetry\crossfire.cpp" />
     <ClCompile Include="src\telemetry\flysky_ibus.cpp" />
@@ -469,9 +379,7 @@
     <ClInclude Include="src\io\multi_firmware_update.h" />
     <ClInclude Include="src\io\stk500.h" />
     <ClInclude Include="src\keys.h" />
-    <ClInclude Include="src\lua\lua_api.h">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">true</ExcludedFromBuild>
-    </ClInclude>
+    <ClInclude Include="src\lua\lua_api.h" />
     <ClInclude Include="src\myeeprom.h" />
     <ClInclude Include="src\opentx.h" />
     <ClInclude Include="src\opentx_constants.h" />
@@ -503,14 +411,18 @@
     <ClInclude Include="src\storage\sdcard_raw.h" />
     <ClInclude Include="src\storage\storage.h" />
     <ClInclude Include="src\strhelpers.h" />
-    <ClInclude Include="src\targets\sky9x\AT91SAM3S4.h" />
     <ClInclude Include="src\targets\sky9x\audio_driver.h" />
     <ClInclude Include="src\targets\sky9x\board.h" />
     <ClInclude Include="src\targets\sky9x\board_lowlevel.h" />
-    <ClInclude Include="src\targets\sky9x\chip.h" />
-    <ClInclude Include="src\targets\sky9x\core_cm3.h" />
+    <ClInclude Include="src\targets\sky9x\cmsis_compiler.h" />
+    <ClInclude Include="src\targets\sky9x\cmsis_gcc.h" />
+    <ClInclude Include="src\targets\sky9x\cmsis_version.h" />
+    <ClInclude Include="src\targets\sky9x\core_cm4.h" />
     <ClInclude Include="src\targets\sky9x\i2c_driver.h" />
     <ClInclude Include="src\targets\sky9x\Media.h" />
+    <ClInclude Include="src\targets\sky9x\mpu_armv7.h" />
+    <ClInclude Include="src\targets\sky9x\sam4s16c.h" />
+    <ClInclude Include="src\targets\sky9x\system_sam4s.h" />
     <ClInclude Include="src\targets\sky9x\usb\common\cdc\CDCAbstractControlManagementDescriptor.h" />
     <ClInclude Include="src\targets\sky9x\usb\common\cdc\CDCCallManagementDescriptor.h" />
     <ClInclude Include="src\targets\sky9x\usb\common\cdc\CDCCommunicationInterfaceDescriptor.h" />
@@ -659,17 +571,8 @@
     <None Include="data\fonts\sqt5\font_10x14_compressed.lbm" />
     <None Include="data\fonts\sqt5\font_10x14_extra.lbm" />
     <None Include="data\fonts\sqt5\font_22x38_num.lbm" />
-    <None Include="Debug.vgdbsettings" />
-    <None Include="Release.vgdbsettings" />
-    <None Include="ATSAM3S.xml">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="ATSAM3S.props">
-      <SubType>Designer</SubType>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <LinkerScript Include="src\targets\sky9x\sam3s8c_flash.ld" />
+    <None Include="SAM4S16C.props" />
+    <None Include="SAM4S16C.vgdbsettings" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="data\bitmaps\128x64\about.png" />
@@ -700,5 +603,11 @@
     <Text Include="data\translations\pl.h.txt" />
     <Text Include="data\translations\pt.h.txt" />
     <Text Include="data\translations\se.h.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="SAM4S16C.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <LinkerScript Include="src\targets\sky9x\sam4s16c_flash.ld" />
   </ItemGroup>
 </Project>

@@ -708,7 +708,7 @@ int cliStackInfo(const char ** argv)
 }
 
 extern int _end;
-extern int _heap_end;
+extern int __ram_end__;
 extern unsigned char *heap;
 
 int cliMemoryInfo(const char ** argv)
@@ -735,10 +735,10 @@ int cliMemoryInfo(const char ** argv)
 
   serialPrint("\nHeap:");
   serialPrint("\tstart %p", (unsigned char *)&_end);
-  serialPrint("\tend   %p", (unsigned char *)&_heap_end);
+  serialPrint("\tend   %p", (unsigned char *)&__ram_end__);
   serialPrint("\tcurr  %p", heap);
   serialPrint("\tused  %d bytes", (int)(heap - (unsigned char *)&_end));
-  serialPrint("\tfree  %d bytes", (int)((unsigned char *)&_heap_end - heap));
+  serialPrint("\tfree  %d bytes", (int)((unsigned char *)&__ram_end__ - heap));
 
 #if defined(LUA)
   serialPrint("\nLua:");
@@ -1091,7 +1091,7 @@ int cliDebugVars(const char ** argv)
   serialPrint("ioMutexReq=%d", ioMutexReq);
   serialPrint("ioMutexRel=%d", ioMutexRel);
   serialPrint("sdReadRetries=%d", sdReadRetries);
-#elif defined(PCBTARANIS)
+#elif defined(PCBTARANIS) || defined(PCBSKY9X)
   serialPrint("telemetryErrors=%d", telemetryErrors);
 #endif
 

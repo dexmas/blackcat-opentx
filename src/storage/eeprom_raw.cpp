@@ -593,4 +593,52 @@ const char * eeRestoreModel(uint8_t i_fileDst, char *model_name)
 
   return NULL;
 }
+
+void eepromBackup()
+{
+    char path[60];
+    uint8_t buffer[EEPROM_BLOCK_SIZE];
+    FIL file;
+
+    // reset unexpectedShutdown to prevent warning when user restores EEPROM backup
+    g_eeGeneral.unexpectedShutdown = 0;
+    storageDirty(EE_GENERAL);
+    storageCheck(true);
+
+    // create the directory if needed...
+    const char* error = sdCheckAndCreateDirectory(EEPROMS_PATH);
+    if (error) {
+        POPUP_WARNING(error);
+        return;
+    }
+
+    // prepare the filename...
+    char* tmp = strAppend(path, EEPROMS_PATH "/eeprom");
+#if defined(RTCLOCK)
+    tmp = strAppendDate(tmp, true);
+#endif
+    strAppend(tmp, EEPROM_EXT);
+
+    // open the file for writing...
+    f_open(&file, path, FA_WRITE | FA_CREATE_ALWAYS);
+
+    for (int i = 0; i < EEPROM_SIZE; i += EEPROM_BLOCK_SIZE) {
+        UINT count;
+        eepromRead(buffer, i, EEPROM_BLOCK_SIZE);
+        f_write(&file, buffer, EEPROM_BLOCK_SIZE, &count);
+        drawProgressScreen("EEPROM Backup", STR_WRITING, i, EEPROM_SIZE);
+#if defined(SIMU)
+        // add an artificial delay and check for simu quit
+        if (SIMU_SLEEP_OR_EXIT_MS(100))
+            break;
+#endif
+    }
+
+    f_close(&file);
+
+    //set back unexpectedShutdown
+    g_eeGeneral.unexpectedShutdown = 1;
+    storageDirty(EE_GENERAL);
+    storageCheck(true);
+}
 #endif

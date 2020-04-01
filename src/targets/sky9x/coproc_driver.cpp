@@ -125,7 +125,7 @@ void coprocWriteData(uint8_t *data, uint32_t size)
 }
 
 #if !defined(SIMU)
-extern "C" void TWI0_IRQHandler()
+extern "C" void TWI0_Handler()
 {
   if ( TwiOperation == TWI_READ_COPROC )
   {

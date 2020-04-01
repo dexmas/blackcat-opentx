@@ -59,7 +59,7 @@ uint32_t txPdcBt(struct t_serial_tx *data)
   return 0 ;  // Busy
 }
 
-extern "C" void UART1_IRQHandler()
+extern "C" void UART1_Handler()
 {
   Uart *pUart = BT_USART ;
   if ( pUart->UART_SR & UART_SR_TXBUFE ) {

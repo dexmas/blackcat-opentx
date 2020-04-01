@@ -36,6 +36,7 @@
 #include "usb/common/massstorage/MSInterfaceDescriptor.h"
 
 #include "board_lowlevel.h"
+#include "board.h"
 
 //------------------------------------------------------------------------------
 //         Internal definitions

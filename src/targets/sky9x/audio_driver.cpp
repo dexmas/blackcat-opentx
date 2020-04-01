@@ -44,7 +44,7 @@ void setSampleRate(uint32_t frequency)
     timer = 2 ;
 
   ptc = TC0 ;		// Tc block 0 (TC0-2)
-  ptc->TC_CHANNEL[1].TC_CCR = TC_CCR0_CLKDIS ;		// Stop clock
+  ptc->TC_CHANNEL[1].TC_CCR = TC_CCR_CLKDIS ;		// Stop clock
   ptc->TC_CHANNEL[1].TC_RC = timer ;			// 100 000 Hz
   ptc->TC_CHANNEL[1].TC_RA = timer >> 1 ;
   ptc->TC_CHANNEL[1].TC_CCR = 5 ;		// Enable clock and trigger it (may only need trigger)
@@ -112,7 +112,7 @@ void audioConsumeCurrentBuffer()
 }
 
 
-extern "C" void DAC_IRQHandler()
+extern "C" void DACC_Handler()
 {
   uint32_t sr = DACC->DACC_ISR;
   if (sr & DACC_ISR_ENDTX) {

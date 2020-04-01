@@ -1,20 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27703.2000
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29920.165
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "blackcat-opentx", "blackcat-opentx.vcxproj", "{838CF6E3-0038-4491-B9F6-1474F84F159E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|VisualGDB = Debug|VisualGDB
-		Release|VisualGDB = Release|VisualGDB
+		SAM4S16C|VisualGDB = SAM4S16C|VisualGDB
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{838CF6E3-0038-4491-B9F6-1474F84F159E}.Debug|VisualGDB.ActiveCfg = Debug|VisualGDB
-		{838CF6E3-0038-4491-B9F6-1474F84F159E}.Debug|VisualGDB.Build.0 = Debug|VisualGDB
-		{838CF6E3-0038-4491-B9F6-1474F84F159E}.Release|VisualGDB.ActiveCfg = Release|VisualGDB
-		{838CF6E3-0038-4491-B9F6-1474F84F159E}.Release|VisualGDB.Build.0 = Release|VisualGDB
+		{838CF6E3-0038-4491-B9F6-1474F84F159E}.SAM4S16C|VisualGDB.ActiveCfg = SAM4S16C|VisualGDB
+		{838CF6E3-0038-4491-B9F6-1474F84F159E}.SAM4S16C|VisualGDB.Build.0 = SAM4S16C|VisualGDB
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

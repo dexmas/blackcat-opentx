@@ -666,7 +666,7 @@ bool luaLoadFunctionScript(uint8_t index, uint8_t ref)
   return true;
 }
 
-#if defined(PCBTARANIS)
+#if defined(PCBTARANIS) || defined(PCBSKY9X)
 bool luaLoadTelemetryScript(uint8_t index)
 {
   TelemetryScreenType screenType = TELEMETRY_SCREEN_TYPE(index);
@@ -727,7 +727,7 @@ void luaLoadPermanentScripts()
     }
   }
 
-#if defined(PCBTARANIS)
+#if defined(PCBTARANIS) || defined(PCBSKY9X)
   // Load custom telemetry scripts
   for (int i=0; i<MAX_TELEMETRY_SCREENS; i++) {
     if (!luaLoadTelemetryScript(i)) {
@@ -947,7 +947,7 @@ bool luaDoOneRunPermanentScript(event_t evt, int i, uint32_t scriptType)
       return false;
   }
   else {
-#if defined(PCBTARANIS)
+#if defined(PCBTARANIS) || defined(PCBSKY9X)
 #if defined(SIMU) || defined(DEBUG)
     TelemetryScriptData & script = g_model.screens[sid.reference-SCRIPT_TELEMETRY_FIRST].script;
     filename = script.file;

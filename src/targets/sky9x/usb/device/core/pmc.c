@@ -32,7 +32,7 @@
  *----------------------------------------------------------------------------*/
 
 //#include "chip.h"
-#include "AT91SAM3S4.h"
+#include "sam4s16c.h"
 
 //#include <assert.h>
 

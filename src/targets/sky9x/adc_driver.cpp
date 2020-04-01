@@ -80,15 +80,15 @@ void adcSingleRead()
     x = padc->ADC_LCDR; // Clear DRSY flag
   }
   // Next bit may be done using the PDC
-  adcValues[0] = ADC->ADC_CDR1;
-  adcValues[1] = ADC->ADC_CDR2;
-  adcValues[2] = ADC->ADC_CDR3;
-  adcValues[3] = ADC->ADC_CDR4;
-  adcValues[4] = ADC->ADC_CDR5;
-  adcValues[5] = ADC->ADC_CDR9;
-  adcValues[6] = ADC->ADC_CDR13;
-  adcValues[7] = ADC->ADC_CDR14;
-  adcValues[8] = ADC->ADC_CDR8 ;
+  adcValues[0] = ADC->ADC_CDR[1];
+  adcValues[1] = ADC->ADC_CDR[2];
+  adcValues[2] = ADC->ADC_CDR[3];
+  adcValues[3] = ADC->ADC_CDR[4];
+  adcValues[4] = ADC->ADC_CDR[5];
+  adcValues[5] = ADC->ADC_CDR[9];
+  adcValues[6] = ADC->ADC_CDR[13];
+  adcValues[7] = ADC->ADC_CDR[14];
+  adcValues[8] = ADC->ADC_CDR[8];
 
   // adc direction correct
 #if defined(FRSKY_STICKS)

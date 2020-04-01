@@ -39,8 +39,8 @@
 #include "usb/device/core/USBDDriver.h"
 #include "usb/device/core/pmc.h"
 
-#include "AT91SAM3S4.h"
-#include "core_cm3.h"
+#include "sam4s16c.h"
+#include "core_cm4.h"
 
 
 ///*------------------------------------------------------------------------------

@@ -953,12 +953,10 @@ LUALIB_API const char *luaL_gsub (lua_State *L, const char *s, const char *p,
   return lua_tostring(L, -1);
 }
 
-
 void *l_alloc (void *ud, void *ptr, size_t osize, size_t nsize) {
   (void)ud; (void)osize;  /* not used */
   if (nsize == 0) {
     if (ptr) {   // avoid a bunch of NULL pointer free calls
-      // TRACE_LUA_INTERNALS("free %p", ptr); FLUSH();
       free(ptr);
     }
     return NULL;
@@ -967,13 +965,11 @@ void *l_alloc (void *ud, void *ptr, size_t osize, size_t nsize) {
     return realloc(ptr, nsize);
 }
 
-
 static int panic (lua_State *L) {
   luai_writestringerror("PANIC: unprotected error in call to Lua API (%s)\n",
                    lua_tostring(L, -1));
   return 0;  /* return to Lua to abort */
 }
-
 
 LUALIB_API lua_State *luaL_newstate (void) {
   lua_State *L = lua_newstate(l_alloc, NULL);

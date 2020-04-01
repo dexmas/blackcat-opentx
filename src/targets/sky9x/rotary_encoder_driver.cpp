@@ -35,7 +35,7 @@ void rotaryEncoderEnd()
 }
 
 volatile uint32_t Rotary_position;
-extern "C" void PIOC_IRQHandler()
+extern "C" void PIOC_Handler()
 {
   uint32_t dummy;
 

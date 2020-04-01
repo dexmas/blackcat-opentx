@@ -25,8 +25,6 @@
 #define SECOND_SERIAL_UART        UART0
 /** Usart Hw ID used by the console (UART0). */
 #define SECOND_SERIAL_ID          ID_UART0
-/** Pins description corresponding to Rxd,Txd, (UART pins) */
-#define SECOND_SERIAL_PINS        {PINS_UART}
 
 Fifo<uint8_t, 512> auxSerialRxFifo;
 
@@ -97,7 +95,7 @@ void SECOND_UART_Stop()
   NVIC_DisableIRQ(UART0_IRQn) ;
 }
 
-extern "C" void UART0_IRQHandler()
+extern "C" void UART0_Handler()
 {
   if (SECOND_SERIAL_UART->UART_SR & UART_SR_RXRDY) {
     auxSerialRxFifo.push(SECOND_SERIAL_UART->UART_RHR);

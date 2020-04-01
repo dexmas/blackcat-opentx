@@ -1064,7 +1064,7 @@ uint32_t sd_read_block(uint32_t block_no, uint32_t *data)
 
       // Block size = 512, nblocks = 1
       HSMCI->HSMCI_BLKR = ((512) << 16) | 1;
-      HSMCI->HSMCI_MR   = (HSMCI->HSMCI_MR & (~(HSMCI_MR_BLKLEN_Msk|HSMCI_MR_FBYTE))) | (HSMCI_MR_PDCMODE|HSMCI_MR_WRPROOF|HSMCI_MR_RDPROOF) | (512 << 16);
+      HSMCI->HSMCI_MR   = (HSMCI->HSMCI_MR & (~(HSMCI_BLKR_BLKLEN_Msk|HSMCI_MR_FBYTE))) | (HSMCI_MR_PDCMODE|HSMCI_MR_WRPROOF|HSMCI_MR_RDPROOF) | (512 << 16);
       HSMCI->HSMCI_ARGR = (Cmd_A41_resp & OCR_SD_CCS ? block_no : (block_no << 9));
       HSMCI->HSMCI_RPR  = (uint32_t)data;
       HSMCI->HSMCI_RCR  = 512 / 4;
@@ -1108,7 +1108,7 @@ uint32_t sd_write_block( uint32_t block_no, uint32_t *data )
 
     // Block size = 512, nblocks = 1
     HSMCI->HSMCI_BLKR = ((512) << 16) | 1;
-    HSMCI->HSMCI_MR   = (HSMCI->HSMCI_MR & (~(HSMCI_MR_BLKLEN_Msk|HSMCI_MR_FBYTE))) | (HSMCI_MR_PDCMODE|HSMCI_MR_WRPROOF) | (512 << 16);
+    HSMCI->HSMCI_MR   = (HSMCI->HSMCI_MR & (~(HSMCI_BLKR_BLKLEN_Msk|HSMCI_MR_FBYTE))) | (HSMCI_MR_PDCMODE|HSMCI_MR_WRPROOF) | (512 << 16);
     HSMCI->HSMCI_ARGR = (Cmd_A41_resp & OCR_SD_CCS ? block_no : (block_no << 9));
     HSMCI->HSMCI_TPR  = (uint32_t)data;
     HSMCI->HSMCI_TCR  = 512 / 4;

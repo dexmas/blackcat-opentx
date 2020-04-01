@@ -173,9 +173,6 @@
     <ClCompile Include="src\thirdparty\FatFs\option\ccsbcs.c">
       <Filter>Source files\thirdparty\FatFs\option</Filter>
     </ClCompile>
-    <None Include="ATSAM3S.xml">
-      <Filter>VisualGDB settings</Filter>
-    </None>
     <ClCompile Include="src\thirdparty\Lua\src\lapi.c">
       <Filter>Source files\thirdparty\lua</Filter>
     </ClCompile>
@@ -461,9 +458,6 @@
     <ClCompile Include="src\lua\interface.cpp">
       <Filter>Source files\lua</Filter>
     </ClCompile>
-    <ClCompile Include="src\lua\widgets.cpp">
-      <Filter>Source files\lua</Filter>
-    </ClCompile>
     <ClCompile Include="src\pulses\crossfire.cpp">
       <Filter>Source files\pulses</Filter>
     </ClCompile>
@@ -548,12 +542,6 @@
     <ClCompile Include="src\targets\sky9x\coproc_driver.cpp">
       <Filter>Source files\targets\sky9x</Filter>
     </ClCompile>
-    <ClCompile Include="src\targets\sky9x\core_cm3.c">
-      <Filter>Source files\targets\sky9x</Filter>
-    </ClCompile>
-    <ClCompile Include="src\targets\sky9x\crt.c">
-      <Filter>Source files\targets\sky9x</Filter>
-    </ClCompile>
     <ClCompile Include="src\targets\sky9x\diskio.cpp">
       <Filter>Source files\targets\sky9x</Filter>
     </ClCompile>
@@ -600,9 +588,6 @@
       <Filter>Source files\targets\sky9x</Filter>
     </ClCompile>
     <ClCompile Include="src\targets\sky9x\trainer_driver.cpp">
-      <Filter>Source files\targets\sky9x</Filter>
-    </ClCompile>
-    <ClCompile Include="src\targets\sky9x\vectors_sam3s.c">
       <Filter>Source files\targets\sky9x</Filter>
     </ClCompile>
     <ClCompile Include="src\telemetry\crossfire.cpp">
@@ -767,9 +752,6 @@
     <ClCompile Include="src\switches.cpp">
       <Filter>Source files</Filter>
     </ClCompile>
-    <ClCompile Include="src\syscalls.c">
-      <Filter>Source files</Filter>
-    </ClCompile>
     <ClCompile Include="src\tasks.cpp">
       <Filter>Source files</Filter>
     </ClCompile>
@@ -824,14 +806,17 @@
     <ClCompile Include="src\targets\sky9x\usb_serial.cpp">
       <Filter>Source files\targets\sky9x</Filter>
     </ClCompile>
+    <ClCompile Include="src\targets\sky9x\startup_sam4s.c">
+      <Filter>Source files\targets\sky9x</Filter>
+    </ClCompile>
+    <ClCompile Include="src\targets\sky9x\syscalls.c">
+      <Filter>Source files\targets\sky9x</Filter>
+    </ClCompile>
+    <ClCompile Include="src\targets\sky9x\system_sam4s.c">
+      <Filter>Source files\targets\sky9x</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Debug.vgdbsettings">
-      <Filter>VisualGDB settings</Filter>
-    </None>
-    <None Include="Release.vgdbsettings">
-      <Filter>VisualGDB settings</Filter>
-    </None>
     <None Include="data\fonts\sqt5\font_03x05.lbm">
       <Filter>Resource files\fonts</Filter>
     </None>
@@ -877,7 +862,10 @@
     <None Include="data\bitmaps\sticks.lbm">
       <Filter>Resource files\bitmaps</Filter>
     </None>
-    <None Include="ATSAM3S.props">
+    <None Include="SAM4S16C.props">
+      <Filter>VisualGDB settings</Filter>
+    </None>
+    <None Include="SAM4S16C.vgdbsettings">
       <Filter>VisualGDB settings</Filter>
     </None>
   </ItemGroup>
@@ -1020,9 +1008,6 @@
     <ClInclude Include="src\targets\sky9x\usb\device\hid\HIDDJoystickDriver.h">
       <Filter>Source files\targets\sky9x\usb\device\hid</Filter>
     </ClInclude>
-    <ClInclude Include="src\targets\sky9x\AT91SAM3S4.h">
-      <Filter>Source files\targets\sky9x</Filter>
-    </ClInclude>
     <ClInclude Include="src\targets\sky9x\audio_driver.h">
       <Filter>Source files\targets\sky9x</Filter>
     </ClInclude>
@@ -1030,12 +1015,6 @@
       <Filter>Source files\targets\sky9x</Filter>
     </ClInclude>
     <ClInclude Include="src\targets\sky9x\board_lowlevel.h">
-      <Filter>Source files\targets\sky9x</Filter>
-    </ClInclude>
-    <ClInclude Include="src\targets\sky9x\chip.h">
-      <Filter>Source files\targets\sky9x</Filter>
-    </ClInclude>
-    <ClInclude Include="src\targets\sky9x\core_cm3.h">
       <Filter>Source files\targets\sky9x</Filter>
     </ClInclude>
     <ClInclude Include="src\targets\sky9x\i2c_driver.h">
@@ -1506,9 +1485,27 @@
     <ClInclude Include="src\targets\sky9x\usb\device\cdc-serial\CDCDSerialDriverDescriptors.h">
       <Filter>Source files\targets\sky9x\usb\device\cdc-serial</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <LinkerScript Include="src\targets\sky9x\sam3s8c_flash.ld" />
+    <ClInclude Include="src\targets\sky9x\sam4s16c.h">
+      <Filter>Source files\targets\sky9x</Filter>
+    </ClInclude>
+    <ClInclude Include="src\targets\sky9x\system_sam4s.h">
+      <Filter>Source files\targets\sky9x</Filter>
+    </ClInclude>
+    <ClInclude Include="src\targets\sky9x\cmsis_compiler.h">
+      <Filter>Source files\targets\sky9x</Filter>
+    </ClInclude>
+    <ClInclude Include="src\targets\sky9x\cmsis_gcc.h">
+      <Filter>Source files\targets\sky9x</Filter>
+    </ClInclude>
+    <ClInclude Include="src\targets\sky9x\cmsis_version.h">
+      <Filter>Source files\targets\sky9x</Filter>
+    </ClInclude>
+    <ClInclude Include="src\targets\sky9x\core_cm4.h">
+      <Filter>Source files\targets\sky9x</Filter>
+    </ClInclude>
+    <ClInclude Include="src\targets\sky9x\mpu_armv7.h">
+      <Filter>Source files\targets\sky9x</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="data\fonts\sqt5\font_03x05.png">
@@ -1591,5 +1588,13 @@
     <Text Include="data\translations\se.h.txt">
       <Filter>Resource files\translations</Filter>
     </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="SAM4S16C.xml">
+      <Filter>VisualGDB settings</Filter>
+    </Xml>
+  </ItemGroup>
+  <ItemGroup>
+    <LinkerScript Include="src\targets\sky9x\sam4s16c_flash.ld" />
   </ItemGroup>
 </Project>

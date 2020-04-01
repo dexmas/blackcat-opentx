@@ -199,27 +199,31 @@ void onSdManagerMenu(const char * result)
     getSelectionFullPath(lfn);
     pushMenuTextView(lfn);
   }
-#if defined(PCBTARANIS)
+#if defined(PCBTARANIS) || defined(PCBSKY9X)
   else if (result == STR_FLASH_BOOTLOADER) {
     getSelectionFullPath(lfn);
     bootloaderFlash(lfn);
   }
+#if defined(PCBTARANIS)
   else if (result == STR_FLASH_INTERNAL_MODULE) {
     getSelectionFullPath(lfn);
     FrskyDeviceFirmwareUpdate device(INTERNAL_MODULE);
     device.flashFirmware(lfn);
   }
+#endif
   else if (result == STR_FLASH_EXTERNAL_MODULE) {
     // needed on X-Lite (as the R9M needs 2S while the external device flashing port only provides 5V)
     getSelectionFullPath(lfn);
     FrskyDeviceFirmwareUpdate device(EXTERNAL_MODULE);
     device.flashFirmware(lfn);
   }
+#if defined(PCBTARANIS)
   else if (result == STR_FLASH_EXTERNAL_DEVICE) {
     getSelectionFullPath(lfn);
     FrskyDeviceFirmwareUpdate device(SPORT_MODULE);
     device.flashFirmware(lfn);
   }
+#endif
 #if defined(MULTIMODULE)
 #if defined(INTERNAL_MODULE_MULTI)
   else if (result == STR_FLASH_INTERNAL_MULTI) {
@@ -229,7 +233,8 @@ void onSdManagerMenu(const char * result)
 #endif
   else if (result == STR_FLASH_EXTERNAL_MULTI) {
     getSelectionFullPath(lfn);
-    multiFlashFirmware(EXTERNAL_MODULE, lfn);
+	//#TODO DeXmas
+    //multiFlashFirmware(EXTERNAL_MODULE, lfn);
   }
 #endif
 #if defined(BLUETOOTH)

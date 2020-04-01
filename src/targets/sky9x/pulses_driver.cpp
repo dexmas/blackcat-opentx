@@ -70,8 +70,8 @@ void init_main_ppm(uint32_t period, uint32_t out_enable)
   pwmptr = PWM;
   // PWM3 for PPM output
   pwmptr->PWM_CH_NUM[3].PWM_CMR = 0x0004000B;                          // CLKA
-  pwmptr->PWM_CH_NUM[3].PWM_CPDR = period;                             // Period in half uS
-  pwmptr->PWM_CH_NUM[3].PWM_CPDRUPD = period;                          // Period in half uS
+  pwmptr->PWM_CH_NUM[3].PWM_CPRD = period;                             // Period in half uS
+  pwmptr->PWM_CH_NUM[3].PWM_CPRDUPD = period;                          // Period in half uS
   pwmptr->PWM_CH_NUM[3].PWM_CDTY = GET_MODULE_PPM_DELAY(EXTERNAL_MODULE) * 2; // Duty in half uS
   pwmptr->PWM_ENA = PWM_ENA_CHID3;                                     // Enable channel 3
   pwmptr->PWM_IER1 = PWM_IER1_CHID3;
@@ -98,8 +98,8 @@ void init_second_ppm(uint32_t period)
   if (!GET_MODULE_PPM_POLARITY(EXTRA_MODULE)) {
     pwmptr->PWM_CH_NUM[1].PWM_CMR |= 0x00000200;                       // CPOL
   }
-  pwmptr->PWM_CH_NUM[1].PWM_CPDR = period;                             // Period
-  pwmptr->PWM_CH_NUM[1].PWM_CPDRUPD = period;                          // Period
+  pwmptr->PWM_CH_NUM[1].PWM_CPRD = period;                             // Period
+  pwmptr->PWM_CH_NUM[1].PWM_CPRDUPD = period;                          // Period
   pwmptr->PWM_CH_NUM[1].PWM_CDTY = GET_MODULE_PPM_DELAY(EXTRA_MODULE)*2;      // Duty
   pwmptr->PWM_CH_NUM[1].PWM_CDTYUPD = GET_MODULE_PPM_DELAY(EXTRA_MODULE)*2;   // Duty
   pwmptr->PWM_ENA = PWM_ENA_CHID1;                                     // Enable channel 1
@@ -207,7 +207,7 @@ void extmoduleSendNextFrame()
 }
 
 #if !defined(SIMU)
-extern "C" void PWM_IRQHandler(void)
+extern "C" void PWM_Handler(void)
 {
   Pwm * pwmptr = PWM;
   uint32_t reason = pwmptr->PWM_ISR1;
@@ -218,14 +218,14 @@ extern "C" void PWM_IRQHandler(void)
     switch (moduleState[EXTERNAL_MODULE].protocol) {
       case PROTOCOL_CHANNELS_PXX1_PULSES:
         // Alternate periods of 6.5mS and 2.5 mS
-        period = pwmptr->PWM_CH_NUM[3].PWM_CPDR;
+        period = pwmptr->PWM_CH_NUM[3].PWM_CPRD;
         if (period == 2500 * 2) {
           period = 6500 * 2;
         }
         else {
           period = 2500 * 2;
         }
-        pwmptr->PWM_CH_NUM[3].PWM_CPDRUPD = period; // Period in half uS
+        pwmptr->PWM_CH_NUM[3].PWM_CPRDUPD = period; // Period in half uS
         if (period != 2500 * 2) {
           setupPulsesExternalModule();
           setExternalModulePolarity();
@@ -243,14 +243,14 @@ extern "C" void PWM_IRQHandler(void)
       case PROTOCOL_CHANNELS_DSM2_DSM2:
       case PROTOCOL_CHANNELS_DSM2_DSMX:
         // Alternate periods of 19.5mS and 2.5 mS
-        period = pwmptr->PWM_CH_NUM[3].PWM_CPDR;
+        period = pwmptr->PWM_CH_NUM[3].PWM_CPRD;
         if (period == 2500 * 2) {
           period = 19500 * 2;
         }
         else {
           period = 2500 * 2;
         }
-        pwmptr->PWM_CH_NUM[3].PWM_CPDRUPD = period; // Period in half uS
+        pwmptr->PWM_CH_NUM[3].PWM_CPRDUPD = period; // Period in half uS
         if (period != 2500 * 2) {
           setupPulsesExternalModule();
         }
@@ -269,14 +269,14 @@ extern "C" void PWM_IRQHandler(void)
       case PROTOCOL_CHANNELS_SBUS:
         // Todo: how to do inverted polarity on this platform?
         // Alternate periods of 5.5mS and 3.5 mS
-        period = pwmptr->PWM_CH_NUM[3].PWM_CPDR;
+        period = pwmptr->PWM_CH_NUM[3].PWM_CPRD;
         if (period == 3500 * 2) {
           period = 5500 * 2;
         }
         else {
           period = 3500 * 2;
         }
-        pwmptr->PWM_CH_NUM[3].PWM_CPDRUPD = period; // Period in half uS
+        pwmptr->PWM_CH_NUM[3].PWM_CPRDUPD = period; // Period in half uS
         if (period != 3500 * 2) {
           setupPulsesExternalModule();
         }
@@ -290,7 +290,7 @@ extern "C" void PWM_IRQHandler(void)
         break;
 
       default:
-        pwmptr->PWM_CH_NUM[3].PWM_CPDRUPD = *extmodulePulsesData.ppm.ptr++;
+        pwmptr->PWM_CH_NUM[3].PWM_CPRDUPD = *extmodulePulsesData.ppm.ptr++;
         if (*extmodulePulsesData.ppm.ptr == 0) {
           setExternalModulePolarity();
           setupPulsesExternalModule();

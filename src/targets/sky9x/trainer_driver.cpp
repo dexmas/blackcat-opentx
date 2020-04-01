@@ -39,7 +39,7 @@ inline void start_timer3()
 
   NVIC_SetPriority( TC3_IRQn, 14 ) ; // Low priority interrupt
   NVIC_EnableIRQ(TC3_IRQn) ;
-  ptc->TC_CHANNEL[0].TC_IER = TC_IER0_LDRAS ;
+  ptc->TC_CHANNEL[0].TC_IER = TC_IER_LDRAS ;
 }
 
 // Start Timer4 to provide 0.5uS clock for input capture
@@ -71,10 +71,10 @@ void start_timer4()
 // (The timer is free-running and is thus not reset to zero at each capture interval.)
 // Timer 4 generates the 2MHz clock to clock Timer 3
 
-extern "C" void TC3_IRQHandler() //capture ppm in at 2MHz
+extern "C" void TC3_Handler() //capture ppm in at 2MHz
 {
   uint32_t status = TC1->TC_CHANNEL[0].TC_SR;
-  if (status & TC_SR0_LDRAS) {
+  if (status & TC_SR_LDRAS) {
     uint16_t capture = TC1->TC_CHANNEL[0].TC_RA ;
     captureTrainerPulses(capture);
   }
@@ -90,6 +90,6 @@ void init_trainer_capture()
 void stop_trainer_capture()
 {
   PIOC->PIO_PDR = PIO_PC22;
-  TC1->TC_CHANNEL[0].TC_IDR = TC_IDR0_LDRAS ;
+  TC1->TC_CHANNEL[0].TC_IDR = TC_IDR_LDRAS ;
   NVIC_DisableIRQ(TC3_IRQn) ;
 }

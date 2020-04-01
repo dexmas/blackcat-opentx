@@ -56,7 +56,7 @@ uint32_t readLockBits()
   __disable_irq();
   (void) IAP_Function( 0, flash_cmd );
   __enable_irq();
-  return EFC->EEFC_FRR;
+  return EFC0->EEFC_FRR;
 }
 
 void clearLockBits()

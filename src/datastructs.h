@@ -887,7 +887,7 @@ static inline void check_struct()
   CHKSIZE(SwashRingData, 8);
   CHKSIZE(FrSkyBarData, 5);
   CHKSIZE(FrSkyLineData, 2);
-  CHKSIZE(ModelHeader, 12);
+  CHKSIZE(ModelHeader, 11);
   CHKTYPE(CurveData, 4);
 #else
   // Common for all variants
@@ -934,7 +934,7 @@ static inline void check_struct()
 #elif defined(PCBSKY9X)
   CHKSIZE(RadioData, 735);
 #if defined(LUA)
-  CHKSIZE(ModelData, 5357);
+  CHKSIZE(ModelData, 5447);
 #else
   CHKSIZE(ModelData, 5301);
 #endif

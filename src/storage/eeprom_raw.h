@@ -32,6 +32,7 @@ void eeSwapModels(uint8_t id1, uint8_t id2);
 #if defined(SDCARD)
 const char * eeBackupModel(uint8_t i_fileSrc);
 const char * eeRestoreModel(uint8_t i_fileDst, char *model_name);
+void eepromBackup();
 #endif
 
 enum EepromWriteState {

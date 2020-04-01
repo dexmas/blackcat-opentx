@@ -82,7 +82,7 @@ void UART2_timeout_disable()
   NVIC_DisableIRQ(USART0_IRQn);
 }
 
-extern "C" void USART0_IRQHandler()
+extern "C" void USART0_Handler()
 {
   Usart *pUsart = SECOND_USART;
   pUsart->US_CR = US_CR_STTTO ;         // Clears timeout bit

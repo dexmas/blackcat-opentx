@@ -49,6 +49,8 @@ enum {
     ITEM_RADIO_HARDWARE_RAS,
     ITEM_RADIO_HARDWARE_DEBUG,
     CASE_BLUETOOTH(ITEM_RADIO_HARDWARE_BT_BAUDRATE)
+    ITEM_RADIO_BACKUP_EEPROM,
+    ITEM_RADIO_FACTORY_RESET,
     ITEM_RADIO_HARDWARE_MAX
 };
 
@@ -58,6 +60,15 @@ enum {
 
 #define HW_SETTINGS_COLUMN1 30
 #define HW_SETTINGS_COLUMN2 (HW_SETTINGS_COLUMN1 + 5*FW)
+
+void onFactoryResetConfirm(const char* result)
+{
+    if (result == STR_OK) {
+        showMessageBox(STR_STORAGE_FORMAT);
+        storageEraseAll(false);
+        NVIC_SystemReset();
+    }
+}
 
 void menuRadioHardware(event_t event)
 {
@@ -213,6 +224,28 @@ void menuRadioHardware(event_t event)
                     pushMenu(menuRadioDiagAnalogs);
                 else
                     pushMenu(menuRadioDiagKeys);
+            }
+            break;
+
+        case ITEM_RADIO_BACKUP_EEPROM:
+            if (LCD_W < 212)
+                lcdDrawText(LCD_W / 2, y, BUTTON(STR_EEBACKUP), attr | CENTERED);
+            else
+                lcdDrawText(HW_SETTINGS_COLUMN2, y, BUTTON(STR_EEBACKUP), attr);
+            if (attr && event == EVT_KEY_BREAK(KEY_ENTER)) {
+                s_editMode = EDIT_SELECT_FIELD;
+                eepromBackup();
+            }
+            break;
+
+        case ITEM_RADIO_FACTORY_RESET:
+            if (LCD_W < 212)
+                lcdDrawText(LCD_W / 2, y, BUTTON(STR_FACTORYRESET), attr | CENTERED);
+            else
+                lcdDrawText(HW_SETTINGS_COLUMN2, y, BUTTON(STR_FACTORYRESET), attr);
+            if (attr && event == EVT_KEY_BREAK(KEY_ENTER)) {
+                s_editMode = EDIT_SELECT_FIELD;
+                POPUP_CONFIRMATION(STR_CONFIRMRESET, onFactoryResetConfirm);
             }
             break;
         }
