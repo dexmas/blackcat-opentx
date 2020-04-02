@@ -556,11 +556,14 @@ void *bin_l_alloc(void *ud, void *ptr, size_t osize, size_t nsize)
 
     if (nsize == 0)
     {
-        //umm_free(ptr);
-        free(ptr);
+        umm_free(ptr);
+        //free(ptr);
         return nullptr;
     }
     else
-        return realloc(ptr, nsize);
-	    //return umm_realloc(ptr, nsize);
+    {
+        size_t aligned = (nsize & 0xFFFFFFF8) + ((nsize & 0x7) ? 8 : 0);
+        //return realloc(ptr, aligned);
+        return umm_realloc(ptr, aligned);
+    }
 }
