@@ -393,7 +393,7 @@ void boardInit()
     uint32_t cpu_hz = (12000000U * 20) / (1 << (PMC_MCKR_PRES_CLK_2 >> PMC_MCKR_PRES_Pos));
     system_init_flash(cpu_hz);
 
-    Master_frequency = cpu_hz;
+    Master_frequency = 120000000L;
     // ^^^
 
   Pio *pioptr ;

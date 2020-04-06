@@ -229,6 +229,8 @@ enum NavigationDirection {
   #define EVT_KEY_NEXT_VIEW(evt)             (evt == EVT_KEY_FIRST(KEY_DOWN))
 #endif
 
+char vm_heap_size_stat[16] = {0};
+
 void menuViewTelemetryFrsky(event_t event)
 {
   enum NavigationDirection direction = none;
@@ -253,8 +255,13 @@ void menuViewTelemetryFrsky(event_t event)
   }
   else if (event == EVT_KEY_LONG(KEY_ENTER)) {
     killEvents(event);
+    
     POPUP_MENU_ADD_ITEM(STR_RESET_TELEMETRY);
     POPUP_MENU_ADD_ITEM(STR_RESET_FLIGHT);
+
+    sprintf(vm_heap_size_stat, "VM Use: %db", luaGetMemUsed(lsScripts));
+    POPUP_MENU_ADD_ITEM(vm_heap_size_stat);
+
     POPUP_MENU_START(onMainViewMenu);
   }
 

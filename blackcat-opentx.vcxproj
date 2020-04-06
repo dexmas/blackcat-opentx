@@ -35,7 +35,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='SAM4S16C|VisualGDB'">
     <ClCompile>
-      <PreprocessorDefinitions>__SAM4S16C__;REVX;PCBSKY9X;RTOS_COOS;FLAVOUR="9xrpro";REQUIRED_SDCARD_VERSION="2.3.0";FONT=SQT5;TRANSLATIONS="EN";TRANSLATIONS_EN;PPM_PIN_SERIAL;AUDIO_DUAL_BUFFER;AUDIO;VOICE;RTCLOCK;RUN_FROM_FLASH=1;EEPROM;EEPROM_RAW;SPLASH;TIMERS=2;HAPTIC;MULTIMODULE;VIRTUAL_INPUTS;TELEMETRY_FRSKY_SPORT;FRSKY_HUB;PXX;DSM2;BOLD_FONT;BATTGRAPH;THRTRACE;GAUGES;VARIO;GRAPHICS;FLIGHT_MODES;EEPROM_VARIANT=1;CURVES;AUTOSOURCE;AUTOSWITCH;SDCARD;PPM_UNIT_US;PPM_CENTER_ADJUSTABLE;PPM_LIMITS_SYMETRICAL;OVERRIDE_CHANNEL_FUNCTION;DANGEROUS_MODULE_FUNCTIONS;GUI;CPUARM;CORRECT_NEGATIVE_SHIFTS;DISABLE_MULTI_UPDATE;NAVIGATION_9X;BUZZER;PXX1;WATCHDOG;POPUP_LEVEL=2;CROSSFIRE;GVARS;LUA;LUA_COMPILER;LUA_INPUTS;LUA_MODEL_SCRIPTS;USE_BIN_ALLOCATOR;%(ClCompile.PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>__SAM4S16C__;REVX;PCBSKY9X;RTOS_COOS;FLAVOUR="9xrpro";REQUIRED_SDCARD_VERSION="2.3.0";FONT=SQT5;TRANSLATIONS="EN";TRANSLATIONS_EN;PPM_PIN_SERIAL;AUDIO_DUAL_BUFFER;AUDIO;VOICE;RTCLOCK;RUN_FROM_FLASH=1;EEPROM;EEPROM_RAW;SPLASH;TIMERS=2;HAPTIC;MULTIMODULE;VIRTUAL_INPUTS;TELEMETRY_FRSKY_SPORT;FRSKY_HUB;PXX;DSM2;BOLD_FONT;BATTGRAPH;THRTRACE;GAUGES;VARIO;GRAPHICS;FLIGHT_MODES;EEPROM_VARIANT=1;CURVES;AUTOSOURCE;AUTOSWITCH;SDCARD;PPM_UNIT_US;PPM_CENTER_ADJUSTABLE;PPM_LIMITS_SYMETRICAL;OVERRIDE_CHANNEL_FUNCTION;DANGEROUS_MODULE_FUNCTIONS;GUI;CPUARM;CORRECT_NEGATIVE_SHIFTS;DISABLE_MULTI_UPDATE;NAVIGATION_9X;BUZZER;PXX1;WATCHDOG;POPUP_LEVEL=2;CROSSFIRE;GVARS;LUA;LUA_COMPILER;%(ClCompile.PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>src;src\gui;src\gui\128x64;src\thirdparty;src\thirdparty\CoOS;src\thirdparty\CoOS\kernel;src\thirdparty\CoOS\portable;src\thirdparty\FatFs;src\thirdparty\FatFs\option;src\thirdparty\Lua\src;src\targets\sky9x;data;data\bitmaps;data\bitmaps\128x64;data\fonts\sqt5;%(ClCompile.AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PrecompiledHeaderDirectory>
       </PrecompiledHeaderDirectory>
@@ -50,7 +50,7 @@
     <Link />
     <Link>
       <LinkerScript>src/targets/sky9x/sam4s16c_flash.ld</LinkerScript>
-      <AdditionalLinkerInputs>--specs=nano.specs;-u _printf_float;-u _scanf_float;%(Link.AdditionalLinkerInputs)</AdditionalLinkerInputs>
+      <AdditionalLinkerInputs>;%(Link.AdditionalLinkerInputs)</AdditionalLinkerInputs>
       <LibrarySearchDirectories>;%(Link.LibrarySearchDirectories)</LibrarySearchDirectories>
       <AdditionalLibraryNames>;%(Link.AdditionalLibraryNames)</AdditionalLibraryNames>
     </Link>
@@ -61,7 +61,9 @@
   <ItemGroup>
     <ClCompile Include="data\translations\tts_en.cpp" />
     <ClCompile Include="src\audio.cpp" />
-    <ClCompile Include="src\bin_allocator.cpp" />
+    <ClCompile Include="src\bin_allocator.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='SAM4S16C|VisualGDB'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="src\bluetooth.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='SAM4S16C|VisualGDB'">true</ExcludedFromBuild>
     </ClCompile>
@@ -90,7 +92,9 @@
     <ClCompile Include="src\gui\128x64\menu_model.cpp" />
     <ClCompile Include="src\gui\128x64\menu_radio.cpp" />
     <ClCompile Include="src\gui\128x64\model_curve_edit.cpp" />
-    <ClCompile Include="src\gui\128x64\model_custom_scripts.cpp" />
+    <ClCompile Include="src\gui\128x64\model_custom_scripts.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='SAM4S16C|VisualGDB'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="src\gui\128x64\model_display.cpp" />
     <ClCompile Include="src\gui\128x64\model_failsafe.cpp" />
     <ClCompile Include="src\gui\128x64\model_flightmodes.cpp" />
@@ -345,7 +349,9 @@
     <ClCompile Include="src\thirdparty\FatFs\option\ccsbcs.c" />
     <ClCompile Include="src\vario.cpp" />
     <ClInclude Include="src\audio.h" />
-    <ClInclude Include="src\bin_allocator.h" />
+    <ClInclude Include="src\bin_allocator.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='SAM4S16C|VisualGDB'">true</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="src\bitfield.h" />
     <ClInclude Include="src\bluetooth.h" />
     <ClInclude Include="src\buzzer.h" />
