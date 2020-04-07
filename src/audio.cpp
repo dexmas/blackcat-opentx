@@ -271,6 +271,10 @@ void referenceSystemAudioFiles()
   char * filename = strAppendSystemAudioPath(path);
   *(filename-1) = '\0';
 
+  if (!sdMounted()) {
+      sdMount();
+  }
+
   FRESULT res = f_opendir(&dir, path);        /* Open the directory */
   if (res == FR_OK) {
     for (;;) {
@@ -975,7 +979,7 @@ void audioPlay(unsigned int index, uint8_t id)
     if (isAudioFileReferenced(index, filename)) {
       audioQueue.playFile(filename, 0, id);
     }
-  }
+    }
 }
 
 void audioKeyPress()
@@ -1078,10 +1082,10 @@ void audioEvent(unsigned int index)
 #if defined(SDCARD)
     char filename[AUDIO_FILENAME_MAXLEN + 1];
     if (index < AU_SPECIAL_SOUND_FIRST && isAudioFileReferenced(index, filename)) {
-      audioQueue.stopPlay(ID_PLAY_PROMPT_BASE + index);
-      audioQueue.playFile(filename, 0, ID_PLAY_PROMPT_BASE + index);
-      return;
-    }
+            audioQueue.stopPlay(ID_PLAY_PROMPT_BASE + index);
+            audioQueue.playFile(filename, 0, ID_PLAY_PROMPT_BASE + index);
+            return;
+        }
 #endif
     switch (index) {
       case AU_INACTIVITY:
