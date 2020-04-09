@@ -19,6 +19,7 @@
  */
 
 #include "opentx.h"
+#include "usb_driver.h"
 
 uint8_t currentSpeakerVolume = 255;
 uint8_t requiredSpeakerVolume = 255;

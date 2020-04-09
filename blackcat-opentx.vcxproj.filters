@@ -66,24 +66,6 @@
     <Filter Include="Source files\targets\sky9x\usb">
       <UniqueIdentifier>{64aa6b90-0918-4040-80f4-9438cc9affa1}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source files\targets\sky9x\usb\common">
-      <UniqueIdentifier>{731bb3a6-7586-41e9-8a0f-beada356b792}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source files\targets\sky9x\usb\common\core">
-      <UniqueIdentifier>{19a0a8f2-2d6c-4f64-a27a-3e942a65fe73}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source files\targets\sky9x\usb\common\hid">
-      <UniqueIdentifier>{56040546-ae1c-4d8b-a3a4-0fb82e028f2c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source files\targets\sky9x\usb\device">
-      <UniqueIdentifier>{69817ab6-4415-4fd1-a60d-d0edd0c6cb24}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source files\targets\sky9x\usb\device\core">
-      <UniqueIdentifier>{5ccb943c-deb7-40a7-80b4-e9dbdd94da07}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source files\targets\sky9x\usb\device\hid">
-      <UniqueIdentifier>{5b435a09-2ee3-4c40-baec-f69c638dda26}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source files\telemetry">
       <UniqueIdentifier>{1f52320a-e0dd-44db-bdb4-f34813432ffd}</UniqueIdentifier>
     </Filter>
@@ -114,17 +96,23 @@
     <Filter Include="Source files\thirdparty\libopenui">
       <UniqueIdentifier>{42d7acb2-2bfe-4183-90af-e64791c757e4}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source files\targets\sky9x\usb\common\masstorage">
-      <UniqueIdentifier>{d547a44f-8e2a-45cd-9ec9-e02ae4f043f5}</UniqueIdentifier>
+    <Filter Include="Source files\targets\sky9x\usb\class">
+      <UniqueIdentifier>{13fe09b5-d608-4ca7-8c3c-5aed3b7d126a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source files\targets\sky9x\usb\device\masstorage">
-      <UniqueIdentifier>{fd5be73b-6ff3-4174-8cc8-9c1e20afde96}</UniqueIdentifier>
+    <Filter Include="Source files\targets\sky9x\usb\udc">
+      <UniqueIdentifier>{224b8814-cba7-4b81-b06c-1ef591b88abe}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source files\targets\sky9x\usb\common\cdc">
-      <UniqueIdentifier>{c9e79449-ee13-4fbc-b121-033d1cc8d1ba}</UniqueIdentifier>
+    <Filter Include="Source files\targets\sky9x\usb\class\hid">
+      <UniqueIdentifier>{a8aebb4d-4a19-428d-895e-8067e9df1b62}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source files\targets\sky9x\usb\device\cdc-serial">
-      <UniqueIdentifier>{17e0089f-b882-4398-9d18-ca01e4d405d5}</UniqueIdentifier>
+    <Filter Include="Source files\targets\sky9x\usb\class\hid\device">
+      <UniqueIdentifier>{e6e4b255-d0fc-4778-aa6e-3413985e6965}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\targets\sky9x\usb\class\hid\device\joystick">
+      <UniqueIdentifier>{158b0eb0-3c9b-4be8-a3f5-7d0ab295beba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\targets\sky9x\usb\udp">
+      <UniqueIdentifier>{77e4ba6b-d419-4cd4-a30c-51d389d2da88}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -626,45 +614,6 @@
     <ClCompile Include="src\telemetry\telemetry_sensors.cpp">
       <Filter>Source files\telemetry</Filter>
     </ClCompile>
-    <ClCompile Include="src\targets\sky9x\usb\common\core\USBDescriptors.c">
-      <Filter>Source files\targets\sky9x\usb\common\core</Filter>
-    </ClCompile>
-    <ClCompile Include="src\targets\sky9x\usb\common\core\USBRequests.c">
-      <Filter>Source files\targets\sky9x\usb\common\core</Filter>
-    </ClCompile>
-    <ClCompile Include="src\targets\sky9x\usb\common\hid\HIDDFunction.c">
-      <Filter>Source files\targets\sky9x\usb\common\hid</Filter>
-    </ClCompile>
-    <ClCompile Include="src\targets\sky9x\usb\common\hid\HIDIdleRequest.c">
-      <Filter>Source files\targets\sky9x\usb\common\hid</Filter>
-    </ClCompile>
-    <ClCompile Include="src\targets\sky9x\usb\common\hid\HIDReportRequest.c">
-      <Filter>Source files\targets\sky9x\usb\common\hid</Filter>
-    </ClCompile>
-    <ClCompile Include="src\targets\sky9x\usb\device\core\pmc.c">
-      <Filter>Source files\targets\sky9x\usb\device\core</Filter>
-    </ClCompile>
-    <ClCompile Include="src\targets\sky9x\usb\device\core\USBD.c">
-      <Filter>Source files\targets\sky9x\usb\device\core</Filter>
-    </ClCompile>
-    <ClCompile Include="src\targets\sky9x\usb\device\core\USBD_HAL.c">
-      <Filter>Source files\targets\sky9x\usb\device\core</Filter>
-    </ClCompile>
-    <ClCompile Include="src\targets\sky9x\usb\device\core\USBDCallbacks.c">
-      <Filter>Source files\targets\sky9x\usb\device\core</Filter>
-    </ClCompile>
-    <ClCompile Include="src\targets\sky9x\usb\device\core\USBDDriver.c">
-      <Filter>Source files\targets\sky9x\usb\device\core</Filter>
-    </ClCompile>
-    <ClCompile Include="src\targets\sky9x\usb\device\core\USBDDriverCallbacks.c">
-      <Filter>Source files\targets\sky9x\usb\device\core</Filter>
-    </ClCompile>
-    <ClCompile Include="src\targets\sky9x\usb\device\hid\device_descriptor.c">
-      <Filter>Source files\targets\sky9x\usb\device\hid</Filter>
-    </ClCompile>
-    <ClCompile Include="src\targets\sky9x\usb\device\hid\HIDDJoystickDriver.c">
-      <Filter>Source files\targets\sky9x\usb\device\hid</Filter>
-    </ClCompile>
     <ClCompile Include="src\audio.cpp">
       <Filter>Source files</Filter>
     </ClCompile>
@@ -773,33 +722,6 @@
     <ClCompile Include="src\targets\sky9x\usb_driver.cpp">
       <Filter>Source files\targets\sky9x</Filter>
     </ClCompile>
-    <ClCompile Include="src\targets\sky9x\usb\device\massstorage\MSDDriver.c">
-      <Filter>Source files\targets\sky9x\usb\device\masstorage</Filter>
-    </ClCompile>
-    <ClCompile Include="src\targets\sky9x\usb\device\massstorage\MSDDriverDescriptors.c">
-      <Filter>Source files\targets\sky9x\usb\device\masstorage</Filter>
-    </ClCompile>
-    <ClCompile Include="src\targets\sky9x\usb\device\massstorage\MSDDStateMachine.c">
-      <Filter>Source files\targets\sky9x\usb\device\masstorage</Filter>
-    </ClCompile>
-    <ClCompile Include="src\targets\sky9x\usb\device\massstorage\MSDLun.c">
-      <Filter>Source files\targets\sky9x\usb\device\masstorage</Filter>
-    </ClCompile>
-    <ClCompile Include="src\targets\sky9x\usb\device\massstorage\SBCMethods.c">
-      <Filter>Source files\targets\sky9x\usb\device\masstorage</Filter>
-    </ClCompile>
-    <ClCompile Include="src\targets\sky9x\usb\common\cdc\CDCLineCoding.c">
-      <Filter>Source files\targets\sky9x\usb\common\cdc</Filter>
-    </ClCompile>
-    <ClCompile Include="src\targets\sky9x\usb\common\cdc\CDCSetControlLineStateRequest.c">
-      <Filter>Source files\targets\sky9x\usb\common\cdc</Filter>
-    </ClCompile>
-    <ClCompile Include="src\targets\sky9x\usb\device\cdc-serial\CDCDSerialDriver.c">
-      <Filter>Source files\targets\sky9x\usb\device\cdc-serial</Filter>
-    </ClCompile>
-    <ClCompile Include="src\targets\sky9x\usb\device\cdc-serial\CDCDSerialDriverDescriptors.c">
-      <Filter>Source files\targets\sky9x\usb\device\cdc-serial</Filter>
-    </ClCompile>
     <ClCompile Include="src\targets\sky9x\usb_massstorage.cpp">
       <Filter>Source files\targets\sky9x</Filter>
     </ClCompile>
@@ -814,6 +736,21 @@
     </ClCompile>
     <ClCompile Include="src\targets\sky9x\system_sam4s.c">
       <Filter>Source files\targets\sky9x</Filter>
+    </ClCompile>
+    <ClCompile Include="src\targets\sky9x\usb\udc\udc.c">
+      <Filter>Source files\targets\sky9x\usb\udc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\targets\sky9x\usb\class\hid\device\udi_hid.c">
+      <Filter>Source files\targets\sky9x\usb\class\hid\device</Filter>
+    </ClCompile>
+    <ClCompile Include="src\targets\sky9x\usb\class\hid\device\joystick\udi_hid_joystick.c">
+      <Filter>Source files\targets\sky9x\usb\class\hid\device\joystick</Filter>
+    </ClCompile>
+    <ClCompile Include="src\targets\sky9x\usb\class\hid\device\joystick\udi_hid_joystick_desc.c">
+      <Filter>Source files\targets\sky9x\usb\class\hid\device\joystick</Filter>
+    </ClCompile>
+    <ClCompile Include="src\targets\sky9x\usb\udp\udp_device.c">
+      <Filter>Source files\targets\sky9x\usb\udp</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -962,51 +899,6 @@
     </ClInclude>
     <ClInclude Include="src\storage\storage.h">
       <Filter>Source files\storage</Filter>
-    </ClInclude>
-    <ClInclude Include="src\targets\sky9x\usb\common\core\USBDescriptors.h">
-      <Filter>Source files\targets\sky9x\usb\common\core</Filter>
-    </ClInclude>
-    <ClInclude Include="src\targets\sky9x\usb\common\core\USBLib_Trace.h">
-      <Filter>Source files\targets\sky9x\usb\common\core</Filter>
-    </ClInclude>
-    <ClInclude Include="src\targets\sky9x\usb\common\core\USBLib_Types.h">
-      <Filter>Source files\targets\sky9x\usb\common\core</Filter>
-    </ClInclude>
-    <ClInclude Include="src\targets\sky9x\usb\common\core\USBRequests.h">
-      <Filter>Source files\targets\sky9x\usb\common\core</Filter>
-    </ClInclude>
-    <ClInclude Include="src\targets\sky9x\usb\common\hid\HIDDescriptors.h">
-      <Filter>Source files\targets\sky9x\usb\common\hid</Filter>
-    </ClInclude>
-    <ClInclude Include="src\targets\sky9x\usb\common\hid\HIDDFunction.h">
-      <Filter>Source files\targets\sky9x\usb\common\hid</Filter>
-    </ClInclude>
-    <ClInclude Include="src\targets\sky9x\usb\common\hid\HIDReports.h">
-      <Filter>Source files\targets\sky9x\usb\common\hid</Filter>
-    </ClInclude>
-    <ClInclude Include="src\targets\sky9x\usb\common\hid\HIDRequests.h">
-      <Filter>Source files\targets\sky9x\usb\common\hid</Filter>
-    </ClInclude>
-    <ClInclude Include="src\targets\sky9x\usb\common\hid\HIDUsages.h">
-      <Filter>Source files\targets\sky9x\usb\common\hid</Filter>
-    </ClInclude>
-    <ClInclude Include="src\targets\sky9x\usb\device\core\pmc.h">
-      <Filter>Source files\targets\sky9x\usb\device\core</Filter>
-    </ClInclude>
-    <ClInclude Include="src\targets\sky9x\usb\device\core\USBD.h">
-      <Filter>Source files\targets\sky9x\usb\device\core</Filter>
-    </ClInclude>
-    <ClInclude Include="src\targets\sky9x\usb\device\core\USBD_Config.h">
-      <Filter>Source files\targets\sky9x\usb\device\core</Filter>
-    </ClInclude>
-    <ClInclude Include="src\targets\sky9x\usb\device\core\USBD_HAL.h">
-      <Filter>Source files\targets\sky9x\usb\device\core</Filter>
-    </ClInclude>
-    <ClInclude Include="src\targets\sky9x\usb\device\core\USBDDriver.h">
-      <Filter>Source files\targets\sky9x\usb\device\core</Filter>
-    </ClInclude>
-    <ClInclude Include="src\targets\sky9x\usb\device\hid\HIDDJoystickDriver.h">
-      <Filter>Source files\targets\sky9x\usb\device\hid</Filter>
     </ClInclude>
     <ClInclude Include="src\targets\sky9x\audio_driver.h">
       <Filter>Source files\targets\sky9x</Filter>
@@ -1416,75 +1308,6 @@
     <ClInclude Include="src\targets\sky9x\usb_driver.h">
       <Filter>Source files\targets\sky9x</Filter>
     </ClInclude>
-    <ClInclude Include="src\targets\sky9x\usb\common\massstorage\MSDeviceDescriptor.h">
-      <Filter>Source files\targets\sky9x\usb\common\masstorage</Filter>
-    </ClInclude>
-    <ClInclude Include="src\targets\sky9x\usb\common\massstorage\MSInterfaceDescriptor.h">
-      <Filter>Source files\targets\sky9x\usb\common\masstorage</Filter>
-    </ClInclude>
-    <ClInclude Include="src\targets\sky9x\usb\device\massstorage\MSD.h">
-      <Filter>Source files\targets\sky9x\usb\device\masstorage</Filter>
-    </ClInclude>
-    <ClInclude Include="src\targets\sky9x\usb\device\massstorage\MSDDriver.h">
-      <Filter>Source files\targets\sky9x\usb\device\masstorage</Filter>
-    </ClInclude>
-    <ClInclude Include="src\targets\sky9x\usb\device\massstorage\MSDDriverDescriptors.h">
-      <Filter>Source files\targets\sky9x\usb\device\masstorage</Filter>
-    </ClInclude>
-    <ClInclude Include="src\targets\sky9x\usb\device\massstorage\MSDDStateMachine.h">
-      <Filter>Source files\targets\sky9x\usb\device\masstorage</Filter>
-    </ClInclude>
-    <ClInclude Include="src\targets\sky9x\usb\device\massstorage\MSDIOFifo.h">
-      <Filter>Source files\targets\sky9x\usb\device\masstorage</Filter>
-    </ClInclude>
-    <ClInclude Include="src\targets\sky9x\usb\device\massstorage\MSDLun.h">
-      <Filter>Source files\targets\sky9x\usb\device\masstorage</Filter>
-    </ClInclude>
-    <ClInclude Include="src\targets\sky9x\usb\device\massstorage\SBC.h">
-      <Filter>Source files\targets\sky9x\usb\device\masstorage</Filter>
-    </ClInclude>
-    <ClInclude Include="src\targets\sky9x\usb\device\massstorage\SBCMethods.h">
-      <Filter>Source files\targets\sky9x\usb\device\masstorage</Filter>
-    </ClInclude>
-    <ClInclude Include="src\targets\sky9x\usb\common\cdc\CDCAbstractControlManagementDescriptor.h">
-      <Filter>Source files\targets\sky9x\usb\common\cdc</Filter>
-    </ClInclude>
-    <ClInclude Include="src\targets\sky9x\usb\common\cdc\CDCCallManagementDescriptor.h">
-      <Filter>Source files\targets\sky9x\usb\common\cdc</Filter>
-    </ClInclude>
-    <ClInclude Include="src\targets\sky9x\usb\common\cdc\CDCCommunicationInterfaceDescriptor.h">
-      <Filter>Source files\targets\sky9x\usb\common\cdc</Filter>
-    </ClInclude>
-    <ClInclude Include="src\targets\sky9x\usb\common\cdc\CDCDataInterfaceDescriptor.h">
-      <Filter>Source files\targets\sky9x\usb\common\cdc</Filter>
-    </ClInclude>
-    <ClInclude Include="src\targets\sky9x\usb\common\cdc\CDCDeviceDescriptor.h">
-      <Filter>Source files\targets\sky9x\usb\common\cdc</Filter>
-    </ClInclude>
-    <ClInclude Include="src\targets\sky9x\usb\common\cdc\CDCGenericDescriptor.h">
-      <Filter>Source files\targets\sky9x\usb\common\cdc</Filter>
-    </ClInclude>
-    <ClInclude Include="src\targets\sky9x\usb\common\cdc\CDCGenericRequest.h">
-      <Filter>Source files\targets\sky9x\usb\common\cdc</Filter>
-    </ClInclude>
-    <ClInclude Include="src\targets\sky9x\usb\common\cdc\CDCHeaderDescriptor.h">
-      <Filter>Source files\targets\sky9x\usb\common\cdc</Filter>
-    </ClInclude>
-    <ClInclude Include="src\targets\sky9x\usb\common\cdc\CDCLineCoding.h">
-      <Filter>Source files\targets\sky9x\usb\common\cdc</Filter>
-    </ClInclude>
-    <ClInclude Include="src\targets\sky9x\usb\common\cdc\CDCSetControlLineStateRequest.h">
-      <Filter>Source files\targets\sky9x\usb\common\cdc</Filter>
-    </ClInclude>
-    <ClInclude Include="src\targets\sky9x\usb\common\cdc\CDCUnionDescriptor.h">
-      <Filter>Source files\targets\sky9x\usb\common\cdc</Filter>
-    </ClInclude>
-    <ClInclude Include="src\targets\sky9x\usb\device\cdc-serial\CDCDSerialDriver.h">
-      <Filter>Source files\targets\sky9x\usb\device\cdc-serial</Filter>
-    </ClInclude>
-    <ClInclude Include="src\targets\sky9x\usb\device\cdc-serial\CDCDSerialDriverDescriptors.h">
-      <Filter>Source files\targets\sky9x\usb\device\cdc-serial</Filter>
-    </ClInclude>
     <ClInclude Include="src\targets\sky9x\sam4s16c.h">
       <Filter>Source files\targets\sky9x</Filter>
     </ClInclude>
@@ -1505,6 +1328,36 @@
     </ClInclude>
     <ClInclude Include="src\targets\sky9x\mpu_armv7.h">
       <Filter>Source files\targets\sky9x</Filter>
+    </ClInclude>
+    <ClInclude Include="src\targets\sky9x\usb\usb_protocol.h">
+      <Filter>Source files\targets\sky9x\usb</Filter>
+    </ClInclude>
+    <ClInclude Include="src\targets\sky9x\usb\udc\udc.h">
+      <Filter>Source files\targets\sky9x\usb\udc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\targets\sky9x\usb\udc\udc_desc.h">
+      <Filter>Source files\targets\sky9x\usb\udc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\targets\sky9x\usb\udc\udd.h">
+      <Filter>Source files\targets\sky9x\usb\udc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\targets\sky9x\usb\udc\udi.h">
+      <Filter>Source files\targets\sky9x\usb\udc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\targets\sky9x\usb\class\hid\usb_protocol_hid.h">
+      <Filter>Source files\targets\sky9x\usb\class\hid</Filter>
+    </ClInclude>
+    <ClInclude Include="src\targets\sky9x\usb\class\hid\device\udi_hid.h">
+      <Filter>Source files\targets\sky9x\usb\class\hid\device</Filter>
+    </ClInclude>
+    <ClInclude Include="src\targets\sky9x\usb\class\hid\device\joystick\udi_hid_joystick.h">
+      <Filter>Source files\targets\sky9x\usb\class\hid\device\joystick</Filter>
+    </ClInclude>
+    <ClInclude Include="src\targets\sky9x\usb\usb_config.h">
+      <Filter>Source files\targets\sky9x\usb</Filter>
+    </ClInclude>
+    <ClInclude Include="src\targets\sky9x\usb\udp\udp_device.h">
+      <Filter>Source files\targets\sky9x\usb\udp</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

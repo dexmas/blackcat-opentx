@@ -21,6 +21,7 @@
 #define LANGUAGE_PACKS_DEFINITION
 
 #include "opentx.h"
+#include "usb_driver.h"
 
 const unsigned char sticks[]  = {
 #include "sticks.lbm"

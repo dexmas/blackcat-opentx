@@ -24,15 +24,13 @@
 
 #ifndef SIMU
 
+extern "C" {
+#include "udc.h"
+}
+
 void usbMassStorage();
 void startCDCSerial();
-
-extern "C" {
-    extern "C" void startJoystick(void);
-    extern "C" uint8_t HIDDJoystickDriver_Change(uint8_t * data);
-    extern "C" void USBD_Connect(void);
-    extern "C" void USBD_Disconnect(void);
-}
+void startJoystick();
 
 static bool usbDriverStarted = false;
 #if defined(BOOT)
@@ -87,13 +85,17 @@ void usbStart()
 void usbStop()
 {
     usbDriverStarted = false;
-    USBD_Disconnect();
-    //USBD_DeInit(&USB_OTG_dev);
+    //USBD_Disconnect();
 }
 
 bool usbStarted()
 {
     return usbDriverStarted;
+}
+
+void startJoystick()
+{
+    udc_remotewakeup();
 }
 
 void usbJoystickUpdate()
@@ -115,7 +117,7 @@ void usbJoystickUpdate()
         HID_Buffer[i+1] = static_cast<int8_t>(value);
     }
 
-    HIDDJoystickDriver_Change(HID_Buffer);
+    //HIDDJoystickDriver_Change(HID_Buffer);
 }
 
 void usbPluggedIn()

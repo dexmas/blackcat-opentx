@@ -20,6 +20,7 @@
 
 #include <io/frsky_firmware_update.h>
 #include "opentx.h"
+#include "usb_driver.h"
 
 RadioData  g_eeGeneral;
 ModelData  g_model;

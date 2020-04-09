@@ -19,6 +19,7 @@
  */
 
 #include "opentx.h"
+#include "usb_driver.h"
 
 #if defined(PCBAR9X)
 #include "i2c_driver.h"

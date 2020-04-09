@@ -8,10 +8,6 @@
 #include "core_cm4.h"
 #endif
 
-/// USB attributes configuration descriptor (bus or self powered, remote wakeup)
-//#define BOARD_USB_BMATTRIBUTES              USBConfigurationDescriptor_SELFPOWERED_RWAKEUP
-#define BOARD_USB_BMATTRIBUTES            USBConfigurationDescriptor_SELFPOWERED_NORWAKEUP
-
 #define BLOCK_SIZE                     512
 #define MSD_BUFFER_SIZE                (12*BLOCK_SIZE) // Size of the MSD IO buffer in bytes (6K, more the better)
 #define SD_CARD_PRESENT()              ( (PIOB->PIO_PDSR & PIO_PB7) == 0 )
