@@ -213,8 +213,6 @@ typedef void (*MblTransferCallback)(void *pArg,
  *         Exported functions
  *------------------------------------------------------------------------------*/
 
-extern void UDP_Handler(void);
-
 extern void USBD_Init(void);
 
 extern void USBD_ConfigureSpeed(uint8_t forceFS);
