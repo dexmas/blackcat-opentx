@@ -127,7 +127,7 @@ UDC_DESC_STORAGE usb_dev_lpm_desc_t udc_device_lpm = {
 //! Structure for USB Device Configuration Descriptor
 PACK(typedef struct {
 	usb_conf_desc_t conf;
-	udi_hid_mouse_desc_t hid_mouse;
+	udi_hid_gpd_desc_t hid_gpd;
 }) udc_desc_t;
 
 //! USB Device Configuration Descriptor filled for FS and HS
@@ -141,7 +141,7 @@ UDC_DESC_STORAGE udc_desc_t udc_desc = {
 	.conf.iConfiguration       = 0,
 	.conf.bmAttributes         = USB_CONFIG_ATTR_MUST_SET | USB_DEVICE_ATTR,
 	.conf.bMaxPower            = USB_CONFIG_MAX_POWER(USB_DEVICE_POWER),
-	.hid_mouse                 = UDI_HID_MOUSE_DESC,
+	.hid_gpd				   = UDI_HID_GPD_DESC,
 };
 
 
@@ -152,7 +152,7 @@ UDC_DESC_STORAGE udc_desc_t udc_desc = {
 
 //! Associate an UDI for each USB interface
 UDC_DESC_STORAGE udi_api_t *udi_apis[USB_DEVICE_NB_INTERFACE] = {
-	&udi_api_hid_mouse,
+	&udi_api_hid_gpd,
 };
 
 //! Add UDI with USB Descriptors FS & HS

@@ -132,7 +132,7 @@ static bool udi_hid_reqstdifaceget_descriptor(uint8_t *report_desc)
 		// USB_DT_HID descriptor requested then send it
 		udd_g_ctrlreq.payload = (uint8_t *) ptr_hid_desc;
 		udd_g_ctrlreq.payload_size =
-				min(udd_g_ctrlreq.req.wLength,
+				Min(udd_g_ctrlreq.req.wLength,
 				ptr_hid_desc->bLength);
 		return true;
 	}
@@ -143,8 +143,8 @@ static bool udi_hid_reqstdifaceget_descriptor(uint8_t *report_desc)
 		// Send HID Report descriptor given by high level
 		udd_g_ctrlreq.payload = report_desc;
 		udd_g_ctrlreq.payload_size =
-				min(udd_g_ctrlreq.req.wLength,
-				uint16_to_cpu(ptr_hid_desc->wDescriptorLength));
+				Min(udd_g_ctrlreq.req.wLength,
+				ptr_hid_desc->wDescriptorLength);
 		return true;
 	}
 	return false;

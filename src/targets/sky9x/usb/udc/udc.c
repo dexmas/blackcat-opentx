@@ -165,7 +165,7 @@ static usb_conf_desc_t UDC_DESC_STORAGE *udc_get_eof_conf(void)
 {
 	return (UDC_DESC_STORAGE usb_conf_desc_t *) ((uint8_t *)
 			udc_ptr_conf->desc +
-			uint16_to_cpu(udc_ptr_conf->desc->wTotalLength));
+			udc_ptr_conf->desc->wTotalLength);
 }
 
 #if (0!=USB_DEVICE_MAX_EP)
@@ -335,8 +335,7 @@ static bool udc_iface_enable(uint8_t iface_num, uint8_t setting_num)
 		// Alloc the endpoint used by the interface
 		if (!udd_ep_alloc(ep_desc->bEndpointAddress,
 				ep_desc->bmAttributes,
-				uint16_to_cpu
-				(ep_desc->wMaxPacketSize))) {
+				ep_desc->wMaxPacketSize)) {
 			return false;
 		}
 	}
@@ -378,16 +377,16 @@ void udc_reset(void)
 	udc_num_configuration = 0;
 #if (USB_CONFIG_ATTR_REMOTE_WAKEUP \
 	== (USB_DEVICE_ATTR & USB_CONFIG_ATTR_REMOTE_WAKEUP))
-	if (CPU_TO_LE16(USB_DEV_STATUS_REMOTEWAKEUP) & udc_device_status) {
+	if (USB_DEV_STATUS_REMOTEWAKEUP & udc_device_status) {
 		// Remote wakeup is enabled then disable it
 		UDC_REMOTEWAKEUP_DISABLE();
 	}
 #endif
 	udc_device_status =
 #if (USB_DEVICE_ATTR & USB_CONFIG_ATTR_SELF_POWERED)
-			CPU_TO_LE16(USB_DEV_STATUS_SELF_POWERED);
+			USB_DEV_STATUS_SELF_POWERED;
 #else
-			CPU_TO_LE16(USB_DEV_STATUS_BUS_POWERED);
+			USB_DEV_STATUS_BUS_POWERED;
 #endif
 }
 
@@ -437,7 +436,7 @@ static bool udc_req_std_ep_get_status(void)
 	}
 
 	udc_ep_status = udd_ep_is_halted(udd_g_ctrlreq.req.
-			wIndex & 0xFF) ? CPU_TO_LE16(USB_EP_STATUS_HALTED) : 0;
+			wIndex & 0xFF) ? USB_EP_STATUS_HALTED : 0;
 
 	udd_set_setup_payload( (uint8_t *) & udc_ep_status,
 			sizeof(udc_ep_status));
@@ -457,7 +456,7 @@ static bool udc_req_std_dev_clear_feature(void)
 	}
 
 	if (udd_g_ctrlreq.req.wValue == USB_DEV_FEATURE_REMOTE_WAKEUP) {
-		udc_device_status &= CPU_TO_LE16(~(uint32_t)USB_DEV_STATUS_REMOTEWAKEUP);
+		udc_device_status &= ~(uint32_t)USB_DEV_STATUS_REMOTEWAKEUP;
 #if (USB_CONFIG_ATTR_REMOTE_WAKEUP \
 	== (USB_DEVICE_ATTR & USB_CONFIG_ATTR_REMOTE_WAKEUP))
 		UDC_REMOTEWAKEUP_DISABLE();
@@ -502,7 +501,7 @@ static bool udc_req_std_dev_set_feature(void)
 	case USB_DEV_FEATURE_REMOTE_WAKEUP:
 #if (USB_CONFIG_ATTR_REMOTE_WAKEUP \
 	== (USB_DEVICE_ATTR & USB_CONFIG_ATTR_REMOTE_WAKEUP))
-		udc_device_status |= CPU_TO_LE16(USB_DEV_STATUS_REMOTEWAKEUP);
+		udc_device_status |= USB_DEV_STATUS_REMOTEWAKEUP;
 		UDC_REMOTEWAKEUP_ENABLE();
 		return true;
 #else
@@ -640,7 +639,7 @@ static bool udc_req_std_dev_get_str_desc(void)
 
 	if (str_length) {
 		for(i = 0; i < str_length; i++) {
-			udc_string_desc.string[i] = cpu_to_le16((uint16_t)str[i]);
+			udc_string_desc.string[i] = (uint16_t)str[i];
 		}
 
 		udc_string_desc.header.bLength = 2 + (str_length) * 2;
@@ -692,7 +691,7 @@ static bool udc_req_std_dev_get_descriptor(void)
 			}
 			udd_set_setup_payload(
 				(uint8_t *)udc_config.conf_hs[conf_num].desc,
-				uint16_to_cpu(udc_config.conf_hs[conf_num].desc->wTotalLength));
+				udc_config.conf_hs[conf_num].desc->wTotalLength);
 		} else
 #endif
 		{
@@ -703,7 +702,7 @@ static bool udc_req_std_dev_get_descriptor(void)
 			}
 			udd_set_setup_payload(
 				(uint8_t *)udc_config.conf_lsfs[conf_num].desc,
-				uint16_to_cpu(udc_config.conf_lsfs[conf_num].desc->wTotalLength));
+				udc_config.conf_lsfs[conf_num].desc->wTotalLength);
 		}
 		((usb_conf_desc_t *) udd_g_ctrlreq.payload)->bDescriptorType =
 				USB_DT_CONFIGURATION;
@@ -726,7 +725,7 @@ static bool udc_req_std_dev_get_descriptor(void)
 			}
 			udd_set_setup_payload(
 				(uint8_t *)udc_config.conf_hs[conf_num].desc,
-				uint16_to_cpu(udc_config.conf_hs[conf_num].desc->wTotalLength));
+				udc_config.conf_hs[conf_num].desc->wTotalLength);
 		} else {
 			// FS descriptor
 			if (conf_num >= udc_config.confdev_lsfs->
@@ -735,7 +734,7 @@ static bool udc_req_std_dev_get_descriptor(void)
 			}
 			udd_set_setup_payload(
 				(uint8_t *)udc_config.conf_lsfs[conf_num].desc,
-				uint16_to_cpu(udc_config.conf_lsfs[conf_num].desc->wTotalLength));
+				udc_config.conf_lsfs[conf_num].desc->wTotalLength);
 		}
 		((usb_conf_desc_t *) udd_g_ctrlreq.payload)->bDescriptorType =
 				USB_DT_OTHER_SPEED_CONFIGURATION;

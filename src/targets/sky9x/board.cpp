@@ -335,10 +335,14 @@ void i2cInit()
 
 void boardInit()
 {
+    irq_initialize_vectors();
+    cpu_irq_enable();
+
     // DeXmas
     /* Set flash wait state to max in case the below clock switching. */
     system_init_flash(CHIP_FREQ_CPU_MAX);
 
+    //#TODO DeXmas: WRONG PLL SOURCE!
     // PLL
     PMC->CKGR_MOR = (PMC->CKGR_MOR & ~CKGR_MOR_MOSCXTBY) |
         CKGR_MOR_KEY_PASSWD | CKGR_MOR_MOSCXTEN |
@@ -352,12 +356,8 @@ void boardInit()
         /* Do nothing */
     }
 
-    /* Calculate internal VCO frequency */
-    uint32_t vco_hz = 12000000U * 20;
-
     /* PMC hardware will automatically make it mul+1 */
     uint32_t ctrl = CKGR_PLLAR_MULA(20 - 1) | CKGR_PLLAR_DIVA(1) | CKGR_PLLAR_PLLACOUNT(0x3FU);
-
 
     PMC->CKGR_PLLAR = CKGR_PLLAR_ONE | CKGR_PLLAR_MULA(0);
     PMC->CKGR_PLLAR = CKGR_PLLAR_ONE | ctrl;

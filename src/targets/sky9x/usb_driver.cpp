@@ -21,6 +21,7 @@
 #include "opentx.h"
 #include "debug.h"
 #include "usb_driver.h"
+#include "udi_hid_joystick.h"
 
 #ifndef SIMU
 
@@ -56,8 +57,6 @@ int usbPlugged()
 
 void usbInit()
 {
-    // Initialize hardware
-    //USB_OTG_BSP_Init(&USB_OTG_dev);
     usbDriverStarted = false;
 }
 
@@ -85,7 +84,6 @@ void usbStart()
 void usbStop()
 {
     usbDriverStarted = false;
-    //USBD_Disconnect();
 }
 
 bool usbStarted()
@@ -95,6 +93,7 @@ bool usbStarted()
 
 void startJoystick()
 {
+    udc_start();
     udc_remotewakeup();
 }
 
@@ -102,22 +101,22 @@ void usbJoystickUpdate()
 {
     static uint8_t HID_Buffer[9];
 
-    HID_Buffer[0] = 0; // buttons
+    HID_Buffer[3] = 0; // buttons
     for (int i = 0; i < 8; ++i) {
         if ( channelOutputs[i+8] > 0 ) {
-            HID_Buffer[0] |= (1 << i);
+            HID_Buffer[3] |= (1 << i);
         }
     }
 
     //analog values
-    for (int i = 0; i < 8; ++i) {
+    /*for (int i = 0; i < 8; ++i) {
         int16_t value = channelOutputs[i] / 8;
         if ( value > 127 ) value = 127;
         else if ( value < -127 ) value = -127;
         HID_Buffer[i+1] = static_cast<int8_t>(value);
-    }
+    }*/
 
-    //HIDDJoystickDriver_Change(HID_Buffer);
+    udi_hid_gpd_fill_report(HID_Buffer);
 }
 
 void usbPluggedIn()

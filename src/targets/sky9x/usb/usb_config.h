@@ -37,7 +37,7 @@
 #ifndef _CONF_USB_H_
 #define _CONF_USB_H_
 
-#include "board_lowlevel.h"
+#include "board.h"
 
 /**
  * USB Device Configuration
@@ -46,21 +46,17 @@
 
 //! Device definition (mandatory)
 #define  USB_DEVICE_VENDOR_ID             0x03EB
-#define  USB_DEVICE_PRODUCT_ID            0x2400
+#define  USB_DEVICE_PRODUCT_ID            0x6200
 #define  USB_DEVICE_MAJOR_VERSION         1
-#define  USB_DEVICE_MINOR_VERSION         0
+#define  USB_DEVICE_MINOR_VERSION         1
 #define  USB_DEVICE_POWER                 100 // Consumption on Vbus line (mA)
-#define  USB_DEVICE_ATTR                  \
-	(USB_CONFIG_ATTR_REMOTE_WAKEUP|USB_CONFIG_ATTR_BUS_POWERED)
-//	(USB_CONFIG_ATTR_REMOTE_WAKEUP|USB_CONFIG_ATTR_SELF_POWERED)
-//	(USB_CONFIG_ATTR_REMOTE_WAKEUP|USB_CONFIG_ATTR_BUS_POWERED)
-//	(USB_CONFIG_ATTR_SELF_POWERED)
-//	(USB_CONFIG_ATTR_BUS_POWERED)
+#define  USB_DEVICE_ATTR                  (USB_CONFIG_ATTR_REMOTE_WAKEUP|USB_CONFIG_ATTR_BUS_POWERED)
+
 
 //! USB Device string definitions (Optional)
-#define  USB_DEVICE_MANUFACTURE_NAME      "ATMEL ASF"
-#define  USB_DEVICE_PRODUCT_NAME          "HID Mouse"
-// #define  USB_DEVICE_SERIAL_NAME           "12...EF"
+#define  USB_DEVICE_MANUFACTURE_NAME      "OpenTX"
+#define  USB_DEVICE_PRODUCT_NAME          "9XR Pro"
+//#define  USB_DEVICE_SERIAL_NAME           "OpenTX 2.3.3"
 
 /**
  * Device speeds support
@@ -84,12 +80,12 @@
  * @{
  */
 #define  UDC_VBUS_EVENT(b_vbus_high)
-#define  UDC_SOF_EVENT()                  main_sof_action()
-#define  UDC_SUSPEND_EVENT()              main_suspend_action()
-#define  UDC_RESUME_EVENT()               main_resume_action()
+#define  UDC_SOF_EVENT()                  
+#define  UDC_SUSPEND_EVENT()              
+#define  UDC_RESUME_EVENT()               
 //! Mandatory when USB_DEVICE_ATTR authorizes remote wakeup feature
-#define  UDC_REMOTEWAKEUP_ENABLE()        main_remotewakeup_enable()
-#define  UDC_REMOTEWAKEUP_DISABLE()       main_remotewakeup_disable()
+#define  UDC_REMOTEWAKEUP_ENABLE()        
+#define  UDC_REMOTEWAKEUP_DISABLE()       
 #ifdef USB_DEVICE_LPM_SUPPORT
 #define  UDC_SUSPEND_LPM_EVENT()          main_suspend_lpm_action()
 #define  UDC_REMOTEWAKEUP_LPM_ENABLE()    main_remotewakeup_lpm_enable()
@@ -102,26 +98,20 @@
 
 //@}
 
-
-/**
- * USB Interface Configuration
- * @{
- */
-/**
- * Configuration of HID Mouse interface
- * @{
- */
-//! Interface callback definition
-#define  UDI_HID_MOUSE_ENABLE_EXT()       main_mouse_enable()
-#define  UDI_HID_MOUSE_DISABLE_EXT()      main_mouse_disable()
-//@}
-//@}
-
-
 /**
  * USB Device Driver Configuration
  * @{
  */
+ /* ! Interface callback definition */
+#define  UDI_HID_GPD_ENABLE_EXT()    true  
+#define  UDI_HID_GPD_DISABLE_EXT()     
+#define  UDI_HID_GPD_CHANGE_LED(value)
+
+/* ! Interface number */
+#define  UDI_HID_GPD_IFACE_NUMBER    0
+
+/* ! Endpoint numbers definition */
+#define  UDI_HID_GPD_EP_IN           (1 | USB_EP_DIR_IN)
 //@}
 
 //! Control endpoint size
@@ -131,14 +121,6 @@
 #  define  USB_DEVICE_EP_CTRL_SIZE       8
 #endif
 
-
-//! Endpoint number used by HID mouse interface
-#define  UDI_HID_MOUSE_EP_IN            (1 | USB_EP_DIR_IN)
-
-//! Interface number
-#define  UDI_HID_MOUSE_IFACE_NUMBER     0
-
-
 /**
  * \name UDD Configuration
  */
@@ -147,50 +129,68 @@
 //! 1 endpoint used by HID mouse standard interface
 #define  USB_DEVICE_MAX_EP             1
 
-#define Max(a, b)           (((a) > (b)) ?  (a) : (b))
+static inline uint32_t pmc_enable_periph_clk(uint32_t ul_id)
+{
+    if (ul_id < 32) {
+        if ((PMC->PMC_PCSR0 & (1u << ul_id)) != (1u << ul_id)) {
+            PMC->PMC_PCER0 = 1 << ul_id;
+        }
+    }
+    else {
+        ul_id -= 32;
+        if ((PMC->PMC_PCSR1 & (1u << ul_id)) != (1u << ul_id)) {
+            PMC->PMC_PCER1 = 1 << ul_id;
+        }
+    }
 
-/*! \name Bit-Field Handling
- */
- //! @{
+    return 0;
+}
 
- /*! \brief Reads the bits of a value specified by a given bit-mask.
-  *
-  * \param value Value to read bits from.
-  * \param mask  Bit-mask indicating bits to read.
-  *
-  * \return Read bits.
-  */
-#define Rd_bits( value, mask)        ((value) & (mask))
+static inline uint32_t pmc_disable_periph_clk(uint32_t ul_id)
+{
+    if (ul_id < 32) {
+        if ((PMC->PMC_PCSR0 & (1u << ul_id)) == (1u << ul_id)) {
+            PMC->PMC_PCDR0 = 1 << ul_id;
+        }
+    }
+    else {
+        ul_id -= 32;
+        if ((PMC->PMC_PCSR1 & (1u << ul_id)) == (1u << ul_id)) {
+            PMC->PMC_PCDR1 = 1 << ul_id;
+        }
+    }
+    return 0;
+}
 
-  /*! \brief Writes the bits of a C lvalue specified by a given bit-mask.
-   *
-   * \param lvalue  C lvalue to write bits to.
-   * \param mask    Bit-mask indicating bits to write.
-   * \param bits    Bits to write.
-   *
-   * \return Resulting value with written bits.
-   */
-#define Wr_bits(lvalue, mask, bits)  ((lvalue) = ((lvalue) & ~(mask)) |\
-                                                 ((bits  ) &  (mask)))
+static inline void sysclk_enable_usb(void)
+{
+    //#TODO DeXmas: WRONG PLL SOURCE!
+    //#TODO DeXmas: PLL Routine to board_lowlwvel
+    PMC->CKGR_MOR = (PMC->CKGR_MOR & ~CKGR_MOR_MOSCXTBY) |
+        CKGR_MOR_KEY_PASSWD | CKGR_MOR_MOSCXTEN |
+        CKGR_MOR_MOSCXTST(((15625 * CHIP_FREQ_SLCK_RC / 8 / 1000000) < 0x100 ? (15625 * CHIP_FREQ_SLCK_RC / 8 / 1000000) : 0xFF));
+    /* Wait the Xtal to stabilize */
+    while (!(PMC->PMC_SR & PMC_SR_MOSCXTS));
 
-    /*! \brief Clears the bits of a C lvalue specified by a given bit-mask.
-     *
-     * \param lvalue  C lvalue of which to clear bits.
-     * \param mask    Bit-mask indicating bits to clear.
-     *
-     * \return Resulting value with cleared bits.
-     */
-#define Clr_bits(lvalue, mask)  ((lvalue) &= ~(mask))
+    PMC->CKGR_MOR |= CKGR_MOR_KEY_PASSWD | CKGR_MOR_MOSCSEL;
 
-     /*! \brief Sets the bits of a C lvalue specified by a given bit-mask.
-      *
-      * \param lvalue  C lvalue of which to set bits.
-      * \param mask    Bit-mask indicating bits to set.
-      *
-      * \return Resulting value with set bits.
-      */
-#define Set_bits(lvalue, mask)  ((lvalue) |=  (mask))
+    while (!(PMC->PMC_SR & PMC_SR_MOSCSELS)) {
+        /* Do nothing */
+    }
 
+    /* PMC hardware will automatically make it mul+1 */
+    uint32_t ctrl = CKGR_PLLAR_MULA(16 - 1) | CKGR_PLLAR_DIVA(2) | CKGR_PLLAR_PLLACOUNT(0x3fU);
 
+    PMC->CKGR_PLLBR = CKGR_PLLBR_MULB(0);
+    PMC->CKGR_PLLBR = ctrl;
+
+    while (!(PMC->PMC_SR & PMC_SR_LOCKB));
+
+    PMC->PMC_USB = PMC_USB_USBDIV(2 - 1) | PMC_USB_USBS;
+
+    PMC->PMC_SCER = PMC_SCER_UDP;
+
+    return;
+}
 
 #endif // _CONF_USB_H_

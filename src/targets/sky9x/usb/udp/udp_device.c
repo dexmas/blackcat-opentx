@@ -340,7 +340,7 @@ static bool udd_ep_interrupt(void);
  * - bulk/interrupt/isochronous endpoints events (end of data transfer)
  *
  */
-ISR(UDD_USB_INT_FUN)
+void UDP_Handler(void)
 {
 	/* The UDP peripheral clock in the Power Management Controller (PMC)
 	   must be enabled before any read/write operations to the UDP registers
@@ -462,15 +462,15 @@ void udd_enable(void)
 #endif
 
 	// Always authorize asynchronous USB interrupts to exit of sleep mode
-	pmc_set_fast_startup_input(PMC_FSMR_USBAL);
-
+	PMC->PMC_FSMR |= PMC_FSMR_USBAL & 0x7FFFFu;
+	
 #if UDD_VBUS_IO
-	/* Initialize VBus monitor */
+	// Initialize VBus monitor
 	udd_vbus_init(udd_vbus_handler);
 	udd_vbus_monitor_sleep_mode(true);
-	/* Force Vbus interrupt when Vbus is always high
-	 * This is possible due to a short timing between a Host mode stop/start.
-	 */
+	// Force Vbus interrupt when Vbus is always high
+	// This is possible due to a short timing between a Host mode stop/start.
+	//
 	if (Is_udd_vbus_high()) {
 		udd_vbus_handler(USB_VBUS_PIO_ID, USB_VBUS_PIO_MASK);
 	}
@@ -577,14 +577,7 @@ uint16_t udd_get_micro_frame_number(void)
 void udd_send_remotewakeup(void)
 {
 	udd_sleep_mode(true); // Enter in IDLE mode
-
-	 /* Enable PLLB for USB */
-	PMC->CKGR_PLLBR = CKGR_PLLBR_MULB(16 - 1) | CKGR_PLLBR_DIVB(2) | CKGR_PLLBR_PLLBCOUNT(0x3FU);
-
-	while ((PMC->PMC_SR & PMC_SR_LOCKB) == 0);
-	/* USB Clock uses PLLB */
-	PMC->PMC_USB = PMC_USB_USBDIV(1) | PMC_USB_USBS; /* PLLB */
-
+	udd_enable_periph_ck();
 	udd_initiate_remote_wake_up();
 }
 
@@ -903,9 +896,9 @@ static void udd_ctrl_setup_received(void)
 			udd_endpoint_fifo_read(0);
 	}
 	// Manage LSB/MSB to fit with CPU usage
-	udd_g_ctrlreq.req.wValue = le16_to_cpu(udd_g_ctrlreq.req.wValue);
-	udd_g_ctrlreq.req.wIndex = le16_to_cpu(udd_g_ctrlreq.req.wIndex);
-	udd_g_ctrlreq.req.wLength = le16_to_cpu(udd_g_ctrlreq.req.wLength);
+	udd_g_ctrlreq.req.wValue = udd_g_ctrlreq.req.wValue;
+	udd_g_ctrlreq.req.wIndex = udd_g_ctrlreq.req.wIndex;
+	udd_g_ctrlreq.req.wLength = udd_g_ctrlreq.req.wLength;
 
 	// Decode setup request
 	if (udc_process_setup() == false) {
@@ -957,7 +950,6 @@ static void udd_ctrl_in_sent(void)
 		udd_ctrl_init();
 		return;
 	}
-	Assert(udd_ep_control_state == UDD_EPCTRL_DATA_IN);
 
 	nb_remain = udd_g_ctrlreq.payload_size - udd_ctrl_payload_nb_trans;
 	if (0 == nb_remain) {

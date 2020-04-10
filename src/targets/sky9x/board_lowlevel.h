@@ -72,7 +72,8 @@ extern uint32_t transSpeed;
 #define BT_USART       UART1
 #define BT_ID          ID_UART1
 
-extern uint32_t Master_frequency ;
+extern uint32_t Master_frequency;
+extern volatile unsigned char g_interrupt_enabled;
 
 struct t_serial_tx
 {
@@ -80,5 +81,124 @@ struct t_serial_tx
   uint16_t size ;
   volatile uint16_t ready ;
 };
+
+
+#define Min(a, b) (((a) < (b)) ?  (a) : (b))
+#define Max(a, b) (((a) > (b)) ?  (a) : (b))
+
+/*! \name Bit-Field Handling
+ */
+ //! @{
+
+#define ctz(u) ((u) ? __builtin_ctz(u) : 32)
+
+/*! \brief Tests the bits of a value specified by a given bit-mask.
+ *
+ * \param value Value of which to test bits.
+ * \param mask  Bit-mask indicating bits to test.
+ *
+ * \return \c 1 if at least one of the tested bits is set, else \c 0.
+ */
+#define Tst_bits( value, mask)  (Rd_bits(value, mask) != 0)
+
+ /*! \brief Reads the bits of a value specified by a given bit-mask.
+  *
+  * \param value Value to read bits from.
+  * \param mask  Bit-mask indicating bits to read.
+  *
+  * \return Read bits.
+  */
+#define Rd_bits( value, mask)        ((value) & (mask))
+
+  /*! \brief Writes the bits of a C lvalue specified by a given bit-mask.
+   *
+   * \param lvalue  C lvalue to write bits to.
+   * \param mask    Bit-mask indicating bits to write.
+   * \param bits    Bits to write.
+   *
+   * \return Resulting value with written bits.
+   */
+#define Wr_bits(lvalue, mask, bits)  ((lvalue) = ((lvalue) & ~(mask)) |\
+                                                 ((bits  ) &  (mask)))
+
+   /*! \brief Clears the bits of a C lvalue specified by a given bit-mask.
+    *
+    * \param lvalue  C lvalue of which to clear bits.
+    * \param mask    Bit-mask indicating bits to clear.
+    *
+    * \return Resulting value with cleared bits.
+    */
+#define Clr_bits(lvalue, mask)  ((lvalue) &= ~(mask))
+
+    /*! \brief Sets the bits of a C lvalue specified by a given bit-mask.
+     *
+     * \param lvalue  C lvalue of which to set bits.
+     * \param mask    Bit-mask indicating bits to set.
+     *
+     * \return Resulting value with set bits.
+     */
+#define Set_bits(lvalue, mask)  ((lvalue) |=  (mask))
+
+     /*! \brief Reads the bit-field of a value specified by a given bit-mask.
+      *
+      * \param value Value to read a bit-field from.
+      * \param mask  Bit-mask indicating the bit-field to read.
+      *
+      * \return Read bit-field.
+      */
+#define Rd_bitfield( value, mask)           (Rd_bits( value, mask) >> ctz(mask))
+
+      /*! \brief Writes the bit-field of a C lvalue specified by a given bit-mask.
+       *
+       * \param lvalue    C lvalue to write a bit-field to.
+       * \param mask      Bit-mask indicating the bit-field to write.
+       * \param bitfield  Bit-field to write.
+       *
+       * \return Resulting value with written bit-field.
+       */
+#define Wr_bitfield(lvalue, mask, bitfield) (Wr_bits(lvalue, mask, (uint32_t)(bitfield) << ctz(mask)))
+
+/**
+ * \brief Initialize interrupt vectors
+ *
+ * For NVIC the interrupt vectors are put in vector table. So nothing
+ * to do to initialize them, except defined the vector function with
+ * right name.
+ *
+ * This must be called prior to \ref irq_register_handler.
+ */
+#define irq_initialize_vectors()   \
+	do {                           \
+	} while(0)
+
+#define cpu_irq_enable()                     \
+	do {                                     \
+		g_interrupt_enabled = 1;             \
+		__DMB();                             \
+		__enable_irq();                      \
+	} while (0)
+
+#define cpu_irq_disable()                    \
+	do {                                     \
+		__disable_irq();                     \
+		__DMB();                             \
+		g_interrupt_enabled = 0;             \
+	} while (0)
+
+#define cpu_irq_is_enabled()    (__get_PRIMASK() == 0)
+
+static inline uint32_t cpu_irq_save(void)
+{
+    volatile uint32_t flags = cpu_irq_is_enabled();
+    cpu_irq_disable();
+    return flags;
+}
+
+static inline void cpu_irq_restore(uint32_t flags)
+{
+    if (flags) {
+        cpu_irq_enable();
+    }
+}
 
 #endif // _BOARD_H_

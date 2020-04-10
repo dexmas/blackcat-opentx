@@ -1,37 +1,44 @@
 /**
  * \file
  *
- * \brief USB Device Human Interface Device (HID) mouse interface.
+ * \brief USB Device Human Interface Device (HID) gamepad interface.
  *
- * Copyright (c) 2009-2018 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2014-2015 Atmel Corporation. All rights reserved.
  *
  * \asf_license_start
  *
  * \page License
  *
- * Subject to your compliance with these terms, you may use Microchip
- * software and any derivatives exclusively with Microchip products.
- * It is your responsibility to comply with third party license terms applicable
- * to your use of third party software (including open source software) that
- * may accompany Microchip software.
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are met:
  *
- * THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES,
- * WHETHER EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE,
- * INCLUDING ANY IMPLIED WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY,
- * AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT WILL MICROCHIP BE
- * LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, INCIDENTAL OR CONSEQUENTIAL
- * LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND WHATSOEVER RELATED TO THE
- * SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP HAS BEEN ADVISED OF THE
- * POSSIBILITY OR THE DAMAGES ARE FORESEEABLE.  TO THE FULLEST EXTENT
- * ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN ANY WAY
- * RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
- * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
+ * 1. Redistributions of source code must retain the above copyright notice,
+ *    this list of conditions and the following disclaimer.
+ *
+ * 2. Redistributions in binary form must reproduce the above copyright notice,
+ *    this list of conditions and the following disclaimer in the documentation
+ *    and/or other materials provided with the distribution.
+ *
+ * 3. The name of Atmel may not be used to endorse or promote products derived
+ *    from this software without specific prior written permission.
+ *
+ * 4. This software may only be redistributed and used in connection with an
+ *    Atmel microcontroller product.
+ *
+ * THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR IMPLIED
+ * WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
+ * EXPRESSLY AND SPECIFICALLY DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR
+ * ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+ * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
+ * STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ * POSSIBILITY OF SUCH DAMAGE.
  *
  * \asf_license_stop
  *
- */
-/*
- * Support and FAQ: visit <a href="https://www.microchip.com/support/">Microchip Support</a>
  */
 
 #include "usb_config.h"
@@ -42,302 +49,276 @@
 #include "udi_hid_joystick.h"
 #include <string.h>
 
-/**
- * \ingroup udi_hid_mouse_group
- * \defgroup udi_hid_mouse_group_udc Interface with USB Device Core (UDC)
- *
- * Structures and functions required by UDC.
- *
- * @{
- */
-bool udi_hid_mouse_enable(void);
-void udi_hid_mouse_disable(void);
-bool udi_hid_mouse_setup(void);
-uint8_t udi_hid_mouse_getsetting(void);
+ /**
+  * \ingroup udi_hid_gamepad_group
+  * \defgroup udi_hid_gamepad_group_udc Interface with USB Device Core (UDC)
+  *
+  * Structures and functions required by UDC.
+  *
+  * @{
+  */
 
-//! Global structure which contains standard UDI interface for UDC
-UDC_DESC_STORAGE udi_api_t udi_api_hid_mouse = {
-	.enable = (bool(*)(void))udi_hid_mouse_enable,
-	.disable = (void (*)(void))udi_hid_mouse_disable,
-	.setup = (bool(*)(void))udi_hid_mouse_setup,
-	.getsetting = (uint8_t(*)(void))udi_hid_mouse_getsetting,
+bool udi_hid_gpd_enable(void);
+void udi_hid_gpd_disable(void);
+bool udi_hid_gpd_setup(void);
+uint8_t udi_hid_gpd_getsetting(void);
+
+/* ! Global structure which contains standard UDI interface for UDC */
+UDC_DESC_STORAGE udi_api_t udi_api_hid_gpd = {
+	.enable = (bool (*)(void))udi_hid_gpd_enable,
+	.disable = (void (*)(void))udi_hid_gpd_disable,
+	.setup = (bool (*)(void))udi_hid_gpd_setup,
+	.getsetting = (uint8_t(*)(void))udi_hid_gpd_getsetting,
 	.sof_notify = NULL,
 };
-//@}
-
+/* @} */
 
 /**
- * \ingroup udi_hid_mouse_group
- * \defgroup udi_hid_mouse_group_internal Implementation of UDI HID Mouse
+ * \ingroup udi_hid_gamepad_group
+ * \defgroup udi_hid_gamepad_group_internal Implementation of UDI HID gamepad
  *
  * Class internal implementation
  * @{
  */
 
-/**
- * \name Internal defines and variables to manage HID mouse
- */
-//@{
+ /**
+  * \name Internal defines and variables to manage HID gamepad
+  */
+  /* @{ */
 
-//! Size of report for standard HID mouse
-#define UDI_HID_MOUSE_REPORT_SIZE   4
-//! To store current rate of HID mouse
-__attribute__((__aligned__(4)))
-		static uint8_t udi_hid_mouse_rate;
-//! To store current protocol of HID mouse
-__attribute__((__aligned__(4)))
-		static uint8_t udi_hid_mouse_protocol;
-//! To signal if a valid report is ready to send
-static bool udi_hid_mouse_b_report_valid;
-//! Report ready to send
-static uint8_t udi_hid_mouse_report[UDI_HID_MOUSE_REPORT_SIZE];
-//! Signal if a report transfer is on going
-static bool udi_hid_mouse_report_trans_ongoing;
-//! Buffer used to send report
-__attribute__((__aligned__(4)))
-		static uint8_t
-		udi_hid_mouse_report_trans[UDI_HID_MOUSE_REPORT_SIZE];
+  /* ! Size of report for standard HID gamepad */
+#define UDI_HID_GPD_REPORT_SIZE  4
 
+/* ! To store current rate of HID gamepad */
+static uint8_t udi_hid_gpd_rate;
+/* ! To store current protocol of HID gamepad */
+static uint8_t udi_hid_gpd_protocol;
+/* ! To store report feedback from USB host */
+static uint8_t udi_hid_gpd_report_set;
+/* ! To signal if a valid report is ready to send */
+static bool udi_hid_gpd_b_report_valid;
+/* ! Report ready to send */
+static uint8_t udi_hid_gpd_report[UDI_HID_GPD_REPORT_SIZE];
+/* ! Signal if a report transfer is on going */
+static bool udi_hid_gpd_b_report_trans_ongoing;
+/* ! Buffer used to send report */
+__attribute__((__aligned__(4))) 
+static uint8_t udi_hid_gpd_report_trans[UDI_HID_GPD_REPORT_SIZE];
 
-/**
- * \brief Callback for set report setup request
- *
- * \return \c 1 always, because it is not used on mouse interface
- */
-static bool udi_hid_mouse_setreport(void);
+/* @} */
 
-//@}
-
-//! HID report descriptor for standard HID mouse
-UDC_DESC_STORAGE udi_hid_mouse_report_desc_t udi_hid_mouse_report_desc = {
+/* ! HID report descriptor for standard HID gamepad */
+/*UDC_DESC_STORAGE udi_hid_gpd_report_desc_t udi_hid_gpd_report_desc = {
 	{
-				0x05, 0x01,	/* Usage Page (Generic Desktop),       */
-				0x09, 0x02,	/* Usage (Mouse),                      */
-				0xA1, 0x01,	/*  Collection (Application),          */
-				0x09, 0x01,	/*   Usage (Pointer),                  */
-				0xA1, 0x00,	/*  Collection (Physical),             */
-				0x05, 0x09,	/*     Usage Page (Buttons),           */
-				0x19, 0x01,	/*     Usage Minimum (01),             */
-				0x29, 0x03,	/*     Usage Maximum (03),             */
-				0x15, 0x00,	/*     Logical Minimum (0),            */
-				0x25, 0x01,	/*     Logical Maximum (1),            */
-				0x75, 0x01,	/*     Report Size (1),                */
-				0x95, 0x03,	/*     Report Count (3),               */
-				0x81, 0x02,	/*     Input (Data, Variable, Absolute) */
-				0x75, 0x05,	/*     Report Size (5),                */
-				0x95, 0x01,	/*     Report Count (1),               */
-				0x81, 0x01,	/*     Input (Constant),               */
-				0x05, 0x01,	/*     Usage Page (Generic Desktop),   */
-				0x09, 0x30,	/*     Usage (X),                      */
-				0x09, 0x31,	/*     Usage (Y),                      */
-				0x09, 0x38,	/*     Usage (Scroll),                 */
-				0x15, 0x81,	/*     Logical Minimum (-127),         */
-				0x25, 0x7F,	/*     Logical Maximum (127),          */
-				0x75, 0x08,	/*     Report Size (8),                */
-				0x95, 0x03,	/*     Report Count (3),               */
-				0x81, 0x06,	/*     Input (Data, Variable, Relative) */
-				0xC0,	/*  End Collection,                    */
-				0xC0,	/* End Collection                      */
-			}
+        0x05, 0x01,                    //     USAGE_PAGE (Generic Desktop)
+		0x09, 0x05,                    //     USAGE (Game Pad)
+		0xa1, 0x01,                    //     COLLECTION (Application)
+		0xa1, 0x00,                    //       COLLECTION (Physical)
+		0x05, 0x09,                    //         USAGE_PAGE (Button)
+		0x19, 0x01,                    //         USAGE_MINIMUM (Button 1)
+		0x29, 0x08,                    //         USAGE_MAXIMUM (Button 8)
+		0x15, 0x00,                    //         LOGICAL_MINIMUM (0)
+		0x25, 0x01,                    //         LOGICAL_MAXIMUM (1)
+		0x95, 0x08,                    //         REPORT_COUNT (8)
+		0x75, 0x01,                    //         REPORT_SIZE (1)
+		0x81, 0x02,                    //         INPUT (Data,Var,Abs)
+		0x05, 0x01,                    //         USAGE_PAGE (Generic Desktop)
+		0x09, 0x30,                    //         USAGE (X)
+		0x09, 0x31,                    //         USAGE (Y)
+		0x09, 0x32,                    //         USAGE (Z)
+		0x09, 0x33,                    //         USAGE (Rx)
+		0x09, 0x34,                    //         USAGE (Ry)
+		0x09, 0x35,                    //         USAGE (Rz)
+		0x09, 0x36,                    //         USAGE (Slider)
+		0x09, 0x36,                    //         USAGE (Slider)
+		0x15, 0x81,                    //         LOGICAL_MINIMUM (-127)
+		0x25, 0x7f,                    //         LOGICAL_MAXIMUM (127)
+		0x75, 0x08,                    //         REPORT_SIZE (8)
+		0x95, 0x08,                    //         REPORT_COUNT (8)
+		0x81, 0x02,                    //         INPUT (Data,Var,Abs)
+		0xc0,                          //       END_COLLECTION
+		0xc0                           //     END_COLLECTION
+	}
+};*/
+
+UDC_DESC_STORAGE udi_hid_gpd_report_desc_t udi_hid_gpd_report_desc = {
+    {
+        0x05,0x01, /*UsagePage(Generic Desktop)*/
+        0x09,0x04, /*Usage(Joystick),*/
+        0xA1,0x01, /*Collection(Application),*/
+        0x05,0x02,	/*UsagePage(Simulation Controls),*/
+        0x09,0xbb,/*	Usage (Throttle),*/
+        0x15,0x81,/*	Logical Minimum(-127)*/
+        0x25,0x7f,/*	Logical Maximum(127),*/
+        0x75,0x08,/*	Report Size (8),*/
+        0x95,0x01,/*	Report Count (1),*/
+        0x81,0x02,/*	Input (Data, Variable, Absolute),*/
+        0x05,0x01,/*	UsagePage(Generic Desktop)*/
+        0x09,0x01,/*  Usage(Pointer),*/
+        0xA1,0x00,	/*Collection(Physical),*/
+        0x09,0x30,/*	Usage(X),*/
+        0x09,0x31,/*	Usage (Y),*/
+        0x95,0x02,/*	Report Count (2),*/
+        0x81,0x02,/*	Input (Data, Variable, Absolute),*/
+        0xC0,	/*End Collection(),*/
+        0x09,0x39,/*	Usage(Hat Switch),*/
+        0x15,0x00,/*	Logical Minimum(0),*/
+        0x25,0x03,/*	Logical Maximum(3),*/
+        0x35,0x00,/*Physical Minimum(0),*/
+        0x46,0x0E,0x01, /*	Physical Maximum(270),*/
+        0x65,0x14, /*Unit (English Rotation: Angular Position), ;Degrees*/
+        0x75,0x04,/*	Report Size(4),*/
+        0x95,0x01,/*	Report Count(1),*/
+        0x81,0x02,/*	Input (Data, Variable, Absolute, NULL State),*/
+        0x05,0x09,/*					Usage Page(Buttons),*/
+        0x19,0x01,/*	Usage Minimum (Button 1),*/
+        0x29,0x04,/*	Usage Maximum (Button 4),*/
+        0x15,0x00,                    //   LOGICAL_MINIMUM (0)
+        0x25,0x01,	//					Logical Maximum (1),
+        0x95,0x04,//	Report Count (4),
+        0x75,0x01,/* Report size*/
+        0x55,0x00,/*unit exponent*/
+        0x65,0x00,//	Unit (None),
+        0x81,0x02,//	Input (Data, Variable, Absolute),
+        0xC0//	End Collection()
+    }
 };
 
 /**
  * \name Internal routines
  */
-//@{
+ /* @{ */
 
-/**
- * \brief Moves an axe
- *
- * \param pos           Signed value to move
- * \param index_report  Index of report to move
- *								(3=scroll wheel, 2=axe Y, 1=axe X))
- *
- * \return \c 1 if function was successfully done, otherwise \c 0.
- */
-static bool udi_hid_mouse_move(int8_t pos, uint8_t index_report);
-
-/**
- * \brief Changes a button state
- *
- * \param b_state    New button state
- * \param btn        Index of button to change (4=middle, 2=right, 1=left)
- *
- * \return \c 1 if function was successfully done, otherwise \c 0.
- */
-static bool udi_hid_mouse_btn(bool b_state, uint8_t btn);
+ /**
+  * \brief Changes gamepad report states (like LEDs)
+  *
+  * \param rate       New rate value
+  *
+  */
+static bool udi_hid_gpd_setreport(void);
 
 /**
  * \brief Send the report
  *
  * \return \c 1 if send on going, \c 0 if delay.
  */
-static bool udi_hid_mouse_send_report(void);
+static bool udi_hid_gpd_send_report(void);
 
 /**
  * \brief Callback called when the report is sent
  *
- * \param status     UDD_EP_TRANSFER_OK, if transfer finish
- * \param status     UDD_EP_TRANSFER_ABORT, if transfer aborted
+ * \param status     UDD_EP_TRANSFER_OK, if transfer is completed
+ * \param status     UDD_EP_TRANSFER_ABORT, if transfer is aborted
  * \param nb_sent    number of data transfered
  *
  * \return \c 1 if function was successfully done, otherwise \c 0.
  */
-static void udi_hid_mouse_report_sent(udd_ep_status_t status,
-		uint32_t nb_sent, udd_ep_id_t ep);
+static void udi_hid_gpd_report_sent(udd_ep_status_t status, uint32_t nb_sent, udd_ep_id_t ep);
 
-//@}
+/**
+ * \brief Callback called to update report from USB host
+ * udi_hid_gpd_report_set is updated before callback execution
+ */
+static void udi_hid_gpd_setreport_valid(void);
 
+/* @} */
 
-//--------------------------------------------
-//------ Interface for UDI HID level
+/* -------------------------------------------- */
+/* ------ Interface for UDI HID level */
 
-bool udi_hid_mouse_enable(void)
+bool udi_hid_gpd_enable(void)
 {
-	// Initialize internal value
-	udi_hid_mouse_rate = 0;
-	udi_hid_mouse_protocol = 0;
-	udi_hid_mouse_report_trans_ongoing = false;
-	memset(udi_hid_mouse_report, 0, UDI_HID_MOUSE_REPORT_SIZE);
-	udi_hid_mouse_b_report_valid = false;
-	return UDI_HID_MOUSE_ENABLE_EXT();
+	/* Initialize internal values */
+	udi_hid_gpd_rate = 0;
+	udi_hid_gpd_protocol = 0;
+	udi_hid_gpd_b_report_trans_ongoing = false;
+	memset(udi_hid_gpd_report, 0, UDI_HID_GPD_REPORT_SIZE);
+	udi_hid_gpd_b_report_valid = false;
+	return UDI_HID_GPD_ENABLE_EXT();
 }
 
-
-void udi_hid_mouse_disable(void)
+void udi_hid_gpd_disable(void)
 {
-	UDI_HID_MOUSE_DISABLE_EXT();
+	UDI_HID_GPD_DISABLE_EXT();
 }
 
-
-bool udi_hid_mouse_setup(void)
+bool udi_hid_gpd_setup(void)
 {
-	return udi_hid_setup(&udi_hid_mouse_rate,
-								&udi_hid_mouse_protocol,
-								(uint8_t *) &udi_hid_mouse_report_desc,
-								udi_hid_mouse_setreport);
+	return udi_hid_setup(&udi_hid_gpd_rate,
+		&udi_hid_gpd_protocol,
+		(uint8_t*)&udi_hid_gpd_report_desc,
+		udi_hid_gpd_setreport);
 }
 
-
-uint8_t udi_hid_mouse_getsetting(void)
+uint8_t udi_hid_gpd_getsetting(void)
 {
 	return 0;
 }
 
-
-static bool udi_hid_mouse_setreport(void)
+static bool udi_hid_gpd_setreport(void)
 {
+	if ((USB_HID_REPORT_TYPE_OUTPUT == (udd_g_ctrlreq.req.wValue >> 8)) &&
+		(0 == (0xFF & udd_g_ctrlreq.req.wValue)) &&
+		(1 == udd_g_ctrlreq.req.wLength)) {
+		/* Report OUT type on report ID 0 from USB Host */
+		udd_g_ctrlreq.payload = &udi_hid_gpd_report_set;
+		udd_g_ctrlreq.callback = udi_hid_gpd_setreport_valid;
+		udd_g_ctrlreq.payload_size = 1;
+		return true;
+	}
+
 	return false;
 }
 
-
-//--------------------------------------------
-//------ Interface for application
-
-bool udi_hid_mouse_moveScroll(int8_t pos)
+bool udi_hid_gpd_fill_report(uint8_t* _report)
 {
-	return udi_hid_mouse_move(pos, 3);
-}
-
-bool udi_hid_mouse_moveY(int8_t pos_y)
-{
-	return udi_hid_mouse_move(pos_y, 2);
-}
-
-bool udi_hid_mouse_moveX(int8_t pos_x)
-{
-	return udi_hid_mouse_move(pos_x, 1);
-}
-
-bool udi_hid_mouse_btnmiddle(bool b_state)
-{
-	return udi_hid_mouse_btn(b_state, 0x04);
-}
-
-bool udi_hid_mouse_btnright(bool b_state)
-{
-	return udi_hid_mouse_btn(b_state, 0x02);
-}
-
-bool udi_hid_mouse_btnleft(bool b_state)
-{
-	return udi_hid_mouse_btn(b_state, 0x01);
-}
-
-
-//--------------------------------------------
-//------ Internal routines
-
-static bool udi_hid_mouse_move(int8_t pos, uint8_t index_report)
-{
-	int16_t s16_newpos;
+    memcpy(udi_hid_gpd_report, _report, UDI_HID_GPD_REPORT_SIZE);
 
 	uint32_t flags = cpu_irq_save();
 
-	// Add position in HID mouse report
-	s16_newpos = (int8_t) udi_hid_mouse_report[index_report];
-	s16_newpos += pos;
-	if ((-127 > s16_newpos) || (127 < s16_newpos)) {
-		cpu_irq_restore(flags);
-		return false;	// Overflow of report
-	}
-	udi_hid_mouse_report[index_report] = (uint8_t) s16_newpos;
-
-	// Valid and send report
-	udi_hid_mouse_b_report_valid = true;
-	udi_hid_mouse_send_report();
+	/* Valid and send report */
+	udi_hid_gpd_b_report_valid = true;
+	udi_hid_gpd_send_report();
 
 	cpu_irq_restore(flags);
 	return true;
 }
 
+/* -------------------------------------------- */
+/* ------ Internal routines */
 
-static bool udi_hid_mouse_btn(bool b_state, uint8_t btn)
+static bool udi_hid_gpd_send_report(void)
 {
-	// Modify buttons report
-	if (HID_MOUSE_BTN_DOWN == b_state)
-		udi_hid_mouse_report[0] |= btn;
-	else
-		udi_hid_mouse_report[0] &= ~(unsigned)btn;
-	// Use mouse move routine
-	return udi_hid_mouse_move(0, 1);
+	if (udi_hid_gpd_b_report_trans_ongoing) {
+		return false;
+	}
+
+	memcpy(udi_hid_gpd_report_trans, udi_hid_gpd_report,
+		UDI_HID_GPD_REPORT_SIZE);
+	udi_hid_gpd_b_report_valid = false;
+	udi_hid_gpd_b_report_trans_ongoing
+		= udd_ep_run(UDI_HID_GPD_EP_IN,
+			false,
+			udi_hid_gpd_report_trans,
+			UDI_HID_GPD_REPORT_SIZE,
+			udi_hid_gpd_report_sent);
+	return udi_hid_gpd_b_report_trans_ongoing;
 }
 
-
-static bool udi_hid_mouse_send_report(void)
+static void udi_hid_gpd_report_sent(udd_ep_status_t status, uint32_t nb_sent, udd_ep_id_t ep)
 {
-	if (udi_hid_mouse_report_trans_ongoing)
-		return false;	// Transfer on going then send this one after transfer complete
-
-	// Copy report on other array used only for transfer
-	memcpy(udi_hid_mouse_report_trans, udi_hid_mouse_report,
-			UDI_HID_MOUSE_REPORT_SIZE);
-	memset(&udi_hid_mouse_report[1], 0, 3);	// Keep status of btn for next report
-	udi_hid_mouse_b_report_valid = false;
-
-	// Send report
-	udi_hid_mouse_report_trans_ongoing =
-			udd_ep_run(	UDI_HID_MOUSE_EP_IN,
-							false,
-							udi_hid_mouse_report_trans,
-							UDI_HID_MOUSE_REPORT_SIZE,
-							udi_hid_mouse_report_sent);
-	return udi_hid_mouse_report_trans_ongoing;
-}
-
-
-static void udi_hid_mouse_report_sent(udd_ep_status_t status,
-		uint32_t nb_sent, udd_ep_id_t ep)
-{
-	UNUSED(ep);
 	UNUSED(status);
 	UNUSED(nb_sent);
-	// Valid report sending
-	udi_hid_mouse_report_trans_ongoing = false;
-	if (udi_hid_mouse_b_report_valid) {
-		// Send new valid report
-		udi_hid_mouse_send_report();
+	UNUSED(ep);
+	udi_hid_gpd_b_report_trans_ongoing = false;
+	if (udi_hid_gpd_b_report_valid) {
+		udi_hid_gpd_send_report();
 	}
 }
 
-//@}
+static void udi_hid_gpd_setreport_valid(void)
+{
+	UDI_HID_GPD_CHANGE_LED(udi_hid_gpd_report_set);
+}
+
+/* @} */

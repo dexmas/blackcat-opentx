@@ -1,6 +1,8 @@
 
 #include "board_lowlevel.h"
 
+volatile unsigned char g_interrupt_enabled = 1;
+
 #if defined(BOOT)
 
 static void lowLevelUsbCheck( void )
