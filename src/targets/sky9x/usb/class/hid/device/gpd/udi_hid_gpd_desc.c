@@ -35,10 +35,10 @@
  */
 
 #include "usb_config.h"
-#include "udd.h"
-#include "udc_desc.h"
-#include "udi_hid.h"
-#include "udi_hid_joystick.h"
+#include "udc/udd.h"
+#include "udc/udc_desc.h"
+#include "class/hid/device/udi_hid.h"
+#include "udi_hid_gpd.h"
 
 /**
  * \ingroup udi_hid_gpd_group

@@ -21,12 +21,12 @@
 #include "opentx.h"
 #include "debug.h"
 #include "usb_driver.h"
-#include "udi_hid_joystick.h"
+#include "class/hid/device/gpd/udi_hid_gpd.h"
 
 #ifndef SIMU
 
 extern "C" {
-#include "udc.h"
+#include "udc/udc.h"
 }
 
 static bool usbDriverStarted = false;

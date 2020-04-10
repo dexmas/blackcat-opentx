@@ -122,6 +122,44 @@
 #  define  USB_DEVICE_EP_CTRL_SIZE       8
 #endif
 
+//! Define two USB communication ports
+#define  UDI_CDC_PORT_NB 1
+
+//! Interface callback definition
+//#TODO DeXmas
+#define  UDI_CDC_ENABLE_EXT(port)         true
+#define  UDI_CDC_DISABLE_EXT(port)        
+#define  UDI_CDC_RX_NOTIFY(port)          
+#define  UDI_CDC_TX_EMPTY_NOTIFY(port)
+#define  UDI_CDC_SET_CODING_EXT(port,cfg) 
+#define  UDI_CDC_SET_DTR_EXT(port,set)    
+#define  UDI_CDC_SET_RTS_EXT(port,set)
+
+//! Define it when the transfer CDC Device to Host is a low rate (<512000 bauds)
+//! to reduce CDC buffers size
+//#define  UDI_CDC_LOW_RATE
+
+//! Default configuration of communication port
+#define  UDI_CDC_DEFAULT_RATE             115200
+#define  UDI_CDC_DEFAULT_STOPBITS         CDC_STOP_BITS_1
+#define  UDI_CDC_DEFAULT_PARITY           CDC_PAR_NONE
+#define  UDI_CDC_DEFAULT_DATABITS         8
+
+/**
+ * USB CDC low level configuration
+ * In standalone these configurations are defined by the CDC module.
+ * For composite device, these configuration must be defined here
+ * @{
+ */
+ //! Endpoint numbers definition
+#define  UDI_CDC_COMM_EP_0             (7 | USB_EP_DIR_IN)  // Notify endpoint
+#define  UDI_CDC_DATA_EP_IN_0          (6 | USB_EP_DIR_IN)  // TX
+#define  UDI_CDC_DATA_EP_OUT_0         (5 | USB_EP_DIR_OUT) // RX
+
+//! Interface numbers
+#define  UDI_CDC_COMM_IFACE_NUMBER_0   0
+#define  UDI_CDC_DATA_IFACE_NUMBER_0   1
+
 /**
  * \name UDD Configuration
  */

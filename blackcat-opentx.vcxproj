@@ -36,7 +36,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='SAM4S16C|VisualGDB'">
     <ClCompile>
       <PreprocessorDefinitions>SAM4S;__SAM4S16C__;REVX;PCBSKY9X;RTOS_COOS;FLAVOUR="9xrpro";REQUIRED_SDCARD_VERSION="2.3.0";FONT=SQT5;TRANSLATIONS="EN";TRANSLATIONS_EN;PPM_PIN_SERIAL;AUDIO_DUAL_BUFFER;AUDIO;VOICE;RTCLOCK;RUN_FROM_FLASH=1;EEPROM;EEPROM_RAW;SPLASH;TIMERS=2;HAPTIC;MULTIMODULE;VIRTUAL_INPUTS;TELEMETRY_FRSKY_SPORT;FRSKY_HUB;PXX;DSM2;BOLD_FONT;BATTGRAPH;THRTRACE;GAUGES;VARIO;GRAPHICS;FLIGHT_MODES;EEPROM_VARIANT=1;CURVES;AUTOSOURCE;AUTOSWITCH;SDCARD;PPM_UNIT_US;PPM_CENTER_ADJUSTABLE;PPM_LIMITS_SYMETRICAL;OVERRIDE_CHANNEL_FUNCTION;DANGEROUS_MODULE_FUNCTIONS;GUI;CPUARM;CORRECT_NEGATIVE_SHIFTS;DISABLE_MULTI_UPDATE;NAVIGATION_9X;BUZZER;PXX1;WATCHDOG;POPUP_LEVEL=2;CROSSFIRE;GVARS;LUA;LUA_COMPILER;USB_SERIAL;%(ClCompile.PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;src\gui;src\gui\128x64;src\thirdparty;src\thirdparty\CoOS;src\thirdparty\CoOS\kernel;src\thirdparty\CoOS\portable;src\thirdparty\FatFs;src\thirdparty\FatFs\option;src\thirdparty\Lua\src;src\targets\sky9x;src\targets\sky9x\usb;src\targets\sky9x\usb\udc;src\targets\sky9x\usb\class;src\targets\sky9x\usb\class\hid;src\targets\sky9x\usb\class\hid\device;src\targets\sky9x\usb\class\hid\device\joystick;data;data\bitmaps;data\bitmaps\128x64;data\fonts\sqt5;%(ClCompile.AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src\gui;src\gui\128x64;src\thirdparty;src\thirdparty\CoOS;src\thirdparty\CoOS\kernel;src\thirdparty\CoOS\portable;src\thirdparty\FatFs;src\thirdparty\FatFs\option;src\thirdparty\Lua\src;src\targets\sky9x;src\targets\sky9x\usb;data;data\bitmaps;data\bitmaps\128x64;src;data\fonts\sqt5;%(ClCompile.AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PrecompiledHeaderDirectory>
       </PrecompiledHeaderDirectory>
       <Optimization>Os</Optimization>
@@ -246,8 +246,9 @@
     <ClCompile Include="src\targets\sky9x\startup_sam4s.c" />
     <ClCompile Include="src\targets\sky9x\syscalls.c" />
     <ClCompile Include="src\targets\sky9x\system_sam4s.c" />
-    <ClCompile Include="src\targets\sky9x\usb\class\hid\device\joystick\udi_hid_joystick.c" />
-    <ClCompile Include="src\targets\sky9x\usb\class\hid\device\joystick\udi_hid_joystick_desc.c" />
+    <ClCompile Include="src\targets\sky9x\usb\class\cdc\device\udi_cdc.c" />
+    <ClCompile Include="src\targets\sky9x\usb\class\hid\device\gpd\udi_hid_gpd.c" />
+    <ClCompile Include="src\targets\sky9x\usb\class\hid\device\gpd\udi_hid_gpd_desc.c" />
     <ClCompile Include="src\targets\sky9x\usb\class\hid\device\udi_hid.c" />
     <ClCompile Include="src\targets\sky9x\usb\udc\udc.c" />
     <ClCompile Include="src\targets\sky9x\usb\udp\udp_device.c" />
@@ -410,7 +411,9 @@
     <ClInclude Include="src\targets\sky9x\mpu_armv7.h" />
     <ClInclude Include="src\targets\sky9x\sam4s16c.h" />
     <ClInclude Include="src\targets\sky9x\system_sam4s.h" />
-    <ClInclude Include="src\targets\sky9x\usb\class\hid\device\joystick\udi_hid_joystick.h" />
+    <ClInclude Include="src\targets\sky9x\usb\class\cdc\device\udi_cdc.h" />
+    <ClInclude Include="src\targets\sky9x\usb\class\cdc\usb_protocol_cdc.h" />
+    <ClInclude Include="src\targets\sky9x\usb\class\hid\device\gpd\udi_hid_gpd.h" />
     <ClInclude Include="src\targets\sky9x\usb\class\hid\device\udi_hid.h" />
     <ClInclude Include="src\targets\sky9x\usb\class\hid\usb_protocol_hid.h" />
     <ClInclude Include="src\targets\sky9x\usb\udc\udc.h" />

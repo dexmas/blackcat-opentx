@@ -3,9 +3,9 @@
 
 #include "usb_config.h"
 #include "usb_protocol.h"
-#include "usb_protocol_hid.h"
-#include "udc_desc.h"
-#include "udi.h"
+#include "class/hid/usb_protocol_hid.h"
+#include "udc/udc_desc.h"
+#include "udc/udi.h"
 
 #ifdef __cplusplus
 extern "C" {

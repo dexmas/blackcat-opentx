@@ -22,10 +22,10 @@
 
 #include "usb_config.h"
 #include "usb_protocol.h"
-#include "udd.h"
-#include "udc.h"
-#include "udi_hid.h"
-#include "udi_hid_joystick.h"
+#include "udc/udd.h"
+#include "udc/udc.h"
+#include "class/hid/device/udi_hid.h"
+#include "udi_hid_gpd.h"
 #include <string.h>
 
 /**

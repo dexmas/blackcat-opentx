@@ -36,8 +36,8 @@
 
 #include "usb_config.h"
 #include "usb_protocol.h"
-#include "udd.h"
-#include "udc.h"
+#include "udc/udd.h"
+#include "udc/udc.h"
 #include "udi_hid.h"
 
 

@@ -40,8 +40,10 @@
 
     // The list of Lua fields that have a range of values
     const LuaMultipleField luaMultipleFields[] = {
-        {MIXSRC_FIRST_INPUT, "input", "Input [I%d]", 32},
+    {MIXSRC_FIRST_INPUT, "input", "Input [I%d]", 32},
+#if defined(LUA_INPUTS)
     {MIXSRC_FIRST_LUA, "lua", "Lua mix output %d", 12},
+#endif
     {MIXSRC_SW1, "ls", "Logical switch L%d", 64},
     {MIXSRC_FIRST_TRAINER, "trn", "Trainer input %d", 16},
     {MIXSRC_CH1, "ch", "Channel CH%d", 32},

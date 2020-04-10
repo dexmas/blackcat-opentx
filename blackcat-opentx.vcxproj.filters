@@ -108,11 +108,17 @@
     <Filter Include="Source files\targets\sky9x\usb\class\hid\device">
       <UniqueIdentifier>{e6e4b255-d0fc-4778-aa6e-3413985e6965}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source files\targets\sky9x\usb\class\hid\device\joystick">
-      <UniqueIdentifier>{158b0eb0-3c9b-4be8-a3f5-7d0ab295beba}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source files\targets\sky9x\usb\udp">
       <UniqueIdentifier>{77e4ba6b-d419-4cd4-a30c-51d389d2da88}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\targets\sky9x\usb\class\cdc">
+      <UniqueIdentifier>{fcea9616-b26b-490b-b387-ed3288dfed9b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\targets\sky9x\usb\class\cdc\device">
+      <UniqueIdentifier>{da8ad809-eaec-4b81-b22a-01b2ccb65f38}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\targets\sky9x\usb\class\hid\device\gpd">
+      <UniqueIdentifier>{158b0eb0-3c9b-4be8-a3f5-7d0ab295beba}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -737,14 +743,17 @@
     <ClCompile Include="src\targets\sky9x\usb\class\hid\device\udi_hid.c">
       <Filter>Source files\targets\sky9x\usb\class\hid\device</Filter>
     </ClCompile>
-    <ClCompile Include="src\targets\sky9x\usb\class\hid\device\joystick\udi_hid_joystick.c">
-      <Filter>Source files\targets\sky9x\usb\class\hid\device\joystick</Filter>
-    </ClCompile>
-    <ClCompile Include="src\targets\sky9x\usb\class\hid\device\joystick\udi_hid_joystick_desc.c">
-      <Filter>Source files\targets\sky9x\usb\class\hid\device\joystick</Filter>
-    </ClCompile>
     <ClCompile Include="src\targets\sky9x\usb\udp\udp_device.c">
       <Filter>Source files\targets\sky9x\usb\udp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\targets\sky9x\usb\class\cdc\device\udi_cdc.c">
+      <Filter>Source files\targets\sky9x\usb\class\cdc\device</Filter>
+    </ClCompile>
+    <ClCompile Include="src\targets\sky9x\usb\class\hid\device\gpd\udi_hid_gpd.c">
+      <Filter>Source files\targets\sky9x\usb\class\hid\device\gpd</Filter>
+    </ClCompile>
+    <ClCompile Include="src\targets\sky9x\usb\class\hid\device\gpd\udi_hid_gpd_desc.c">
+      <Filter>Source files\targets\sky9x\usb\class\hid\device\gpd</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1344,14 +1353,20 @@
     <ClInclude Include="src\targets\sky9x\usb\class\hid\device\udi_hid.h">
       <Filter>Source files\targets\sky9x\usb\class\hid\device</Filter>
     </ClInclude>
-    <ClInclude Include="src\targets\sky9x\usb\class\hid\device\joystick\udi_hid_joystick.h">
-      <Filter>Source files\targets\sky9x\usb\class\hid\device\joystick</Filter>
-    </ClInclude>
     <ClInclude Include="src\targets\sky9x\usb\usb_config.h">
       <Filter>Source files\targets\sky9x\usb</Filter>
     </ClInclude>
     <ClInclude Include="src\targets\sky9x\usb\udp\udp_device.h">
       <Filter>Source files\targets\sky9x\usb\udp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\targets\sky9x\usb\class\cdc\usb_protocol_cdc.h">
+      <Filter>Source files\targets\sky9x\usb\class\cdc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\targets\sky9x\usb\class\cdc\device\udi_cdc.h">
+      <Filter>Source files\targets\sky9x\usb\class\cdc\device</Filter>
+    </ClInclude>
+    <ClInclude Include="src\targets\sky9x\usb\class\hid\device\gpd\udi_hid_gpd.h">
+      <Filter>Source files\targets\sky9x\usb\class\hid\device\gpd</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
