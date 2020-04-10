@@ -25,6 +25,7 @@
 #include "lua_api.h"
 #include "telemetry/frsky.h"
 #include "telemetry/multi.h"
+#include "usb_driver.h"
 
 #if defined(PCBX12S)
   #include "lua/lua_exports_x12s.inc"   // this line must be after lua headers

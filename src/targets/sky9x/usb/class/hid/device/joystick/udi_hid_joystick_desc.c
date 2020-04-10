@@ -41,8 +41,8 @@
 #include "udi_hid_joystick.h"
 
 /**
- * \ingroup udi_hid_mouse_group
- * \defgroup udi_hid_mouse_group_single_desc USB device descriptors for a single interface
+ * \ingroup udi_hid_gpd_group
+ * \defgroup udi_hid_gpd_group_single_desc USB device descriptors for a single interface
  *
  * The following structures provide the USB device descriptors required
  * for USB Device with a single interface HID mouse.

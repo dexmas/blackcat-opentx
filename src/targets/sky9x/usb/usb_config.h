@@ -50,13 +50,13 @@
 #define  USB_DEVICE_MAJOR_VERSION         1
 #define  USB_DEVICE_MINOR_VERSION         1
 #define  USB_DEVICE_POWER                 100 // Consumption on Vbus line (mA)
-#define  USB_DEVICE_ATTR                  (USB_CONFIG_ATTR_REMOTE_WAKEUP|USB_CONFIG_ATTR_BUS_POWERED)
+#define  USB_DEVICE_ATTR                  (USB_CONFIG_ATTR_REMOTE_WAKEUP|USB_CONFIG_ATTR_SELF_POWERED)
 
 
 //! USB Device string definitions (Optional)
 #define  USB_DEVICE_MANUFACTURE_NAME      "OpenTX"
 #define  USB_DEVICE_PRODUCT_NAME          "9XR Pro"
-//#define  USB_DEVICE_SERIAL_NAME           "OpenTX 2.3.3"
+#define  USB_DEVICE_SERIAL_NAME           "OpenTX 2.3.3"
 
 /**
  * Device speeds support
@@ -103,8 +103,9 @@
  * @{
  */
  /* ! Interface callback definition */
-#define  UDI_HID_GPD_ENABLE_EXT()    true  
-#define  UDI_HID_GPD_DISABLE_EXT()     
+//#TODO DeXmas
+#define  UDI_HID_GPD_ENABLE_EXT()       true
+#define  UDI_HID_GPD_DISABLE_EXT()      
 #define  UDI_HID_GPD_CHANGE_LED(value)
 
 /* ! Interface number */

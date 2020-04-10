@@ -22,6 +22,7 @@
 #include "serial.h"
 #include <stdarg.h>
 #include <stdio.h>
+#include "usb_driver.h"
 
 #define PRINTF_BUFFER_SIZE    128
 

@@ -722,12 +722,6 @@
     <ClCompile Include="src\targets\sky9x\usb_driver.cpp">
       <Filter>Source files\targets\sky9x</Filter>
     </ClCompile>
-    <ClCompile Include="src\targets\sky9x\usb_massstorage.cpp">
-      <Filter>Source files\targets\sky9x</Filter>
-    </ClCompile>
-    <ClCompile Include="src\targets\sky9x\usb_serial.cpp">
-      <Filter>Source files\targets\sky9x</Filter>
-    </ClCompile>
     <ClCompile Include="src\targets\sky9x\startup_sam4s.c">
       <Filter>Source files\targets\sky9x</Filter>
     </ClCompile>

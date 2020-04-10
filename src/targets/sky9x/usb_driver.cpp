@@ -29,10 +29,6 @@ extern "C" {
 #include "udc.h"
 }
 
-void usbMassStorage();
-void startCDCSerial();
-void startJoystick();
-
 static bool usbDriverStarted = false;
 #if defined(BOOT)
 static usbMode selectedUsbMode = USB_MASS_STORAGE_MODE;
@@ -60,6 +56,69 @@ void usbInit()
     usbDriverStarted = false;
 }
 
+bool usbStarted()
+{
+    return usbDriverStarted;
+}
+
+void usbPluggedIn()
+{
+    
+}
+
+void startJoystick()
+{
+    udc_start();
+    udc_remotewakeup();
+}
+
+void startCDCSerial()
+{
+
+}
+
+void startMassStorage()
+{
+    static bool initialized = false;
+
+    if (sd_card_ready()) {
+        TRACE_DEBUG("usbMassStorage\n\r");
+
+        if (sdMounted()) {
+            Card_state = SD_ST_DATA;
+            audioQueue.stopSD();
+            logsClose();
+            f_mount(nullptr, "", 0); // unmount SD
+        }
+
+        if (!initialized) {
+            /* Initialize LUN */
+            //MEDSdcard_Initialize(&(medias[DRV_SDMMC]), 0);
+
+            //LUN_Init(&(luns[DRV_SDMMC]), &(medias[DRV_SDMMC]),
+            //    msdBuffer, MSD_BUFFER_SIZE,
+            //    0, 0, 0, 0,
+            //    MSDCallbacks_Data);
+
+            /* BOT driver initialization */
+            //MSDDriver_Initialize(luns, 1);
+
+            // VBus_Configure();
+            //USBD_Connect();
+
+            initialized = true;
+        }
+
+        /* Mass storage state machine */
+        //for (uint8_t i=0; i<50; i++)
+        //  MSDDriver_StateMachine();
+    }
+    else {
+        //msdReadTotal = 0;
+        //msdWriteTotal = 0;
+    }
+}
+
 void usbStart()
 {
     switch (getSelectedUsbMode()) {
@@ -75,7 +134,7 @@ void usbStart()
 #endif
     default:
     case USB_MASS_STORAGE_MODE:
-        usbMassStorage();
+        startMassStorage();
         break;
     }
     usbDriverStarted = true;
@@ -83,45 +142,36 @@ void usbStart()
 
 void usbStop()
 {
+    udc_stop();
+
     usbDriverStarted = false;
-}
-
-bool usbStarted()
-{
-    return usbDriverStarted;
-}
-
-void startJoystick()
-{
-    udc_start();
-    udc_remotewakeup();
 }
 
 void usbJoystickUpdate()
 {
     static uint8_t HID_Buffer[9];
 
-    HID_Buffer[3] = 0; // buttons
+    HID_Buffer[0] = 0; // buttons
     for (int i = 0; i < 8; ++i) {
         if ( channelOutputs[i+8] > 0 ) {
-            HID_Buffer[3] |= (1 << i);
+            HID_Buffer[0] |= (1 << i);
         }
     }
 
     //analog values
-    /*for (int i = 0; i < 8; ++i) {
+    for (int i = 0; i < 8; ++i) {
         int16_t value = channelOutputs[i] / 8;
         if ( value > 127 ) value = 127;
         else if ( value < -127 ) value = -127;
         HID_Buffer[i+1] = static_cast<int8_t>(value);
-    }*/
+    }
 
-    udi_hid_gpd_fill_report(HID_Buffer);
+    udi_hid_gpd_update(HID_Buffer);
 }
 
-void usbPluggedIn()
+void usbSerialPutc(uint8_t c)
 {
-    //#TODO
+    
 }
 
 #endif
