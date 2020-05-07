@@ -1089,7 +1089,7 @@ static inline uint8_t UDP_Read(uint8_t  bEndpoint,
  * Manages device resume, suspend, end of bus reset.
  * Forwards endpoint events to the appropriate handler.
  */
-void USBD_IRQHandler(void)
+void UDP_Handler(void)
 {
     uint32_t status;
     int32_t eptnum = 0;

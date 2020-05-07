@@ -130,13 +130,11 @@ typedef struct {
 static void _ConfigureUsbClock(void)
 {
     /* Enable PLLB for USB */
-    PMC->CKGR_PLLBR = CKGR_PLLBR_DIVB(1)
-                    | CKGR_PLLBR_MULB(7)
-                    | CKGR_PLLBR_PLLBCOUNT_Msk;
+    PMC->CKGR_PLLBR = CKGR_PLLBR_MULB(16-1)|CKGR_PLLBR_DIVB(2)|CKGR_PLLBR_PLLBCOUNT(0x3FU);
+
     while((PMC->PMC_SR & PMC_SR_LOCKB) == 0);
     /* USB Clock uses PLLB */
-    PMC->PMC_USB = PMC_USB_USBDIV(1)    /* /2   */
-                 | PMC_USB_USBS;        /* PLLB */
+    PMC->PMC_USB = PMC_USB_USBDIV(1)|PMC_USB_USBS; /* PLLB */
 }
 
 /*----------------------------------------------------------------------------
@@ -267,6 +265,7 @@ uint8_t HIDDJoystickDriver_Change( uint8_t *data )
 	{
   	    pReport->analog[i] = *data++ ;
 	}
+
     /* Send input report through the interrupt IN endpoint */
     return USBD_Write(pHidd->bPipeIN,
                       (void*)pReport,
