@@ -27,11 +27,6 @@
  * RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
  * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
  *
- * \asf_license_stop
- *
- */
-/*
- * Support and FAQ: visit <a href="https://www.microchip.com/support/">Microchip Support</a>
  */
 
 #ifndef _UDC_DESC_H_
@@ -48,8 +43,6 @@ extern "C" {
 /**
  * \ingroup udc_group
  * \defgroup udc_desc_group USB Device Descriptor
- *
- * @{
  */
 
 /**
@@ -78,8 +71,8 @@ extern "C" {
 #		define UDC_BSS(x)               COMPILER_ALIGNED(x)   __data32
 #	endif
 #else
-#	define UDC_DATA(x)              __attribute__((__aligned__(a)))(x)
-#	define UDC_BSS(x)               __attribute__((__aligned__(a)))(x)
+#	define UDC_DATA(x)              __attribute__((__aligned__(x)))
+#	define UDC_BSS(x)               __attribute__((__aligned__(x)))
 #endif
 
 
@@ -116,8 +109,6 @@ typedef struct {
 
 //! Global variables of USB Device Descriptor and UDI links
 extern UDC_DESC_STORAGE udc_config_t udc_config;
-
-//@}
 
 #ifdef __cplusplus
 }

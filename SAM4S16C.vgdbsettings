@@ -22,6 +22,7 @@
     <ProjectFile>opentx-9xrpro.vcxproj</ProjectFile>
     <RemoteBuildEnvironment>
       <Records />
+      <EnvironmentSetupFiles />
     </RemoteBuildEnvironment>
     <ParallelJobCount>1</ParallelJobCount>
     <SuppressDirectoryChangeMessages>true</SuppressDirectoryChangeMessages>
@@ -106,7 +107,7 @@
     <DebugMethod>
       <ID>com.sysprogs.arm.openocd</ID>
       <Configuration xsi:type="com.visualgdb.edp.openocd.settings">
-        <CommandLine>-f interface/stlink-v2.cfg -c "adapter speed 1000" -f target/at91sam4sXX.cfg -c "debug_level 3"</CommandLine>
+        <CommandLine>-f interface/cmsis-dap.cfg -c "adapter speed 500" -f target/at91sam3sXX.cfg -c "debug_level 3"</CommandLine>
         <ExtraParameters>
           <Frequency xsi:nil="true" />
           <BoostedFrequency xsi:nil="true" />

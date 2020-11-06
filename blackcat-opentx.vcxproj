@@ -35,7 +35,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='SAM4S16C|VisualGDB'">
     <ClCompile>
-      <PreprocessorDefinitions>SAM4S;__SAM4S16C__;REVX;PCBSKY9X;RTOS_COOS;FLAVOUR="9xrpro";REQUIRED_SDCARD_VERSION="2.3.0";FONT=SQT5;TRANSLATIONS="EN";TRANSLATIONS_EN;PPM_PIN_SERIAL;AUDIO_DUAL_BUFFER;AUDIO;VOICE;RTCLOCK;RUN_FROM_FLASH=1;EEPROM;EEPROM_RAW;SPLASH;TIMERS=2;HAPTIC;MULTIMODULE;VIRTUAL_INPUTS;TELEMETRY_FRSKY_SPORT;FRSKY_HUB;PXX;DSM2;BOLD_FONT;BATTGRAPH;THRTRACE;GAUGES;VARIO;GRAPHICS;FLIGHT_MODES;EEPROM_VARIANT=1;CURVES;AUTOSOURCE;AUTOSWITCH;SDCARD;PPM_UNIT_US;PPM_CENTER_ADJUSTABLE;PPM_LIMITS_SYMETRICAL;OVERRIDE_CHANNEL_FUNCTION;DANGEROUS_MODULE_FUNCTIONS;GUI;CPUARM;CORRECT_NEGATIVE_SHIFTS;DISABLE_MULTI_UPDATE;NAVIGATION_9X;BUZZER;PXX1;WATCHDOG;POPUP_LEVEL=2;CROSSFIRE;GVARS;LUA;LUA_COMPILER;USB_SERIAL;%(ClCompile.PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>SAM4S;__SAM4S16C__;REVX;PCBSKY9X;RTOS_COOS;FLAVOUR="9xrpro";REQUIRED_SDCARD_VERSION="2.3.0";FONT=SQT5;TRANSLATIONS="EN";TRANSLATIONS_EN;PPM_PIN_SERIAL;AUDIO_DUAL_BUFFER;AUDIO;VOICE;RTCLOCK;RUN_FROM_FLASH=1;EEPROM;EEPROM_RAW;SPLASH;TIMERS=2;HAPTIC;MULTIMODULE;VIRTUAL_INPUTS;TELEMETRY_FRSKY_SPORT;FRSKY_HUB;PXX;PPM;DSM2;XJT;SBUS;CROSSFIRE;HARDWARE_EXTERNAL_MODULE_SIZE_STD;BOLD_FONT;BATTGRAPH;THRTRACE;GAUGES;VARIO;GRAPHICS;FLIGHT_MODES;EEPROM_VARIANT=1;CURVES;AUTOSOURCE;AUTOSWITCH;SDCARD;PPM_UNIT_US;PPM_CENTER_ADJUSTABLE;PPM_LIMITS_SYMETRICAL;OVERRIDE_CHANNEL_FUNCTION;DANGEROUS_MODULE_FUNCTIONS;GUI;CPUARM;CORRECT_NEGATIVE_SHIFTS;DISABLE_MULTI_UPDATE;NAVIGATION_9X;BUZZER;PXX1;WATCHDOG;POPUP_LEVEL=2;GVARS;LUA;LUA_COMPILER;USB_SERIAL;%(ClCompile.PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>src\gui;src\gui\128x64;src\thirdparty;src\thirdparty\CoOS;src\thirdparty\CoOS\kernel;src\thirdparty\CoOS\portable;src\thirdparty\FatFs;src\thirdparty\FatFs\option;src\thirdparty\Lua\src;src\targets\sky9x;src\targets\sky9x\usb;data;data\bitmaps;data\bitmaps\128x64;src;data\fonts\sqt5;%(ClCompile.AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PrecompiledHeaderDirectory>
       </PrecompiledHeaderDirectory>
@@ -248,9 +248,10 @@
     <ClCompile Include="src\targets\sky9x\system_sam4s.c" />
     <ClCompile Include="src\targets\sky9x\usb\class\cdc\device\udi_cdc.c" />
     <ClCompile Include="src\targets\sky9x\usb\class\hid\device\gpd\udi_hid_gpd.c" />
-    <ClCompile Include="src\targets\sky9x\usb\class\hid\device\gpd\udi_hid_gpd_desc.c" />
     <ClCompile Include="src\targets\sky9x\usb\class\hid\device\udi_hid.c" />
+    <ClCompile Include="src\targets\sky9x\usb\class\msc\device\udi_msc.c" />
     <ClCompile Include="src\targets\sky9x\usb\udc\udc.c" />
+    <ClCompile Include="src\targets\sky9x\usb\udi_desc.c" />
     <ClCompile Include="src\targets\sky9x\usb\udp\udp_device.c" />
     <ClCompile Include="src\targets\sky9x\usb_driver.cpp" />
     <ClCompile Include="src\targets\sky9x\keys_driver.cpp" />
@@ -416,6 +417,10 @@
     <ClInclude Include="src\targets\sky9x\usb\class\hid\device\gpd\udi_hid_gpd.h" />
     <ClInclude Include="src\targets\sky9x\usb\class\hid\device\udi_hid.h" />
     <ClInclude Include="src\targets\sky9x\usb\class\hid\usb_protocol_hid.h" />
+    <ClInclude Include="src\targets\sky9x\usb\class\msc\device\udi_msc.h" />
+    <ClInclude Include="src\targets\sky9x\usb\class\msc\sbc_protocol.h" />
+    <ClInclude Include="src\targets\sky9x\usb\class\msc\spc_protocol.h" />
+    <ClInclude Include="src\targets\sky9x\usb\class\msc\usb_protocol_msc.h" />
     <ClInclude Include="src\targets\sky9x\usb\udc\udc.h" />
     <ClInclude Include="src\targets\sky9x\usb\udc\udc_desc.h" />
     <ClInclude Include="src\targets\sky9x\usb\udc\udd.h" />

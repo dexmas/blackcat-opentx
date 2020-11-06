@@ -243,7 +243,7 @@ typedef struct {
    .header.bFunctionLength       = sizeof(usb_cdc_hdr_desc_t),\
    .header.bDescriptorType       = CDC_CS_INTERFACE,\
    .header.bDescriptorSubtype    = CDC_SCS_HEADER,\
-   .header.bcdCDC                = LE16(0x0110),\
+   .header.bcdCDC                = 0x0110,\
    .call_mgmt.bFunctionLength    = sizeof(usb_cdc_call_mgmt_desc_t),\
    .call_mgmt.bDescriptorType    = CDC_CS_INTERFACE,\
    .call_mgmt.bDescriptorSubtype = CDC_SCS_CALL_MGMT,\
@@ -259,7 +259,7 @@ typedef struct {
    .ep_notify.bLength            = sizeof(usb_ep_desc_t),\
    .ep_notify.bDescriptorType    = USB_DT_ENDPOINT,\
    .ep_notify.bmAttributes       = USB_EP_TYPE_INTERRUPT,\
-   .ep_notify.wMaxPacketSize     = LE16(UDI_CDC_COMM_EP_SIZE),\
+   .ep_notify.wMaxPacketSize     = UDI_CDC_COMM_EP_SIZE,\
    .ep_notify.bInterval          = 0x10,\
    .ep_notify.bEndpointAddress   = UDI_CDC_COMM_EP_##port,\
    .iface.bInterfaceNumber       = UDI_CDC_COMM_IFACE_NUMBER_##port,\
@@ -289,8 +289,8 @@ typedef struct {
 
 #define UDI_CDC_DATA_DESC_FS(port) { \
    UDI_CDC_DATA_DESC_COMMON \
-   .ep_in.wMaxPacketSize         = LE16(UDI_CDC_DATA_EPS_FS_SIZE),\
-   .ep_out.wMaxPacketSize        = LE16(UDI_CDC_DATA_EPS_FS_SIZE),\
+   .ep_in.wMaxPacketSize         = UDI_CDC_DATA_EPS_FS_SIZE,\
+   .ep_out.wMaxPacketSize        = UDI_CDC_DATA_EPS_FS_SIZE,\
    .ep_in.bEndpointAddress       = UDI_CDC_DATA_EP_IN_##port,\
    .ep_out.bEndpointAddress      = UDI_CDC_DATA_EP_OUT_##port,\
    .iface.bInterfaceNumber       = UDI_CDC_DATA_IFACE_NUMBER_##port,\
@@ -299,8 +299,8 @@ typedef struct {
 
 #define UDI_CDC_DATA_DESC_HS(port) { \
    UDI_CDC_DATA_DESC_COMMON \
-   .ep_in.wMaxPacketSize         = LE16(UDI_CDC_DATA_EPS_HS_SIZE),\
-   .ep_out.wMaxPacketSize        = LE16(UDI_CDC_DATA_EPS_HS_SIZE),\
+   .ep_in.wMaxPacketSize         = UDI_CDC_DATA_EPS_HS_SIZE,\
+   .ep_out.wMaxPacketSize        = UDI_CDC_DATA_EPS_HS_SIZE,\
    .ep_in.bEndpointAddress       = UDI_CDC_DATA_EP_IN_##port,\
    .ep_out.bEndpointAddress      = UDI_CDC_DATA_EP_OUT_##port,\
    .iface.bInterfaceNumber       = UDI_CDC_DATA_IFACE_NUMBER_##port,\

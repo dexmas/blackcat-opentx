@@ -120,6 +120,12 @@
     <Filter Include="Source files\targets\sky9x\usb\class\hid\device\gpd">
       <UniqueIdentifier>{158b0eb0-3c9b-4be8-a3f5-7d0ab295beba}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source files\targets\sky9x\usb\class\msc">
+      <UniqueIdentifier>{61dbe0d5-d3e9-4de9-bdd1-db5eb539f4da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\targets\sky9x\usb\class\msc\device">
+      <UniqueIdentifier>{8a00d29f-9abb-4976-a5f0-102833f347f7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\targets\common\arm\loadboot.cpp">
@@ -752,8 +758,11 @@
     <ClCompile Include="src\targets\sky9x\usb\class\hid\device\gpd\udi_hid_gpd.c">
       <Filter>Source files\targets\sky9x\usb\class\hid\device\gpd</Filter>
     </ClCompile>
-    <ClCompile Include="src\targets\sky9x\usb\class\hid\device\gpd\udi_hid_gpd_desc.c">
-      <Filter>Source files\targets\sky9x\usb\class\hid\device\gpd</Filter>
+    <ClCompile Include="src\targets\sky9x\usb\udi_desc.c">
+      <Filter>Source files\targets\sky9x\usb</Filter>
+    </ClCompile>
+    <ClCompile Include="src\targets\sky9x\usb\class\msc\device\udi_msc.c">
+      <Filter>Source files\targets\sky9x\usb\class\msc\device</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1367,6 +1376,18 @@
     </ClInclude>
     <ClInclude Include="src\targets\sky9x\usb\class\hid\device\gpd\udi_hid_gpd.h">
       <Filter>Source files\targets\sky9x\usb\class\hid\device\gpd</Filter>
+    </ClInclude>
+    <ClInclude Include="src\targets\sky9x\usb\class\msc\sbc_protocol.h">
+      <Filter>Source files\targets\sky9x\usb\class\msc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\targets\sky9x\usb\class\msc\spc_protocol.h">
+      <Filter>Source files\targets\sky9x\usb\class\msc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\targets\sky9x\usb\class\msc\usb_protocol_msc.h">
+      <Filter>Source files\targets\sky9x\usb\class\msc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\targets\sky9x\usb\class\msc\device\udi_msc.h">
+      <Filter>Source files\targets\sky9x\usb\class\msc\device</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
